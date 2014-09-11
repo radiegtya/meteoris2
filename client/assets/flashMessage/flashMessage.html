@@ -1,0 +1,16 @@
+<!--/**
+ * This Code was created on April 2014
+ * If you find any bug, unreadable code, messy code, potential bug code, etc
+ * Please contact me at:
+ * Ega Radiegtya / radiegtya@yahoo.co.id / 085641278479
+ */-->
+
+<template name="widgetFlashMessage">
+    {{#if isOpened}}
+    <div class="alert-container"><div class="flash-message alert alert-{{state}} fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{message}}
+    </div>
+        </div>
+    {{/if}}
+</template>

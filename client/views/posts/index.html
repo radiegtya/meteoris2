@@ -1,0 +1,17 @@
+<template name="postsIndex">
+    <a href="{{pathFor 'postsInsert'}}">Insert</a>
+    
+    <h3>List Posts</h3>
+    <a href="#" class="btnSortName {{sortClass 'name'}}">Sort by Name</a>
+    {{#each models}}
+    <p>
+        {{name}}
+        <a href="{{pathFor 'postsUpdate'}}">Update</a> |
+        <a href="{{pathFor 'postsView'}}">View</a> |
+        <a href="#" class="btnRemove">Remove</a> |        
+    </p>
+    {{/each}}
+    {{#if hasMore}}
+    <a class="load-more" href="{{hasMore}}">Load more</a>
+    {{/if}}
+</template>

@@ -1,0 +1,35 @@
+<head>
+    <title>PIYIKU-MVVM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+<!--<body>
+    {{#Layout template="layout"}}   
+    {{/Layout}}
+</body>-->
+
+<template name="layout">       
+    {{#if isDesktop}}
+    {{>yield region="flashMessage"}}
+    {{>yield region="header"}}
+    {{>yield region="menu"}}
+    {{>yield}}
+    {{>yield region="footer"}}
+    {{/if}}
+
+    {{#if isPhone}}
+    {{>yield region="flashMessage"}}
+    {{>yield region="headerPhone"}}
+    {{>yield region="menuPhone"}}
+    {{>yield}}
+    {{>yield region="footerPhone"}}
+    {{/if}}
+</template>
+
+
+
+
+
+
+
+
