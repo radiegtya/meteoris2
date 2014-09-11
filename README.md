@@ -1,18 +1,19 @@
-piyiku-mvvm
+PIYIKU-MVVM
 ===========
 
-##WHAT IS PIYIKU-MVVM?
+###WHAT IS PIYIKU-MVVM?
 Piyiku-MVVM is a Realtime Javascript MVVM Framework base on MeteorJs. 
 It's help you structuring your MeteorJS apps, and there are many usefull packages inside.
 
-##WHY USING PIYIKU-MVVM?
+###WHY USING PIYIKU-MVVM?
 - Looking a MVC/MVVM/MVP framework for meteor?
 - Tired of installing required packages/plugin, searching for best packages?
 - Don't know how to structuring your meteor apps or too lazy to restructuring again and again every creating a new project?
 - Try to find the best structure for meteor apps?
+
 **PIYIKU-MVVM ARE THE SOLUTION :)**
 
-##HOW TO USE PIYIKU-MVVM
+###HOW TO USE PIYIKU-MVVM
 Before using this, make sure you have installing meteor which version greater than equals 0.9.1. To install meteor,
 run this command "curl https://install.meteor.com | /bin/sh". After that, follow this instruction:
 
@@ -22,7 +23,7 @@ run this command "curl https://install.meteor.com | /bin/sh". After that, follow
 4. There will be a running DEMO to get you started easily. Register your account from registration page, then 
 loging in using those account. You can then use the demo CRUDSS app.
 
-##WHAT'S INSIDE PIYIKU-MVVM?
+###WHAT'S INSIDE PIYIKU-MVVM?
 Piyiku-MVVM used standard, usefull, robust and stable for meteor js like Iron Router and Collection2.
 
 **Here are List of packages which Piyiku-MVVM used:**
