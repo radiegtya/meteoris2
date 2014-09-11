@@ -1,12 +1,17 @@
 <template name="posts_form">
-    <form id="posts_form">
-        <div class="form-group {{#if error 'name'}}has-error{{/if}}">
-            <label for="name" class="control-label">Name *</label>
-            <input type="text" id="name" value="{{model.name}}" placeholder="Nama" class="form-control" autofocus="true">
-            <span class="help-block">{{error "name"}}</span>
+    <form id="posts_form">        
+        <div class="form-group {{#if error 'title'}}has-error{{/if}}">
+            <label for="title" class="control-label">Title *</label>
+            <input type="text" id="title" value="{{title}}" placeholder="Title" class="form-control" autofocus="true">
+            <span class="help-block">{{error "title"}}</span>
         </div>
-        <input class="btnSave" type="submit" value="Save"/>
-        <input class="btnCancel" type="submit" value="Cancel"/>
+        <div class="form-group {{#if error 'content'}}has-error{{/if}}">
+            <label for="content" class="control-label">Content *</label>
+            <textarea id="content" class="form-control" rows="3" placeholder="Content">{{content}}</textarea>
+            <span class="help-block">{{error "content"}}</span>
+        </div>
+        <a href="{{pathFor 'postsIndex'}}" class="btn btn-default">Back</a>                
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
     </form>
 </template>
 

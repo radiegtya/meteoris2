@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 24, 2014, 1:38:01 PM
+    Author     : Shepherd
+*/
+nav.navbar{
+    background: #F3873F;
+}
+nav.navbar .navbar-brand,
+nav.navbar .navbar-nav>li>a{
+    color: rgba(255,255,255,0.8);
+}
+.title{
+    float: left;
+    width: 100%;
+}
+.title h3{
+    display: inline-block;
+    margin-top: 0;
+}
+
+
+.toolbar{
+    float: left;
+    width: 100%;
+    margin-bottom: 20px
+}
+.toolbar .quick-search{
+    width: 250px;
+}
+.toolbar .input-group .form-control{
+}
+
+
+
+
+.table .buttons{
+    text-align: right;
+}
+.table .buttons .btn{
+}
+
+.tab-content{
+    padding: 30px 0;
+}
+
+.table thead th{
+    position: relative;
+}
+.table thead th.ascending:after{
+    position: relative;
+    top: -12px;
+    margin-left: 5px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 3.5px 7px 3.5px;
+    border-color: transparent transparent #222 transparent;
+}
+.table thead th.descending:after{
+    position: relative;
+    top: 12px;
+    margin-left: 5px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 3.5px 0 3.5px;
+    border-color: #222 transparent transparent transparent;
+}
+.table .filter input{
+    width: calc(100% - 10px);
+    overflow: hidden;
+    margin: 5px;
+}

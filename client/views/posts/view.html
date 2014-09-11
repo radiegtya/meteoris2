@@ -1,6 +1,27 @@
 <template name="postsView">
-    <p>
-        Name: {{model.name}}
-    </p>
-    <a href="{{pathFor 'postsIndex'}}">Go to Index</a> 
+    <div class="container">
+        {{#with model}}
+        <div class="title">
+            <h3 class="pull-left">View Post #{{_id}}</h3>
+            <div class="toolbar pull-right">
+                <a href="{{pathFor 'postsIndex'}}" class="btn btn-default">Back</a> 
+                <a href="{{pathFor 'postsUpdate'}}" class="btn btn-info">Update</a>
+                <a id="btnRemove" class="btn btn-danger">Remove</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><b>Title</b></td>
+                    <td>{{title}}</td>
+                </tr>
+                <tr>
+                    <td><b>Content</b></td>
+                    <td>{{content}}</td>
+                </tr>                
+            </tbody>
+        </table>        
+        {{/with}}
+    </div>
 </template>
