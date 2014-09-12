@@ -64,3 +64,13 @@ PiyikuGridView = {
         return result;
     }
 };
+
+/**
+ * Don't edit this if you don't know what exactly are you doing 
+ */
+UI.registerHelper('piyikuGridView', function(option, firstParam) {
+    return PiyikuGridView[option](firstParam);
+});
+UI.registerHelper('piyikuGridViewSortClass', function(by) {
+    return PiyikuGridView.sortClass(by);
+});

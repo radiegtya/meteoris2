@@ -5,12 +5,6 @@ Meteor.publishComposite('users', function(id) {
             return Meteor.users.find(id);
         },
         children: [
-//            /* return all related Jobs in HRM module */
-//            {
-//                find: function(collection) {
-//                    return Hrm.Jobs.find({_id: collection.profile.hrm_jobId});
-//                }
-//            },
         ],
     }
 });

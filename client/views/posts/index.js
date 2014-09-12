@@ -1,8 +1,4 @@
 Template.postsIndex.helpers({
-    /* get btn arrow up or down whether sortOrder desc or asc */
-    sortClass: function(by) {
-        return PiyikuGridView.sortClass(by);
-    },
     /* get related createdUserId from users collection */
     user: function() {
         return Meteor.users.findOne(this.createdUserId);
