@@ -1,4 +1,4 @@
-PiyikuFormatter = {
+MeteorisFormatter = {
     /**
      * Formatting date to desired format, this function needs moment packages     
      */
@@ -44,15 +44,15 @@ PiyikuFormatter = {
 /**
  * Don't edit this if you don't know what exactly are you doing 
  */
-UI.registerHelper('piyikuFormatter', function(option, firstParam) {
-    return PiyikuFormatter[option](firstParam);
+UI.registerHelper('meteorisFormatter', function(option, firstParam) {
+    return MeteorisFormatter[option](firstParam);
 });
-UI.registerHelper('piyikuFormatterDate', function(date, format) {
-    return PiyikuFormatter.date(date, format);
+UI.registerHelper('meteorisFormatterDate', function(date, format) {
+    return MeteorisFormatter.date(date, format);
 });
-UI.registerHelper('piyikuFormatterDateTime', function(date, format) {
-    return PiyikuFormatter.dateTime(date, format);
+UI.registerHelper('meteorisFormatterDateTime', function(date, format) {
+    return MeteorisFormatter.dateTime(date, format);
 });
-UI.registerHelper('piyikuFormatterNumber', function(value) {
-    return PiyikuFormatter.dateTime(value);
+UI.registerHelper('meteorisFormatterNumber', function(value) {
+    return MeteorisFormatter.dateTime(value);
 });

@@ -5,7 +5,7 @@
  * Ega Radiegtya / radiegtya@yahoo.co.id / 085641278479
  */
 
-PiyikuFlash = {
+MeteorisFlash = {
     isOpened: false,
     state: 'success',
     message: 'success',
@@ -35,27 +35,27 @@ PiyikuFlash = {
         return this.message;
     },
     set: function(state, message) {
-        PiyikuFlash.setState(state);
-        PiyikuFlash.setMessage(message);
-        PiyikuFlash.setIsOpened(true);
+        MeteorisFlash.setState(state);
+        MeteorisFlash.setMessage(message);
+        MeteorisFlash.setIsOpened(true);
         
         Meteor.setTimeout(function() {
-            PiyikuFlash.setIsOpened(false);
+            MeteorisFlash.setIsOpened(false);
         }, 4000);
     }
 };
 
-Template.piyikuFlash.helpers({
+Template.meteorisFlash.helpers({
     isOpened: function() {
-        if (PiyikuFlash.getIsOpened()) {
+        if (MeteorisFlash.getIsOpened()) {
             return true;
         } else
             return false;
     },
     state: function() {
-        return PiyikuFlash.getState();
+        return MeteorisFlash.getState();
     },
     message: function() {
-        return PiyikuFlash.getMessage();
+        return MeteorisFlash.getMessage();
     }
 });

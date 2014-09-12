@@ -1,4 +1,4 @@
-PiyikuSimpleSchema = {
+MeteorisSimpleSchema = {
     error: function(collections, field) {
         var namedContext = collections.simpleSchema().namedContext();
         var result = "";

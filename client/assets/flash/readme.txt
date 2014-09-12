@@ -8,5 +8,5 @@
 HOW TO USE:
 
 //set flash message example
-PiyikuFlash.set('success', 'Data berhasil ditambahkan');
-PiyikuFlash.set('danger', 'Data gagal ditambahkan');
+MeteorisFlash.set('success', 'Data berhasil ditambahkan');
+MeteorisFlash.set('danger', 'Data gagal ditambahkan');

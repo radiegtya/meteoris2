@@ -13,7 +13,7 @@ Template.postsIndex.events = {
     },
     /* sorting by parameter */
     'click #btnSortTitle': function(e) {
-        PiyikuGridView.sort('title');
+        MeteorisGridView.sort('title');
     },
     'keyup #search': function(e, t) {
         e.preventDefault();
@@ -49,7 +49,7 @@ Template.postsIndex.events = {
                 }
             }
         } else {
-            PiyikuFlash.set('danger', 'Please Select Some data which You Want to Remove');
+            MeteorisFlash.set('danger', 'Please Select Some data which You Want to Remove');
         }
 
         //set checkAll header to uncheck

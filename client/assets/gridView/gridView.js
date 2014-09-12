@@ -5,7 +5,7 @@
  * Ega Radiegtya / radiegtya@yahoo.co.id / 085641278479
  */
 
-PiyikuGridView = {
+MeteorisGridView = {
     deps: new Tracker.Dependency,
     /* ---- sorting ---- */
     sortState: 1,
@@ -68,9 +68,9 @@ PiyikuGridView = {
 /**
  * Don't edit this if you don't know what exactly are you doing 
  */
-UI.registerHelper('piyikuGridView', function(option, firstParam) {
-    return PiyikuGridView[option](firstParam);
+UI.registerHelper('meteorisGridView', function(option, firstParam) {
+    return MeteorisGridView[option](firstParam);
 });
-UI.registerHelper('piyikuGridViewSortClass', function(by) {
-    return PiyikuGridView.sortClass(by);
+UI.registerHelper('meteorisGridViewSortClass', function(by) {
+    return MeteorisGridView.sortClass(by);
 });

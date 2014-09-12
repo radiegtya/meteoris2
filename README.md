@@ -1,32 +1,32 @@
-PIYIKU-MVVM
+METEORIS
 ===========
 
-###WHAT IS PIYIKU-MVVM?
-Piyiku-MVVM is a Realtime Javascript MVVM Framework base on MeteorJs. 
+###WHAT IS METEORIS?
+Meteoris is a Realtime Javascript MVVM Framework base on MeteorJs. 
 It's help you structuring your MeteorJS apps, and there are many usefull packages inside.
 
-###WHY USING PIYIKU-MVVM?
+###WHY USING METEORIS?
 - Looking a MVC/MVVM/MVP framework for meteor?
 - Tired of installing required packages/plugin, searching for best packages?
 - Don't know how to structuring your meteor apps or too lazy to restructuring again and again every creating a new project?
 - Try to find the best structure for meteor apps?
 
-**PIYIKU-MVVM ARE THE SOLUTION :)**
+**METEORIS ARE THE SOLUTION :)**
 
-###HOW TO USE PIYIKU-MVVM
+###HOW TO USE METEORIS
 Before using this, make sure you have installing meteor which version greater than equals 0.9.1. To install meteor,
 run this command "curl https://install.meteor.com | /bin/sh". After that, follow this instruction:
 
-1. Git clone or download this repo. "git clone https://github.com/radiegtya/piyiku-mvvm.git"
-2. Rename file to your desired name "ex: piyiku-mvvm to myproject"
+1. Git clone or download this repo. "git clone https://github.com/radiegtya/meteoris.git"
+2. Rename file to your desired name "ex: meteoris to myproject"
 3. Change dir to your apps then just run "sudo meteor". Then type "localhost:3000" in your browser.
 4. There will be a running DEMO to get you started easily. Register your account from registration page, then 
 loging in using those account. You can then use the demo CRUDSS app.
 
-###WHAT'S INSIDE PIYIKU-MVVM?
-Piyiku-MVVM used standard, usefull, robust and stable for meteor js like Iron Router and Collection2.
+###WHAT'S INSIDE METEORIS?
+Meteoris used standard, usefull, robust and stable for meteor js like Iron Router and Collection2.
 
-**Here are List of packages which Piyiku-MVVM used:**
+**Here are List of packages which Meteoris used:**
 - meteor-platform            1.0.2  Include a standard set of Meteor packages i...
 - aldeed:collection2         2.0.0  Automatic validation of insert and update o...
 - iron:router                0.9.3  Routing specifically designed for Meteor
@@ -42,6 +42,6 @@ Piyiku-MVVM used standard, usefull, robust and stable for meteor js like Iron Ro
 - mrt:moment                 2.8.1  Moment.js, a JavaScript date library for da...
 - lepozepo:accounting        1.0.0  Accounting.js -  number, money and currency...
 
- ###YOU CAN VIEW THE ROADMAP OF PIYIKU-MVVM HERE
- https://trello.com/b/01SvtPLA/piyiku-mvvm-roadmap
+ ###YOU CAN VIEW THE ROADMAP OF METEORIS HERE
+ https://trello.com/b/01SvtPLA/meteoris-roadmap
 

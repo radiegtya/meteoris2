@@ -8,9 +8,9 @@
 /**
  * Edit this class value as you need
  */
-var App = {
-    name: "Meteorisme",
-    version: "0.0.1"
+App = {
+    name: "Meteoris",
+    version: "0.2.1"
 };
 
 
