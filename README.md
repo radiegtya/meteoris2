@@ -1,5 +1,5 @@
-METEORIS
-===========
+METEORIS v0.2.1
+===============
 
 ###WHAT IS METEORIS?
 Meteoris is a Realtime Javascript MVVM Framework base on MeteorJs. 
@@ -10,8 +10,8 @@ It's help you structuring your MeteorJS apps, and there are many usefull package
 - Tired of installing required packages/plugin, searching for best packages?
 - Don't know how to structuring your meteor apps or too lazy to restructuring again and again every creating a new project?
 - Try to find the best structure for meteor apps?
-
 **METEORIS ARE THE SOLUTION :)**
+
 
 ###HOW TO USE METEORIS
 Before using this, make sure you have installing meteor which version greater than equals 0.9.1. To install meteor,
@@ -22,6 +22,7 @@ run this command "curl https://install.meteor.com | /bin/sh". After that, follow
 3. Change dir to your apps then just run "sudo meteor". Then type "localhost:3000" in your browser.
 4. There will be a running DEMO to get you started easily. Register your account from registration page, then 
 loging in using those account. You can then use the demo CRUDSS app.
+
 
 ###WHAT'S INSIDE METEORIS?
 Meteoris used standard, usefull, robust and stable for meteor js like Iron Router and Collection2.
@@ -39,8 +40,9 @@ Meteoris used standard, usefull, robust and stable for meteor js like Iron Route
 - mizzao:bootstrap-3         3.2.0  HTML, CSS, and JS framework for developing ...
 - mizzao:timesync            0.2.2  NTP-style time synchronization between serv...
 - jquery                     1.0.0  Manipulate the DOM using CSS selectors
-- mrt:moment                 2.8.1  Moment.js, a JavaScript date library for da...
+- mrt:moment                 2.8.1  Momentjs, a JavaScript date library for da...
 - lepozepo:accounting        1.0.0  Accounting.js -  number, money and currency...
+
 
  ###YOU CAN VIEW THE ROADMAP OF METEORIS HERE
  https://trello.com/b/01SvtPLA/meteoris-roadmap
