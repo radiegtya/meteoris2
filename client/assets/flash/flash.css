@@ -3,5 +3,6 @@
     right: 30px;
     bottom: 30px;
     display: inline-block;
+    min-width:250px;
     z-index: 20000;
 }

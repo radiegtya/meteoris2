@@ -8,7 +8,7 @@
 /**
  * Edit this class value as you need
  */
-var piyikuApp = {
+var App = {
     name: "Meteorisme",
     version: "0.0.1"
 };
@@ -17,6 +17,6 @@ var piyikuApp = {
 /**
  * Don't edit this if you don't know what exactly are you doing 
  */
-UI.registerHelper('piyikuApp', function(option, value) {
-    return piyikuApp[option];
+UI.registerHelper('app', function(option, value) {
+    return App[option];
 });
