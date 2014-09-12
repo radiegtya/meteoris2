@@ -20,6 +20,22 @@
                     <td><b>Content</b></td>
                     <td>{{content}}</td>
                 </tr>                
+                <tr>
+                    <td><b>Created at</b></td>
+                    <td>{{piyikuFormatter "date" createdDate}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Updated at</b></td>
+                    <td>{{piyikuFormatter "date" updatedDate}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Created by</b></td>
+                    <td>{{createdUser.profile.name}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Updated By</b></td>
+                    <td>{{updatedUser.profile.name}}</td>
+                </tr>                
             </tbody>
         </table>        
         {{/with}}

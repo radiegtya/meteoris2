@@ -7,3 +7,12 @@ Template.postsView.events = {
         }
     },
 };
+
+Template.postsView.helpers({
+    createdUser: function(){
+        return Meteor.users.findOne(this.createdUserId);
+    },
+    updatedUser: function(){
+        return Meteor.users.findOne(this.updatedUserId);
+    },
+});

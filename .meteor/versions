@@ -27,6 +27,7 @@ iron:layout@0.4.1
 iron:router@0.9.3
 jquery@1.0.0
 json@1.0.0
+lepozepo:accounting@1.0.0
 livedata@1.0.9
 localstorage@1.0.0
 logging@1.0.2
@@ -39,6 +40,7 @@ mizzao:bootstrap-3@3.2.0
 mizzao:timesync@0.2.2
 mongo-livedata@1.0.4
 mongo@1.0.4
+mrt:moment@2.8.1
 mystor:device-detection@0.2.0
 npm-bcrypt@0.7.7
 observe-sequence@1.0.2
