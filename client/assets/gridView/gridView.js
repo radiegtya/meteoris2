@@ -5,13 +5,12 @@
  * Ega Radiegtya / radiegtya@yahoo.co.id / 085641278479
  */
 
-WidgetGridView = {
+PiyikuGridView = {
     deps: new Tracker.Dependency,
     /* ---- sorting ---- */
     sortState: 1,
     sorting: {
         sort: {
-//            'updated_date': -1,
             'updatedDate': -1
         }
     },

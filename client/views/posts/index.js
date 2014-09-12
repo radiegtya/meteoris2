@@ -1,7 +1,7 @@
 Template.postsIndex.helpers({
     /* get btn arrow up or down whether sortOrder desc or asc */
     sortClass: function(by) {
-        return WidgetGridView.sortClass(by);
+        return PiyikuGridView.sortClass(by);
     },
     /* get related createdUserId from users collection */
     user: function() {
@@ -17,7 +17,7 @@ Template.postsIndex.events = {
     },
     /* sorting by parameter */
     'click #btnSortTitle': function(e) {
-        WidgetGridView.sort('title');
+        PiyikuGridView.sort('title');
     },
     'keyup #search': function(e, t) {
         e.preventDefault();
@@ -53,7 +53,7 @@ Template.postsIndex.events = {
                 }
             }
         } else {
-            WidgetFlashMessage.run('danger', 'Please Select Some data which You Want to Remove');
+            PiyikuFlash.set('danger', 'Please Select Some data which You Want to Remove');
         }
 
         //set checkAll header to uncheck

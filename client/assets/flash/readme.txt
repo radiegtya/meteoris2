@@ -8,4 +8,5 @@
 HOW TO USE:
 
 //set flash message example
-WidgetFlashMessage.run('success', 'Data berhasil ditambahkan');
+PiyikuFlash.set('success', 'Data berhasil ditambahkan');
+PiyikuFlash.set('danger', 'Data gagal ditambahkan');

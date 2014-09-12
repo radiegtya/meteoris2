@@ -10,7 +10,7 @@
 
 <template name="layout">       
     {{#if isDesktop}}
-    {{>yield region="flashMessage"}}
+    {{>yield region="piyikuFlash"}}
     {{>yield region="header"}}
     {{>yield region="menu"}}
     {{>yield}}
@@ -18,7 +18,7 @@
     {{/if}}
 
     {{#if isPhone}}
-    {{>yield region="flashMessage"}}
+    {{>yield region="piyikuFlash"}}
     {{>yield region="headerPhone"}}
     {{>yield region="menuPhone"}}
     {{>yield}}
