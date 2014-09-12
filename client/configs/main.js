@@ -9,7 +9,7 @@
  * Edit this class value as you need
  */
 var piyikuApp = {
-    name: "PIYIKU-MVVM",
+    name: "Meteorisme",
     version: "0.0.1"
 };
 

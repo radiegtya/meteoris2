@@ -132,14 +132,6 @@ nav.navbar .navbar-brand img{
 }
 
 
-.alert-container{
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    display: inline-block;
-    z-index: 20000;
-}
-
 .loading{
     margin-top: -70px !important;;
 }
