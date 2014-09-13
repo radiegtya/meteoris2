@@ -6,10 +6,11 @@ Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework up to 
 It's help you structuring your Meteor Js apps, and there are many usefull packages inside.
 
 ###WHY USING METEORIS?
-- Looking a MVC/MVVM/MVP boilerplate for meteor?
+- Looking a MVC/MVVM/MVP boilerplate for meteor up to v.0.9.0?
 - Tired of installing required packages/plugin, searching for best packages?
 - Don't know how to structuring your meteor apps or too lazy to restructuring again and again every creating a new project?
 - Try to find the best structure for meteor apps?
+- Confuse or don't have time to learn about whats new in latest meteor v.0.9.0? 
 **METEORIS ARE THE SOLUTION :)**
 
 ###WHAT'S INSIDE METEORIS?
