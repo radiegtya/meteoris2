@@ -81,7 +81,7 @@ PostsController = MeteorisController.extend({
 
 });
 ```
-save this file in "lib/controllers/PostsController.js"
+> save this file in "lib/controllers/PostsController.js"
 
 *3. Creating function inside Controller*
 ```
