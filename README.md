@@ -75,8 +75,11 @@ server/ 			    # Server folder
 **C. Routing, Controller and Views**
 
 *1. What is Controller*
+
 Controller are class which responsible for storing dynamic data to view.
+
 *2. Creating Controller*
+
 Let's create simple controller named PostsController that extends MeteorisController.
 ```
 PostsController = MeteorisController.extend({
