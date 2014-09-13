@@ -165,5 +165,11 @@ Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message o
 **L. Using Meteoris Packages** 
 > Documentation are Coming Soon! For now you can try the code at Posts DEMO.
 
-**M. Sending Email** 
+**M. Templating for Desktop Apps** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**N. Templating for Mobile Apps** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**O. Sending Email** 
 > Documentation are Coming Soon! For now you can try the code at Posts DEMO.
