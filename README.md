@@ -34,11 +34,11 @@ Meteoris used standard, usefull, robust and stable for meteor js like Iron Route
  ###YOU CAN VIEW THE ROADMAP OF METEORIS HERE
  https://trello.com/b/01SvtPLA/meteoris-roadmap
 
-----------
+------------------------
 
- ###DOCUMENTATIONS
+###DOCUMENTATIONS
 
- **A. Installation**
+**A. Installation**
  
  Before using this, make sure you have installing meteor which version
  greater than equals 0.9.1. To install meteor, run this command "curl
@@ -51,22 +51,36 @@ Meteoris used standard, usefull, robust and stable for meteor js like Iron Route
  4. There will be a running DEMO to get you started easily. Register your account from registration page, then  loging in using those
  account. You can then use the demo CRUDSS app.
 
+**B. Folder Structure**
+```
+client/ 				# Client folder
+    assets/             # Packages with global variable
+    configs/            # Configuration files on the client
+	templates/          # Custom your template here
+    views/              # Your views files 
+lib/ 					# Executed both from client/server
+    applications/       # framework base classes
+    collections/        # Your collection files
+    controllers/        # Your controllers files
+    router.js           # Your routing location
+public/ 			    # Your images or file
+server/ 			    # Server folder
+```
 
-**B. Controller**
+**C. Routing, Controller and Views Basic Usage**
 
-1. What is Controller
+*1. What is Controller*
 Controller are class which responsible for storing dynamic data to view.
-2. Creating Controller
+*2. Creating Controller*
 Let's create simple controller named PostsController that extends MeteorisController.
 ```
 PostsController = MeteorisController.extend({
 
 });
 ```
+save this file in "lib/controllers/PostsController.js"
 
-> save this file in "lib/controllers/PostsController.js"
-
-3. Creating function inside Controller
+*3. Creating function inside Controller*
 ```
 PostsController = MeteorisController.extend({
 	/* passing data from controllers to view */
@@ -81,7 +95,7 @@ PostsController = MeteorisController.extend({
 
 function data is responsible to storing dynamic data to be displayed to the view. Create a view with related name, remember this is the best practice using naming convention in Meteoris.
 
-4. Creating html page to be used for Controller
+*4. Creating html page to be used for Controller*
 ```
 <template name="postsIndex">
 	{{helloWorld}}
@@ -89,4 +103,29 @@ function data is responsible to storing dynamic data to be displayed to the view
 ```
 > save this file in "client/views/posts/index.html"
 
-5. Setup your router 
+*5. Setup your router* 
+Router responsible for url formatting, for example you want to redirect user to "AppName/posts/index". You can make routing like this. 
+
+> Best practice note: 
+> - AppName is your apps name
+> - posts is your controller name or your folder in views name
+> -  index is your view name inside folder posts
+> This is little different from MVC concept like other framework did, which index is 
+>  function name from the controller. It's Because we are using MVVM concept.
+
+```
+    /* POSTS */
+    this.route('postsIndex', { //targetted template
+        path: 'posts/index/', //desired path
+        controller: PostsController, //targetted controller
+    });
+``` 
+
+> save this file in "lib/router.js"
+
+*6. running your app*
+To run your apps, use this url http://localhost:3000/posts/index.
+Now you should see "Hello World" message on your screen. Congratulation!
+
+> For complete tutorial about routing, controller and view you can visit this page https://github.com/EventedMind/iron-router from EventedMind.
+
