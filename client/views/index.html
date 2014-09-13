@@ -17,9 +17,11 @@
 
     {{#if isPhone}}
     {{>yield region="meteorisFlash"}}
-    {{>yield region="headerPhone"}}
-    {{>yield region="menuPhone"}}
-    {{>yield}}
+    <div class="content">
+        {{>yield region="headerPhone"}}
+        {{>yield region="menuPhone"}}
+        {{>yield}}
+    </div>
     {{>yield region="footerPhone"}}
     {{/if}}
 </template>

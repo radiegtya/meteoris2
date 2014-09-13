@@ -69,8 +69,10 @@ nav.navbar .navbar-brand img{
     width: 100%;
     margin-bottom: 20px
 }
-.toolbar .quick-search{
-    width: 250px;
+.toolbar .quick-search.col-xs-12{
+    /*width: 250px;*/
+    margin-top: 10px;
+    padding:0;
 }
 .toolbar .input-group .form-control{
 }

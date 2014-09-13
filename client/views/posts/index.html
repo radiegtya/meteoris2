@@ -17,7 +17,7 @@
                 <a class="btn btn-success" href="{{pathFor 'postsInsert'}}">Insert</a>
                 <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
             </div>   
-            <div class="quick-search pull-right">
+            <div class="quick-search pull-right col-xs-12 col-md-3">
                 <div class="input-group">
                     <input type="text" id="search" class="form-control" placeholder="Type Here to Search...">
                     <span class="input-group-btn">
@@ -34,11 +34,11 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th class="hidden-xs" style="width: 30px;"><input type="checkbox" id="checkAll"/></th>
+                    <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>
                     <th id="btnSortTitle" class="{{meteorisGridViewSortClass 'title'}}">Title</th>                    
                     <th>Content</th>                    
                     <th>Created by</th>                    
-                    <th class="hidden-xs" style="width: 145px;">Actions</th>
+                    <th style="width: 145px;">Actions</th>
                 </tr>
             </thead>
             <tbody>
