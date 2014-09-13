@@ -2,11 +2,11 @@ METEORIS v0.2.1
 ===============
 
 ###WHAT IS METEORIS?
-Meteoris is a Realtime Javascript MVVM Framework base on MeteorJs. 
-It's help you structuring your MeteorJS apps, and there are many usefull packages inside.
+Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework. 
+It's help you structuring your Meteor Js apps, and there are many usefull packages inside.
 
 ###WHY USING METEORIS?
-- Looking a MVC/MVVM/MVP framework for meteor?
+- Looking a MVC/MVVM/MVP boilerplate for meteor?
 - Tired of installing required packages/plugin, searching for best packages?
 - Don't know how to structuring your meteor apps or too lazy to restructuring again and again every creating a new project?
 - Try to find the best structure for meteor apps?
@@ -30,9 +30,12 @@ Meteoris used standard, usefull, robust and stable for meteor js like Iron Route
 - jquery                     1.0.0  Manipulate the DOM using CSS selectors
 - mrt:moment                 2.8.1  Momentjs, a JavaScript date library for da...
 - lepozepo:accounting        1.0.0  Accounting.js -  number, money and currency...
+**note: autopublish and insecure package are removed due to security reason.**
 
- ###YOU CAN VIEW THE ROADMAP OF METEORIS HERE
- https://trello.com/b/01SvtPLA/meteoris-roadmap
+###METEORIS ROADMAP AND CHANGELOG
+You can view our roadmap from this link. 
+ https://trello.com/b/01SvtPLA/meteoris-roadmap.
+if you want to share your idea, just write it in our trello page from that link.
 
 ------------------------
 
@@ -67,7 +70,7 @@ public/ 			    # Your images or file
 server/ 			    # Server folder
 ```
 
-**C. Routing, Controller and Views Basic Usage**
+**C. Routing, Controller and Views**
 
 *1. What is Controller*
 Controller are class which responsible for storing dynamic data to view.
@@ -83,10 +86,15 @@ save this file in "lib/controllers/PostsController.js"
 *3. Creating function inside Controller*
 ```
 PostsController = MeteorisController.extend({
+	getOtherMessage: function(){
+		
+	},
 	/* passing data from controllers to view */
     data: function() {
+	    var otherMessage = this.getOtherMessage();
         return {
 			helloWorld: "Hello World",        
+			otherMessage: otherMessage,
         };
     },
 });
@@ -98,7 +106,8 @@ function data is responsible to storing dynamic data to be displayed to the view
 *4. Creating html page to be used for Controller*
 ```
 <template name="postsIndex">
-	{{helloWorld}}
+	<p>{{helloWorld}}</p>
+	<p>{{otherMessage}}</p>
 </template>
 ```
 > save this file in "client/views/posts/index.html"
@@ -125,7 +134,36 @@ Router responsible for url formatting, for example you want to redirect user to 
 
 *6. running your app*
 To run your apps, use this url http://localhost:3000/posts/index.
-Now you should see "Hello World" message on your screen. Congratulation!
+Now you should see "Hello World" and "Other Message" on your screen. Congratulation!
 
 > For complete tutorial about routing, controller and view you can visit this page https://github.com/EventedMind/iron-router from EventedMind.
 
+**D. Collections**
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**E. Publish Subscribe**
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**F. CRUDSS**
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**G. Validation Message** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**H. Flash Message** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**I. Sorting Table** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**J. User RBAC** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**K. Pagination** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**L. Using Meteoris Packages** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**M. Sending Email** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
