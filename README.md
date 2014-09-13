@@ -2,7 +2,7 @@ METEORIS v0.2.1
 ===============
 
 ###WHAT IS METEORIS?
-Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework. 
+Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework up to v.0.9.0. 
 It's help you structuring your Meteor Js apps, and there are many usefull packages inside.
 
 ###WHY USING METEORIS?
@@ -13,7 +13,8 @@ It's help you structuring your Meteor Js apps, and there are many usefull packag
 **METEORIS ARE THE SOLUTION :)**
 
 ###WHAT'S INSIDE METEORIS?
-Meteoris used standard, usefull, robust and stable for meteor js like Iron Router and Collection2.
+Meteoris used standard, usefull, robust and stable for meteor js like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
+Here is the simple demo about how does Meteoris works http://meteoris.meteor.com
 
 **Here are List of packages which Meteoris used:**
 - meteor-platform            1.0.2  Include a standard set of Meteor packages i...
