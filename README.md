@@ -12,18 +12,6 @@ It's help you structuring your MeteorJS apps, and there are many usefull package
 - Try to find the best structure for meteor apps?
 **METEORIS ARE THE SOLUTION :)**
 
-
-###HOW TO USE METEORIS
-Before using this, make sure you have installing meteor which version greater than equals 0.9.1. To install meteor,
-run this command "curl https://install.meteor.com | /bin/sh". After that, follow this instruction:
-
-1. Git clone or download this repo. "git clone https://github.com/radiegtya/meteoris.git"
-2. Rename file to your desired name "ex: meteoris to myproject"
-3. Change dir to your apps then just run "sudo meteor". Then type "localhost:3000" in your browser.
-4. There will be a running DEMO to get you started easily. Register your account from registration page, then 
-loging in using those account. You can then use the demo CRUDSS app.
-
-
 ###WHAT'S INSIDE METEORIS?
 Meteoris used standard, usefull, robust and stable for meteor js like Iron Router and Collection2.
 
@@ -43,7 +31,62 @@ Meteoris used standard, usefull, robust and stable for meteor js like Iron Route
 - mrt:moment                 2.8.1  Momentjs, a JavaScript date library for da...
 - lepozepo:accounting        1.0.0  Accounting.js -  number, money and currency...
 
-
  ###YOU CAN VIEW THE ROADMAP OF METEORIS HERE
  https://trello.com/b/01SvtPLA/meteoris-roadmap
 
+----------
+
+ ###DOCUMENTATIONS
+
+ **A. Installation**
+ 
+ Before using this, make sure you have installing meteor which version
+ greater than equals 0.9.1. To install meteor, run this command "curl
+ https://install.meteor.com | /bin/sh". After that, follow this
+ instruction:
+ 
+ 1. Git clone or download this repo. "git clone https://github.com/radiegtya/meteoris.git"
+ 2. Rename file to your desired name "ex: meteoris to myproject"
+ 3. Change dir to your apps then just run "sudo meteor". Then type "localhost:3000" in your browser.
+ 4. There will be a running DEMO to get you started easily. Register your account from registration page, then  loging in using those
+ account. You can then use the demo CRUDSS app.
+
+
+**B. Controller**
+
+1. What is Controller
+Controller are class which responsible for storing dynamic data to view.
+2. Creating Controller
+Let's create simple controller named PostsController that extends MeteorisController.
+```
+PostsController = MeteorisController.extend({
+
+});
+```
+
+> save this file in "lib/controllers/PostsController.js"
+
+3. Creating function inside Controller
+```
+PostsController = MeteorisController.extend({
+	/* passing data from controllers to view */
+    data: function() {
+        return {
+			helloWorld: "Hello World",        
+        };
+    },
+});
+```
+> save this file in "lib/controllers/PostsController.js"
+
+function data is responsible to storing dynamic data to be displayed to the view. Create a view with related name, remember this is the best practice using naming convention in Meteoris.
+
+4. Creating html page to be used for Controller
+```
+<template name="postsIndex">
+	{{helloWorld}}
+</template>
+```
+> save this file in "client/views/posts/index.html"
+
+5. Setup your router 
