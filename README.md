@@ -87,7 +87,7 @@ save this file in "lib/controllers/PostsController.js"
 ```
 PostsController = MeteorisController.extend({
 	getOtherMessage: function(){
-		
+            return "my Name is Ega Wachid Radiegtya";
 	},
 	/* passing data from controllers to view */
     data: function() {
@@ -134,7 +134,7 @@ Router responsible for url formatting, for example you want to redirect user to 
 
 *6. running your app*
 To run your apps, use this url http://localhost:3000/posts/index.
-Now you should see "Hello World" and "Other Message" on your screen. Congratulation!
+Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message on your screen. Congratulation!
 
 > For complete tutorial about routing, controller and view you can visit this page https://github.com/EventedMind/iron-router from EventedMind.
 
