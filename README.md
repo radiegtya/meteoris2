@@ -1,4 +1,4 @@
-METEORIS v0.2.1
+METEORIS v0.3.1
 ===============
 
 ###WHAT IS METEORIS?

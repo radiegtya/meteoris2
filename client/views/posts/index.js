@@ -17,7 +17,7 @@ Template.postsIndex.events = {
     },
     'keyup #search': function(e, t) {
         e.preventDefault();
-        Router.current().search(t);
+        Router.current().search(t);        
     },
     /* check all checkbox */
     'change #checkAll': function(e) {
