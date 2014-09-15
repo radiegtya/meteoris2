@@ -1,8 +1,8 @@
-Meteor.publishComposite('users', function(id) {
+Meteor.publishComposite('users', function(doc) {
     console.log('subscribing some Users');
     return {
         find: function() {
-            return Meteor.users.find(id);
+            return Meteor.users.find(doc);
         },
         children: [
         ],
