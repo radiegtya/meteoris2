@@ -5,6 +5,12 @@ Meteor.publishComposite('posts', function(doc, sort) {
             return Posts.find(doc, sort);
         },
         children: [
+            /* return all related Images */
+            {
+                find: function(collection) {
+                    return Images.find({_id: collection.imageId});
+                }
+            },
             /* return all related Users */
             {
                 find: function(collection) {
