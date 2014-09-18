@@ -1,4 +1,4 @@
-METEORIS v0.3.1
+METEORIS v0.4.0
 ===============
 
 ###WHAT IS METEORIS?
@@ -177,4 +177,7 @@ Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message o
 > Documentation are Coming Soon! For now you can try the code at Posts DEMO.
 
 **O. Sending Email** 
+> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+**P. Uploading Files** 
 > Documentation are Coming Soon! For now you can try the code at Posts DEMO.
