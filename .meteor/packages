@@ -17,4 +17,7 @@ mizzao:timesync
 jquery
 mrt:moment
 lepozepo:accounting
+cfs:standard-packages
+cfs:filesystem
+cfs:ejson-file
 
