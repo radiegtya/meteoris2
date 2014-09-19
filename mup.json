@@ -26,7 +26,7 @@
   "appName": "meteoris_v2",
 
   // Location of app (local directory)
-  "app": "/Users/arunoda/Meteor/meteoris_v2",
+  "app": "/Users/root/Meteor/meteoris_v2",
 
   // Configure environment
   "env": {
