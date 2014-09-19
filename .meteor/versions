@@ -18,6 +18,7 @@ cfs:data-man@0.0.0
 cfs:ejson-file@0.0.0
 cfs:file@0.0.0
 cfs:filesystem@0.0.0
+cfs:gridfs@0.0.0
 cfs:http-methods@0.0.24
 cfs:http-publish@0.0.0
 cfs:power-queue@0.0.1
