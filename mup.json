@@ -23,10 +23,10 @@
   "setupPhantom": false,
 
   // Application name (No spaces)
-  "appName": "meteoris",
+  "appName": "meteoris_v2",
 
   // Location of app (local directory)
-  "app": "~/Meteor/meteoris",
+  "app": "~/Meteor/meteoris_v2",
 
   // Configure environment
   "env": {
