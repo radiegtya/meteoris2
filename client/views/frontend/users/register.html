@@ -1,4 +1,4 @@
-<template name="usersLogin">
+<template name="frontend_usersRegister">
     <div class="container sign-form">
         <div class="row">
             <div  class="col-md-4 col-md-offset-4">
@@ -6,21 +6,21 @@
                 <form role="form">
                     <div class="form-group">
                         <label class="sr-only" for="email">Email</label>
-                        <input type="text" class="form-control input-lg" id="email" placeholder="Email" autofocus>
-                    </div>
+                        <input type="text" class="form-control input-lg" id="email" placeholder="Email">
+                    </div>                        
                     <div class="form-group">
                         <label class="sr-only" for="password">Password</label>
                         <input type="password" class="form-control input-lg" id="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <input class="btnLogin btn btn-danger btn-block btn-lg btn-red" type="submit" value="Log In"/>
+                        <label class="sr-only" for="name">Name</label>
+                        <input type="text" class="form-control input-lg" id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input class="btnRegister btn btn-danger btn-red btn-block btn-lg" type="submit" value="Register"/>
                     </div>
                 </form>
-                <br/>
-                <p class="text-center"><a>Forget Password?</a></p>
-                <p class="text-center"><a href="{{pathFor 'usersRegister'}}">Doesn't have account? Register here</a></p>
-                <!--<div class="divider-or"></div>-->
-                <!--<a  href="{{pathFor 'usersRegister'}}" class="btn btn-default btn-lg btn-block">Register</a>-->
+                <p class="text-center"><a href="{{pathFor 'frontend_usersLogin'}}">Already have account? Log In here</a></p>
             </div>
         </div>
     </div>

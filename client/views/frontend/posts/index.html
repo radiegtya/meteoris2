@@ -1,9 +1,9 @@
-<template name="postsIndex">
+<template name="frontend_postsIndex">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
             <li class="active">index</li>
         </ol>
 
@@ -14,7 +14,7 @@
 
         <div class="toolbar">
             <div class="pull-left">
-                <a class="btn btn-success" href="{{pathFor 'postsInsert'}}">Insert</a>
+                <a class="btn btn-success" href="{{pathFor 'frontend_postsInsert'}}">Insert</a>
                 <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
             </div>   
             <div class="quick-search pull-right col-xs-12 col-md-3">
@@ -52,8 +52,8 @@
                         <td><img class="image" src="{{image.url}}"/></td>
                         <td>{{user.profile.name}}</td>
                         <td>
-                            <a href="{{pathFor 'postsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
-                            <a href="{{pathFor 'postsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                            <a href="{{pathFor 'frontend_postsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
+                            <a href="{{pathFor 'frontend_postsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
                             <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                     </tr>

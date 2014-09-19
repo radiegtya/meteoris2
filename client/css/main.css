@@ -9,12 +9,12 @@ and open the template in the editor.
 */
 @font-face{
     font-family: 'Oswald';
-    src: url(../../../font/oswald/Oswald-Regular.otf);
+    src: url(/../../../font/oswald/Oswald-Regular.otf);
 }
 @font-face{
     font-family: 'Oswald';
     font-weight: 700;
-    src: url(../../../font/oswald/Oswald-Bold.otf);
+    src: url(/../../../font/oswald/Oswald-Bold.otf);
 }
 html, html body{
     position: relative;

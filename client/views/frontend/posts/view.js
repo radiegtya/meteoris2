@@ -1,14 +1,14 @@
-Template.postsView.events = {
+Template.frontend_postsView.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
         if (confirm("Are you sure want to remove this data?")) {
             Router.current().remove(this._id);
-            Router.go("postsIndex")
+            Router.go("frontend_postsIndex")
         }
     },
 };
 
-Template.postsView.helpers({
+Template.frontend_postsView.helpers({
     /* get related imageId from images collection */
     image: function() {
         return Images.findOne(this.imageId);

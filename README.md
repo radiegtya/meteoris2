@@ -1,4 +1,4 @@
-METEORIS v0.4.0
+METEORIS v0.5.2
 ===============
 
 ###WHAT IS METEORIS?
@@ -32,12 +32,20 @@ Here is the simple demo about how does Meteoris works http://meteoris.meteor.com
 - jquery                     1.0.0  Manipulate the DOM using CSS selectors
 - mrt:moment                 2.8.1  Momentjs, a JavaScript date library for da...
 - lepozepo:accounting        1.0.0  Accounting.js -  number, money and currency...
+- cfs:standard-packages      0.0.2  Filesystem for Meteor, collectionFS
+- cfs:filesystem             0.0.0  Filesystem storage adapter for CollectionFS
+- cfs:ejson-file             0.0.0  CollectionFS, FS.File as EJSON type
+
 **note: autopublish and insecure package are removed due to security reason.**
 
 ###METEORIS ROADMAP AND CHANGELOG
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.5.2
+- Now frontend and backend logical are separated
+- Now frontend and backend template are separated
 
 ------------------------
 
@@ -61,12 +69,17 @@ if you want to share your idea, just write it in our trello page from that link.
 client/ 				# Client folder
     assets/             # Packages with global variable
     configs/            # Configuration files on the client
-	templates/          # Custom your template here
+    css/                # Css files
+    templates/          # Custom your template here
     views/              # Your views files 
+        backend/        # Backend view pages
+        frontend/       # Frontend view pages
 lib/ 					# Executed both from client/server
     applications/       # framework base classes
     collections/        # Your collection files
     controllers/        # Your controllers files
+        backend/        # Backend Controllers logical
+        frontend/       # Frontend Controllers logical
     router.js           # Your routing location
 public/ 			    # Your images or file
 server/ 			    # Server folder

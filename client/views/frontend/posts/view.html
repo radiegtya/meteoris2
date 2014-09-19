@@ -1,9 +1,9 @@
-<template name="postsView">
+<template name="frontend_postsView">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
             <li class="active">view</li>
         </ol>
 
@@ -11,8 +11,8 @@
         <div class="title">
             <h3 class="pull-left">View Post #{{_id}}</h3>
             <div class="toolbar pull-right">
-                <a href="{{pathFor 'postsIndex'}}" class="btn btn-default">Back</a> 
-                <a href="{{pathFor 'postsUpdate'}}" class="btn btn-info">Update</a>
+                <a href="{{pathFor 'frontend_postsIndex'}}" class="btn btn-default">Back</a> 
+                <a href="{{pathFor 'frontend_postsUpdate'}}" class="btn btn-info">Update</a>
                 <a id="btnRemove" class="btn btn-danger">Remove</a>
             </div>
         </div>

@@ -1,9 +1,9 @@
-<template name="postsInsert">    
+<template name="frontend_postsInsert">    
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
             <li class="active">insert</li>
         </ol>
 
@@ -13,7 +13,7 @@
             </div>
             <div class="clearfix"></div>
 
-            {{> posts_form}}  
+            {{> frontend_posts_form}}  
         </div>        
     </div>
 </template>

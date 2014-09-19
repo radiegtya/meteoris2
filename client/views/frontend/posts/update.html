@@ -1,9 +1,9 @@
-<template name="postsUpdate">
+<template name="frontend_postsUpdate">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
             <li class="active">update</li>
         </ol>
 
@@ -14,7 +14,7 @@
             <div class="clearfix"></div>
 
             {{#with model}}
-            {{> posts_form}}  
+            {{> frontend_posts_form}}  
             {{/with}}
         </div>        
     </div>
