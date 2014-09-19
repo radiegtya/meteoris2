@@ -4,25 +4,23 @@
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/svg/logo.svg">
 </head>
-<template name="layout">       
+<template name="backend"> 
     {{#if isDesktop}}
     {{>yield region="meteorisFlash"}}
     <div class="content">
-        {{>yield region="header"}}
-        {{>yield region="menu"}}
+        {{>yield region="backendHeader"}}
         {{>yield}}
     </div>
-    {{>yield region="footer"}}
+    {{>yield region="backendFooter"}}
     {{/if}}
 
     {{#if isPhone}}
     {{>yield region="meteorisFlash"}}
     <div class="content">
-        {{>yield region="headerPhone"}}
-        {{>yield region="menuPhone"}}
+        {{>yield region="backendHeaderPhone"}}
         {{>yield}}
     </div>
-    {{>yield region="footerPhone"}}
+    {{>yield region="backendFooterPhone"}}
     {{/if}}
 </template>
 

@@ -1,10 +1,10 @@
-Template.templatePhoneHeader.events({
+Template.templateFrontendHeader.events({
     'click #btnLogout': function() {
         Meteor.logout();
     }
 });
 
-Template.templatePhoneHeader.helpers({
+Template.templateFrontendHeader.helpers({
     breadcrumbs: function() {
         var currentPath = Router.current().path;
         if (currentPath == '/')
