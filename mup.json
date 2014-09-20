@@ -11,7 +11,7 @@
   ],
 
   // Install MongoDB in the server, does not destroy local MongoDB on future setup
-  "setupMongo": true,
+  "setupMongo": false,
 
   // WARNING: Node.js is required! Only skip if you already have Node.js installed on server.
   "setupNode": false,
@@ -23,7 +23,7 @@
   "setupPhantom": false,
 
   // Application name (No spaces)
-  "appName": "meteoris",
+  "appName": "meteoris-production",
 
   // Location of app (local directory)
   "app": "~/meteor-apps/meteoris",
