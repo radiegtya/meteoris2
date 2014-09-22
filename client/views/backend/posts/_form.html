@@ -1,4 +1,4 @@
-<template name="frontend_posts_form">
+<template name="backend_posts_form">
     <form id="posts_form">        
         <div class="form-group {{#if error 'title'}}has-error{{/if}}">
             <label for="title" class="control-label">Title *</label>
@@ -15,7 +15,7 @@
             <input type="file" id="image" class="form-control">
             <span class="help-block">{{error "image"}}</span>
         </div>
-        <a href="{{pathFor 'frontend_postsIndex'}}" class="btn btn-default">Back</a>                
+        <a href="{{pathFor 'backend_postsIndex'}}" class="btn btn-default">Back</a>                
         <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
     </form>
 </template>

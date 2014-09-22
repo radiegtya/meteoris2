@@ -1,4 +1,4 @@
-Template.frontend_usersRegister.events = {
+Template.backend_usersRegister.events = {
     'click #btnRegister': function(e, t){
         e.preventDefault();        
         Router.current().register(t);

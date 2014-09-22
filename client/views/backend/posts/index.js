@@ -1,4 +1,4 @@
-Template.frontend_postsIndex.helpers({
+Template.backend_postsIndex.helpers({
     /* get related imageId from images collection */
     image: function(){
         return Images.findOne(this.imageId);
@@ -9,7 +9,7 @@ Template.frontend_postsIndex.helpers({
     },
 });
 
-Template.frontend_postsIndex.events = {
+Template.backend_postsIndex.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
         if (confirm("Are you sure want to remove this data?"))
