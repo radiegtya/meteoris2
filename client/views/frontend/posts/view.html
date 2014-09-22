@@ -1,0 +1,52 @@
+<template name="frontend_postsView">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
+            <li class="active">view</li>
+        </ol>
+
+        {{#with model}}
+        <div class="title">
+            <h3 class="pull-left">View Post #{{_id}}</h3>
+            <div class="toolbar pull-right">
+                <a href="{{pathFor 'frontend_postsIndex'}}" class="btn btn-default">Back</a> 
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><b>Title</b></td>
+                    <td>{{title}}</td>
+                </tr>
+                <tr>
+                    <td><b>Content</b></td>
+                    <td>{{content}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Image</b></td>
+                    <td><img src="{{image.url}}"/></td>
+                </tr>                
+                <tr>
+                    <td><b>Created at</b></td>
+                    <td>{{meteorisFormatter "date" createdDate}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Updated at</b></td>
+                    <td>{{meteorisFormatter "date" updatedDate}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Created by</b></td>
+                    <td>{{createdUser.profile.name}}</td>
+                </tr>                
+                <tr>
+                    <td><b>Updated By</b></td>
+                    <td>{{updatedUser.profile.name}}</td>
+                </tr>                
+            </tbody>
+        </table>        
+        {{/with}}
+    </div>
+</template>

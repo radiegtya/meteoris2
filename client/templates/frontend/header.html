@@ -16,15 +16,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
                     <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.profile.name}} <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li class="divider"></li>
-                            <li id="btnLogout"><a href="#">Logout</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{pathFor 'backend_sitesIndex'}}">Go to Backend Page</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

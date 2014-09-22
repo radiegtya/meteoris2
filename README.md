@@ -91,7 +91,7 @@ server/ 			    # Server folder
 
 Controller are class which responsible for storing dynamic data to view.
 
-*2. Creating Controller*
+*2. Creating Controller (Backend)*
 
 Let's create simple controller named PostsController that extends MeteorisController.
 ```
@@ -101,9 +101,9 @@ PostsController = MeteorisController.extend({
 ```
 > save this file in "lib/controllers/PostsController.js"
 
-*3. Creating function inside Controller*
+*3. Creating function inside Controller (Backend)*
 ```
-PostsController = MeteorisController.extend({
+Backend.PostsController = MeteorisController.extend({
 	getOtherMessage: function(){
             return "my Name is Ega Wachid Radiegtya";
 	},
@@ -117,18 +117,18 @@ PostsController = MeteorisController.extend({
     },
 });
 ```
-> save this file in "lib/controllers/PostsController.js"
+> save this file in "lib/controllers/backend/PostsController.js"
 
 function data is responsible to storing dynamic data to be displayed to the view. Create a view with related name, remember this is the best practice using naming convention in Meteoris.
 
 *4. Creating html page to be used for Controller*
 ```
-<template name="postsIndex">
+<template name="backend_postsIndex">
 	<p>{{helloWorld}}</p>
 	<p>{{otherMessage}}</p>
 </template>
 ```
-> save this file in "client/views/posts/index.html"
+> save this file in "client/views/backend/posts/index.html"
 
 *5. Setup your router* 
 Router responsible for url formatting, for example you want to redirect user to "AppName/posts/index". You can make routing like this. 
@@ -142,9 +142,9 @@ Router responsible for url formatting, for example you want to redirect user to 
 
 ```
     /* POSTS */
-    this.route('postsIndex', { //targetted template
-        path: 'posts/index/', //desired path
-        controller: PostsController, //targetted controller
+    this.route('backend_postsIndex', { //targetted template
+        path: 'backend/posts/index/', //desired path
+        controller: Backend.PostsController, //targetted controller
     });
 ``` 
 
