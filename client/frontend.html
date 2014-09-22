@@ -7,20 +7,24 @@
 <template name="frontend">       
     {{#if isDesktop}}
     {{>yield region="meteorisFlash"}}
-    <div class="content">
-        {{>yield region="frontendHeader"}}
-        {{>yield}}
+    <div class="frontend">
+        <div class="content">
+            {{>yield region="frontendHeader"}}
+            {{>yield}}
+        </div>
+        {{>yield region="frontendFooter"}}
     </div>
-    {{>yield region="frontendFooter"}}
     {{/if}}
 
     {{#if isPhone}}
     {{>yield region="meteorisFlash"}}
-    <div class="content">
-        {{>yield region="frontendHeaderPhone"}}
-        {{>yield}}
+    <div class="frontend">
+        <div class="content">
+            {{>yield region="frontendHeaderPhone"}}
+            {{>yield}}
+        </div>
+        {{>yield region="frontendFooterPhone"}}
     </div>
-    {{>yield region="frontendFooterPhone"}}
     {{/if}}
 </template>
 

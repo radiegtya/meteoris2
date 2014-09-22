@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 22, 2014, 9:08:28 AM
+    Author     : piyiku
+*/
+.frontend{
+    position: relative;
+    height: 100%;
+    line-height: 2;
+}
+.frontend nav.navbar{
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+.frontend nav.navbar .navbar-brand,.frontend nav.navbar .navbar-nav>li>a{
+    color: #FC611F;
+}
+.frontend nav.navbar .navbar-brand:hover,.frontend nav.navbar .navbar-nav>li>a:hover{
+    text-decoration: underline;
+}
+.frontend .post{
+    margin-bottom: 60px;
+}
+.frontend .post h1{
+    margin: 0;
+}
+.frontend .post small{
+    color: #999;
+    font-style: italic;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.frontend .post .btn{
+    margin-top: 10px;
+}
+
+.frontend .post-view-image{
+    float: left;
+    margin: 0 30px 30px 0;
+    max-width: 30%;
+}
+.frontend .post-view h1{
+    margin: 0;
+}
+.frontend .post-view small{
+    color: #999;
+    font-style: italic;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.frontend footer{
+    line-height: 1.5;
+}

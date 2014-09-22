@@ -1,4 +1,4 @@
-METEORIS v0.5.2
+METEORIS v0.5.6
 ===============
 
 ###WHAT IS METEORIS?
@@ -46,6 +46,10 @@ if you want to share your idea, just write it in our trello page from that link.
 ###WHAT'S NEW IN V0.5.2
 - Now frontend and backend logical are separated
 - Now frontend and backend template are separated
+###WHAT'S NEW IN V0.5.6
+- adding example to switching between template
+- adding example about how to separating backend and frontend page
+- now user not required to logged in to view posts in frontend page
 
 ------------------------
 
