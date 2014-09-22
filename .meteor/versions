@@ -30,6 +30,7 @@ cfs:tempstore@0.0.2
 cfs:upload-http@0.0.2
 cfs:worker@0.0.0
 check@1.0.0
+coffeescript@1.0.3
 ctl-helper@1.0.3
 ctl@1.0.1
 ddp@1.0.8
@@ -38,6 +39,7 @@ ejson@1.0.2
 email@1.0.2
 fastclick@1.0.0
 follower-livedata@1.0.1
+francocatena:status@0.9.7
 geojson-utils@1.0.0
 html-tools@1.0.0
 htmljs@1.0.1
@@ -83,6 +85,8 @@ sha@1.0.0
 spacebars-compiler@1.0.2
 spacebars@1.0.1
 srp@1.0.0
+tap:http-methods@0.0.23
+tap:i18n@1.0.3
 templating@1.0.6
 tracker@1.0.2
 ui@1.0.2

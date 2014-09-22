@@ -10,6 +10,7 @@
     <div class="frontend">
         <div class="content">
             {{>yield region="frontendHeader"}}
+            {{> status}}
             {{>yield}}
         </div>
         {{>yield region="frontendFooter"}}
@@ -21,6 +22,7 @@
     <div class="frontend">
         <div class="content">
             {{>yield region="frontendHeaderPhone"}}
+            {{> status}}
             {{>yield}}
         </div>
         {{>yield region="frontendFooterPhone"}}

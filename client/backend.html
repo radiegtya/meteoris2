@@ -5,19 +5,22 @@
     <link rel="shortcut icon" href="/svg/logo.svg">
 </head>
 <template name="backend"> 
-    {{#if isDesktop}}
+    {{#if isDesktop}}    
     {{>yield region="meteorisFlash"}}
     <div class="content">
         {{>yield region="backendHeader"}}
+        {{> status}}
         {{>yield}}
     </div>
     {{>yield region="backendFooter"}}
     {{/if}}
 
     {{#if isPhone}}
+    {{> status}}
     {{>yield region="meteorisFlash"}}
     <div class="content">
         {{>yield region="backendHeaderPhone"}}
+        {{> status}}
         {{>yield}}
     </div>
     {{>yield region="backendFooterPhone"}}
