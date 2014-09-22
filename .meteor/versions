@@ -41,13 +41,6 @@ fastclick@1.0.0
 follower-livedata@1.0.1
 francocatena:status@0.9.7
 geojson-utils@1.0.0
-ground:db@0.0.2
-ground:dictionary@0.0.1
-ground:localstorage@0.0.0
-ground:minimax@0.0.2
-ground:servertime@0.0.0
-ground:store@0.0.0
-ground:util@0.0.0
 html-tools@1.0.0
 htmljs@1.0.1
 http@1.0.5

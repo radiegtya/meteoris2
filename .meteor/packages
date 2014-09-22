@@ -22,5 +22,3 @@ cfs:ejson-file
 cfs:gridfs
 pinglamb:bootstrap3
 francocatena:status
-ground:db
-
