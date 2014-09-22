@@ -12,7 +12,6 @@ accounts-base
 accounts-password
 mystor:device-detection
 sacha:spin
-mizzao:bootstrap-3
 mizzao:timesync
 jquery
 mrt:moment
@@ -21,4 +20,4 @@ cfs:standard-packages
 cfs:filesystem
 cfs:ejson-file
 cfs:gridfs
-
+pinglamb:bootstrap3
