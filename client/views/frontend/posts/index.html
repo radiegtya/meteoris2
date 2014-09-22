@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-8">
                 <h1><a href="{{pathFor 'frontend_postsView'}}">{{title}}</a></h1>
-                <small>by {{user.profile.name}}</small>
+                <small>by {{user.profile.name}}, on {{meteorisFormatter "dateTime" updatedDate}}</small>
                 <div>{{getSomeContent}}</div>
                 <a href="{{pathFor 'frontend_postsView'}}" class="btn btn-default">Read More</a>
             </div>
