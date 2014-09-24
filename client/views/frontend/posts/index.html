@@ -30,8 +30,8 @@
         {{#each models}}
         
         <div class="post row">
-            <div class="col-md-4">
-                <img class="image" src="{{image.url}}"/>
+            <div class="col-md-4">                
+                <img class="image" src="{{#if image}}{{image.url}}{{else}}/images/noimage.jpg{{/if}}"/>
             </div>
             <div class="col-md-8">
                 <h1><a href="{{pathFor 'frontend_postsView'}}">{{title}}</a></h1>

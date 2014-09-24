@@ -16,7 +16,7 @@
         <div class="clearfix"></div>
 
         <div class="post-view">
-            <img class="post-view-image" src="{{image.url}}"/>
+            <img class="post-view-image" src="{{#if image}}{{image.url}}{{else}}/images/noimage.jpg{{/if}}"/>
             <h1>{{title}}</h1>
             <small>by {{createdUser.profile.name}} at {{meteorisFormatter "dateTime" createdDate}}</small>
             <div>{{content}}</div>
