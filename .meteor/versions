@@ -1,4 +1,7 @@
 accounts-base@1.1.0
+accounts-facebook@1.0.0
+accounts-google@1.0.0
+accounts-oauth@1.1.0
 accounts-password@1.0.1
 aldeed:collection2@2.0.1
 aldeed:simple-schema@1.0.3
@@ -37,10 +40,12 @@ ddp@1.0.8
 deps@1.0.3
 ejson@1.0.2
 email@1.0.2
+facebook@1.1.0
 fastclick@1.0.0
 follower-livedata@1.0.1
 francocatena:status@0.9.7
 geojson-utils@1.0.0
+google@1.1.0
 html-tools@1.0.0
 htmljs@1.0.1
 http@1.0.5
@@ -67,8 +72,11 @@ mongo@1.0.5
 mrt:moment@2.8.1
 mystor:device-detection@0.2.0
 npm-bcrypt@0.7.7
+oauth2@1.1.0
+oauth@1.1.0
 observe-sequence@1.0.2
 ordered-dict@1.0.0
+pfafman:font-awesome-4@4.2.0
 pinglamb:bootstrap3@3.2.1
 raix:eventemitter@0.0.2
 random@1.0.0

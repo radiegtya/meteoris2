@@ -210,3 +210,19 @@ footer a{
     color: #666;
     text-decoration: underline;
 }
+
+
+.btn-facebook{
+    background: #3B5998;
+    color: #fff;
+}
+.btn-facebook i{
+    line-height: 23px;
+    font-size: 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 15px;
+}
+.btn-facebook:hover{
+    background: #2C4780;
+    color: #fff;
+}
