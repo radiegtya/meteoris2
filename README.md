@@ -2,23 +2,23 @@ METEORIS v0.6.1
 ===============
 
 ###WHAT IS METEORIS?
-Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework up to v.0.9.0. 
+Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework v.0.9.x. 
 It's help you structuring your Meteor Js apps, and there are many usefull packages inside.
 
 ###WHY USING METEORIS?
-- Looking a MVC/MVVM/MVP boilerplate for meteor up to v.0.9.0?
+- Looking for MVC/MVVM/MVP boilerplate for meteor v.0.9.x?
 - Tired of installing required packages/plugin, searching for best packages?
-- Don't know how to structuring your meteor apps or too lazy to restructuring again and again every creating a new project?
-- Try to find the best structure for meteor apps?
-- Confuse or don't have time to learn about whats new in latest meteor v.0.9.0? 
-**METEORIS ARE THE SOLUTION :)**
+- Don't know how to structure your meteor apps or are too lazy to restructure again and again every time you create a new project?
+- Tring to find the best structure for your meteor app?
+- Confused or don't have the time to learn about whats new in the latest meteor version? 
+**METEORIS IS THE SOLUTION :)**
 
 ###WHAT'S INSIDE METEORIS?
-Meteoris used standard, usefull, robust and stable for meteor js like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
-Here is the simple demo about how does Meteoris works http://piyiku.biz:3001
+Meteoris uses standard, usefull, robust and stable packages like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
+Here is the simple demo about how Meteoris works http://piyiku.biz:3001
 
-**Here are List of packages which Meteoris used:**
-- meteor-platform            1.0.2  Include a standard set of Meteor packages i...
+**Here is a list of packages which Meteoris uses:**
+- meteor-platform            1.0.2  Includes a standard set of Meteor packages i...
 - aldeed:collection2         2.0.0  Automatic validation of insert and update o...
 - iron:router                0.9.3  Routing specifically designed for Meteor
 - meteorhacks:subs-manager   1.1.0  Subscriptions Manager for Meteor
@@ -44,15 +44,15 @@ You can view our roadmap from this link.
 if you want to share your idea, just write it in our trello page from that link.
 
 ###WHAT'S NEW IN V0.5.2
-- Now frontend and backend logical are separated
-- Now frontend and backend template are separated
+- Now frontend and backend logic is separated
+- Now frontend and backend templates are separated
 
 **--
 
 ###WHAT'S NEW IN V0.5.6
 - adding example to switching between template
-- adding example about how to separating backend and frontend page
-- now user not required to logged in to view posts in frontend page
+- adding example about how to separate backend and frontend page
+- now user is not required to be logged in to a view posts in frontend page
 
 **--
 
@@ -67,13 +67,13 @@ if you want to share your idea, just write it in our trello page from that link.
 
 **A. Installation**
  
- Before using this, make sure you have installing meteor which version
- greater than equals 0.9.1. To install meteor, run this command "curl
+ Before using this, make sure you have installing meteor with version
+ greater than or equal to 0.9.1. To install meteor, run this command "curl
  https://install.meteor.com | /bin/sh". After that, follow this
  instruction:
  
  1. Git clone or download this repo. "git clone https://github.com/radiegtya/meteoris.git"
- 2. Rename file to your desired name "ex: meteoris to myproject"
+ 2. Rename directory to your desired name "ex: meteoris to myproject"
  3. Change dir to your apps then just run "sudo meteor". Then type "localhost:3000" in your browser.
  4. There will be a running DEMO to get you started easily. Register your account from registration page, then  loging in using those
  account. You can then use the demo CRUDSS app.
@@ -101,13 +101,13 @@ server/ 			    # Server folder
 
 **C. Routing, Controller and Views**
 
-*1. What is Controller*
+*1. What is a Controller*
 
-Controller are class which responsible for storing dynamic data to view.
+Controllers are class which are responsible for displaying dynamic data in the view.
 
-*2. Creating Controller (Backend)*
+*2. Creating a Controller (Backend)*
 
-Let's create simple controller named PostsController that extends MeteorisController.
+Let's create a simple controller named PostsController that extends MeteorisController.
 ```
 PostsController = MeteorisController.extend({
 
@@ -133,7 +133,7 @@ Backend.PostsController = MeteorisController.extend({
 ```
 > save this file in "lib/controllers/backend/PostsController.js"
 
-function data is responsible to storing dynamic data to be displayed to the view. Create a view with related name, remember this is the best practice using naming convention in Meteoris.
+function data is responsible  for storing dynamic data to be displayed to the view. Create a view with related name, remember this is a the best practice naming convention in Meteoris.
 
 *4. Creating html page to be used for Controller*
 ```
@@ -145,13 +145,13 @@ function data is responsible to storing dynamic data to be displayed to the view
 > save this file in "client/views/backend/posts/index.html"
 
 *5. Setup your router* 
-Router responsible for url formatting, for example you want to redirect user to "AppName/posts/index". You can make routing like this. 
+Router is responsible for url formatting, for example if you want to redirect user to "AppName/posts/index". You can make routing like this. 
 
 > Best practice note: 
 > - AppName is your apps name
 > - posts is your controller name or your folder in views name
 > -  index is your view name inside folder posts
-> This is little different from MVC concept like other framework did, which index is 
+> This is a little different from MVC concept that other frameworks use, where index is 
 >  function name from the controller. It's Because we are using MVVM concept.
 
 ```
@@ -165,7 +165,7 @@ Router responsible for url formatting, for example you want to redirect user to 
 > save this file in "lib/router.js"
 
 *6. running your app*
-To run your apps, use this url http://localhost:3000/posts/index.
+To run your app, use this url http://localhost:3000/posts/index.
 Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message on your screen. Congratulation!
 
 > For complete tutorial about routing, controller and view you can visit this page https://github.com/EventedMind/iron-router from EventedMind.
