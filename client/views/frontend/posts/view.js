@@ -1,11 +1,4 @@
 Template.frontend_postsView.events = {
-    'click #btnRemove': function(e) {
-        e.preventDefault();
-        if (confirm("Are you sure want to remove this data?")) {
-            Router.current().remove(this._id);
-            Router.go("frontend_postsIndex")
-        }
-    },
 };
 
 Template.frontend_postsView.helpers({
