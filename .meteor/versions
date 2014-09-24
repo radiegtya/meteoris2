@@ -3,7 +3,7 @@ accounts-facebook@1.0.0
 accounts-google@1.0.0
 accounts-oauth@1.1.0
 accounts-password@1.0.1
-aldeed:collection2@2.0.1
+aldeed:collection2@2.1.0
 aldeed:simple-schema@1.0.3
 application-configuration@1.0.2
 autoupdate@1.1.0
@@ -46,6 +46,13 @@ follower-livedata@1.0.1
 francocatena:status@0.9.7
 geojson-utils@1.0.0
 google@1.1.0
+ground:db@0.0.6
+ground:dictionary@0.0.1
+ground:localstorage@0.0.0
+ground:minimax@0.0.2
+ground:servertime@0.0.0
+ground:store@0.0.0
+ground:util@0.0.1
 html-tools@1.0.0
 htmljs@1.0.1
 http@1.0.5

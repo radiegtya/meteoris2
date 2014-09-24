@@ -18,6 +18,30 @@ MeteorisFormatter = {
             return "-";
     },
     /**
+     * get elapsed time whether it's minutes, hours or days     
+     */
+    elapsedTime: function(date) {
+        var dateNow = moment(new Date(TimeSync.serverTime()));
+        var elapsedMinutes = dateNow.diff(date, "minutes");
+        var elapsedHours = dateNow.diff(date, "hours");
+        var elapsedDays = dateNow.diff(date, "days");
+        var elapsedMonths = dateNow.diff(date, "months");
+        var elapsedYears = dateNow.diff(date, "years");
+        var elapsed = 0;
+        if (elapsedMinutes <= 60)
+            elapsed = elapsedMinutes + "m";
+        else if (elapsedMinutes >= 60 && elapsedHours <= 24)
+            elapsed = elapsedHours + "h";
+        else if (elapsedHours >= 24)
+            elapsed = elapsedDays + "d";
+        else if (elapsedDays >= 31)
+            elapsed = elapsedMonths + "mo";
+        else if (elapsedMonths >= 12)
+            elapsed = elapsedYears + "y";
+
+        return elapsed;
+    },
+    /**
      * Formatting number to desired format, this function needs accounting packages     
      */
     number: function(value) {
