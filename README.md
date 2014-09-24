@@ -1,4 +1,4 @@
-METEORIS v0.5.6
+METEORIS v0.6.1
 ===============
 
 ###WHAT IS METEORIS?
@@ -53,6 +53,13 @@ if you want to share your idea, just write it in our trello page from that link.
 - adding example to switching between template
 - adding example about how to separating backend and frontend page
 - now user not required to logged in to view posts in frontend page
+
+**--
+
+###WHAT'S NEW IN V0.6.1
+- adding facebook login example
+- code refractoring for unused code
+- if there is no image to be shown, show noimage.jpg rather than blank in frontend/postsIndex
 
 ------------------------
 
