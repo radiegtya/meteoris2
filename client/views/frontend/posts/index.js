@@ -3,6 +3,9 @@ Template.frontend_postsIndex.helpers({
     image: function() {
         return Images.findOne(this.imageId);
     },
+    getLocationOrigin:function(){
+        return window.location.origin + "";
+    },
     /* get related createdUserId from users collection */
     user: function() {
         return Meteor.users.findOne(this.createdUserId);
