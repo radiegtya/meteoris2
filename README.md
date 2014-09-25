@@ -1,4 +1,4 @@
-METEORIS v0.6.1
+METEORIS v0.6.2
 ===============
 
 ###WHAT IS METEORIS?
@@ -60,6 +60,14 @@ if you want to share your idea, just write it in our trello page from that link.
 - adding facebook login example
 - code refractoring for unused code
 - if there is no image to be shown, show noimage.jpg rather than blank in frontend/postsIndex
+
+**--
+
+###WHAT'S NEW IN V0.6.2
+- adding groundDB v0.0.6 support to make collection able to work offline (thanks to Raix).
+- adding elapsed time functionality (ex: posted 5m ago) in meteoris formatter package. You can just type
+  {{meteorisFormatter "elapsedTime" yourDate}} in blaze template view.
+- updating aldeed:collection2 package to v.2.1.0.
 
 ------------------------
 
