@@ -15,7 +15,7 @@ It's help you structuring your Meteor Js apps, and there are many usefull packag
 
 ###WHAT'S INSIDE METEORIS?
 Meteoris uses standard, usefull, robust and stable packages like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
-Here is the simple demo about how Meteoris works http://piyiku.biz:3001
+Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
 
 **Here is a list of packages which Meteoris uses:**
 - meteor-platform                         1.1.0  Include a standard set of Mete...
