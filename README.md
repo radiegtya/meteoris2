@@ -9,7 +9,7 @@ It's help you structuring your Meteor Js apps, and there are many usefull packag
 - Looking for MVC/MVVM/MVP boilerplate for meteor v.0.9.x?
 - Tired of installing required packages/plugin, searching for best packages?
 - Don't know how to structure your meteor apps or are too lazy to restructure again and again every time you create a new project?
-- Tring to find the best structure for your meteor app?
+- Trying to find the best structure for your meteor app?
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
 **METEORIS IS THE SOLUTION :)**
 
@@ -133,7 +133,7 @@ PostsController = MeteorisController.extend({
 ```
 > save this file in "lib/controllers/PostsController.js"
 
-*3. Creating function inside Controller (Backend)*
+*3. Create function inside Controller (Backend)*
 ```
 Backend.PostsController = MeteorisController.extend({
 	getOtherMessage: function(){
@@ -151,9 +151,9 @@ Backend.PostsController = MeteorisController.extend({
 ```
 > save this file in "lib/controllers/backend/PostsController.js"
 
-function data is responsible  for storing dynamic data to be displayed to the view. Create a view with related name, remember this is a the best practice naming convention in Meteoris.
+function data is responsible  for storing dynamic data to be displayed in the view. Create a view with related name, remember this is a best practice naming convention in Meteoris.
 
-*4. Creating html page to be used for Controller*
+*4. Create html page to be used with Controller*
 ```
 <template name="backend_postsIndex">
 	<p>{{helloWorld}}</p>
