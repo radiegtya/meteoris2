@@ -226,3 +226,14 @@ Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message o
 
 **P. Uploading Files** 
 > Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+### Contributing
+
+Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
+
+You can also support us, to make meteoris improved and grow bigger.
+
+
+[![Support via Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/id/cgi-bin/webscr?cmd=_flow&SESSION=zKUOwQZHSJJtz9XwCQmqNU9UKccGto1TrI4JRXQqLrXTvHFuvniAWCQxDKG&dispatch=5885d80a13c0db1f8e263663d3faee8dbd0a2170b502f343d92a90377a9956d7)
+
+
