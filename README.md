@@ -1,4 +1,4 @@
-METEORIS v0.6.2
+METEORIS v0.6.3
 ===============
 
 ###WHAT IS METEORIS?
@@ -78,6 +78,9 @@ if you want to share your idea, just write it in our trello page from that link.
   You can just type {{meteorisFormatter "elapsedTime" yourDate}} in blaze template view.
 - updating aldeed:collection2 package to v.2.1.0.
 - now you can access meteoris demo from http://meteoris.piyiku.biz rather than http://piyiku.biz:3001
+
+###WHAT'S NEW IN V0.6.3
+- updating core to meteor v0.9.3
 
 ------------------------
 
