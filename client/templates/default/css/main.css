@@ -78,3 +78,40 @@ nav.navbar .navbar-nav>li>a{
     overflow: hidden;
     margin: 5px;
 }
+.form-control,
+.btn{
+    border-radius: 3px !important;
+}
+.input-lg, .btn-lg{
+    padding: 15px !important;
+    height: auto;
+}
+
+
+
+.divider-or{
+    position: relative;
+    padding: 20px 0 30px 0;
+}
+.divider-or:before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: #ddd;
+    z-index: 2;
+    left: 0;
+}
+.divider-or:after{
+    content: 'OR';
+    padding: 0 20px 0 20px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60px;
+    background: #fff;
+    z-index: 3;
+    color: #ccc;
+}
