@@ -132,6 +132,7 @@ nav.navbar .navbar-brand img{
 }
 
 
-.loading{
-    margin-top: -70px !important;;
+.load-more{
+    margin-top: -10px !important;
+    margin-bottom: 20px;
 }
