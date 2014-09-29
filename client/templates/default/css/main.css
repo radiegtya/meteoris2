@@ -8,11 +8,26 @@ and open the template in the editor.
     Author     : Shepherd
 */
 nav.navbar{
-    background: #F3873F;
+    background: #3C2F34;
+    min-height: 62px;
+    border-radius: 0;
 }
 nav.navbar .navbar-brand,
 nav.navbar .navbar-nav>li>a{
     color: rgba(255,255,255,0.8);
+    line-height: 32px;
+    height: auto;
+}
+nav.navbar .navbar-brand:hover,
+nav.navbar .navbar-brand:active,
+nav.navbar .navbar-nav>li>a:hover,
+nav.navbar .navbar-nav>li>a:active
+{
+    color: #FC611F;
+}
+nav.navbar .navbar-brand img{
+    width: 106px;
+    margin-top: -10px;
 }
 .title{
     float: left;
@@ -114,4 +129,17 @@ nav.navbar .navbar-nav>li>a{
     background: #fff;
     z-index: 3;
     color: #ccc;
+}
+
+
+.alert-container{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: inline-block;
+    z-index: 20000;
+}
+
+.loading{
+    margin-top: -70px !important;;
 }
