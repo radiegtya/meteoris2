@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="200px" height="200px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 200 200"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil3 {fill:#E44B3C}
+    .fil1 {fill:url(#id0)}
+    .fil0 {fill:url(#id1)}
+    .fil2 {fill:url(#id2)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="133.503" y1="56.6213" x2="133.503" y2="160.243">
+   <stop offset="0" style="stop-color:#E44B3C"/>
+   <stop offset="0.560784" style="stop-color:#B23B30"/>
+   <stop offset="1" style="stop-color:#802A23"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="162.486" y1="160.491" x2="162.486" y2="56.8859">
+   <stop offset="0" style="stop-color:#E44B3C"/>
+   <stop offset="0.25098" style="stop-color:#B23B30"/>
+   <stop offset="1" style="stop-color:#802A23"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="101.208" y1="61.2028" x2="101.208" y2="135.483">
+   <stop offset="0" style="stop-color:#802A23"/>
+   <stop offset="0.611765" style="stop-color:#B23A2F"/>
+   <stop offset="1" style="stop-color:#E44B3C"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_790434960">
+   <polygon class="fil0" points="137,57 164,57 188,160 164,160 "/>
+   <polygon class="fil1" points="163,57 137,57 104,160 138,160 "/>
+   <polygon class="fil2" points="64,36 107,37 138,160 104,160 "/>
+   <polygon class="fil3" points="107,37 64,36 14,160 63,160 "/>
+  </g>
+ </g>
+</svg>

@@ -2,14 +2,16 @@
     <title>Meteoris</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="http://www.piyiku.biz/frontend/web/themes/piyiku-frontend/images/icon.png">
+    <link rel="shortcut icon" href="/svg/logo.svg">
 </head>
 <template name="layout">       
     {{#if isDesktop}}
     {{>yield region="meteorisFlash"}}
-    {{>yield region="header"}}
-    {{>yield region="menu"}}
-    {{>yield}}
+    <div class="content">
+        {{>yield region="header"}}
+        {{>yield region="menu"}}
+        {{>yield}}
+    </div>
     {{>yield region="footer"}}
     {{/if}}
 

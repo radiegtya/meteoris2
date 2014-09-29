@@ -7,13 +7,38 @@ and open the template in the editor.
     Created on : Sep 24, 2014, 1:38:01 PM
     Author     : Shepherd
 */
+@font-face{
+    font-family: 'Oswald';
+    src: url(../../../font/oswald/Oswald-Regular.otf);
+}
+@font-face{
+    font-family: 'Oswald';
+    font-weight: 700;
+    src: url(../../../font/oswald/Oswald-Bold.otf);
+}
+html, body{
+    position: relative;
+    min-height: 100%;
+}
+.content{
+    position: relative;
+    min-height: calc(100% - 65px);
+}
+
+
 nav.navbar{
     background: #3C2F34;
     min-height: 62px;
     border-radius: 0;
 }
+nav.navbar .navbar-brand{
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    letter-spacing: 5px;
+}
 nav.navbar .navbar-brand,
 nav.navbar .navbar-nav>li>a{
+
     color: rgba(255,255,255,0.8);
     line-height: 32px;
     height: auto;
@@ -26,7 +51,7 @@ nav.navbar .navbar-nav>li>a:active
     color: #FC611F;
 }
 nav.navbar .navbar-brand img{
-    width: 106px;
+    width: 40px;
     margin-top: -10px;
 }
 .title{
@@ -135,4 +160,43 @@ nav.navbar .navbar-brand img{
 .load-more{
     margin-top: -10px !important;
     margin-bottom: 20px;
+}
+
+.logo{
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    letter-spacing: 5px;
+}
+.logo img{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    top: -10px;
+}
+
+.sign-form p a{
+    font-size: 110%;
+    text-decoration: underline;
+    color: #666;
+}
+.btn-red{
+    background: #e44b3c;
+}
+
+
+footer{
+    margin: 20px 0 5px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 90%;
+}
+.footer span{
+    display: inline-block;
+    line-height: 20px;
+    padding: 0;
+    color: #999;
+}
+footer a{
+    color: #666;
+    text-decoration: underline;
 }
