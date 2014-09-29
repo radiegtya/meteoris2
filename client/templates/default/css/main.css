@@ -16,9 +16,9 @@ and open the template in the editor.
     font-weight: 700;
     src: url(../../../font/oswald/Oswald-Bold.otf);
 }
-html, body{
+html, html body{
     position: relative;
-    min-height: 100%;
+    height: 100%;
 }
 .content{
     position: relative;
