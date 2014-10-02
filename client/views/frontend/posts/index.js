@@ -3,19 +3,6 @@ Template.frontend_postsIndex.helpers({
     image: function() {
         return Images.findOne(this.imageId);
     },
-    /* 
-     * format image url with location header and without get (?) method. Idk whether this is meteor bug or cfs bug. 
-     * (without this functionality, image will not shown in android installed app).
-     */
-    formatImageUrl: function(imageUrl) {
-        var url = window.location.origin + "" + imageUrl;
-        url = url.split("?");
-        url = url[0];
-        return url;
-    },
-    getLocationOrigin: function() {
-        return window.location.origin + "";
-    },
     /* get related createdUserId from users collection */
     user: function() {
         return Meteor.users.findOne(this.createdUserId);

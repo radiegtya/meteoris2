@@ -29,7 +29,7 @@
                 </tr>                
                 <tr>
                     <td><b>Image</b></td>
-                    <td><img src="{{image.url}}"/></td>
+                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
                 </tr>                
                 <tr>
                     <td><b>Created at</b></td>

@@ -31,7 +31,7 @@
         
         <div class="post row">
             <div class="col-md-4">                
-                <img class="image" src="{{#if image}}{{formatImageUrl image.url}}{{else}}{{formatImageUrl '/images/noimage.jpg'}}{{/if}}"/>
+                <img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/>
             </div>
             <div class="col-md-8">
                 <h1><a href="{{pathFor 'frontend_postsView'}}">{{title}}</a></h1>
@@ -45,6 +45,9 @@
         {{#if hasMore}}
         <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
         {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
         {{/if}}
     </div>
 </template>

@@ -47,7 +47,7 @@
                     <tr>
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{title}}</td>
-                        <td><img class="image" src="{{image.url}}"/></td>
+                        <td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
                         <td>{{user.profile.name}}</td>
                         <td>
                             <a href="{{pathFor 'backend_postsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
@@ -62,6 +62,9 @@
         {{#if hasMore}}
         <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
         {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
         {{/if}}
     </div>
 </template>
