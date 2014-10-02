@@ -27,7 +27,4 @@ accounts-google
 service-configuration
 pfafman:font-awesome-4
 ground:db
-mdg:reload-on-resume
-mdg:geolocation
 mrt:iron-router-progress
-
