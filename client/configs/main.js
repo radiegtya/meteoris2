@@ -11,7 +11,7 @@
 App = {
     name: "Meteoris",
     version: "0.2.1",
-    baseUrl: "http://192.168.1.168:3000"
+    baseUrl: "http://localhost:3000"
 };
 
 
