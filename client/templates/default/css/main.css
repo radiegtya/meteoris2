@@ -20,6 +20,9 @@ html, html body{
     position: relative;
     height: 100%;
 }
+img{
+    max-width: 100%;
+}
 .content{
     position: relative;
     min-height: calc(100% - 65px);
@@ -120,6 +123,11 @@ nav.navbar .navbar-brand img{
     overflow: hidden;
     margin: 5px;
 }
+.table .image{
+    max-height: 150px;
+}
+
+
 .form-control,
 .btn{
     border-radius: 3px !important;
