@@ -31,34 +31,36 @@
         {{#if isEmpty}}
         <p>No Data Found</p>
         {{else}}
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>
-                    <th id="btnSortTitle" class="{{meteorisGridViewSortClass 'title'}}">Title</th>                    
-                    <th>Content</th>                    
-                    <th>Image</th>                    
-                    <th>Created by</th>                    
-                    <th style="width: 145px;">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each models}}
-                <tr>
-                    <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
-                    <td>{{title}}</td>
-                    <td>{{content}}</td>
-                    <td><img class="image" src="{{image.url}}"/></td>
-                    <td>{{user.profile.name}}</td>
-                    <td>
-                        <a href="{{pathFor 'postsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="{{pathFor 'postsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-                        <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
+        <div class=" table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>
+                        <th id="btnSortTitle" class="{{meteorisGridViewSortClass 'title'}}">Title</th>                    
+                        <th>Content</th>                    
+                        <th>Image</th>                    
+                        <th>Created by</th>                    
+                        <th style="width: 145px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each models}}
+                    <tr>
+                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <td>{{title}}</td>
+                        <td>{{content}}</td>
+                        <td><img class="image" src="{{image.url}}"/></td>
+                        <td>{{user.profile.name}}</td>
+                        <td>
+                            <a href="{{pathFor 'postsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
+                            <a href="{{pathFor 'postsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                            <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
         {{#if hasMore}}
         <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
         {{/if}}
