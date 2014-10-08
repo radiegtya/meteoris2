@@ -46,9 +46,9 @@ follower-livedata@1.0.1
 francocatena:status@0.9.8
 geojson-utils@1.0.0
 google@1.1.0
-ground:db@0.0.7
+ground:db@0.0.9
 ground:dictionary@0.0.1
-ground:localstorage@0.0.1
+ground:localstorage@0.0.2
 ground:minimax@0.0.2
 ground:servertime@0.0.0
 ground:store@0.0.0

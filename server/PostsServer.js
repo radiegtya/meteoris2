@@ -1,5 +1,6 @@
 Meteor.publishComposite('posts', function(doc, sort) {
-    console.log("subscribing some Posts with it's relation");
+    doc.appId = App.id;    
+    console.log("subscribing some Posts with it's relation in App Id = "+ App.id);
     return{
         find: function() {
             return Posts.find(doc, sort);

@@ -1,4 +1,4 @@
-METEORIS v0.6.4
+METEORIS v0.7.1
 ===============
 
 ###WHAT IS METEORIS?
@@ -53,6 +53,13 @@ Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.7.1
+- adding AppId field in every collection, so you can have many application using same database
+- Server now only Publish list of collection according to appId to specify the data.
+- now config are placed at lib, so both client and server can see it.
+- updating ground:db to version 0.0.9
+- adding video tutorial about basic usage of meteoris
 
 ###WHAT'S NEW IN V0.6.4
 - updating core to meteor v0.9.3.1
