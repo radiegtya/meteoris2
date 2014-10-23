@@ -1,4 +1,4 @@
-METEORIS v0.7.1
+METEORIS v0.7.5
 ===============
 
 ###WHAT IS METEORIS?
@@ -18,33 +18,31 @@ Meteoris uses standard, usefull, robust and stable packages like Iron Router and
 Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
 
 **Here is a list of packages which Meteoris uses:**
-- accounts-base              1.1.1  A user account system
-- accounts-facebook          1.0.1  Login service for Facebook accounts
-- accounts-google            1.0.1  Login service for Google accounts
-- accounts-password          1.0.2  Password support for accounts
-- aldeed:collection2         2.1.0  Automatic validation of insert and update o...
+- accounts-base              1.1.2  A user account system
+- accounts-facebook          1.0.2  Login service for Facebook accounts
+- accounts-google            1.0.2  Login service for Google accounts
+- accounts-password          1.0.3  Password support for accounts
+- aldeed:collection2         2.2.0  Automatic validation of insert and update o...
 - cfs:ejson-file             0.0.0  CollectionFS, FS.File as EJSON type
 - cfs:filesystem             0.0.0  Filesystem storage adapter for CollectionFS
 - cfs:gridfs                 0.0.0  GridFS storage adapter for CollectionFS
 - cfs:standard-packages      0.0.2  Filesystem for Meteor, collectionFS
 - francocatena:status        0.9.8  Display the connection status with the server
-- ground:db                  0.0.7  Ground Meteor.Collections offline
+- ground:db                  0.0.9  Ground Meteor.Collections offline
 - iron:router                0.9.4  Routing specifically designed for Meteor
-- jquery                     1.0.0  Manipulate the DOM using CSS selectors
+- jquery                     1.0.1  Manipulate the DOM using CSS selectors
 - lepozepo:accounting        1.0.0  Accounting.js -  number, money and currency...
-- mdg:geolocation            1.0.2  Provides reactive geolocation on desktop an...
-- mdg:reload-on-resume       1.0.1  On Cordova, only allow the app to reload wh...
-- meteor-platform            1.1.1  Include a standard set of Meteor packages i...
-- meteorhacks:subs-manager   1.1.0  Subscriptions Manager for Meteor
+- meteor-platform            1.1.2  Include a standard set of Meteor packages i...
+- meteorhacks:subs-manager   1.2.0  Subscriptions Manager for Meteor
 - mizzao:timesync            0.2.2  NTP-style time synchronization between serv...
 - mrt:iron-router-progress   0.9.2  Progressbar for iron:router
 - mrt:moment                 2.8.1  Moment.js, a JavaScript date library for da...
 - mystor:device-detection    0.2.0  Client-Side Device Type Detection & Templat...
 - pfafman:font-awesome-4     4.2.0_1  Font awesome packaged for meteor
 - pinglamb:bootstrap3        3.2.1  Front-end framework from Twitter, version 3
-- reywood:publish-composite  1.3.0  Publish a set of documents and their child ...
+- reywood:publish-composite  1.3.2  Publish a set of related documents from mul...
 - sacha:spin                 2.0.4  Simple spinner package for Meteor
-- service-configuration      1.0.1  Manage the configuration for third-party se...
+- service-configuration      1.0.2  Manage the configuration for third-party se...
 
 
 **note: autopublish and insecure package are removed due to security reason.**
@@ -53,6 +51,10 @@ Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.7.5
+- updating meteor to v0.9.4
+- adding mobile config to let you easily deploy apps
 
 ###WHAT'S NEW IN V0.7.1
 - adding AppId field in every collection, so you can have many application using same database
