@@ -1,5 +1,6 @@
 METEORIS v0.7.5
 ===============
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 
 ###WHAT IS METEORIS?
 Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework v.0.9.x. 
@@ -246,8 +247,4 @@ Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message o
 Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
 
 You can also support us, to make meteoris improved and grow bigger.
-
-
-[![Support via Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/id/cgi-bin/webscr?cmd=_flow&SESSION=zKUOwQZHSJJtz9XwCQmqNU9UKccGto1TrI4JRXQqLrXTvHFuvniAWCQxDKG&dispatch=5885d80a13c0db1f8e263663d3faee8dbd0a2170b502f343d92a90377a9956d7)
-
 
