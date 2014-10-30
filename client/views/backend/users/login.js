@@ -1,4 +1,4 @@
-Template.backend_usersLogin.events = {
+Template.backendUsersLogin.events = {
     'click #btnLogin': function(e, t){
         e.preventDefault();        
         Router.current().login(t);

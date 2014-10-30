@@ -1,9 +1,9 @@
-<template name="frontend_postsIndex">
+<template name="frontendPostsIndex">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'frontendSitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontendPostsIndex'}}">Posts</a></li>
             <li class="active">index</li>
         </ol>
 
@@ -34,10 +34,10 @@
                 <img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/>
             </div>
             <div class="col-md-8">
-                <h1><a href="{{pathFor 'frontend_postsView'}}">{{title}}</a></h1>
-                <small>by {{user.profile.name}}, on {{meteorisFormatter "dateTime" updatedDate}}</small>
+                <h1><a href="{{pathFor 'frontendPostsView'}}">{{title}}</a></h1>
+                <small>by {{createdUser.profile.name}}, on {{meteorisFormatter "dateTime" updatedDate}}</small>
                 <div>{{getSomeContent}}</div>
-                <a href="{{pathFor 'frontend_postsView'}}" class="btn btn-default">Read More</a>
+                <a href="{{pathFor 'frontendPostsView'}}" class="btn btn-default">Read More</a>
             </div>
         </div>
             

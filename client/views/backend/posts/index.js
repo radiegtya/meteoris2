@@ -1,15 +1,7 @@
-Template.backend_postsIndex.helpers({
-    /* get related imageId from images collection */
-    image: function(){
-        return Images.findOne(this.imageId);
-    },
-    /* get related createdUserId from users collection */
-    user: function() {
-        return Meteor.users.findOne(this.createdUserId);
-    },
+Template.backendPostsIndex.helpers({
 });
 
-Template.backend_postsIndex.events = {
+Template.backendPostsIndex.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
         if (confirm("Are you sure want to remove this data?"))

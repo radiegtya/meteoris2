@@ -9,14 +9,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{pathFor 'backend_sitesIndex'}}"><img src="/svg/logo.svg"/> {{app "name"}}</a>
+                <a class="navbar-brand" href="{{pathFor 'backendSitesIndex'}}"><img src="/svg/logo.svg"/> {{app "name"}}</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{pathFor 'backend_sitesIndex'}}">Home</a></li>
-                    <li><a href="{{pathFor 'backend_postsIndex'}}">Posts</a></li>
-                    <li><a href="{{pathFor 'frontend_postsIndex'}}"><b>Go to Frontend Page</b> <i class="glyphicon glyphicon-share-alt"></i></a></li>
+                    <li><a href="{{pathFor 'backendSitesIndex'}}">Home</a></li>
+                    <li><a href="{{pathFor 'backendPostsIndex'}}">Posts</a></li>
+                    <li><a href="{{pathFor 'frontendPostsIndex'}}"><b>Go to Frontend Page</b> <i class="glyphicon glyphicon-share-alt"></i></a></li>
+                    {{#if currentUser}}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.profile.name}} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -26,6 +27,7 @@
                             <li id="btnLogout"><a href="#">Logout</a></li>
                         </ul>
                     </li>
+                    {{/if}}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

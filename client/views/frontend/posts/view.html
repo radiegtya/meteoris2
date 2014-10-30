@@ -1,16 +1,16 @@
-<template name="frontend_postsView">
+<template name="frontendPostsView">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'frontend_sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'frontend_postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'frontendSitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'frontendPostsIndex'}}">Posts</a></li>
             <li class="active">view</li>
         </ol>
 
         {{#with model}}
         <div class="title">
             <div class="toolbar pull-right">
-                <a href="{{pathFor 'frontend_postsIndex'}}" class="btn btn-default">Back</a> 
+                <a href="{{pathFor 'frontendPostsIndex'}}" class="btn btn-default">Back</a> 
             </div>
         </div>
         <div class="clearfix"></div>

@@ -1,9 +1,9 @@
-<template name="backend_postsIndex">
+<template name="backendPostsIndex">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'backend_sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'backend_postsIndex'}}">Posts</a></li>
+            <li><a href="{{pathFor 'backendSitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'backendPostsIndex'}}">Posts</a></li>
             <li class="active">index</li>
         </ol>
 
@@ -14,7 +14,7 @@
 
         <div class="toolbar">
             <div class="pull-left">
-                <a class="btn btn-success" href="{{pathFor 'backend_postsInsert'}}">Insert</a>
+                <a class="btn btn-success" href="{{pathFor 'backendPostsInsert'}}">Insert</a>
                 <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
             </div>   
             <div class="quick-search pull-right col-xs-12 col-md-3">
@@ -48,10 +48,10 @@
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{title}}</td>
                         <td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
-                        <td>{{user.profile.name}}</td>
+                        <td>{{createdUser.profile.name}}</td>
                         <td>
-                            <a href="{{pathFor 'backend_postsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
-                            <a href="{{pathFor 'backend_postsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                            <a href="{{pathFor 'backendPostsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
+                            <a href="{{pathFor 'backendPostsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
                             <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                     </tr>
