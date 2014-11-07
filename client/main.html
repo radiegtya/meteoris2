@@ -1,0 +1,25 @@
+<head>
+    <title>Meteoris</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/svg/logo.svg">
+</head>
+<template name="basic"> 
+    {{> meteorisFlash}}
+    <div class="content">
+        <!--{{>yield region="templateBasicHeader"}}-->
+        {{> templateBasicHeader}}
+        {{> status}}
+        {{>yield}}
+    </div>
+    <!--{{>yield region="templateBasicFooter"}}-->
+    {{> templateBasicFooter}}
+</template>
+
+
+
+
+
+
+
+

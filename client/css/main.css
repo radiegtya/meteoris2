@@ -226,3 +226,34 @@ footer a{
     background: #2C4780;
     color: #fff;
 }
+
+/*Checkbox*/
+input[type="checkbox"] {
+    -webkit-appearance : none;
+    appearance : none;
+    border: 1px solid #aaa;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    position: relative;
+}
+input[type="checkbox"]:checked:before {
+    font: normal normal normal 12px/1 FontAwesome;
+    content: "\f00c";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/*Field Table*/
+.btnAddField{
+    display: none;
+}
+.collectionFields tr:last-child .btnAddField{
+    display: inline-block;
+}

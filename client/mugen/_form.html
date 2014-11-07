@@ -1,0 +1,45 @@
+<template name="mugen_form">
+    <form id="posts_form" class="form-horizontal">
+        <p class="text-info">Field with * is required.</p>
+        <div class="form-group">
+            <label for="collection" class="col-sm-3 control-label" style="text-align: left;">Collection Name (lower case) *</label>
+            <div class="col-sm-5">
+                <input type="text" id="collection" value="" placeholder="eg: blog" class="form-control" autofocus="true">
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name *</th>
+                    <th>Type *</th>
+                    <th>Required</th>
+                    <th>Label</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody  class="collectionFields">
+                <tr>
+                    <td><input type="text" class="names form-control" placeholder="eg: title"></td>
+                    <td><select class="types form-control" id="types">                     
+                        <option value="String" selected="selected">String</option>                    
+                        <option value="Number">Number</option>                    
+                        <option value="Boolean">Boolean</option>                    
+                    </select></td>
+                    <td><input type="checkbox" class="isRequireds" value="1"></td>
+                    <td><input type="text" class="labels form-control" value="" placeholder="eg: Title"></td>
+                    <td>
+                        <a href="#" class="btn btn-default btnAddField">Add</a>
+                        <a href="#" class="btn btn-default btnDeleteField">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="buttons">
+                <!--<a href="#" id="btnAddField" class="btn btn-success">Add Field</a>-->
+                <button id="btnSave" type="submit" class="btn btn-primary">Submit</button>        
+            </div>
+        </div>
+    </form>
+</template>
+

@@ -1,8 +1,8 @@
-METEORIS v0.9.1 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.2 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 ###WHAT IS METEORIS?
-Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework v.0.9.x. 
+Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework v1.0. 
 It's help you structuring your Meteor Js apps, and there are many usefull packages inside.
 
 ###WHY USING METEORIS?
@@ -49,61 +49,10 @@ Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
 
 **note: autopublish and insecure package are removed due to security reason.**
 
-###METEORIS ROADMAP AND CHANGELOG
-You can view our roadmap from this link. 
- https://trello.com/b/01SvtPLA/meteoris-roadmap.
-if you want to share your idea, just write it in our trello page from that link.
-
-###WHAT'S NEW IN V0.9.1
-- updating meteor to v1.0
-- new iron router v1.0 support 
-- new observer in server (auto remove relation)
-- new relation global template so you can now call relation without having to query. Just like simple ORM
-(ex: Showing related images collection (image url) from posts collection -> {{#each posts}}{{image.url}}{{/each}}
-- renaming template which is using underscore(_) to lower/uppercase due to new iron router compatibility. 
-(ex: frontend_postsIndex to frontendPostsIndex)
-- adding push notification mobile example (this is still on alpha stage, please refer to example first)
-
-###WHAT'S NEW IN V0.7.5
-- updating meteor to v0.9.4
-- adding mobile config to let you easily deploy apps
-
-###WHAT'S NEW IN V0.7.1
-- adding AppId field in every collection, so you can have many application using same database
-- Server now only Publish list of collection according to appId to specify the data.
-- now config are placed at lib, so both client and server can see it.
-- updating ground:db to version 0.0.9
-- adding video tutorial about basic usage of meteoris
-
-###WHAT'S NEW IN V0.6.4
-- updating core to meteor v0.9.3.1
-- adding mrt:iron-router-progress
-- adding loading when load more data in pagination
-- updating iron-router to v0.9.4
-
-###WHAT'S NEW IN V0.6.3
-- updating core to meteor v0.9.3
-
-###WHAT'S NEW IN V0.6.2
-- adding groundDB v0.0.6 support to make collection able to work offline (thanks to Raix).
-- adding reactive elapsed time functionality (ex: posted 5m ago like in facebook) in meteoris formatter package. 
-  You can just type {{meteorisFormatter "elapsedTime" yourDate}} in blaze template view.
-- updating aldeed:collection2 package to v.2.1.0.
-- now you can access meteoris demo from http://meteoris.piyiku.biz rather than http://piyiku.biz:3001
-
-###WHAT'S NEW IN V0.6.1
-- adding facebook login example
-- code refractoring for unused code
-- if there is no image to be shown, show noimage.jpg rather than blank in frontend/postsIndex
-
-###WHAT'S NEW IN V0.5.6
-- adding example to switching between template
-- adding example about how to separate backend and frontend page
-- now user is not required to be logged in to a view posts in frontend page
-
-###WHAT'S NEW IN V0.5.2
-- Now frontend and backend logic is separated
-- Now frontend and backend templates are separated
+###WHAT'S NEW IN V0.9.2
+- CODE GENERATOR WITH GUI :D
+- Brand new code structure. Now it's more like the famous Rails/Yii Php Framework/Laravel structure. 
+  It almost like MVC structure. So every coder in the world should try meteor :)
 
 ------------------------
 
@@ -252,6 +201,62 @@ Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message o
 
 **P. Uploading Files** 
 > Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+
+###METEORIS ROADMAP AND CHANGELOG
+You can view our roadmap from this link. 
+ https://trello.com/b/01SvtPLA/meteoris-roadmap.
+if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.9.1
+- updating meteor to v1.0
+- new iron router v1.0 support 
+- new observer in server (auto remove relation)
+- new relation global template so you can now call relation without having to query. Just like simple ORM
+(ex: Showing related images collection (image url) from posts collection -> {{#each posts}}{{image.url}}{{/each}}
+- renaming template which is using underscore(_) to lower/uppercase due to new iron router compatibility. 
+(ex: frontend_postsIndex to frontendPostsIndex)
+- adding push notification mobile example (this is still on alpha stage, please refer to example first)
+
+###WHAT'S NEW IN V0.7.5
+- updating meteor to v0.9.4
+- adding mobile config to let you easily deploy apps
+
+###WHAT'S NEW IN V0.7.1
+- adding AppId field in every collection, so you can have many application using same database
+- Server now only Publish list of collection according to appId to specify the data.
+- now config are placed at lib, so both client and server can see it.
+- updating ground:db to version 0.0.9
+- adding video tutorial about basic usage of meteoris
+
+###WHAT'S NEW IN V0.6.4
+- updating core to meteor v0.9.3.1
+- adding mrt:iron-router-progress
+- adding loading when load more data in pagination
+- updating iron-router to v0.9.4
+
+###WHAT'S NEW IN V0.6.3
+- updating core to meteor v0.9.3
+
+###WHAT'S NEW IN V0.6.2
+- adding groundDB v0.0.6 support to make collection able to work offline (thanks to Raix).
+- adding reactive elapsed time functionality (ex: posted 5m ago like in facebook) in meteoris formatter package. 
+  You can just type {{meteorisFormatter "elapsedTime" yourDate}} in blaze template view.
+- updating aldeed:collection2 package to v.2.1.0.
+- now you can access meteoris demo from http://meteoris.piyiku.biz rather than http://piyiku.biz:3001
+
+###WHAT'S NEW IN V0.6.1
+- adding facebook login example
+- code refractoring for unused code
+- if there is no image to be shown, show noimage.jpg rather than blank in frontend/postsIndex
+
+###WHAT'S NEW IN V0.5.6
+- adding example to switching between template
+- adding example about how to separate backend and frontend page
+- now user is not required to be logged in to a view posts in frontend page
+
+###WHAT'S NEW IN V0.5.2
+- Now frontend and backend logic is separated
+- Now frontend and backend templates are separated
 
 ### Contributing
 

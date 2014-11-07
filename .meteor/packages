@@ -27,4 +27,10 @@ accounts-google
 service-configuration
 pfafman:font-awesome-4
 ground:db
-tarang:gcm
+aldeed:autoform
+mizzao:autocomplete
+peerlibrary:fs
+spiderable
+gadicohen:phantomjs
+natestrauser:select2
+
