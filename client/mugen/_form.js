@@ -48,13 +48,13 @@ Template.mugen_form.events = {
             throw new Meteor.Error(errMessage);
         }
         //check whether names cannot be empty
-        if (names.length < 1) {
+        if (names.length < 1 || names[0] == "") {
             var errMessage = "Field Name is required";
             MeteorisFlash.set('danger', errMessage);
             throw new Meteor.Error(errMessage);
         }
         //check whether types cannot be empty
-        if (types.length < 1) {
+        if (types.length < 1 || types[0] == "") {
             var errMessage = "Field Type is required";
             MeteorisFlash.set('danger', errMessage);
             throw new Meteor.Error(errMessage);
