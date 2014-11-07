@@ -13,6 +13,11 @@ It's help you structuring your Meteor Js apps, and there are many usefull packag
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
 **METEORIS IS THE SOLUTION :)**
 
+###WHAT'S NEW IN V0.9.2
+- CODE GENERATOR WITH GUI :D
+- Brand new code structure. Now it's more like the famous Rails/Yii Php Framework/Laravel structure. 
+  It almost like MVC structure. So every coder in the world should try meteor :)
+
 ###WHAT'S INSIDE METEORIS?
 Meteoris uses standard, usefull, robust and stable packages like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
 Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
@@ -48,11 +53,6 @@ Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
 
 
 **note: autopublish and insecure package are removed due to security reason.**
-
-###WHAT'S NEW IN V0.9.2
-- CODE GENERATOR WITH GUI :D
-- Brand new code structure. Now it's more like the famous Rails/Yii Php Framework/Laravel structure. 
-  It almost like MVC structure. So every coder in the world should try meteor :)
 
 ------------------------
 
