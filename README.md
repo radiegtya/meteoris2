@@ -20,7 +20,7 @@ It's help you structuring your Meteor Js apps, and there are many usefull packag
 
 ###WHAT'S INSIDE METEORIS?
 Meteoris uses standard, usefull, robust and stable packages like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
-Here is the simple demo about how Meteoris works http://meteoris.piyiku.biz
+Here is the simple demo about how Meteoris works http://meteoris.me
 
 **Here is a list of packages which Meteoris uses:**
 - accounts-base                            1.1.2  A user account system
@@ -242,7 +242,7 @@ if you want to share your idea, just write it in our trello page from that link.
 - adding reactive elapsed time functionality (ex: posted 5m ago like in facebook) in meteoris formatter package. 
   You can just type {{meteorisFormatter "elapsedTime" yourDate}} in blaze template view.
 - updating aldeed:collection2 package to v.2.1.0.
-- now you can access meteoris demo from http://meteoris.piyiku.biz rather than http://piyiku.biz:3001
+- now you can access meteoris demo from http://meteoris.me
 
 ###WHAT'S NEW IN V0.6.1
 - adding facebook login example
