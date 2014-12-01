@@ -33,4 +33,5 @@ peerlibrary:fs
 spiderable
 gadicohen:phantomjs
 natestrauser:select2
+dburles:collection-helpers
 

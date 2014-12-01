@@ -38,6 +38,7 @@ coffeescript@1.0.4
 ctl-helper@1.0.4
 ctl@1.0.2
 dandv:caret-position@2.1.0-3
+dburles:collection-helpers@1.0.1
 ddp@1.0.11
 deps@1.0.5
 ejson@1.0.4

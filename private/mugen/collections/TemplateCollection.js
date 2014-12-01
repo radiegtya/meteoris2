@@ -78,8 +78,14 @@ Replacement.allow({
  */
 
 /* register helper for default relations */
-/* uncomment to use
- UI.registerHelper('replacement', function() {
- return Replacement.findOne(this.replacementId);
- });
- */
+Replacement.helpers({
+   image: function(){
+       return Images.findOne(this.imageId);
+   },
+   createdUser: function(){
+       return Meteor.users.findOne(this.createdUserId);
+   },
+   updatedUser: function(){
+       return Meteor.users.findOne(this.updatedUserId);
+   },
+}); 
