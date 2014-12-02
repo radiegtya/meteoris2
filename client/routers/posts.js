@@ -1,5 +1,5 @@
 /* POSTS */
-Router.route('posts/index/:limit?/:search?/', {
+Router.route('posts/index/:limit?/', {
     name: 'postsIndex',
     controller: PostsController,
     action: 'index',

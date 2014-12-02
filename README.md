@@ -1,4 +1,4 @@
-METEORIS v0.9.2 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.3 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 ###WHAT IS METEORIS?
@@ -13,10 +13,10 @@ It's help you structuring your Meteor Js apps, and there are many usefull packag
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
 **METEORIS IS THE SOLUTION :)**
 
-###WHAT'S NEW IN V0.9.2
-- CODE GENERATOR WITH GUI :D
-- Brand new code structure. Now it's more like the famous Rails/Yii Php Framework/Laravel structure. 
-  It almost like MVC structure. So every coder in the world should try meteor :)
+###WHAT'S NEW IN V0.9.3
+- search is now using iron router query param, rather than default param (ex: ?q=yourSearch)
+- collection helpers for relation n+1 etc
+- now meteoris using MIT license rather than GNU
 
 ###WHAT'S INSIDE METEORIS?
 Meteoris uses standard, usefull, robust and stable packages like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
@@ -206,6 +206,11 @@ Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message o
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.9.2
+- CODE GENERATOR WITH GUI :D
+- Brand new code structure. Now it's more like the famous Rails/Yii Php Framework/Laravel structure. 
+  It almost like MVC structure. So every coder in the world should try meteor :)
 
 ###WHAT'S NEW IN V0.9.1
 - updating meteor to v1.0

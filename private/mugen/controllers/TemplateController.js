@@ -8,11 +8,11 @@ ReplacementController = MeteorisController.extend({
     },
     /* event searching data by user input with parameter */
     search: function(t) {
-        Router.go('replacementIndex', {limit: this.limit(), search: t.find('#search').value});
+        Router.go('replacementIndex', {limit: this.limit()}, {query: "q=" + t.find('#search').value});
     },
     /* @override getCriteria */
     getCriteria: function() {
-        var search = this.params.search ? this.params.search : "";
+        var search = this.params.query.q ? this.params.query.q : "";
         return {
             $or: [
                 [criteriaFields]

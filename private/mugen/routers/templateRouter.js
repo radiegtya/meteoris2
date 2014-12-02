@@ -1,5 +1,5 @@
 /* Replacement */
-Router.route('replacement/index/:limit?/:search?/', {
+Router.route('replacement/index/:limit?/', {
     name: 'replacementIndex',
     controller: ReplacementController,
     action: 'index',
