@@ -14,18 +14,18 @@ mystor:device-detection
 sacha:spin
 mizzao:timesync
 jquery
-mrt:moment
+momentjs:moment
 lepozepo:accounting
 cfs:standard-packages
 cfs:filesystem
 cfs:ejson-file
 cfs:gridfs
-pinglamb:bootstrap3
+twbs:bootstrap
 francocatena:status
 accounts-facebook
 accounts-google
 service-configuration
-pfafman:font-awesome-4
+fortawesome:fontawesome
 ground:db
 aldeed:autoform
 mizzao:autocomplete
@@ -34,4 +34,3 @@ spiderable
 gadicohen:phantomjs
 natestrauser:select2
 dburles:collection-helpers
-
