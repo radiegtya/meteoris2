@@ -11,7 +11,7 @@ MeteorisGridView = {
     sortState: 1,
     sorting: {
         sort: {
-            'updatedDate': -1
+            'updatedAt': -1
         }
     },
     //used in index js to know current sort order

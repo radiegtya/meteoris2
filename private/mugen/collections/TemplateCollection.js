@@ -9,16 +9,16 @@ Replacement = new Mongo.Collection("replacement");
 
 var schemas = new SimpleSchema({
     [collectionFields]
-    /* AUTOVALUE */
-    appId: {
-        type: String,
-        label: "App Id",
-        autoValue: function() {
-            if (this.isInsert)
-                return App.id;
-        },
-    },
-    createdDate: {
+            /* AUTOVALUE */
+            appId: {
+                type: String,
+                label: "App Id",
+                autoValue: function() {
+                    if (this.isInsert)
+                        return App.id;
+                },
+            },
+    createdAt: {
         type: Date,
         label: "Created Date",
         autoValue: function() {
@@ -28,12 +28,11 @@ var schemas = new SimpleSchema({
         denyUpdate: true,
         optional: true
     },
-    updatedDate: {
+    updatedAt: {
         type: Date,
         label: "Updated Date",
         autoValue: function() {
-            if (this.isUpdate || this.isInsert)
-                return new Date();
+            return new Date();
         },
         optional: true
     },
@@ -51,8 +50,7 @@ var schemas = new SimpleSchema({
         type: String,
         label: "Updated by",
         autoValue: function() {
-            if (this.isUpdate || this.isInsert)
-                return this.userId;
+            return this.userId;
         },
         optional: true
     },
@@ -79,13 +77,13 @@ Replacement.allow({
 
 /* register helper for default relations */
 Replacement.helpers({
-   image: function(){
-       return Images.findOne(this.imageId);
-   },
-   createdUser: function(){
-       return Meteor.users.findOne(this.createdUserId);
-   },
-   updatedUser: function(){
-       return Meteor.users.findOne(this.updatedUserId);
-   },
+    image: function() {
+        return Images.findOne(this.imageId);
+    },
+    createdUser: function() {
+        return Meteor.users.findOne(this.createdUserId);
+    },
+    updatedUser: function() {
+        return Meteor.users.findOne(this.updatedUserId);
+    },
 }); 
