@@ -46,6 +46,7 @@ email@1.0.4
 facebook@1.1.2
 fastclick@1.0.1
 follower-livedata@1.0.2
+fortawesome:fontawesome@4.2.0_2
 francocatena:status@1.0.3
 gadicohen:phantomjs@0.0.2
 geojson-utils@1.0.1
@@ -84,6 +85,7 @@ minimongo@1.0.5
 mizzao:autocomplete@0.4.10
 mizzao:timesync@0.2.2
 mobile-status-bar@1.0.1
+momentjs:moment@2.8.4
 mongo-livedata@1.0.6
 mongo@1.0.8
 mrt:moment@2.8.1
@@ -97,8 +99,6 @@ ordered-dict@1.0.1
 peerlibrary:assert@0.2.5
 peerlibrary:blocking@0.4.2
 peerlibrary:fs@0.1.5
-pfafman:font-awesome-4@4.2.0_2
-pinglamb:bootstrap3@3.2.1
 raix:eventemitter@0.0.2
 random@1.0.1
 reactive-dict@1.0.4
@@ -119,6 +119,7 @@ tap:http-methods@0.0.23
 tap:i18n@1.0.7
 templating@1.0.9
 tracker@1.0.3
+twbs:bootstrap@3.3.1
 ui@1.0.4
 underscore@1.0.1
 url@1.0.2

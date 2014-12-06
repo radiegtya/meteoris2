@@ -44,13 +44,21 @@ MeteorisFormatter = {
     /**
      * Formatting number to desired format, this function needs accounting packages     
      */
-    number: function(value) {
+    money: function(value) {
         if (value === 0)
             return 0;
         else if (value < 0) //accounting format when number is negative
             return "(" + accounting.formatMoney(value * -1, "", 2, ".", ",") + ")";
         else if (value)
             return accounting.formatMoney(value, "", 2, ".", ",");
+    },
+    /**
+     * Formatting number to desired format, this function needs accounting packages     
+     */
+    number: function(value) {
+        if (value === 0)
+            return 0;
+        return accounting.formatMoney(value, "", 0, ".");
     },
     combodate: function(date) {
         if (date)
