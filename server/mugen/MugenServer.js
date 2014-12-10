@@ -171,7 +171,7 @@ var Mugen = {
         fields.forEach(function(obj) {
             var name = obj.name;
             var label = obj.label;
-            stringFields += '<th id="btnSort' + label + '" class="{{meteorisGridViewSortClass ' + "'" + name + "'" + '}}">' + label + '</th>';
+            stringFields += '<th id="btnSort' + label + '" class="{{meteorisGridViewSortClass ' + "'" + name + "'" + '}}">' + label + '</th>\n';
         });
         contentindexHtml = contentindexHtml.replace("[thFields]", stringFields);
 
@@ -179,7 +179,7 @@ var Mugen = {
         var stringFields = "";
         fields.forEach(function(obj) {
             var name = obj.name;
-            stringFields += '<td>{{' + name + '}}</td>';
+            stringFields += '<td>{{' + name + '}}</td>\n';
         });
         contentindexHtml = contentindexHtml.replace("[tdFields]", stringFields);
 
@@ -190,7 +190,7 @@ var Mugen = {
             var label = obj.label;
             stringFields +=
                     "/* sorting by parameter */\n" +
-                    "'click #btnSort" + label + "': function(e) {\n" +
+                    "'click #btnSort" + name + "': function(e) {\n" +
                     "MeteorisGridView.sort('" + name + "');\n" +
                     "},\n";
         });
