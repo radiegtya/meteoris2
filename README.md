@@ -2,25 +2,26 @@ METEORIS v0.9.4 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hos
 ===============
 
 ###WHAT IS METEORIS?
-Meteoris is a Realtime Javascript Boilerplate base on Meteor Js framework v1.0. 
-It's help you structuring your Meteor Js apps, and there are many usefull packages inside.
+Meteoris is a Realtime Javascript Boilerplate based on Meteor Js framework v1.0. 
+It helps you structure your Meteor Js apps and includes many useful packages.
 
-###WHY USING METEORIS?
-- Looking for MVC/MVVM/MVP boilerplate for meteor v.0.9.x?
-- Tired of installing required packages/plugin, searching for best packages?
-- Don't know how to structure your meteor apps or are too lazy to restructure again and again every time you create a new project?
-- Trying to find the best structure for your meteor app?
+###WHY USE METEORIS?
+- Looking for MVC/MVVM/MVP boilerplate for meteor v.0.9.x+?
+- Tired of installing required packages/plugin and searching for the best packages?
+- Want a standard way to structure all of your Meteor projects so they're consistent every time?
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
-**METEORIS IS THE SOLUTION :)**
+
+**METEORIS IS THE SOLUTION!**
 
 ###WHAT'S NEW IN V0.9.4
-- minor bug fixing on mugen (meteoris ui generator)
-- updating to Meteor v1.0.1
-- updating packages to latest version
+- Minor bug fixes in mugen (meteoris ui generator)
+- Updated to Meteor v1.0.1
+- Updated packages to latest versions
 
 ###WHAT'S INSIDE METEORIS?
-Meteoris uses standard, usefull, robust and stable packages like Iron Router and Collection2. Want to quickly understand what's inside Meteoris? 
-Here is the simple demo about how Meteoris works http://meteoris.me
+Meteoris uses standard, useful, robust, and stable packages like Iron Router and Collection2. 
+
+For a quick overview of what's inside Meteoris, go see our simple demo at the [demo page](http://meteoris.me).
 
 **Here is a list of packages which Meteoris uses:**
 
@@ -55,7 +56,7 @@ Package                                   | Version | Description
 
 
 
-**note: autopublish and insecure package are removed due to security reason.**
+**NOTE: autopublish and insecure package are removed for security reasons.**
 
 ------------------------
 
@@ -63,18 +64,42 @@ Package                                   | Version | Description
 
 **A. Installation**
  
- Before using this, make sure you have installing meteor with version
- greater than or equal to 0.9.1. To install meteor, run this command "curl
- https://install.meteor.com | /bin/sh". After that, follow this
- instruction:
+ Before using this, make sure you have installed Meteor >= 0.9.1. 
+
+ To install meteor, run this command:
+
+ ```
+ curl https://install.meteor.com | /bin/sh
+ ```
+
+ After that, follow these instructions:
  
- 1. Git clone or download this repo. "git clone https://github.com/radiegtya/meteoris.git"
- 2. Rename directory to your desired name "ex: meteoris to myproject"
- 3. Change dir to your apps then just run "sudo meteor". Then type "localhost:3000" in your browser.
- 4. There will be a running DEMO to get you started easily. Register your account from registration page, then  loging in using those
+ 1. Git clone or download this repo:
+ 
+ ```
+ git clone https://github.com/radiegtya/meteoris.git"
+ ```
+ 
+ 2. Rename directory to your desired name:
+ 
+ ```
+ mv meteoris myproject
+ ```
+ 
+ 3. Change dir to your apps then just run:
+ 
+ ```
+ meteor
+ ```
+ 
+ 4. Then type ```http://localhost:3000``` in your browser.
+ 
+ 
+ 5. There will be a running DEMO to get you started easily. Register your account from registration page, then  loging in using those
  account. You can then use the demo CRUDSS app.
 
 **B. Folder Structure**
+
 ```
 client/ 				# Client folder
     assets/             # Packages with global variable
@@ -99,19 +124,24 @@ server/ 			    # Server folder
 
 *1. What is a Controller*
 
-Controllers are class which are responsible for displaying dynamic data in the view.
+Controllers are classes which are responsible for displaying dynamic data in the view.
 
 *2. Creating a Controller (Backend)*
 
 Let's create a simple controller named PostsController that extends MeteorisController.
+
+
 ```
 PostsController = MeteorisController.extend({
 
 });
 ```
-> save this file in "lib/controllers/PostsController.js"
 
-*3. Create function inside Controller (Backend)*
+save this file in ```lib/controllers/PostsController.js```
+
+*3. Create functions inside Controller (Backend)*
+
+
 ```
 Backend.PostsController = MeteorisController.extend({
 	getOtherMessage: function(){
@@ -127,20 +157,25 @@ Backend.PostsController = MeteorisController.extend({
     },
 });
 ```
-> save this file in "lib/controllers/backend/PostsController.js"
+
+save this file in ```lib/controllers/backend/PostsController.js```
 
 function data is responsible  for storing dynamic data to be displayed in the view. Create a view with related name, remember this is a best practice naming convention in Meteoris.
 
-*4. Create html page to be used with Controller*
+*4. Create an html page to be used with the Controller*
+
+
 ```
 <template name="backendPostsIndex">
 	<p>{{helloWorld}}</p>
 	<p>{{otherMessage}}</p>
 </template>
 ```
-> save this file in "client/views/backend/posts/index.html"
 
-*5. Setup your router* 
+save this file in ```client/views/backend/posts/index.html```
+
+*5. Set up your router* 
+
 Router is responsible for url formatting, for example if you want to redirect user to "AppName/posts/index". You can make routing like this. 
 
 > Best practice note: 
@@ -150,6 +185,7 @@ Router is responsible for url formatting, for example if you want to redirect us
 > This is a little different from MVC concept that other frameworks use, where index is 
 >  function name from the controller. It's Because we are using MVVM concept.
 
+
 ```
     /* POSTS */
     this.route('backendPostsIndex', { //targetted template
@@ -158,52 +194,54 @@ Router is responsible for url formatting, for example if you want to redirect us
     });
 ``` 
 
-> save this file in "lib/router.js"
+save this file in ```lib/router.js```
 
-*6. running your app*
-To run your app, use this url http://localhost:3000/posts/index.
+*6. Running your app*
+
+To run your app, use this url ```http://localhost:3000/posts/index```
+
 Now you should see "Hello World" and "my Name is Ega Wachid Radiegtya" message on your screen. Congratulation!
 
-> For complete tutorial about routing, controller and view you can visit this page https://github.com/EventedMind/iron-router from EventedMind.
+For complete tutorial about routing, controller and view you can visit this page https://github.com/EventedMind/iron-router from EventedMind.
 
 **D. Collections**
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **E. Publish Subscribe**
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **F. CRUDSS**
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **G. Validation Message** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **H. Flash Message** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **I. Sorting Table** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **J. User RBAC** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **K. Pagination** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **L. Using Meteoris Packages** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **M. Templating for Desktop Apps** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **N. Templating for Mobile Apps** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **O. Sending Email** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 **P. Uploading Files** 
-> Documentation are Coming Soon! For now you can try the code at Posts DEMO.
+Documentation Coming Soon! For now you can try the code at Posts DEMO.
 
 ###METEORIS ROADMAP AND CHANGELOG
 You can view our roadmap from this link. 
