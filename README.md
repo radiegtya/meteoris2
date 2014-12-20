@@ -22,7 +22,7 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 
 Meteoris uses standard, useful, robust, and stable packages like Iron Router and Collection2. 
 
-For a quick overview of what's inside Meteoris, go see our simple demo at the [demo page](http://meteoris.me).
+For a quick overview of what's inside Meteoris, go see our simple demo at the [demo page](http://meteoris.me) and **watch the video!**.
 
 **Here is a list of the packages Meteoris uses: (not updated for Meteor 1.0.2)**
 
@@ -125,7 +125,7 @@ server/ 			    # Server folder
 
 **C0. mugen -- the Meteoris generator**
 
-NOTE: This documentation added by ssteinerX.  The really cool thing that Meteoris does wasn't mentioned in the original documentation.
+NOTE: This documentation added by ssteinerX.  The really cool thing that Meteoris does wasn't mentioned in the original README.md file though it is shown in the [video](https://www.youtube.com/watch?v=erZvEQkr8kw).
 
 Now, for what Meteoris does that's cool...
 
