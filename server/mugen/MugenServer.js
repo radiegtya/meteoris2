@@ -203,7 +203,7 @@ var Mugen = {
             var name = obj.name;
             var type = obj.type;
             if (type == "Date")
-                stringFields += "<td>{{meteorisFormatter 'date'" + name + '}}</td>\n';
+                stringFields += "<td>{{meteorisFormatter 'date' " + name + '}}</td>\n';
             else
                 stringFields += '<td>{{' + name + '}}</td>\n';
         });
