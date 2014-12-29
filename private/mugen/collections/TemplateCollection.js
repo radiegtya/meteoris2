@@ -72,7 +72,7 @@ Replacement.allow({
 
 //activate groundDB for replacement collection to work offline
 /* uncomment to use
- GroundDB(Replacement);
+ Ground.Collection(Replacement);
  */
 
 /* register helper for default relations */

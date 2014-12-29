@@ -54,6 +54,7 @@ nav.navbar .navbar-nav>li>a:active
     color: #FC611F;
 }
 nav.navbar .navbar-brand img{
+    display: inline-block;
     width: 40px;
     margin-top: -10px;
 }
