@@ -145,10 +145,15 @@ var Mugen = {
             var isRequired = obj.isRequired ? "*" : "";
             stringFields +=
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
-                    '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n' +
-                    '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n' +
-                    '<span class="help-block">{{error "' + name + '"}}</span>\n' +
-                    '</div>';
+                    '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n';
+            if (type == "Date") {
+                stringFields += '<input type="datetime" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n';
+            } else if (type == "Number") {
+                stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n';
+            } else {
+                stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n';
+            }
+            stringFields += '<span class="help-block">{{error "' + name + '"}}</span>\n' + '</div>';
         });
         content_formHtml = content_formHtml.replace("[formFields]", stringFields);
 
