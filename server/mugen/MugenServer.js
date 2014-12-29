@@ -164,7 +164,7 @@ var Mugen = {
             } else {
                 stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             }
-            stringFields += '<span class="help-block">{{error "' + name + '"}}</span>\n' + '</div>';
+            stringFields += '<span class="help-block">{{error "' + name + '"}}</span>\n' + '</div>\n';
         });
         content_formHtml = content_formHtml.replace("[formFields]", stringFields);
 
