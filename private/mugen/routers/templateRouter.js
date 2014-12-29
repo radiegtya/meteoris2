@@ -1,8 +1,6 @@
 /* Replacement */
-Router.route('replacement/:limit?/', {
-    name: 'replacement',
-    controller: ReplacementController,
-    action: 'index',
+Router.route('replacement', function() {
+    Router.go('replacementIndex');
 });
 Router.route('replacement/index/:limit?/', {
     name: 'replacementIndex',

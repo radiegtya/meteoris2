@@ -1,8 +1,6 @@
 /* POSTS */
-Router.route('posts/:limit?/', {
-    name: 'posts',
-    controller: PostsController,
-    action: 'index',
+Router.route('posts', function(){
+    Router.go('postsIndex');
 });
 Router.route('posts/index/:limit?/', {
     name: 'postsIndex',
