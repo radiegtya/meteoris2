@@ -47,18 +47,6 @@ Template.mugen_form.events = {
             MeteorisFlash.set('danger', errMessage);
             throw new Meteor.Error(errMessage);
         }
-        //check whether names cannot be empty
-        if (names.length < 1 || names[0] == "") {
-            var errMessage = "Field Name is required";
-            MeteorisFlash.set('danger', errMessage);
-            throw new Meteor.Error(errMessage);
-        }
-        //check whether types cannot be empty
-        if (types.length < 1 || types[0] == "") {
-            var errMessage = "Field Type is required";
-            MeteorisFlash.set('danger', errMessage);
-            throw new Meteor.Error(errMessage);
-        }
 
         //regex match collection to avoid field break generate
         var collectionMatch = collection.match(/^[a-z0-9A-Z_]{3,15}$/);
@@ -68,6 +56,25 @@ Template.mugen_form.events = {
             throw new Meteor.Error(errMessage);
         }
 
+        //check all field before insert, avoid blank field
+        for (i = 0; i < names.length; i++) {
+            var name = names[i];
+            var type = types[i];
+
+            if (name == null || name == "") {
+                var errMessage = "Field Name is required";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            }
+
+            if (type == null || type == "") {
+                var errMessage = "Field Type is required";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            }
+        }
+
+        //push all validated field to fieldsArray
         var fields = [];
         for (i = 0; i < names.length; i++) {
             var name = names[i];
@@ -78,7 +85,7 @@ Template.mugen_form.events = {
             //regex match name to avoid field break generate
             var nameMatch = name.match(/^[a-z0-9A-Z_]{3,15}$/);
             if (!nameMatch) {
-                var errMessage = "Field name can't contain any of the following characters \ / : * ? < > |";
+                var errMessage = "Field Name can't contain any of the following characters \ / : * ? < > |";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }

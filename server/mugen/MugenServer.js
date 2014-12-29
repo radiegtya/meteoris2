@@ -171,7 +171,7 @@ var Mugen = {
         fields.forEach(function(obj) {
             var name = obj.name;
             var label = obj.label;
-            stringFields += '<th id="btnSort' + label + '" class="{{meteorisGridViewSortClass ' + "'" + name + "'" + '}}">' + label + '</th>\n';
+            stringFields += '<th id="btnSort' + name + '" class="{{meteorisGridViewSortClass ' + "'" + name + "'" + '}}">' + label + '</th>\n';
         });
         contentindexHtml = contentindexHtml.replace("[thFields]", stringFields);
 
