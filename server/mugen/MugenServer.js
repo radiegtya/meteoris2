@@ -141,17 +141,28 @@ var Mugen = {
         fields.forEach(function(obj) {
             var name = obj.name;
             var type = obj.type;
+            if (type == "Date") {
+                stringFields += "$('#" + name + "').datepicker();"
+            }
+        });
+        content_formJs = content_formJs.replace("[formRendered]", stringFields);
+
+        //reformat fields as string, and replace it with [formFields]
+        var stringFields = "";
+        fields.forEach(function(obj) {
+            var name = obj.name;
+            var type = obj.type;
             var label = obj.label;
             var isRequired = obj.isRequired ? "*" : "";
             stringFields +=
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
                     '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n';
             if (type == "Date") {
-                stringFields += '<input type="datetime" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n';
+                stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "Number") {
-                stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n';
+                stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             } else {
-                stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n';
+                stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             }
             stringFields += '<span class="help-block">{{error "' + name + '"}}</span>\n' + '</div>';
         });
