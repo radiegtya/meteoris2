@@ -62,13 +62,13 @@ Template.mugen_form.events = {
             var type = types[i];
 
             if (name == null || name == "") {
-                var errMessage = "Field Name is required";
+                var errMessage = "Field (" + (i + 1) + ") Name is required.";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }
 
             if (type == null || type == "") {
-                var errMessage = "Field Type is required";
+                var errMessage = "Field (" + (i + 1) + ") Type is required.";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }

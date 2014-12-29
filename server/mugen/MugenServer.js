@@ -73,7 +73,13 @@ var Mugen = {
         var stringFields = "";
         fields.forEach(function(obj) {
             var name = obj.name;
-            stringFields += name + ": t.find('#" + name + "').value,\n";
+            var type = obj.type;
+            if (type == "Date")
+                stringFields += name + ": t.find('#" + name + "').value? new Date(t.find('#" + name + "').value):null,\n";
+            else if (type == "Number")
+                stringFields += name + ": t.find('#" + name + "').value? Number(t.find('#" + name + "').value):null,\n";
+            else
+                stringFields += name + ": t.find('#" + name + "').value,\n";
         });
         content = content.replace("[docFields]", stringFields);
 
@@ -139,7 +145,7 @@ var Mugen = {
             var isRequired = obj.isRequired ? "*" : "";
             stringFields +=
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
-                    '<label for="' + name + '" class="control-label">' + label + " " + isRequired +'</label>\n' +
+                    '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n' +
                     '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control" autofocus="true">\n' +
                     '<span class="help-block">{{error "' + name + '"}}</span>\n' +
                     '</div>';
