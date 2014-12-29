@@ -158,7 +158,7 @@ var Mugen = {
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
                     '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n';
             if (type == "Date") {
-                stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
+                stringFields += '<input type="text" id="' + name + '" value="{{meteorisFormatterDate ' + name + " 'L'" + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "Number") {
                 stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             } else {
@@ -201,7 +201,11 @@ var Mugen = {
         var stringFields = "";
         fields.forEach(function(obj) {
             var name = obj.name;
-            stringFields += '<td>{{' + name + '}}</td>\n';
+            var type = obj.type;
+            if (type == "Date")
+                stringFields += "<td>{{meteorisFormatter 'date'" + name + '}}</td>\n';
+            else
+                stringFields += '<td>{{' + name + '}}</td>\n';
         });
         contentindexHtml = contentindexHtml.replace("[tdFields]", stringFields);
 
@@ -282,12 +286,19 @@ var Mugen = {
         var stringFields = "";
         fields.forEach(function(obj) {
             var name = obj.name;
+            var type = obj.type;
             var label = obj.label;
             stringFields +=
                     "<tr>\n" +
-                    "<td><b>" + label + "</b></td>\n" +
-                    "<td>{{" + name + "}}</td>\n" +
-                    "</tr>\n";
+                    "<td><b>" + label + "</b></td>\n";
+            if (type == "Date") {
+                stringFields +=
+                        "<td>{{meteorisFormatter 'date' " + name + "}}</td>\n";
+            } else {
+                stringFields +=
+                        "<td>{{" + name + "}}</td>\n";
+            }
+            stringFields += "</tr>\n";
         });
         contentviewHtml = contentviewHtml.replace("[trFields]", stringFields);
 
