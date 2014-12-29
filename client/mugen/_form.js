@@ -60,12 +60,29 @@ Template.mugen_form.events = {
             throw new Meteor.Error(errMessage);
         }
 
+        //regex match collection to avoid field break generate
+        var collectionMatch = collection.match(/^[a-z0-9A-Z_]{3,15}$/);
+        if (!collectionMatch) {
+            var errMessage = "Collection name can't contain any of the following characters \ / : * ? < > |";
+            MeteorisFlash.set('danger', errMessage);
+            throw new Meteor.Error(errMessage);
+        }
+
         var fields = [];
         for (i = 0; i < names.length; i++) {
             var name = names[i];
             var type = types[i];
             var label = labels[i] ? labels[i] : toTitleCase(names[i]);
             var isRequired = isRequireds[i].checked ? true : false;
+
+            //regex match name to avoid field break generate
+            var nameMatch = name.match(/^[a-z0-9A-Z_]{3,15}$/);
+            if (!nameMatch) {
+                var errMessage = "Field name can't contain any of the following characters \ / : * ? < > |";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            }
+
             fields.push({
                 name: name,
                 type: type,

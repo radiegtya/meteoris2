@@ -1,4 +1,4 @@
-METEORIS v0.9.4 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.5 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 ###WHAT IS METEORIS?
@@ -6,6 +6,7 @@ Meteoris is a Realtime Javascript Boilerplate based on Meteor Js framework v1.0.
 It helps you structure your Meteor Js apps and includes many useful packages.
 
 ###WHY USE METEORIS?
+- Generate your apps on the fly using Meteoris UI Generator <MUGEN>. No more command prompt to generate basic crudss code!
 - Looking for MVC/MVVM/MVP boilerplate for meteor v.0.9.x+?
 - Tired of installing required packages/plugin and searching for the best packages?
 - Want a standard way to structure all of your Meteor projects so they're consistent every time?
@@ -13,10 +14,12 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 
 **METEORIS IS THE SOLUTION!**
 
-###WHAT'S NEW IN V0.9.4
-- Minor bug fixes in mugen (meteoris ui generator)
+###WHAT'S NEW IN V0.9.5
+- Regex checker in mugen for collection and field name (thanks for @ssteinerx suggestion)
 - Updated to Meteor v1.0.1
-- Updated packages to latest versions
+- Fixing ground:db bug for the latest version of ground:db
+- Adding date type in mugen
+
 
 ###WHAT'S INSIDE METEORIS?
 
@@ -270,6 +273,11 @@ Documentation Coming Soon! For now you can try the code at Posts DEMO.
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.9.4
+- Minor bug fixes in mugen (meteoris ui generator)
+- Updated to Meteor v1.0.1
+- Updated packages to latest versions
 
 ###WHAT'S NEW IN V0.9.3
 - search is now using iron router query param, rather than default param (ex: ?q=yourSearch)
