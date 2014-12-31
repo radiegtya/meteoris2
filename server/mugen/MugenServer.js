@@ -120,10 +120,12 @@ var Mugen = {
             var name = obj.name;
             var belongToCollection = obj.belongToCollection;
             var relationKey = obj.relationKey;
-            stringFields +=
-                    relationKey + ': function() {\n' +
-                    'return' + belongToCollection + '.findOne(this.' + name + ');\n' +
-                    '},\n';
+            if (belongToCollection) {
+                stringFields +=
+                        relationKey + ': function() {\n' +
+                        'return' + belongToCollection + '.findOne(this.' + name + ');\n' +
+                        '},\n';
+            }
         });
         content = content.replace("[collectionHelpers]", stringFields);
 
