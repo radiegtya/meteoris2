@@ -114,7 +114,7 @@ var Mugen = {
         });
         content = content.replace("[collectionFields]", stringFields);
 
-        //reformat fields as string, and replace it with [mugenCollectionFields]
+        //reformat fields as string, and replace it with [mugenCollectionHelpers]
         var stringFields = "";
         fields.forEach(function(obj) {
             var name = obj.name;
