@@ -123,7 +123,7 @@ var Mugen = {
             if (belongToCollection) {
                 stringFields +=
                         relationKey + ': function() {\n' +
-                        'return' + belongToCollection + '.findOne(this.' + name + ');\n' +
+                        'return ' + belongToCollection + '.findOne(this.' + name + ');\n' +
                         '},\n';
             }
         });
