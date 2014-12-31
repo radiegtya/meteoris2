@@ -114,6 +114,19 @@ var Mugen = {
         });
         content = content.replace("[collectionFields]", stringFields);
 
+        //reformat fields as string, and replace it with [mugenCollectionFields]
+        var stringFields = "";
+        fields.forEach(function(obj) {
+            var name = obj.name;
+            var belongToCollection = obj.belongToCollection;
+            var relationKey = obj.relationKey;
+            stringFields +=
+                    relationKey + ': function() {\n' +
+                    'return' + belongToCollection + '.findOne(this.' + name + ');\n' +
+                    '},\n';
+        });
+        content = content.replace("[collectionHelpers]", stringFields);
+
         //finally write it
         this.write(path, content);
     },

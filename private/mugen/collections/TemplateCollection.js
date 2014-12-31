@@ -77,9 +77,7 @@ Replacement.allow({
 
 /* register helper for default relations */
 Replacement.helpers({
-    image: function() {
-        return Images.findOne(this.imageId);
-    },
+    [collectionHelpers]
     createdUser: function() {
         return Meteor.users.findOne(this.createdUserId);
     },

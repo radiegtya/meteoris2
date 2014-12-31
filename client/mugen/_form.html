@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="collection" class="col-sm-3 control-label" style="text-align: left;">Collection Name (lower case) *</label>
             <div class="col-sm-5">
-                <input type="text" id="collection" value="" placeholder="eg: blog" class="form-control" autofocus="true">
+                <input type="text" id="collection" value="" placeholder="eg: comments" class="form-control" autofocus="true">
             </div>
         </div>
         <table class="table table-bordered">
@@ -14,6 +14,8 @@
                     <th>Type *</th>
                     <th>Required</th>
                     <th>Label</th>
+                    <th>Belongs to Collection</th>
+                    <th>Relation Key</th>
                     <th></th>
                 </tr>
             </thead>
@@ -28,6 +30,8 @@
                     </select></td>
                     <td><input type="checkbox" class="isRequireds" value="1"></td>
                     <td><input type="text" class="labels form-control" value="" placeholder="eg: Title"></td>
+                    <td><input type="text" class="belongToCollections form-control" value="" placeholder="eg: Posts (case sensitive)"></td>
+                    <td><input type="text" class="relationKeys form-control" value="" placeholder="eg: post"></td>
                     <td>
                         <a href="#" class="btn btn-default btnAddField">Add</a>
                         <a href="#" class="btn btn-default btnDeleteField">Delete</a>

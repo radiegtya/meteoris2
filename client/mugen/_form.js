@@ -38,6 +38,12 @@ Template.mugen_form.events = {
         var labels = $('.labels').map(function() {
             return $(this).val();
         }).get();
+        var belongToCollections = $('.belongToCollections').map(function() {
+            return $(this).val();
+        }).get();
+        var relationKeys = $('.relationKeys').map(function() {
+            return $(this).val();
+        }).get();
         var isRequireds = $('.isRequireds');
 
 
@@ -80,6 +86,8 @@ Template.mugen_form.events = {
             var name = names[i];
             var type = types[i];
             var label = labels[i] ? labels[i] : toTitleCase(names[i]);
+            var belongToCollection = belongToCollections[i];
+            var relationKey = relationKeys[i];
             var isRequired = isRequireds[i].checked ? true : false;
 
             //regex match name to avoid field break generate
@@ -94,7 +102,9 @@ Template.mugen_form.events = {
                 name: name,
                 type: type,
                 label: label,
-                isRequired: isRequired
+                isRequired: isRequired,
+                belongToCollection: belongToCollection,
+                relationKey: relationKey,
             });
         }
 
