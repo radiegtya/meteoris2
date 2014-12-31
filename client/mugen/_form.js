@@ -66,6 +66,8 @@ Template.mugen_form.events = {
         for (i = 0; i < names.length; i++) {
             var name = names[i];
             var type = types[i];
+            var belongToCollection = belongToCollections[i];
+            var relationKey = relationKeys[i];
 
             if (name == null || name == "") {
                 var errMessage = "Field (" + (i + 1) + ") Name is required.";
@@ -75,6 +77,12 @@ Template.mugen_form.events = {
 
             if (type == null || type == "") {
                 var errMessage = "Field (" + (i + 1) + ") Type is required.";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            }
+
+            if (belongToCollection != "" && relationKey == "" || belongToCollection == "" && relationKey != "") {
+                var errMessage = "Field (" + (i + 1) + "), error. Please fill both Belongs to Collection and Relation Key.";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }
