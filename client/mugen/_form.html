@@ -23,11 +23,11 @@
                 <tr>
                     <td><input type="text" class="names form-control" placeholder="eg: title"></td>
                     <td><select class="types form-control" id="types">                     
-                        <option value="String" selected="selected">String</option>                    
-                        <option value="Number">Number</option>                    
-                        <option value="Boolean">Boolean</option>                    
-                        <option value="Date">Date</option>                    
-                    </select></td>
+                            <option value="String" selected="selected">String</option>                    
+                            <option value="Number">Number</option>                    
+                            <option value="Boolean">Boolean</option>                    
+                            <option value="Date">Date</option>                    
+                        </select></td>
                     <td><input type="checkbox" class="isRequireds" value="1"></td>
                     <td><input type="text" class="labels form-control" value="" placeholder="eg: Title"></td>
                     <td><input type="text" class="belongToCollections form-control" value="" placeholder="eg: Posts (case sensitive)"></td>
@@ -39,10 +39,44 @@
                 </tr>
             </tbody>
         </table>
+
+        <hr/>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>                    
+                    <th>Code File</th>
+                    <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div id="generatedRoutersPath">client/routers/</div></td>
+                    <td><input type="checkbox" class="checkAll" value="routers"/></td>
+                </tr>
+                <tr>
+                    <td><div id="generatedViewsPath">client/views/</div></td>
+                    <td><input type="checkbox" class="checkAll" value="views"/></td>
+                </tr>
+                <tr>
+                    <td><div id="generatedCollectionsPath">lib/collections/</div></td>
+                    <td><input type="checkbox" class="checkAll" value="collections"/></td>
+                </tr>
+                <tr>
+                    <td><div id="generatedControllersPath">lib/controllers/</div></td>
+                    <td><input type="checkbox" class="checkAll" value="controllers"/></td>
+                </tr>
+                <tr>
+                    <td><div id="generatedServerPath">server/</div></td>
+                    <td><input type="checkbox" class="checkAll" value="server"/></td>
+                </tr>
+            </tbody>
+        </table>
+
         <div>
             <div class="buttons">
                 <!--<a href="#" id="btnAddField" class="btn btn-success">Add Field</a>-->
-                <button id="btnSave" type="submit" class="btn btn-primary">Submit</button>        
+                <button id="btnSave" type="submit" class="btn btn-primary">Generate</button>        
             </div>
         </div>
     </form>

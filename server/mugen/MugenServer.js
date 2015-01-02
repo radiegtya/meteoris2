@@ -384,6 +384,15 @@ Meteor.methods({
     "Mugen.generateCollection": function(collection, fields) {
         Mugen.generateCollection(collection, fields);
     },
+    "Mugen.generateView": function(collection, fields) {
+        Mugen.generateView(collection, fields);
+    },
+    "Mugen.generateRouter": function(collection) {
+        Mugen.generateRouter(collection);
+    },
+    "Mugen.generateServer": function(collection) {
+        Mugen.generateServer(collection);
+    },
     "Mugen.generateAll": function(collection, fields) {
         Mugen.generateController(collection, fields);
         Mugen.generateCollection(collection, fields);
