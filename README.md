@@ -17,6 +17,7 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 ###WHAT'S NEW IN V0.9.6
 - bug fixing for issue "too small max length for field name #26". Thanks to @anderson916.
 - mugen enhancement for issue "camel hump collection name support #27". Thanks to @anderson916.
+- mugen now enabling user to choose what they will generate. this also answer for issue about 'boilerplates in general #21'. Thanks to @MercedesAMG1 & @ssteinerx.
 
 ###WHAT'S INSIDE METEORIS?
 
