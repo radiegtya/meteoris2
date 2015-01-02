@@ -25,16 +25,6 @@ String.prototype.toProperCase = function() {
     return results.join(' ');
 };
 
-String.prototype.toLabelCase = function() {
-    var words = this.split(' ');
-    var results = [];
-    for (var i = 0; i < words.length; i++) {
-        var letter = words[i].charAt(0).toUpperCase();
-        results.push(letter + words[i].slice(1) + " ");
-    }
-    return results.join(' ');
-};
-
 Template.mugen_form.events = {
     'keyup #collection': function(e) {
         var collection = $(e.target).val();
@@ -117,7 +107,7 @@ Template.mugen_form.events = {
         for (i = 0; i < names.length; i++) {
             var name = names[i];
             var type = types[i];
-            var label = labels[i] ? labels[i] : names[i].toLabelCase();
+            var label = labels[i] ? labels[i] : names[i].toProperCase();
             var belongToCollection = belongToCollections[i];
             var relationKey = relationKeys[i];
             var isRequired = isRequireds[i].checked ? true : false;
