@@ -59,7 +59,7 @@ var Mugen = {
     },
     /* convert str to collectionCase ex: HeroSkills to heroSkills */
     toCollectionCase: function(str) {
-        var words = this.split(' ');
+        var words = str.split(' ');
         var results = [];
         for (var i = 0; i < words.length; i++) {
             var letter = words[i].charAt(0).toLowerCase();
