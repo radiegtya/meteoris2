@@ -5,16 +5,30 @@ Template.mugen_form.rendered = function() {
 Template.mugen_form.helpers({
 });
 
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-}
+String.prototype.toCollectionCase = function() {
+    var words = this.split(' ');
+    var results = [];
+    for (var i = 0; i < words.length; i++) {
+        var letter = words[i].charAt(0).toLowerCase();
+        results.push(letter + words[i].slice(1));
+    }
+    return results.join(' ');
+};
+
+String.prototype.toProperCase = function() {
+    var words = this.split(' ');
+    var results = [];
+    for (var i = 0; i < words.length; i++) {
+        var letter = words[i].charAt(0).toUpperCase();
+        results.push(letter + words[i].slice(1));
+    }
+    return results.join(' ');
+};
 
 Template.mugen_form.events = {
     'keyup #collection': function(e) {
         var collection = $(e.target).val();
-        $(e.target).val(collection);
+        $(e.target).val(collection.toCollectionCase());
     },
     'click .btnAddField': function(e) {
         e.preventDefault();
@@ -93,7 +107,7 @@ Template.mugen_form.events = {
         for (i = 0; i < names.length; i++) {
             var name = names[i];
             var type = types[i];
-            var label = labels[i] ? labels[i] : toTitleCase(names[i]);
+            var label = labels[i] ? labels[i] : names[i].toProperCase();
             var belongToCollection = belongToCollections[i];
             var relationKey = relationKeys[i];
             var isRequired = isRequireds[i].checked ? true : false;

@@ -46,9 +46,16 @@ var Mugen = {
         return str.replace(new RegExp(find, 'g'), replace);
     },
     toTitleCase: function(str) {
-        return str.replace(/\w\S*/g, function(txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
+//        return str.replace(/\w\S*/g, function(txt) {
+//            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+//        });
+        var words = str.split(' ');
+        var results = [];
+        for (var i = 0; i < words.length; i++) {
+            var letter = words[i].charAt(0).toUpperCase();
+            results.push(letter + words[i].slice(1));
+        }
+        return results.join(' ');
     },
     /* generate your controller from template, then replacing with collection */
     generateController: function(collection, fields) {
