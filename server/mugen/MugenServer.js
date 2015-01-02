@@ -57,6 +57,16 @@ var Mugen = {
         }
         return results.join(' ');
     },
+    /* convert str to collectionCase ex: HeroSkills to heroSkills */
+    toCollectionCase: function(str) {
+        var words = this.split(' ');
+        var results = [];
+        for (var i = 0; i < words.length; i++) {
+            var letter = words[i].charAt(0).toLowerCase();
+            results.push(letter + words[i].slice(1));
+        }
+        return results.join(' ');
+    },
     /* generate your controller from template, then replacing with collection */
     generateController: function(collection, fields) {
         //get controller template content
@@ -67,7 +77,7 @@ var Mugen = {
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(controllerTemplate, "Replacement", this.toTitleCase(collection));
-        content = this.replaceAll(content, "replacement", collection.toLowerCase());
+        content = this.replaceAll(content, "replacement", this.toCollectionCase(collection));
 
         //reformat fields as string, and replacing [criteriaFields]
         var stringFields = "";
@@ -141,7 +151,7 @@ var Mugen = {
     },
     generateView: function(collection, fields) {
         //create directory for views first
-        this.mkdir(this.viewDestinationPath + collection.toLowerCase());
+        this.mkdir(this.viewDestinationPath + this.toCollectionCase(collection));
 
         //================= generate _form ===============//
         //get view template content
@@ -149,14 +159,14 @@ var Mugen = {
         var viewTemplate_formJs = this.read(this.viewTemplatePath + "_form" + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var path_formHtml = this.viewDestinationPath + collection.toLowerCase() + "/_form" + this.viewPrefixHtml;
-        var path_formJs = this.viewDestinationPath + collection.toLowerCase() + "/_form" + this.viewPrefixJs;
+        var path_formHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/_form" + this.viewPrefixHtml;
+        var path_formJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/_form" + this.viewPrefixJs;
 
         //get the content, replace the template with desired collection
         var content_formHtml = this.replaceAll(viewTemplate_formHtml, "Replacement", this.toTitleCase(collection));
-        content_formHtml = this.replaceAll(content_formHtml, "replacement", collection.toLowerCase());
+        content_formHtml = this.replaceAll(content_formHtml, "replacement", this.toCollectionCase(collection));
         var content_formJs = this.replaceAll(viewTemplate_formJs, "Replacement", this.toTitleCase(collection));
-        content_formJs = this.replaceAll(content_formJs, "replacement", collection.toLowerCase());
+        content_formJs = this.replaceAll(content_formJs, "replacement", this.toCollectionCase(collection));
 
         //reformat fields as string, and replace it with [formFields]
         var stringFields = "";
@@ -201,14 +211,14 @@ var Mugen = {
         var viewTemplateindexJs = this.read(this.viewTemplatePath + "index" + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathindexHtml = this.viewDestinationPath + collection.toLowerCase() + "/index" + this.viewPrefixHtml;
-        var pathindexJs = this.viewDestinationPath + collection.toLowerCase() + "/index" + this.viewPrefixJs;
+        var pathindexHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/index" + this.viewPrefixHtml;
+        var pathindexJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/index" + this.viewPrefixJs;
 
         //get the content, replace the template with desired collection
         var contentindexHtml = this.replaceAll(viewTemplateindexHtml, "Replacement", this.toTitleCase(collection));
-        contentindexHtml = this.replaceAll(contentindexHtml, "replacement", collection.toLowerCase());
+        contentindexHtml = this.replaceAll(contentindexHtml, "replacement", this.toCollectionCase(collection));
         var contentindexJs = this.replaceAll(viewTemplateindexJs, "Replacement", this.toTitleCase(collection));
-        contentindexJs = this.replaceAll(contentindexJs, "replacement", collection.toLowerCase());
+        contentindexJs = this.replaceAll(contentindexJs, "replacement", this.toCollectionCase(collection));
 
         //reformat fields as string, and replace it with [thFields]
         var stringFields = "";
@@ -255,14 +265,14 @@ var Mugen = {
         var viewTemplateinsertJs = this.read(this.viewTemplatePath + "insert" + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathinsertHtml = this.viewDestinationPath + collection.toLowerCase() + "/insert" + this.viewPrefixHtml;
-        var pathinsertJs = this.viewDestinationPath + collection.toLowerCase() + "/insert" + this.viewPrefixJs;
+        var pathinsertHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/insert" + this.viewPrefixHtml;
+        var pathinsertJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/insert" + this.viewPrefixJs;
 
         //get the content, replace the template with desired collection
         var contentinsertHtml = this.replaceAll(viewTemplateinsertHtml, "Replacement", this.toTitleCase(collection));
-        contentinsertHtml = this.replaceAll(contentinsertHtml, "replacement", collection.toLowerCase());
+        contentinsertHtml = this.replaceAll(contentinsertHtml, "replacement", this.toCollectionCase(collection));
         var contentinsertJs = this.replaceAll(viewTemplateinsertJs, "Replacement", this.toTitleCase(collection));
-        contentinsertJs = this.replaceAll(contentinsertJs, "replacement", collection.toLowerCase());
+        contentinsertJs = this.replaceAll(contentinsertJs, "replacement", this.toCollectionCase(collection));
 
         //finally write it
         this.write(pathinsertHtml, contentinsertHtml);
@@ -275,14 +285,14 @@ var Mugen = {
         var viewTemplateupdateJs = this.read(this.viewTemplatePath + "update" + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathupdateHtml = this.viewDestinationPath + collection.toLowerCase() + "/update" + this.viewPrefixHtml;
-        var pathupdateJs = this.viewDestinationPath + collection.toLowerCase() + "/update" + this.viewPrefixJs;
+        var pathupdateHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/update" + this.viewPrefixHtml;
+        var pathupdateJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/update" + this.viewPrefixJs;
 
         //get the content, replace the template with desired collection
         var contentupdateHtml = this.replaceAll(viewTemplateupdateHtml, "Replacement", this.toTitleCase(collection));
-        contentupdateHtml = this.replaceAll(contentupdateHtml, "replacement", collection.toLowerCase());
+        contentupdateHtml = this.replaceAll(contentupdateHtml, "replacement", this.toCollectionCase(collection));
         var contentupdateJs = this.replaceAll(viewTemplateupdateJs, "Replacement", this.toTitleCase(collection));
-        contentupdateJs = this.replaceAll(contentupdateJs, "replacement", collection.toLowerCase());
+        contentupdateJs = this.replaceAll(contentupdateJs, "replacement", this.toCollectionCase(collection));
 
         //finally write it
         this.write(pathupdateHtml, contentupdateHtml);
@@ -295,14 +305,14 @@ var Mugen = {
         var viewTemplateviewJs = this.read(this.viewTemplatePath + "view" + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathviewHtml = this.viewDestinationPath + collection.toLowerCase() + "/view" + this.viewPrefixHtml;
-        var pathviewJs = this.viewDestinationPath + collection.toLowerCase() + "/view" + this.viewPrefixJs;
+        var pathviewHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/view" + this.viewPrefixHtml;
+        var pathviewJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/view" + this.viewPrefixJs;
 
         //get the content, replace the template with desired collection
         var contentviewHtml = this.replaceAll(viewTemplateviewHtml, "Replacement", this.toTitleCase(collection));
-        contentviewHtml = this.replaceAll(contentviewHtml, "replacement", collection.toLowerCase());
+        contentviewHtml = this.replaceAll(contentviewHtml, "replacement", this.toCollectionCase(collection));
         var contentviewJs = this.replaceAll(viewTemplateviewJs, "Replacement", this.toTitleCase(collection));
-        contentviewJs = this.replaceAll(contentviewJs, "replacement", collection.toLowerCase());
+        contentviewJs = this.replaceAll(contentviewJs, "replacement", this.toCollectionCase(collection));
 
         //reformat fields as string, and replace it with [trFields]
         var stringFields = "";
@@ -335,11 +345,11 @@ var Mugen = {
         var routerTemplate = this.read(this.routerTemplatePath);
 
         //get destinationPath, and set the file name
-        var path = this.routerDestinationPath + collection.toLowerCase() + this.routerPrefix;
+        var path = this.routerDestinationPath + this.toCollectionCase(collection) + this.routerPrefix;
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(routerTemplate, "Replacement", this.toTitleCase(collection));
-        content = this.replaceAll(content, "replacement", collection.toLowerCase());
+        content = this.replaceAll(content, "replacement", this.toCollectionCase(collection));
 
         //finally write it
         this.write(path, content);
@@ -354,7 +364,7 @@ var Mugen = {
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(serverTemplate, "Replacement", this.toTitleCase(collection));
-        content = this.replaceAll(content, "replacement", collection.toLowerCase());
+        content = this.replaceAll(content, "replacement", this.toCollectionCase(collection));
 
         //finally write it
         this.write(path, content);
