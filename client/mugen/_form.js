@@ -14,7 +14,7 @@ function toTitleCase(str) {
 Template.mugen_form.events = {
     'keyup #collection': function(e) {
         var collection = $(e.target).val();
-        $(e.target).val(collection.toLowerCase());
+        $(e.target).val(collection);
     },
     'click .btnAddField': function(e) {
         e.preventDefault();

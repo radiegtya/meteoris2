@@ -96,7 +96,7 @@ var Mugen = {
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(collectionTemplate, "Replacement", this.toTitleCase(collection));
-        content = this.replaceAll(content, "replacement", collection.toLowerCase());
+        content = this.replaceAll(content, "replacement", collection);
 
         //reformat fields as string, and replace it with [mugenCollectionFields]
         var stringFields = "";
