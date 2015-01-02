@@ -79,7 +79,7 @@ Template.mugen_form.events = {
         }
 
         //regex match collection to avoid field break generate
-        var collectionMatch = collection.match(/^[a-z0-9A-Z_]{3,15}$/);
+        var collectionMatch = collection.match(/^[a-z0-9A-Z_]{2,30}$/);
         if (!collectionMatch) {
             var errMessage = "Collection name can't contain any of the following characters \ / : * ? < > |";
             MeteorisFlash.set('danger', errMessage);
