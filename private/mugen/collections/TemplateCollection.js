@@ -60,13 +60,16 @@ Replacement.attachSchema(schemas);
 
 Replacement.allow({
     insert: function(userId, doc) {
-        return userId ? true : false;
+        var result = Meteor.call('MugenRoleActions.getRoles', 'replacement', 'insert');
+        return result;
     },
     update: function(userId, doc) {
-        return doc && doc.createdUserId === userId;
+        var result = Meteor.call('MugenRoleActions.getRoles', 'replacement', 'update');
+        return result;
     },
     remove: function(userId, doc) {
-        return doc && doc.createdUserId === userId;
+        var result = Meteor.call('MugenRoleActions.getRoles', 'replacement', 'remove');
+        return result;
     },
 });
 

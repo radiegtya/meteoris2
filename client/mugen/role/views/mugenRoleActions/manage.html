@@ -3,7 +3,7 @@
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'mugenRoleActionsIndex'}}">Mugen Role Actions</a></li>
+            <li><a href="{{pathFor 'mugenRoleActionsManage'}}">Mugen Role Actions</a></li>
             <li class="active">index</li>
         </ol>
 
@@ -14,17 +14,17 @@
 
         <div class="toolbar">
             <div class="pull-left">
-                <div class="input-group">
-                    <select class="form-control" id="mugenRoleCollectionId">
-                        <option value="">-- Choose Collection --</option>
-                        {{#each mugenRoleCollections}}
-                        <option value="{{_id}}">{{name}}</option>
-                        {{/each}}
-                    </select>
+                <div class="input-group">                    
                     <select class="form-control" id="mugenRoleGroupId">
                         <option value="">-- Choose Group --</option>
                         <option value="*">*</option>
                         {{#each mugenRoleGroups}}
+                        <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                    <select class="form-control" id="mugenRoleCollectionId">
+                        <option value="">-- Choose Collection --</option>
+                        {{#each mugenRoleCollections}}
                         <option value="{{_id}}">{{name}}</option>
                         {{/each}}
                     </select>
@@ -62,8 +62,8 @@
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>                                 
                         <td>{{name}}</td>               
                         <td>
-<!--                            <a href="{{pathFor 'mugenRoleActionsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
-                            <a href="{{pathFor 'mugenRoleActionsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>-->
+                            <!--                            <a href="{{pathFor 'mugenRoleActionsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                                        <a href="{{pathFor 'mugenRoleActionsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>-->
                             <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                     </tr>
