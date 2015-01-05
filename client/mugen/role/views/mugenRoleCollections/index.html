@@ -39,7 +39,7 @@
                         <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Name</th>
 
                         <!--<th>Image</th>-->                    
-                        <th>Created by</th>                    
+                        <!--<th>Created by</th>-->                    
                         <th style="width: 145px;">Actions</th>
                     </tr>
                 </thead>
@@ -50,7 +50,7 @@
                         <td>{{name}}</td>
 
                         <!--<td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>-->
-                        <td>{{createdUser.profile.name}}</td>
+                        <!--<td>{{createdUser.profile.name}}</td>-->
                         <td>
                             <a href="{{pathFor 'mugenRoleCollectionsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
                             <a href="{{pathFor 'mugenRoleCollectionsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
