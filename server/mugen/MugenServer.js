@@ -381,7 +381,7 @@ var Mugen = {
                         '},\n';
             }
         });
-        content = content.replace("[collectionHelpers]", stringFields);
+        content = content.replace("[serverPublishedChildren]", stringFields);
 
         //finally write it
         this.write(path, content);
