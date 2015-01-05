@@ -17,6 +17,7 @@ Meteor.publishComposite('replacement', function(doc, sort) {
                     });
                 }
             },
+            [serverPublishedChildren]
         ],
     }
 });
@@ -33,11 +34,11 @@ Meteor.methods({
 
 /* observing collection */
 /* uncomment to use
-var query = Replacement.find({});
-var handle = query.observe({
-    removed: function(model) {
-        //removing related image, when post removed
-        Images.remove(model.imageId);
-    }
-});
-*/
+ var query = Replacement.find({});
+ var handle = query.observe({
+ removed: function(model) {
+ //removing related image, when post removed
+ Images.remove(model.imageId);
+ }
+ });
+ */

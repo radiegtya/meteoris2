@@ -355,7 +355,7 @@ var Mugen = {
         this.write(path, content);
     },
     /* generate your controller from template, then replacing with collection */
-    generateServer: function(collection) {
+    generateServer: function(collection, fields) {
         //get server template content
         var serverTemplate = this.read(this.serverTemplatePath);
 
@@ -365,6 +365,23 @@ var Mugen = {
         //get the content, replace the template with desired collection
         var content = this.replaceAll(serverTemplate, "Replacement", this.toTitleCase(collection));
         content = this.replaceAll(content, "replacement", this.toCollectionCase(collection));
+
+        //reformat fields as string, and replace it with [mugenCollectionHelpers]
+        var stringFields = "";
+        fields.forEach(function(obj) {
+            var name = obj.name;
+            var belongToCollection = obj.belongToCollection;            
+            if (belongToCollection) {
+                stringFields +=
+                        '/* return all related ' + belongToCollection + ' */\n' +
+                        '{\n' +
+                        'find: function(collection) {\n' +
+                        'return ' + belongToCollection + '.find(collection.' + name + ');' +
+                        '}\n' +
+                        '},\n';
+            }
+        });
+        content = content.replace("[collectionHelpers]", stringFields);
 
         //finally write it
         this.write(path, content);
@@ -390,14 +407,14 @@ Meteor.methods({
     "Mugen.generateRouter": function(collection) {
         Mugen.generateRouter(collection);
     },
-    "Mugen.generateServer": function(collection) {
-        Mugen.generateServer(collection);
+    "Mugen.generateServer": function(collection, fields) {
+        Mugen.generateServer(collection, fields);
     },
     "Mugen.generateAll": function(collection, fields) {
         Mugen.generateController(collection, fields);
         Mugen.generateCollection(collection, fields);
         Mugen.generateView(collection, fields);
         Mugen.generateRouter(collection);
-        Mugen.generateServer(collection);
+        Mugen.generateServer(collection, fields);
     },
 });

@@ -171,7 +171,7 @@ Template.mugen_form.events = {
                                 MeteorisFlash.set('danger', err.reason);
                         });
                     } else if (checkedGeneratedList == 'server') {
-                        Meteor.call("Mugen.generateServer", collection, function(err) {
+                        Meteor.call("Mugen.generateServer", collection, fields, function(err) {
                             if (err)
                                 MeteorisFlash.set('danger', err.reason);
                         });
