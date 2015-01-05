@@ -1,0 +1,12 @@
+<template name="mugenRoleCollections_form">
+    <form id="mugenRoleCollections_form"> 
+        <div class="form-group {{#if error 'name'}}has-error{{/if}}">
+            <label for="name" class="control-label">Name *</label>
+            <input type="text" id="name" value="{{name}}" placeholder="Name" class="form-control">
+            <span class="help-block">{{error "name"}}</span>
+        </div>
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'mugenRoleCollectionsIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

@@ -1,0 +1,19 @@
+<template name="mugenRoleCollectionsUpdate">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'mugenRoleCollectionsIndex'}}">Mugen Role Collections</a></li>
+            <li class="active">update</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Update Mugen Role Collections</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> mugenRoleCollections_form model}}  
+        </div>        
+    </div>
+</template>

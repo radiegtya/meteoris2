@@ -1,0 +1,66 @@
+<template name="mugenRoleGroupsIndex">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'mugenRoleGroupsIndex'}}">Mugen Role Groups</a></li>
+            <li class="active">index</li>
+        </ol>
+
+        <div class="title">
+            <h3 class="pull-left">Mugen Role Groups</h3>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="toolbar">
+            <div class="pull-left">
+                <a class="btn btn-success" href="{{pathFor 'mugenRoleGroupsInsert'}}">Insert</a>
+                <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
+            </div>   
+            <div class="quick-search pull-right col-xs-12 col-md-3">
+                <div class="input-group">
+                    <input type="text" id="search" class="form-control" placeholder="Type Here to Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        {{#if isEmpty}}
+        <p>No Data Found</p>
+        {{else}}
+        <div class=" table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
+                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Name</th>
+                        <th style="width: 145px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each models}}
+                    <tr>
+                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <td>{{name}}</td>
+                        <td>
+                            <a href="{{pathFor 'mugenRoleGroupsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
+                            <a href="{{pathFor 'mugenRoleGroupsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                            <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#if hasMore}}
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
+        {{/if}}
+    </div>
+</template>

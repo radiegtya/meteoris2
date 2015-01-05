@@ -1,0 +1,33 @@
+<template name="mugenRoleActions_form">
+    <form id="mugenRoleActions_form"> 
+        <div class="form-group {{#if error 'name'}}has-error{{/if}}">
+            <label for="name" class="control-label">Name *</label>
+            <input type="text" id="name" value="{{name}}" placeholder="Name" class="form-control">
+            <span class="help-block">{{error "name"}}</span>
+        </div>
+        <div class="form-group {{#if error 'mugenRoleGroupId'}}has-error{{/if}}">
+            <label for="mugenRoleGroupId" class="control-label">Mugen Role Group </label>
+            <select class="form-control" id="mugenRoleGroupId">
+                <option value=""></option>
+                {{#each mugenRoleGroups}}
+                <option value="{{_id}}" {{isSelected ../mugenRoleGroupId}}>{{name}}</option>
+                {{/each}}
+            </select>
+            <span class="help-block">{{error "mugenRoleGroupId"}}</span>
+        </div>
+        <div class="form-group {{#if error 'mugenRoleCollectionId'}}has-error{{/if}}">
+            <label for="mugenRoleCollectionId" class="control-label">Mugen Role Collection *</label>
+            <select class="form-control" id="mugenRoleCollectionId">
+                <option value=""></option>
+                {{#each mugenRoleCollections}}
+                <option value="{{_id}}" {{isSelected ../mugenRoleCollectionId}}>{{name}}</option>
+                {{/each}}
+            </select>
+            <span class="help-block">{{error "mugenRoleCollectionId"}}</span>
+        </div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'mugenRoleActionsIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

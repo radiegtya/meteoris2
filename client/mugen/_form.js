@@ -122,9 +122,9 @@ Template.mugen_form.events = {
                 var isRequired = isRequireds[i].checked ? true : false;
 
                 //regex match name to avoid field break generate
-                var nameMatch = name.match(/^[a-z0-9A-Z_]{3,15}$/);
+                var nameMatch = name.match(/^[a-z0-9A-Z_]{2,30}$/);
                 if (!nameMatch) {
-                    var errMessage = "Field Name can't contain any of the following characters \ / : * ? < > |";
+                    var errMessage = "Field (" + (i + 1) + ") Name can't contain any of the following characters \ / : * ? < > |";
                     MeteorisFlash.set('danger', errMessage);
                     throw new Meteor.Error(errMessage);
                 }
@@ -139,39 +139,45 @@ Template.mugen_form.events = {
                 });
             }
 
-            // loop over generated check lists
-            for (var i = 0; i < checkboxes.length; i++) {
-                // And stick the checked ones onto an array...
-                if (checkboxes[i].checked) {
-                    var checkedGeneratedList = $(checkboxes[i]).val();
-                    if (checkedGeneratedList == 'routers') {
-                        Meteor.call("Mugen.generateRouter", collection, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'views') {
-                        Meteor.call("Mugen.generateView", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'collections') {
-                        Meteor.call("Mugen.generateCollection", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'controllers') {
-                        Meteor.call("Mugen.generateController", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'server') {
-                        Meteor.call("Mugen.generateServer", collection, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    }
-                }
-            }
+            //insert into mugenRoleCollections & mugenRoleActions automatically
+            Meteor.call('MugenRoleCollections.autoInsert', {name: collection}, function(err) {
+                if (err)
+                    MeteorisFlash.set('danger', err.reason);
+            });
+
+//            // loop over generated check lists
+//            for (var i = 0; i < checkboxes.length; i++) {
+//                // And stick the checked ones onto an array...
+//                if (checkboxes[i].checked) {
+//                    var checkedGeneratedList = $(checkboxes[i]).val();
+//                    if (checkedGeneratedList == 'routers') {
+//                        Meteor.call("Mugen.generateRouter", collection, function(err) {
+//                            if (err)
+//                                MeteorisFlash.set('danger', err.reason);
+//                        });
+//                    } else if (checkedGeneratedList == 'views') {
+//                        Meteor.call("Mugen.generateView", collection, fields, function(err) {
+//                            if (err)
+//                                MeteorisFlash.set('danger', err.reason);
+//                        });
+//                    } else if (checkedGeneratedList == 'collections') {
+//                        Meteor.call("Mugen.generateCollection", collection, fields, function(err) {
+//                            if (err)
+//                                MeteorisFlash.set('danger', err.reason);
+//                        });
+//                    } else if (checkedGeneratedList == 'controllers') {
+//                        Meteor.call("Mugen.generateController", collection, fields, function(err) {
+//                            if (err)
+//                                MeteorisFlash.set('danger', err.reason);
+//                        });
+//                    } else if (checkedGeneratedList == 'server') {
+//                        Meteor.call("Mugen.generateServer", collection, function(err) {
+//                            if (err)
+//                                MeteorisFlash.set('danger', err.reason);
+//                        });
+//                    }
+//                }
+//            }
             MeteorisFlash.set('success', 'Success generating code!');
         }
     },

@@ -1,0 +1,19 @@
+<template name="mugenRoleGroupsInsert">    
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'mugenRoleGroupsIndex'}}">Mugen Role Groups</a></li>
+            <li class="active">insert</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Insert Mugen Role Groups</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> mugenRoleGroups_form}}  
+        </div>        
+    </div>
+</template>
