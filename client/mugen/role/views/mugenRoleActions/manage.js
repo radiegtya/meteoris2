@@ -1,7 +1,13 @@
-Template.mugenRoleActionsIndex.helpers({
+Template.mugenRoleActionsManage.helpers({
+    mugenRoleGroups: function() {
+        return MugenRoleGroups.find({}, {sort: {name: 1}});
+    },
+    mugenRoleCollections: function() {
+        return MugenRoleCollections.find({}, {sort: {name: 1}});
+    },
 });
 
-Template.mugenRoleActionsIndex.events = {
+Template.mugenRoleActionsManage.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
         if (confirm("Are you sure want to remove this data?"))
@@ -10,18 +16,6 @@ Template.mugenRoleActionsIndex.events = {
     /* sorting by parameter */
     'click #btnSortname': function(e) {
         MeteorisGridView.sort('name');
-    },
-    /* sorting by parameter */
-    'click #btnSortmugenRoleGroupId': function(e) {
-        MeteorisGridView.sort('mugenRoleGroupId');
-    },
-    /* sorting by parameter */
-    'click #btnSortmugenRoleCollectionId': function(e) {
-        MeteorisGridView.sort('mugenRoleCollectionId');
-    },
-    'keyup #search': function(e, t) {
-        e.preventDefault();
-        Router.current().search(t);
     },
     /* check all checkbox */
     'change #checkAll': function(e) {
@@ -59,4 +53,13 @@ Template.mugenRoleActionsIndex.events = {
         //set checkAll header to uncheck
         $('#checkAll').attr("checked", false);
     },
+    'click #btnSearchManage': function(e, t){
+        e.preventDefault();
+        Router.current().searchManage(t);
+    },
+    'click #btnInsertManage': function(e, t){
+        e.preventDefault();
+        Router.current().insertManage(t);   
+        Router.current().searchManage(t);
+    }
 };

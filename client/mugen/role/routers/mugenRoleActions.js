@@ -8,6 +8,11 @@ if (App.activateMugen) {
         controller: MugenRoleActionsController,
         action: 'index',
     });
+    Router.route('mugenRoleActions/manage/:limit?/', {
+        name: 'mugenRoleActionsManage',
+        controller: MugenRoleActionsController,
+        action: 'manage',
+    });
     Router.route('mugenRoleActions/insert/', {
         name: 'mugenRoleActionsInsert',
         controller: MugenRoleActionsController,
