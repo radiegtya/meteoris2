@@ -41,6 +41,36 @@ Meteor.methods({
             _id: _id,
         }
     },
+    "MugenRoleActions.getRoles": function(collection, action) {
+        var mugenRoleCollection = MugenRoleCollections.findOne({name: collection});
+        var mugenRoleCollectionId = null;
+        if (mugenRoleCollection)
+            mugenRoleCollectionId = mugenRoleCollection._id;
+        var mugenRoleGroupId = Meteor.user() ? Meteor.user().profile.mugenRoleGroupId : null;
+
+        var isAuthenticated = false;
+        //if current path is "/" or "mugen" then make it true
+        if (collection == "" || collection == "mugenRoleActions" || collection == "mugenRoleCollections" || collection == "mugenRoleGroups") {
+            isAuthenticated = true;
+            console.log("masuk 1")
+        } else if (mugenRoleCollectionId) {
+            var orArray = [
+                {mugenRoleGroupId: {$exists: false}},
+                {mugenRoleGroupId: null},
+                {mugenRoleGroupId: ""},
+            ];
+            if (mugenRoleGroupId)
+                orArray.push({mugenRoleGroupId: mugenRoleGroupId});
+            var mugenRoleAction = MugenRoleActions.findOne({mugenRoleCollectionId: mugenRoleCollectionId, name: action,
+                $or: orArray
+            });
+            if (mugenRoleAction)
+                isAuthenticated = true;
+            console.log("masuk 2")
+        }
+
+        return isAuthenticated;
+    },
 });
 
 /* observing collection */

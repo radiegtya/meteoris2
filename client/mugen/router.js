@@ -1,5 +1,5 @@
-Router.route('mugen', {
-    name: 'mugenInsert',
-});
-
-
+if (App.activateMugen) {
+    Router.route('mugen', {
+        name: 'mugenInsert',
+    });
+}

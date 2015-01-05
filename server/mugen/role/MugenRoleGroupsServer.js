@@ -35,8 +35,8 @@ Meteor.methods({
 Meteor.startup(function() {
     var mugenRoleGroups = MugenRoleGroups.find();
     if (mugenRoleGroups.count() == 0) {
-        MugenRoleGroups.insert({name: "@", createdUserId: null, updatedUserId: null});
-        MugenRoleGroups.insert({name: "admin", createdUserId: null, updatedUserId: null});
+        MugenRoleGroups.insert({_id: "1", name: "admin", createdUserId: null, updatedUserId: null});
+        MugenRoleGroups.insert({_id: "2", name: "@", createdUserId: null, updatedUserId: null});        
     }
 });
 

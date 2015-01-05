@@ -8,7 +8,7 @@
         <div class="form-group {{#if error 'mugenRoleGroupId'}}has-error{{/if}}">
             <label for="mugenRoleGroupId" class="control-label">Mugen Role Group </label>
             <select class="form-control" id="mugenRoleGroupId">
-                <option value=""></option>
+                <option value="">*</option>
                 {{#each mugenRoleGroups}}
                 <option value="{{_id}}" {{isSelected ../mugenRoleGroupId}}>{{name}}</option>
                 {{/each}}
