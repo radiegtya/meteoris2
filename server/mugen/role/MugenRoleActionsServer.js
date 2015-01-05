@@ -49,10 +49,9 @@ Meteor.methods({
         var mugenRoleGroupId = Meteor.user() ? Meteor.user().profile.mugenRoleGroupId : null;
 
         var isAuthenticated = false;
-        //if current path is "/" or "mugen" then make it true
-        if (collection == "" || collection == "mugenRoleActions" || collection == "mugenRoleCollections" || collection == "mugenRoleGroups") {
+        //if current path is "/" or "mugen" or "user/login | user/register" then make it true
+        if (collection == "" || collection == "mugenRoleActions" || collection == "mugenRoleCollections" || collection == "mugenRoleGroups" || collection == 'users' && action == 'login' || collection == 'users' && action == 'register') {
             isAuthenticated = true;
-            console.log("masuk 1")
         } else if (mugenRoleCollectionId) {
             var orArray = [
                 {mugenRoleGroupId: {$exists: false}},
@@ -66,7 +65,6 @@ Meteor.methods({
             });
             if (mugenRoleAction)
                 isAuthenticated = true;
-            console.log("masuk 2")
         }
 
         return isAuthenticated;
