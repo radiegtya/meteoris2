@@ -16,6 +16,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
                     <li><a href="{{pathFor 'postsIndex'}}">Posts</a></li>
+                    {{#if app 'activateMugen'}}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mugen <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -27,6 +28,7 @@
                             <!--<li><a href="{{pathFor 'mugenRoleActions'}}">Role Actions</a></li>-->
                         </ul>
                     </li>
+                    {{/if}}
                     <li class="dropdown">
                         {{#if currentUser}}
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.profile.name}} <span class="caret"></span></a>

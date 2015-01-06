@@ -42,6 +42,15 @@ Meteor.methods({
     },
 });
 
+/* auto insert into mugenRoleCollections "posts" and "meteor.users" when collection still empty */
+Meteor.startup(function() {
+    var mugenRoleCollections = MugenRoleCollections.find();
+    if (mugenRoleCollections.count() == 0) {
+        MugenRoleCollections.insert({_id: "1", name: "users"});
+        MugenRoleCollections.insert({_id: "2", name: "posts"});        
+    }
+});
+
 /* observing collection */
 /* uncomment to use
 var query = MugenRoleCollections.find({});

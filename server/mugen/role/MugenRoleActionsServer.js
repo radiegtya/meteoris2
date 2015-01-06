@@ -71,6 +71,28 @@ Meteor.methods({
     },
 });
 
+/* auto insert into mugenRoleActions "posts" and "meteor.users" when collection still empty */
+Meteor.startup(function() {
+    var mugenRoleActions = MugenRoleActions.find();
+    if (mugenRoleActions.count() == 0) {
+        //meteor.users
+        MugenRoleActions.insert({name: "index", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});
+        MugenRoleActions.insert({name: "view", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});        
+        MugenRoleActions.insert({name: "insert", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});        
+        MugenRoleActions.insert({name: "update", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});        
+        MugenRoleActions.insert({name: "remove", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});                
+        //posts
+        MugenRoleActions.insert({name: "index", mugenRoleCollectionId: "2"});
+        MugenRoleActions.insert({name: "view", mugenRoleCollectionId: "2"});        
+        MugenRoleActions.insert({name: "insert", mugenRoleCollectionId: "2", mugenRoleGroupId:"1"});        
+        MugenRoleActions.insert({name: "update", mugenRoleCollectionId: "2", mugenRoleGroupId:"1"});        
+        MugenRoleActions.insert({name: "remove", mugenRoleCollectionId: "2", mugenRoleGroupId:"1"});        
+        MugenRoleActions.insert({name: "insert", mugenRoleCollectionId: "2", mugenRoleGroupId:"2"});        
+        MugenRoleActions.insert({name: "update", mugenRoleCollectionId: "2", mugenRoleGroupId:"2"});        
+        MugenRoleActions.insert({name: "remove", mugenRoleCollectionId: "2", mugenRoleGroupId:"2"});        
+    }
+});
+
 /* observing collection */
 /* uncomment to use
  var query = MugenRoleActions.find({});

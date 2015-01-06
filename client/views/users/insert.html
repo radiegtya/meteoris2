@@ -1,0 +1,18 @@
+<template name="usersInsert">    
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
+            <li class="active">insert</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Insert User</h3>
+            </div>
+            <div class="clearfix"></div>
+            {{> users_form}}  
+        </div>        
+    </div>
+</template>

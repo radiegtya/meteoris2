@@ -1,39 +1,11 @@
-<template name="mugenRoleGroupsView">
+<template name="usersIndex">
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'mugenRoleGroupsIndex'}}">Mugen Role Groups</a></li>
-            <li class="active">view</li>
+            <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
+            <li class="active">index</li>
         </ol>
-
-        {{#with model}}
-        <div class="title">
-            <h3 class="pull-left">View Mugen Role Groups #{{_id}}</h3>
-            <div class="toolbar pull-right">
-                <a href="{{pathFor 'mugenRoleGroupsIndex'}}" class="btn btn-default">Back</a> 
-                <a href="{{pathFor 'mugenRoleGroupsUpdate'}}" class="btn btn-info">Update</a>
-                <a id="btnRemove" class="btn btn-danger">Remove</a>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <td><b>Name</b></td>
-                    <td>{{name}}</td>
-                </tr>
-                <tr>
-                    <td><b>Created at</b></td>
-                    <td>{{meteorisFormatter "dateTime" createdAt}}</td>
-                </tr>                
-                <tr>
-                    <td><b>Updated at</b></td>
-                    <td>{{meteorisFormatter "dateTime" updatedAt}}</td>
-                </tr>                
-            </tbody>
-        </table>        
-        {{/with}}
 
         <div class="title">
             <h3 class="pull-left">Users</h3>
@@ -43,7 +15,7 @@
         <div class="toolbar">
             <div class="pull-left">
                 <a class="btn btn-success" href="{{pathFor 'usersInsert'}}">Insert</a>
-                <!--<a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>-->
+                <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
             </div>   
             <div class="quick-search pull-right col-xs-12 col-md-3">
                 <div class="input-group">
@@ -64,24 +36,24 @@
                 <thead>
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
-                        <th>Email</th>
-                        <th>Name</th>
+                        <th id="btnSortEmail" class="{{meteorisGridViewSortClass 'email'}}">Email</th>
+                        <th id="btnSortName" class="{{meteorisGridViewSortClass 'name'}}">Name</th>
                         <th>Created At</th>
-                        <!--<th style="width: 145px;">Actions</th>-->
+                        <th style="width: 145px;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each users}}
+                    {{#each models}}
                     <tr>
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{emails.[0].address}}</td>
                         <td>{{profile.name}}</td>
                         <td>{{meteorisFormatter 'date' createdAt}}</td>
-<!--                        <td>
+                        <td>
                             <a href="{{pathFor 'usersView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
                             <a href="{{pathFor 'usersUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
                             <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>-->
+                        </td>
                     </tr>
                     {{/each}}
                 </tbody>

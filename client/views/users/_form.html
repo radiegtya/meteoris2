@@ -1,0 +1,22 @@
+<template name="users_form">
+    <form id="posts_form">        
+        <div class="form-group {{#if error 'email'}}has-error{{/if}}">
+            <label for="email" class="control-label">Title *</label>
+            <input type="text" id="email" value="{{email}}" placeholder="Title" class="form-control" autofocus="true">
+            <span class="help-block">{{error "email"}}</span>
+        </div>
+        <div class="form-group {{#if error 'content'}}has-error{{/if}}">
+            <label for="content" class="control-label">Content *</label>
+            <textarea id="content" class="form-control" rows="3" placeholder="Content">{{content}}</textarea>
+            <span class="help-block">{{error "content"}}</span>
+        </div>
+        <div class="form-group {{#if error 'image'}}has-error{{/if}}">
+            <label for="image" class="control-label">File</label>
+            <input type="file" id="image" class="form-control">
+            <span class="help-block">{{error "image"}}</span>
+        </div>
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'postsIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+
