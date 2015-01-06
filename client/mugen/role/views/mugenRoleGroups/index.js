@@ -1,5 +1,4 @@
 Template.mugenRoleGroupsIndex.helpers({
-
 });
 
 Template.mugenRoleGroupsIndex.events = {
@@ -9,13 +8,12 @@ Template.mugenRoleGroupsIndex.events = {
             Router.current().remove(this._id);
     },
     /* sorting by parameter */
-'click #btnSortname': function(e) {
-MeteorisGridView.sort('name');
-},
-
+    'click #btnSortname': function(e) {
+        MeteorisGridView.sort('name');
+    },
     'keyup #search': function(e, t) {
         e.preventDefault();
-        Router.current().search(t);        
+        Router.current().search(t);
     },
     /* check all checkbox */
     'change #checkAll': function(e) {

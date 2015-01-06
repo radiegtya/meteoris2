@@ -6,6 +6,10 @@ Template.mugenRoleGroupsView.events = {
             Router.go("mugenRoleGroupsIndex")
         }
     },
+    'keyup #search': function(e, t) {
+        e.preventDefault();
+        Router.current().searchUser(t);
+    },
 };
 
 Template.mugenRoleGroupsView.helpers({

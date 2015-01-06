@@ -8,7 +8,7 @@ ReplacementController = MeteorisController.extend({
     },
     /* event searching data by user input with parameter */
     search: function(t) {
-        Router.go('replacementIndex', {limit: this.limit()}, {query: "q=" + t.find('#search').value});
+        Router.go(Router.current().route.getName(), {limit: this.limit()}, {query: "q=" + t.find('#search').value});
     },
     /* @override getCriteria */
     getCriteria: function() {
