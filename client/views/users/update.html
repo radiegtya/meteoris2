@@ -1,0 +1,45 @@
+<template name="usersUpdate">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
+            <li class="active">update</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Update User</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{#with model}} 
+            <form id="users_form">        
+                <div class="form-group">
+                    <label for="email" class="control-label">Email *</label>
+                    <input type="text" id="email" value="{{emails.[0].address}}" placeholder="Email" class="form-control" autofocus="true">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="mugenRoleGroupId" class="control-label">Mugen Role Group</label>
+                    <select class="form-control" id="mugenRoleGroupId">
+                        <option value="">*</option>
+                        {{#each mugenRoleGroups}}
+                        <option value="{{_id}}" {{isSelected ../profile.mugenRoleGroupId}}>{{name}}</option>
+                        {{/each}}
+                    </select>
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="control-label">Name</label>
+                    <input type="text" id="name" value="{{profile.name}}" placeholder="Name" class="form-control">
+                    <span class="help-block"></span>
+                </div>
+                <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+                <a href="{{pathFor 'usersIndex'}}" class="btn btn-default">Back</a>                        
+            </form>
+            {{/with}}
+            
+        </div>           
+    </div>
+</template>
