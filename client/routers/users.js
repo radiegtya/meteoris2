@@ -30,4 +30,9 @@ Router.route('users/view/:_id?/', {
     controller: UsersController,
     action: 'view'
 });
+Router.route('users/profile/:_id?/', {
+    name: 'usersProfile',
+    controller: UsersController,
+    action: 'profile'
+});
 /* EOF USERS */

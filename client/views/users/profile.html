@@ -1,0 +1,64 @@
+<template name="usersProfile">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
+            <li class="active">view</li>
+        </ol>
+
+        {{#with model}}
+        <div class="title">
+            <h3 class="pull-left">User Profile #{{_id}}</h3>
+        </div>
+        <div class="clearfix"></div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><b>Email</b></td>
+                    <td>{{emails.[0].address}}</td>
+                </tr>
+                <tr>
+                    <td><b>Mugen Role Group</b></td>
+                    <td>{{mugenRoleGroup.name}}</td>
+                </tr>    
+                <tr>
+                    <td><b>Created at</b></td>
+                    <td>{{meteorisFormatter "dateTime" createdAt}}</td>
+                </tr>                            
+            </tbody>
+        </table>        
+        <hr/>
+
+        <h4>Change Profile</h4>
+
+        <form id="change_profile_form">        
+            <div class="form-group">
+                <label for="name" class="control-label">Name *</label>
+                <input type="text" id="name" value="{{profile.name}}" placeholder="Name" class="form-control">
+            </div>            
+            <button id="btnChangeProfile" type="submit" class="btn btn-success">Submit</button>                
+        </form>
+
+        {{/with}}
+        <hr/>
+
+        <h4>Change Password</h4>
+
+        <form id="change_password_form">        
+            <div class="form-group">
+                <label for="oldPassword" class="control-label">Old Password *</label>
+                <input type="password" id="oldPassword" placeholder="Old Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="newPassword" class="control-label">New Password *</label>
+                <input type="password" id="newPassword" placeholder="New Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirmNewPassword" class="control-label">Confirm New Password *</label>
+                <input type="password" id="confirmNewPassword" placeholder="Confirm New Password" class="form-control">
+            </div>
+            <button id="btnChangePassword" type="submit" class="btn btn-success">Submit</button>                
+        </form>
+    </div>
+</template>
