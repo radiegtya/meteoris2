@@ -70,3 +70,26 @@ function get_visitor_ip(uid) {
     }
     return ret.forwardedFor ? ret.forwardedFor : ret.remoteAddress;
 }
+
+/* auto insert into Meteor.users "@" and "admin" when collection still empty */
+Meteor.startup(function() {
+    var users = Meteor.users.find();
+    if (users.count() == 0) {
+        Accounts.createUser({
+            email: "admin@meteoris.me",
+            password: "admin",
+            profile:{
+                name: "admin",
+                mugenRoleGroupId: "1"
+            }
+        });
+        Accounts.createUser({
+            email: "demo@meteoris.me",
+            password: "demo",
+            profile:{
+                name: "demo",
+                mugenRoleGroupId: "2"
+            }
+        });
+    }
+});

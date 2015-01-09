@@ -37,6 +37,7 @@
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
                         <th id="btnSortEmail" class="{{meteorisGridViewSortClass 'email'}}">Email</th>
+                        <th id="btnSortMugenRoleGroupId" class="{{meteorisGridViewSortClass 'mugenRoleGroupId'}}">Mugen Role Group</th>
                         <th id="btnSortName" class="{{meteorisGridViewSortClass 'name'}}">Name</th>
                         <th>Created At</th>
                         <th style="width: 145px;">Actions</th>
@@ -47,6 +48,7 @@
                     <tr>
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{emails.[0].address}}</td>
+                        <td>{{mugenRoleGroup.name}}</td>
                         <td>{{profile.name}}</td>
                         <td>{{meteorisFormatter 'date' createdAt}}</td>
                         <td>
