@@ -16,7 +16,6 @@ MugenRoleCollectionsController = MeteorisController.extend({
         return {
             $or: [
                 {name: {$regex: search, $options: 'i'}},
-
             ]
         };
     },
@@ -45,7 +44,6 @@ MugenRoleCollectionsController = MeteorisController.extend({
     _getDoc: function(t) {
         return {
             name: t.find('#name').value,
-
         };
     },
     /* uploading file using cfs:fileSystem package + cfs:ejson */
@@ -74,14 +72,21 @@ MugenRoleCollectionsController = MeteorisController.extend({
             var doc = this._getDoc(t);
             //doc.imageId = imageId;
 
-            MugenRoleCollections.insert(doc, function(err, _id) {
-                if (err) {
-                    MeteorisFlash.set('danger', err.message);
-                    throw new Meteor.Error(err);
-                }
-                MeteorisFlash.set('success', "Success Inserting MugenRoleCollections");
-                Router.go('mugenRoleCollectionsView', {_id: _id});
-            });
+            var mugenRoleCollection = MugenRoleCollections.findOne({name: doc.name});
+            if (mugenRoleCollection) {
+                var errMessage = "Mugen Role Collections name must be unique";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            } else {
+                MugenRoleCollections.insert(doc, function(err, _id) {
+                    if (err) {
+                        MeteorisFlash.set('danger', err.message);
+                        throw new Meteor.Error(err);
+                    }
+                    MeteorisFlash.set('success', "Success Inserting MugenRoleCollections");
+                    Router.go('mugenRoleCollectionsView', {_id: _id});
+                });
+            }
         }
         return this.render('mugenRoleCollectionsInsert', {});
     },
