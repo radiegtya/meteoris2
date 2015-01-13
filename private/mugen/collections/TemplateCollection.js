@@ -8,7 +8,7 @@
 Replacement = new Mongo.Collection("replacement");
 
 var schemas = new SimpleSchema({
-    [collectionFields]
+    [collectionFields],
             /* AUTOVALUE */
             appId: {
                 type: String,
@@ -87,4 +87,4 @@ Replacement.helpers({
     updatedUser: function() {
         return Meteor.users.findOne(this.updatedUserId);
     },
-}); 
+});
