@@ -72,7 +72,7 @@ MugenRoleCollectionsController = MeteorisController.extend({
             var doc = this._getDoc(t);
             //doc.imageId = imageId;
 
-            var mugenRoleCollection = MugenRoleCollections.findOne({name: doc.name});
+            var mugenRoleCollection = MugenRoleCollections.findOne(doc);
             if (mugenRoleCollection) {
                 var errMessage = "Mugen Role Collections name must be unique";
                 MeteorisFlash.set('danger', errMessage);

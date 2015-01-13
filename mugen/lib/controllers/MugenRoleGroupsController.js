@@ -95,14 +95,21 @@ MugenRoleGroupsController = MeteorisController.extend({
             var doc = this._getDoc(t);
             //doc.imageId = imageId;
 
-            MugenRoleGroups.insert(doc, function(err, _id) {
-                if (err) {
-                    MeteorisFlash.set('danger', err.message);
-                    throw new Meteor.Error(err);
-                }
-                MeteorisFlash.set('success', "Success Inserting MugenRoleGroups");
-                Router.go('mugenRoleGroupsView', {_id: _id});
-            });
+            var mugenRoleGroup = MugenRoleGroups.findOne(doc);
+            if (mugenRoleGroup) {
+                var errMessage = "Mugen Role Groups name must be unique";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            } else {
+                MugenRoleGroups.insert(doc, function(err, _id) {
+                    if (err) {
+                        MeteorisFlash.set('danger', err.message);
+                        throw new Meteor.Error(err);
+                    }
+                    MeteorisFlash.set('success', "Success Inserting MugenRoleGroups");
+                    Router.go('mugenRoleGroupsView', {_id: _id});
+                });
+            }
         }
         return this.render('mugenRoleGroupsInsert', {});
     },
