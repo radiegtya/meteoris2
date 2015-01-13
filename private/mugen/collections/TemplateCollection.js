@@ -8,7 +8,7 @@
 Replacement = new Mongo.Collection("replacement");
 
 var schemas = new SimpleSchema({
-    [collectionFields],
+    [collectionFields]
             /* AUTOVALUE */
             appId: {
                 type: String,
