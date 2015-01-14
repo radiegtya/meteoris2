@@ -10,6 +10,7 @@ MugenRoleGroups = new Mongo.Collection("mugenRoleGroups");
 var schemas = new SimpleSchema({
     _id: {
         type: String,        
+        optional: true
     },
     name: {
         type: String,
