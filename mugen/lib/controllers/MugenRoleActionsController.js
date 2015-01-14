@@ -147,13 +147,20 @@ MugenRoleActionsController = MeteorisController.extend({
     },
     insertManage: function(t) {
         var doc = this._getDoc(t);
-        MugenRoleActions.insert(doc, function(err, _id) {
-            if (err) {
-                MeteorisFlash.set('danger', err.message);
-                throw new Meteor.Error(err);
-            }
-            MeteorisFlash.set('success', "Success Inserting MugenRoleActions");
-        });
+        var mugenRoleActions = MugenRoleActions.findOne(doc);
+        if (mugenRoleActions) {
+            var errMessage = "Mugen Role Actions name must be unique";
+            MeteorisFlash.set('danger', errMessage);
+            throw new Meteor.Error(errMessage);
+        } else {
+            MugenRoleActions.insert(doc, function(err, _id) {
+                if (err) {
+                    MeteorisFlash.set('danger', err.message);
+                    throw new Meteor.Error(err);
+                }
+                MeteorisFlash.set('success', "Success Inserting MugenRoleActions");
+            });
+        }
         t.find('#name').value = "";
         t.find('#name').focus();
     },
