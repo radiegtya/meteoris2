@@ -3,13 +3,13 @@
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'speakersIndex'}}">Speakers</a></li>
+            <li><a href="{{pathFor 'speakersIndex'}}">Pembicara</a></li>
             <li class="active">view</li>
         </ol>
 
         {{#with model}}
         <div class="title">
-            <h3 class="pull-left">View Speakers #{{_id}}</h3>
+            <h3 class="pull-left">View Pembicara #{{_id}}</h3>
             <div class="toolbar pull-right">
                 <a href="{{pathFor 'speakersIndex'}}" class="btn btn-default">Back</a> 
                 <a href="{{pathFor 'speakersUpdate'}}" class="btn btn-info">Update</a>
@@ -20,18 +20,13 @@
         <table class="table">
             <tbody>
                 <tr>
-<td><b>Nama</b></td>
-<td>{{name}}</td>
-</tr>
-<tr>
-<td><b>Jabatan</b></td>
-<td>{{positionId}}</td>
-</tr>
-
-<!--                <tr>
-                    <td><b>Image</b></td>
-                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
-                </tr>                -->
+                    <td><b>Nama</b></td>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <td><b>Jabatan</b></td>
+                    <td>{{position.name}}</td>
+                </tr>
                 <tr>
                     <td><b>Created at</b></td>
                     <td>{{meteorisFormatter "dateTime" createdAt}}</td>

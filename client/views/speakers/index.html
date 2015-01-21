@@ -3,12 +3,12 @@
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'speakersIndex'}}">Speakers</a></li>
+            <li><a href="{{pathFor 'speakersIndex'}}">Pembicara</a></li>
             <li class="active">index</li>
         </ol>
 
         <div class="title">
-            <h3 class="pull-left">Speakers</h3>
+            <h3 class="pull-left">Pembicara</h3>
         </div>
         <div class="clearfix"></div>
 
@@ -37,7 +37,7 @@
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
                         <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>
-<th id="btnSortpositionId" class="{{meteorisGridViewSortClass 'positionId'}}">Jabatan</th>
+                        <th id="btnSortpositionId" class="{{meteorisGridViewSortClass 'positionId'}}">Jabatan</th>
 
                         <!--<th>Image</th>-->                    
                         <th>Created by</th>                    
@@ -49,9 +49,7 @@
                     <tr>
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{name}}</td>
-<td>{{positionId}}</td>
-
-                        <!--<td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>-->
+                        <td>{{position.name}}</td>
                         <td>{{createdUser.profile.name}}</td>
                         <td>
                             <a href="{{pathFor 'speakersView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
