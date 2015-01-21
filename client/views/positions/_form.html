@@ -1,0 +1,13 @@
+<template name="positions_form">
+    <form id="positions_form"> 
+        <div class="form-group {{#if error 'name'}}has-error{{/if}}">
+<label for="name" class="control-label">Nama *</label>
+<input type="text" id="name" value="{{name}}" placeholder="Nama" class="form-control">
+<span class="help-block">{{error "name"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'positionsIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

@@ -1,0 +1,19 @@
+<template name="slidesInsert">    
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'slidesIndex'}}">Slides</a></li>
+            <li class="active">insert</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Insert Slides</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> slides_form}}  
+        </div>        
+    </div>
+</template>

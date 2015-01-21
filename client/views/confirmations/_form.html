@@ -1,0 +1,33 @@
+<template name="confirmations_form">
+    <form id="confirmations_form"> 
+        <div class="form-group {{#if error 'workshopId'}}has-error{{/if}}">
+<label for="workshopId" class="control-label">Workshop *</label>
+<input type="text" id="workshopId" value="{{workshopId}}" placeholder="Workshop" class="form-control">
+<span class="help-block">{{error "workshopId"}}</span>
+</div>
+<div class="form-group {{#if error 'name'}}has-error{{/if}}">
+<label for="name" class="control-label">Nama *</label>
+<input type="text" id="name" value="{{name}}" placeholder="Nama" class="form-control">
+<span class="help-block">{{error "name"}}</span>
+</div>
+<div class="form-group {{#if error 'provinceId'}}has-error{{/if}}">
+<label for="provinceId" class="control-label">Provinsi *</label>
+<input type="text" id="provinceId" value="{{provinceId}}" placeholder="Provinsi" class="form-control">
+<span class="help-block">{{error "provinceId"}}</span>
+</div>
+<div class="form-group {{#if error 'positionId'}}has-error{{/if}}">
+<label for="positionId" class="control-label">Jabatan *</label>
+<input type="text" id="positionId" value="{{positionId}}" placeholder="Jabatan" class="form-control">
+<span class="help-block">{{error "positionId"}}</span>
+</div>
+<div class="form-group {{#if error 'isAttend'}}has-error{{/if}}">
+<label for="isAttend" class="control-label">Hadir </label>
+<input type="text" id="isAttend" value="{{isAttend}}" placeholder="Hadir" class="form-control">
+<span class="help-block">{{error "isAttend"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'confirmationsIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+
