@@ -17,10 +17,10 @@ Meteor.publishComposite('slides', function(doc, sort) {
                     });
                 }
             },
-            /* return all related Files */
+            /* return all related Images */
 {
 find: function(collection) {
-return Files.find(collection.imageFileId);}
+return Images.find(collection.imageId);}
 },
 
         ],
