@@ -1,5 +1,5 @@
-Template.provinces_form.rendered = function(){
-    
+Template.provinces_form.rendered = function() {
+
 };
 
 Template.provinces_form.helpers({

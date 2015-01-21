@@ -1,21 +1,15 @@
 <template name="workshops_form">
     <form id="workshops_form"> 
         <div class="form-group {{#if error 'name'}}has-error{{/if}}">
-<label for="name" class="control-label">Nama *</label>
-<input type="text" id="name" value="{{name}}" placeholder="Nama" class="form-control">
-<span class="help-block">{{error "name"}}</span>
-</div>
-<div class="form-group {{#if error 'summary'}}has-error{{/if}}">
-<label for="summary" class="control-label">Keterangan *</label>
-<input type="text" id="summary" value="{{summary}}" placeholder="Keterangan" class="form-control">
-<span class="help-block">{{error "summary"}}</span>
-</div>
-<div class="form-group {{#if error 'isActive'}}has-error{{/if}}">
-<label for="isActive" class="control-label">Aktifkan *</label>
-<input type="text" id="isActive" value="{{isActive}}" placeholder="Aktifkan" class="form-control">
-<span class="help-block">{{error "isActive"}}</span>
-</div>
-
+            <label for="name" class="control-label">Nama *</label>
+            <input type="text" id="name" value="{{name}}" placeholder="Nama" class="form-control">
+            <span class="help-block">{{error "name"}}</span>
+        </div>
+        <div class="form-group {{#if error 'summary'}}has-error{{/if}}">
+            <label for="summary" class="control-label">Keterangan *</label>            
+            <div id="summary">{{summary}}</div>
+            <span class="help-block">{{error "summary"}}</span>
+        </div>
         <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
         <a href="{{pathFor 'workshopsIndex'}}" class="btn btn-default">Back</a>                        
     </form>

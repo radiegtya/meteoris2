@@ -1,5 +1,9 @@
 Template.workshopsIndex.helpers({
-
+    isActiveStatus: function(){
+        if(this.isActive)
+            return true;
+        return false;
+    }
 });
 
 Template.workshopsIndex.events = {
@@ -9,21 +13,20 @@ Template.workshopsIndex.events = {
             Router.current().remove(this._id);
     },
     /* sorting by parameter */
-'click #btnSortname': function(e) {
-MeteorisGridView.sort('name');
-},
-/* sorting by parameter */
-'click #btnSortsummary': function(e) {
-MeteorisGridView.sort('summary');
-},
-/* sorting by parameter */
-'click #btnSortisActive': function(e) {
-MeteorisGridView.sort('isActive');
-},
-
+    'click #btnSortname': function(e) {
+        MeteorisGridView.sort('name');
+    },
+    /* sorting by parameter */
+    'click #btnSortsummary': function(e) {
+        MeteorisGridView.sort('summary');
+    },
+    /* sorting by parameter */
+    'click #btnSortisActive': function(e) {
+        MeteorisGridView.sort('isActive');
+    },
     'keyup #search': function(e, t) {
         e.preventDefault();
-        Router.current().search(t);        
+        Router.current().search(t);
     },
     /* check all checkbox */
     'change #checkAll': function(e) {
@@ -60,5 +63,13 @@ MeteorisGridView.sort('isActive');
 
         //set checkAll header to uncheck
         $('#checkAll').attr("checked", false);
+    },
+    'click #btnActivate': function(e){
+        e.preventDefault();
+        Router.current().activate(this._id);
+    },
+    'click #btnDeactivate': function(e){
+        e.preventDefault();
+        Router.current().deactivate(this._id);
     },
 };

@@ -36,11 +36,8 @@
                 <thead>
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
-                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>
-<th id="btnSortsummary" class="{{meteorisGridViewSortClass 'summary'}}">Keterangan</th>
-<th id="btnSortisActive" class="{{meteorisGridViewSortClass 'isActive'}}">Aktifkan</th>
-
-                        <!--<th>Image</th>-->                    
+                        <th id="btnSortisActive" class="{{meteorisGridViewSortClass 'isActive'}}">Aktifkan</th>
+                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>                        
                         <th>Created by</th>                    
                         <th style="width: 145px;">Actions</th>
                     </tr>
@@ -49,16 +46,19 @@
                     {{#each models}}
                     <tr>
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
-                        <td>{{name}}</td>
-<td>{{summary}}</td>
-<td>{{isActive}}</td>
-
-                        <!--<td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>-->
+                        <td>
+                            {{#if isActive}}       
+                            <a id="btnDeactivate" class="btn btn-success"><i class="glyphicon glyphicon-heart"></i></a>
+                            {{else}}
+                            <a id="btnActivate" class="btn btn-warning"><i class="glyphicon glyphicon-heart-empty"></i></a>                            
+                            {{/if}}
+                        </td>
+                        <td>{{name}}</td>                        
                         <td>{{createdUser.profile.name}}</td>
                         <td>
                             <a href="{{pathFor 'workshopsView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
                             <a href="{{pathFor 'workshopsUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-                            <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                            <a id="btnRemove" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>                            
                         </td>
                     </tr>
                     {{/each}}

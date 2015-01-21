@@ -20,22 +20,22 @@
         <table class="table">
             <tbody>
                 <tr>
-<td><b>Nama</b></td>
-<td>{{name}}</td>
-</tr>
-<tr>
-<td><b>Keterangan</b></td>
-<td>{{summary}}</td>
-</tr>
-<tr>
-<td><b>Aktifkan</b></td>
-<td>{{isActive}}</td>
-</tr>
+                    <td><b>Nama</b></td>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <td><b>Keterangan</b></td>
+                    <td>{{{summary}}}</td>
+                </tr>
+                <tr>
+                    <td><b>Aktifkan</b></td>
+                    <td>{{isActiveBahasa}}</td>
+                </tr>
 
-<!--                <tr>
-                    <td><b>Image</b></td>
-                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
-                </tr>                -->
+                <!--                <tr>
+                                    <td><b>Image</b></td>
+                                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
+                                </tr>                -->
                 <tr>
                     <td><b>Created at</b></td>
                     <td>{{meteorisFormatter "dateTime" createdAt}}</td>
