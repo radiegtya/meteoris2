@@ -149,9 +149,9 @@
         {{> spinner}}
         {{/unless}}
         {{/if}}
-        
+
         <hr/>
-        
+
         <div class="title">
             <h3 class="pull-left">Manage Galeri</h3>
         </div>
@@ -186,6 +186,60 @@
             </table>
         </div>
         {{#if hasMoreGalleries}}
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
+        {{/if}}
+
+        <hr/>
+
+        <div class="title">
+            <h3 class="pull-left">Manage Tanya Jawab</h3>
+        </div>
+        <div class="clearfix"></div>
+        
+        {{#if isEmptyComments}}
+        <p>No Data Found</p>
+        {{else}}
+        <div class=" table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
+                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>
+                        <th id="btnSortprovinceId" class="{{meteorisGridViewSortClass 'provinceId'}}">Provinsi</th>
+                        <th id="btnSortcategoryId" class="{{meteorisGridViewSortClass 'categoryId'}}">Kategori</th>
+                        <th id="btnSortspeakerId" class="{{meteorisGridViewSortClass 'speakerId'}}">Pembicara</th>
+                        <th id="btnSortpositionId" class="{{meteorisGridViewSortClass 'positionId'}}">Jabatan</th>
+                        <th id="btnSortquestion" class="{{meteorisGridViewSortClass 'question'}}">Pertanyaan</th>
+
+                        <!--<th>Image</th>-->                    
+                        <th>Created by</th>                    
+                        <th style="width: 145px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each comments}}
+                    <tr>
+                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <td>{{name}}</td>
+                        <td>{{province.name}}</td>
+                        <td>{{category.name}}</td>
+                        <td>{{speaker.name}}</td>
+                        <td>{{position.name}}</td>
+                        <td>{{question}}</td>
+                        <td>{{createdUser.profile.name}}</td>
+                        <td>
+                            <a id="btnRemoveComment" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#if hasMoreComments}}
         <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}

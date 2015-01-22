@@ -30,6 +30,14 @@ Template.workshopsView.events = {
         e.preventDefault();
         Router.current().removeGallery(this._id);
     },
+    'click #btnInsertComment': function(e, t) {
+        e.preventDefault();
+        Router.current().insertComment(t);
+    },
+    'click #btnRemoveComment': function(e, t) {
+        e.preventDefault();
+        Router.current().removeComment(this._id);
+    },
 };
 
 Template.workshopsView.helpers({
