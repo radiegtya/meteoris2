@@ -22,6 +22,14 @@ Template.workshopsView.events = {
         e.preventDefault();
         Router.current().removeDownload(this._id);
     },
+    'click #btnInsertGallery': function(e, t) {
+        e.preventDefault();
+        Router.current().insertGallery(t);
+    },
+    'click #btnRemoveGallery': function(e, t) {
+        e.preventDefault();
+        Router.current().removeGallery(this._id);
+    },
 };
 
 Template.workshopsView.helpers({

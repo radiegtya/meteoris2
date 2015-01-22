@@ -18,16 +18,17 @@ Meteor.publishComposite('galleries', function(doc, sort) {
                 }
             },
             /* return all related Workshops */
-{
-find: function(collection) {
-return Workshops.find(collection.workshopId);}
-},
-/* return all related Files */
-{
-find: function(collection) {
-return Files.find(collection.imageFileId);}
-},
-
+            {
+                find: function(collection) {
+                    return Workshops.find(collection.workshopId);
+                }
+            },
+            /* return all related Images */
+            {
+                find: function(collection) {
+                    return Images.find(collection.imageId);
+                }
+            },
         ],
     }
 });
@@ -43,12 +44,10 @@ Meteor.methods({
 });
 
 /* observing collection */
-/* uncomment to use
- var query = Galleries.find({});
- var handle = query.observe({
- removed: function(model) {
- //removing related image, when post removed
- Images.remove(model.imageId);
- }
- });
- */
+var query = Galleries.find({});
+var handle = query.observe({
+    removed: function(model) {
+        //removing related image, when post removed
+        Images.remove(model.imageId);
+    }
+});

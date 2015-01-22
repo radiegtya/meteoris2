@@ -142,7 +142,50 @@
                 </tbody>
             </table>
         </div>
-        {{#if hasMoreWorkshopsSpeakers}}
+        {{#if hasMoreDownloads}}
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
+        {{/if}}
+        
+        <hr/>
+        
+        <div class="title">
+            <h3 class="pull-left">Manage Galeri</h3>
+        </div>
+        {{> galleries_form}}
+        <div class="clearfix"></div>
+
+        {{#if isEmptyGalleries}}
+        <p>No Data Found</p>
+        {{else}}
+        <div class=" table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
+                        <th id="btnSortimageId" class="{{meteorisGridViewSortClass 'imageId'}}">Gambar</th>
+                        <th>Created by</th>                    
+                        <th style="width: 145px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each galleries}}
+                    <tr>
+                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
+                        <td>{{createdUser.profile.name}}</td>
+                        <td>
+                            <a id="btnRemoveGallery" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#if hasMoreGalleries}}
         <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}

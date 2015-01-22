@@ -13,8 +13,8 @@ Template.galleriesIndex.events = {
 MeteorisGridView.sort('workshopId');
 },
 /* sorting by parameter */
-'click #btnSortimageFileId': function(e) {
-MeteorisGridView.sort('imageFileId');
+'click #btnSortimageId': function(e) {
+MeteorisGridView.sort('imageId');
 },
 
     'keyup #search': function(e, t) {
