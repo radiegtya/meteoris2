@@ -6,6 +6,14 @@ Template.workshopsView.events = {
             Router.go("workshopsIndex")
         }
     },
+    'click #btnInsertWorkshopCategory': function(e, t) {
+        e.preventDefault();
+        Router.current().insertWorkshopCategory(t);
+    },
+    'click #btnRemoveWorkshopCategory': function(e, t) {
+        e.preventDefault();
+        Router.current().removeWorkshopCategory(this._id);
+    },
     'click #btnInsertWorkshopSpeaker': function(e, t) {
         e.preventDefault();
         Router.current().insertWorkshopSpeaker(t);
@@ -46,11 +54,11 @@ Template.workshopsView.events = {
         e.preventDefault();
         Router.current().removeConfirmation(this._id);
     },
-    'click #btnAttend': function(e){
+    'click #btnAttend': function(e) {
         e.preventDefault();
         Router.current().attend(this._id);
     },
-    'click #btnUnattend': function(e){
+    'click #btnUnattend': function(e) {
         e.preventDefault();
         Router.current().unattend(this._id);
     },

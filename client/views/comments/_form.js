@@ -14,7 +14,14 @@ Template.comments_form.helpers({
         return Provinces.find({}, {sort: {name: 1}});
     },
     categories: function() {
-        return Categories.find({}, {sort: {name: 1}});
+        var workshopsCategories = WorkshopsCategories.find({workshopId: Router.current().getId()});
+        var orCriteria = [];
+        workshopsCategories.forEach(function(obj) {
+            orCriteria.push({_id: obj.categoryId});
+        });
+
+        if (orCriteria.length > 0)
+            return Categories.find({$or: orCriteria}, {sort: {name: 1}});
     },
     speakers: function() {
         var workshopsSpeakers = WorkshopsSpeakers.find({workshopId: Router.current().getId()});
@@ -23,6 +30,7 @@ Template.comments_form.helpers({
             orCriteria.push({_id: obj.speakerId});
         });
 
-        return Speakers.find({$or:orCriteria}, {sort: {name: 1}});
+        if (orCriteria.length > 0)
+            return Speakers.find({$or: orCriteria}, {sort: {name: 1}});
     },
 });

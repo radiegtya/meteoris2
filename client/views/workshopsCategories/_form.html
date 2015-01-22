@@ -1,18 +1,17 @@
 <template name="workshopsCategories_form">
     <form id="workshopsCategories_form"> 
-        <div class="form-group {{#if error 'workshopId'}}has-error{{/if}}">
-<label for="workshopId" class="control-label">Workshop *</label>
-<input type="text" id="workshopId" value="{{workshopId}}" placeholder="Workshop" class="form-control">
-<span class="help-block">{{error "workshopId"}}</span>
-</div>
-<div class="form-group {{#if error 'categoryId'}}has-error{{/if}}">
-<label for="categoryId" class="control-label">Kategori *</label>
-<input type="text" id="categoryId" value="{{categoryId}}" placeholder="Kategori" class="form-control">
-<span class="help-block">{{error "categoryId"}}</span>
-</div>
-
-        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
-        <a href="{{pathFor 'workshopsCategoriesIndex'}}" class="btn btn-default">Back</a>                        
+        <div class="form-group {{#if error 'categoryId'}}has-error{{/if}}">
+            <label for="categoryId" class="control-label">Kategori *</label>
+            <select id="categoryId" class="form-control">
+                <option value="">-- Pilih Kategori --</option>
+                {{#each categories}}
+                <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <span class="help-block">{{error "categoryId"}}</span>
+        </div>
+        <button id="btnInsertWorkshopCategory" type="submit" class="btn btn-success">Submit</button>                
+        <!--<a href="{{pathFor 'workshopsCategoriesIndex'}}" class="btn btn-default">Back</a>-->                        
     </form>
 </template>
 

@@ -56,6 +56,49 @@
         </table>        
         {{/with}}
 
+        <hr/>
+
+        <div class="title">
+            <h3 class="pull-left">Kategori Workshop</h3>
+        </div>
+        {{> workshopsCategories_form}}
+        <div class="clearfix"></div>
+
+        {{#if isEmptyWorkshopsCategories}}
+        <p>No Data Found</p>
+        {{else}}
+        <div class=" table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <!--<th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>-->                        
+                        <th id="btnSortcategoryId" class="{{meteorisGridViewSortClass 'categoryId'}}">Kategori</th>
+                        <th>Created by</th>                    
+                        <th style="width: 145px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each workshopsCategories}}
+                    <tr>
+                        <!--<td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>-->
+                        <td>{{category.name}}</td>
+                        <td>{{createdUser.profile.name}}</td>
+                        <td>
+                            <a id="btnRemoveWorkshopCategory" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#if hasMoreWorkshopsCategories}}
+        <a class="btn btn-default load-more btn-block" href="{{hasMoreWorkshopsCategories}}">Load More ...</a>
+        {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
+        {{/if}}
+
         <hr/>                
 
         <div class="title">
@@ -98,7 +141,7 @@
             </table>
         </div>
         {{#if hasMoreWorkshopsSpeakers}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMoreWorkshopsSpeakers}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}
@@ -143,7 +186,7 @@
             </table>
         </div>
         {{#if hasMoreDownloads}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMoreDownloads}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}
@@ -186,7 +229,7 @@
             </table>
         </div>
         {{#if hasMoreGalleries}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMoreGalleries}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}
@@ -241,7 +284,7 @@
             </table>
         </div>
         {{#if hasMoreComments}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMoreComments}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}
@@ -298,7 +341,7 @@
             </table>
         </div>
         {{#if hasMoreConfirmations}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMoreConfirmations}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}
