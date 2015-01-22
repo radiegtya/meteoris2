@@ -17,7 +17,6 @@ Meteor.publishComposite('workshops', function(doc, sort) {
                     });
                 }
             },
-            
         ],
     }
 });

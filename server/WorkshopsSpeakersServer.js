@@ -18,16 +18,17 @@ Meteor.publishComposite('workshopsSpeakers', function(doc, sort) {
                 }
             },
             /* return all related Workshops */
-{
-find: function(collection) {
-return Workshops.find(collection.workshopId);}
-},
-/* return all related Speakers */
-{
-find: function(collection) {
-return Speakers.find(collection.speakerId);}
-},
-
+            {
+                find: function(collection) {
+                    return Workshops.find(collection.workshopId);
+                }
+            },
+            /* return all related Speakers */
+            {
+                find: function(collection) {
+                    return Speakers.find(collection.speakerId);
+                }
+            },
         ],
     }
 });
