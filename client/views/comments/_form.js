@@ -17,6 +17,12 @@ Template.comments_form.helpers({
         return Categories.find({}, {sort: {name: 1}});
     },
     speakers: function() {
-        return Speakers.find({}, {sort: {name: 1}});
+        var workshopsSpeakers = WorkshopsSpeakers.find({workshopId: Router.current().getId()});
+        var orCriteria = [];
+        workshopsSpeakers.forEach(function(obj) {
+            orCriteria.push({_id: obj.speakerId});
+        });
+
+        return Speakers.find({$or:orCriteria}, {sort: {name: 1}});
     },
 });
