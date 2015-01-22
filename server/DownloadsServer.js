@@ -6,6 +6,12 @@ Meteor.publishComposite('downloads', function(doc, sort) {
             return Downloads.find(doc, sort);
         },
         children: [
+            /* return all related Files */
+            {
+                find: function(collection) {
+                    return Files.find({_id: collection.fileId});
+                }
+            },
             /* return all related Users */
             {
                 find: function(collection) {
@@ -18,16 +24,17 @@ Meteor.publishComposite('downloads', function(doc, sort) {
                 }
             },
             /* return all related Workshops */
-{
-find: function(collection) {
-return Workshops.find(collection.workshopId);}
-},
-/* return all related Files */
-{
-find: function(collection) {
-return Files.find(collection.fileId);}
-},
-
+            {
+                find: function(collection) {
+                    return Workshops.find(collection.workshopId);
+                }
+            },
+            /* return all related Files */
+            {
+                find: function(collection) {
+                    return Files.find(collection.fileId);
+                }
+            },
         ],
     }
 });
@@ -43,12 +50,10 @@ Meteor.methods({
 });
 
 /* observing collection */
-/* uncomment to use
- var query = Downloads.find({});
- var handle = query.observe({
- removed: function(model) {
- //removing related image, when post removed
- Images.remove(model.imageId);
- }
- });
- */
+var query = Downloads.find({});
+var handle = query.observe({
+    removed: function(model) {
+        //removing related file, when post removed
+        Files.remove(model.fileId);
+    }
+});
