@@ -38,8 +38,7 @@
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
                         <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>
                         <th id="btnSortpositionId" class="{{meteorisGridViewSortClass 'positionId'}}">Jabatan</th>
-
-                        <!--<th>Image</th>-->                    
+                        <th>Image</th>                    
                         <th>Created by</th>                    
                         <th style="width: 145px;">Actions</th>
                     </tr>
@@ -50,6 +49,7 @@
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{name}}</td>
                         <td>{{position.name}}</td>
+                        <td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
                         <td>{{createdUser.profile.name}}</td>
                         <td>
                             <a href="{{pathFor 'speakersView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>

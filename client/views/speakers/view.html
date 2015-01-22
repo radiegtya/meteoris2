@@ -28,6 +28,10 @@
                     <td>{{position.name}}</td>
                 </tr>
                 <tr>
+                    <td><b>Foto</b></td>
+                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
+                </tr>  
+                <tr>
                     <td><b>Created at</b></td>
                     <td>{{meteorisFormatter "dateTime" createdAt}}</td>
                 </tr>                

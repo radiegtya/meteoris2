@@ -6,6 +6,12 @@ Meteor.publishComposite('speakers', function(doc, sort) {
             return Speakers.find(doc, sort);
         },
         children: [
+            /* return all related Images */
+            {
+                find: function(collection) {
+                    return Images.find({_id: collection.imageId});
+                }
+            },
             /* return all related Users */
             {
                 find: function(collection) {
@@ -18,11 +24,11 @@ Meteor.publishComposite('speakers', function(doc, sort) {
                 }
             },
             /* return all related Positions */
-{
-find: function(collection) {
-return Positions.find(collection.positionId);}
-},
-
+            {
+                find: function(collection) {
+                    return Positions.find(collection.positionId);
+                }
+            },
         ],
     }
 });
@@ -38,12 +44,11 @@ Meteor.methods({
 });
 
 /* observing collection */
-/* uncomment to use
- var query = Speakers.find({});
- var handle = query.observe({
- removed: function(model) {
- //removing related image, when post removed
- Images.remove(model.imageId);
- }
- });
- */
+var query = Speakers.find({});
+var handle = query.observe({
+    removed: function(model) {
+        //removing related image, when post removed
+        Images.remove(model.imageId);
+    }
+});
+ 

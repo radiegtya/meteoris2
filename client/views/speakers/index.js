@@ -1,5 +1,4 @@
 Template.speakersIndex.helpers({
-
 });
 
 Template.speakersIndex.events = {
@@ -9,17 +8,16 @@ Template.speakersIndex.events = {
             Router.current().remove(this._id);
     },
     /* sorting by parameter */
-'click #btnSortname': function(e) {
-MeteorisGridView.sort('name');
-},
-/* sorting by parameter */
-'click #btnSortpositionId': function(e) {
-MeteorisGridView.sort('positionId');
-},
-
+    'click #btnSortname': function(e) {
+        MeteorisGridView.sort('name');
+    },
+    /* sorting by parameter */
+    'click #btnSortpositionId': function(e) {
+        MeteorisGridView.sort('positionId');
+    },
     'keyup #search': function(e, t) {
         e.preventDefault();
-        Router.current().search(t);        
+        Router.current().search(t);
     },
     /* check all checkbox */
     'change #checkAll': function(e) {

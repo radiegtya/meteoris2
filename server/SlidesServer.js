@@ -18,11 +18,11 @@ Meteor.publishComposite('slides', function(doc, sort) {
                 }
             },
             /* return all related Images */
-{
-find: function(collection) {
-return Images.find(collection.imageId);}
-},
-
+            {
+                find: function(collection) {
+                    return Images.find(collection.imageId);
+                }
+            },
         ],
     }
 });
@@ -38,12 +38,11 @@ Meteor.methods({
 });
 
 /* observing collection */
-/* uncomment to use
- var query = Slides.find({});
- var handle = query.observe({
- removed: function(model) {
- //removing related image, when post removed
- Images.remove(model.imageId);
- }
- });
- */
+var query = Slides.find({});
+var handle = query.observe({
+    removed: function(model) {
+        //removing related image, when post removed
+        Images.remove(model.imageId);
+    }
+});
+ 
