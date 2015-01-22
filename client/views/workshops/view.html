@@ -71,7 +71,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
+                        <!--<th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>-->                        
                         <th id="btnSortspeakerId" class="{{meteorisGridViewSortClass 'speakerId'}}">Nama</th>
                         <th>Jabatan</th>                    
                         <th>Foto</th>                    
@@ -83,7 +83,7 @@
                     {{#each workshopsSpeakers}}
                     <tr>
                         {{#with speaker}}
-                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <!--<td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>-->
                         <td>{{name}}</td>
                         <td>{{position.name}}</td>
                         <td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
@@ -120,7 +120,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>       
+                        <!--<th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>-->       
                         <th id="btnSortfileId" class="{{meteorisGridViewSortClass 'fileId'}}">File</th>
                         <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>                        
                         <th>Created by</th>                    
@@ -130,7 +130,7 @@
                 <tbody>
                     {{#each downloads}}
                     <tr>
-                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <!--<td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>-->
                         <td><a href="{{file.url}}">{{file.name}}</a></td>
                         <td>{{name}}</td>                        
                         <td>{{createdUser.profile.name}}</td>
@@ -165,7 +165,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
+                        <!--<th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>-->                        
                         <th id="btnSortimageId" class="{{meteorisGridViewSortClass 'imageId'}}">Gambar</th>
                         <th>Created by</th>                    
                         <th style="width: 145px;">Actions</th>
@@ -174,7 +174,7 @@
                 <tbody>
                     {{#each galleries}}
                     <tr>
-                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <!--<td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>-->
                         <td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
                         <td>{{createdUser.profile.name}}</td>
                         <td>
@@ -200,7 +200,7 @@
         </div>
         {{> comments_form}}
         <div class="clearfix"></div>
-        
+
         {{#if isEmptyComments}}
         <p>No Data Found</p>
         {{else}}
@@ -208,7 +208,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
+                        <!--<th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>-->                        
                         <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>
                         <th id="btnSortprovinceId" class="{{meteorisGridViewSortClass 'provinceId'}}">Provinsi</th>
                         <th id="btnSortcategoryId" class="{{meteorisGridViewSortClass 'categoryId'}}">Kategori</th>
@@ -224,7 +224,7 @@
                 <tbody>
                     {{#each comments}}
                     <tr>
-                        <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
+                        <!--<td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>-->
                         <td>{{name}}</td>
                         <td>{{province.name}}</td>
                         <td>{{category.name}}</td>
@@ -241,6 +241,63 @@
             </table>
         </div>
         {{#if hasMoreComments}}
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        {{/if}}
+        {{#unless ready}}
+        {{> spinner}}
+        {{/unless}}
+        {{/if}}
+
+        <hr/>
+
+        <div class="title">
+            <h3 class="pull-left">Manage Konfirmasi Kehadiran</h3>
+        </div>
+        {{> confirmations_form}}
+        <div class="clearfix"></div>
+
+        {{#if isEmptyConfirmations}}
+        <p>No Data Found</p>
+        {{else}}
+        <div class=" table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <!--<th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>-->                      
+                        <th id="btnSortisAttend" class="{{meteorisGridViewSortClass 'isAttend'}}">Hadir</th>
+                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Nama</th>
+                        <th id="btnSortprovinceId" class="{{meteorisGridViewSortClass 'provinceId'}}">Provinsi</th>
+                        <th id="btnSortpositionId" class="{{meteorisGridViewSortClass 'positionId'}}">Jabatan</th>                        
+                        <!--<th>Image</th>-->                    
+                        <th>Created by</th>                    
+                        <th style="width: 145px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each confirmations}}
+                    <tr>
+                        <!--<td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>-->
+                        <td>       
+                            {{#if isAttend}}       
+                            <a id="btnUnattend" class="btn btn-success">ya <i class="glyphicon glyphicon-heart"></i></a>
+                            {{else}}
+                            <a id="btnAttend" class="btn btn-warning">tidak <i class="glyphicon glyphicon-heart-empty"></i></a>                            
+                            {{/if}}
+                        </td>
+                        <td>{{name}}</td>
+                        <td>{{province.name}}</td>
+                        <td>{{position.name}}</td>                        
+                        <!--<td><img class="image" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>-->
+                        <td>{{createdUser.profile.name}}</td>
+                        <td>
+                            <a id="btnRemoveConfirmation" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#if hasMoreConfirmations}}
         <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
         {{/if}}
         {{#unless ready}}

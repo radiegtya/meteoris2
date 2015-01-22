@@ -38,6 +38,22 @@ Template.workshopsView.events = {
         e.preventDefault();
         Router.current().removeComment(this._id);
     },
+    'click #btnInsertConfirmation': function(e, t) {
+        e.preventDefault();
+        Router.current().insertConfirmation(t);
+    },
+    'click #btnRemoveConfirmation': function(e, t) {
+        e.preventDefault();
+        Router.current().removeConfirmation(this._id);
+    },
+    'click #btnAttend': function(e){
+        e.preventDefault();
+        Router.current().attend(this._id);
+    },
+    'click #btnUnattend': function(e){
+        e.preventDefault();
+        Router.current().unattend(this._id);
+    },
 };
 
 Template.workshopsView.helpers({
