@@ -1,0 +1,261 @@
+/* 
+    Created on : Jan 26, 2015, 8:49:38 AM
+    Author     : Pras Abdilah
+*/
+
+@font-face{
+    font-family: 'Oswald';
+    src: url(/../../../font/oswald/Oswald-Regular.otf);
+}
+@font-face{
+    font-family: 'Oswald';
+    font-weight: 700;
+    src: url(/../../../font/oswald/Oswald-Bold.otf);
+}
+html, html body{
+    position: relative;
+    height: 100%;
+}
+img{
+    max-width: 100%;
+}
+
+
+.meteoris-navbar{
+    
+        background: #3C2F34;
+        min-height: 62px;
+        border-radius: 0;
+
+    .navbar-brand{
+        text-transform: uppercase;
+        font-family: 'Oswald';
+        letter-spacing: 5px;
+        color: rgba(255,255,255,0.8);
+        line-height: 32px;
+        height: auto;
+        &:hover, &:active{
+            color: #FC611F;
+        }
+        img{
+            display: inline-block;
+            width: 40px;
+            margin-top: -10px;
+        }
+    }
+
+    .navbar-nav > li > a{
+        color: rgba(255,255,255,0.8);
+        line-height: 32px;
+        height: auto;
+        &:hover, &:active{
+            color: #FC611F;
+        }
+    }
+
+}
+.meteoris-content{
+    position: relative;
+    min-height: calc(100% - 65px);
+
+    .title{
+        float: left;
+        width: 100%;
+    }
+    .title h3{
+        display: inline-block;
+        margin-top: 0;
+    }
+    .toolbar{
+        float: left;
+        width: 100%;
+        margin-bottom: 20px
+    }
+    .toolbar .quick-search.col-xs-12{
+        /*width: 250px;*/
+        margin-top: 10px;
+        padding:0;
+    }
+    .toolbar .input-group .form-control{
+    }
+
+    ///*TABLE*/
+    .table .buttons{
+        text-align: right;
+    }
+    .table .buttons .btn{
+    }
+    .tab-content{
+        padding: 30px 0;
+    }
+    .table thead th{
+        position: relative;
+    }
+    .table thead th.ascending:after{
+        position: relative;
+        top: -12px;
+        margin-left: 5px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 3.5px 7px 3.5px;
+        border-color: transparent transparent #222 transparent;
+    }
+    .table thead th.descending:after{
+        position: relative;
+        top: 12px;
+        margin-left: 5px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 3.5px 0 3.5px;
+        border-color: #222 transparent transparent transparent;
+    }
+    .table .filter input{
+        width: calc(100% - 10px);
+        overflow: hidden;
+        margin: 5px;
+    }
+    .table .image{
+        max-height: 150px;
+    }
+
+
+    .form-control,
+    .btn{
+        border-radius: 3px !important;
+    }
+    .input-lg, .btn-lg{
+        padding: 15px !important;
+        height: auto;
+    }
+
+    .load-more{
+        margin-top: -10px !important;
+        margin-bottom: 20px;
+    }
+
+
+
+    .divider-or{
+        position: relative;
+        padding: 20px 0 30px 0;
+    }
+    .divider-or:before{
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: #ddd;
+        z-index: 2;
+        left: 0;
+    }
+    .divider-or:after{
+        content: 'OR';
+        padding: 0 20px 0 20px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 60px;
+        background: #fff;
+        z-index: 3;
+        color: #ccc;
+    }
+
+
+
+
+    .logo{
+        text-transform: uppercase;
+        font-family: 'Oswald';
+        letter-spacing: 5px;
+    }
+    .logo img{
+        width: 70px;
+        height: 70px;
+        position: relative;
+        top: -10px;
+    }
+
+    .sign-form p a{
+        font-size: 110%;
+        text-decoration: underline;
+        color: #666;
+    }
+    .btn-red{
+        background: #e44b3c;
+    }
+
+
+
+
+    .btn-facebook{
+        background: #3B5998;
+        color: #fff;
+    }
+    .btn-facebook i{
+        line-height: 23px;
+        font-size: 20px;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0 15px;
+    }
+    .btn-facebook:hover{
+        background: #2C4780;
+        color: #fff;
+    }
+
+    /*Checkbox*/
+    input[type="checkbox"] {
+        -webkit-appearance : none;
+        appearance : none;
+        border: 1px solid #aaa;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        position: relative;
+    }
+    input[type="checkbox"]:checked:before {
+        font: normal normal normal 12px/1 FontAwesome;
+        content: "\f00c";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+
+    /*Field Table*/
+    .btnAddField{
+        display: none;
+    }
+    .collectionFields tr:last-child .btnAddField{
+        display: inline-block;
+    }
+}
+
+.meteoris-footer{
+    footer{
+        margin: 20px 0 5px;
+        height: 40px;
+        overflow: hidden;
+        font-size: 90%;
+
+        span{
+            display: inline-block;
+            line-height: 20px;
+            padding: 0;
+            color: #999;
+        }
+        a{
+            color: #666;
+            text-decoration: underline;
+        }
+    }
+}
