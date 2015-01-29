@@ -265,8 +265,13 @@ var Mugen = {
         fields.forEach(function(obj) {
             var name = obj.name;
             var type = obj.type;
+            var belongToCollection = obj.belongToCollection ? obj.belongToCollection : null;
+            var relationKey = obj.relationKey ? obj.relationKey : null;
+
             if (type == "Date")
                 stringFields += "<td>{{meteorisFormatter 'date' " + name + '}}</td>\n';
+            else if (belongToCollection && relationKey && type == "String")
+                stringFields += '<td>{{' + relationKey + '.name}}</td>\n';
             else
                 stringFields += '<td>{{' + name + '}}</td>\n';
         });
@@ -351,12 +356,18 @@ var Mugen = {
             var name = obj.name;
             var type = obj.type;
             var label = obj.label;
+            var belongToCollection = obj.belongToCollection ? obj.belongToCollection : null;
+            var relationKey = obj.relationKey ? obj.relationKey : null;
+
             stringFields +=
                     "<tr>\n" +
                     "<td><b>" + label + "</b></td>\n";
             if (type == "Date") {
                 stringFields +=
                         "<td>{{meteorisFormatter 'date' " + name + "}}</td>\n";
+            } else if (belongToCollection && relationKey && type == "String") {
+                stringFields +=
+                        "<td>{{" + relationKey + ".name}}</td>\n";
             } else {
                 stringFields +=
                         "<td>{{" + name + "}}</td>\n";
