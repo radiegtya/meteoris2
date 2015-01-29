@@ -82,7 +82,7 @@ var Mugen = {
         //reformat fields as string, and replacing [subscriptionFields]
         var stringFields = "";
         fields.forEach(function(obj) {
-            var belongToCollection = obj.belongToCollection ? belongToCollection : null;
+            var belongToCollection = obj.belongToCollection ? obj.belongToCollection : null;
             if (belongToCollection)
                 stringFields += "this.subs.subscribe('" + belongToCollection + "', {});\n";
         });
@@ -192,7 +192,7 @@ var Mugen = {
         //reformat fields as string, and replace it with [formHelpers]
         var stringFields = "";
         fields.forEach(function(obj) {
-            var belongToCollection = obj.belongToCollection ? belongToCollection : null;
+            var belongToCollection = obj.belongToCollection ? obj.belongToCollection : null;
             if (belongToCollection) {
                 stringFields += belongToCollection.toLowerCase() + ': function() {\n' +
                         'return ' + belongToCollection + '.find({});\n' +
@@ -208,7 +208,7 @@ var Mugen = {
             var type = obj.type;
             var label = obj.label;
             var isRequired = obj.isRequired ? "*" : "";
-            var belongToCollection = obj.belongToCollection ? belongToCollection : null;
+            var belongToCollection = obj.belongToCollection ? obj.belongToCollection : null;
 
             stringFields +=
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
