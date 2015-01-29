@@ -84,7 +84,7 @@ var Mugen = {
         fields.forEach(function(obj) {
             var belongToCollection = obj.belongToCollection ? obj.belongToCollection : null;
             if (belongToCollection)
-                stringFields += "this.subs.subscribe('" + belongToCollection + "', {});\n";
+                stringFields += "this.subs.subscribe('" + this.toCollectionCase(belongToCollection) + "', {});\n";
         });
         content = content.replace("[subscriptionFields]", stringFields);
 
@@ -220,7 +220,7 @@ var Mugen = {
             } else if (type == "String" && belongToCollection) {
                 stringFields += '<select id="' + name + '" class="form-control">\n' +
                         '<option value=""></option>\n' +
-                        '{{#each ' + belongToCollection + '}}\n' +
+                        '{{#each ' + this.toCollectionCase(belongToCollection) + '}}\n' +
                         '<option value="{{_id}}">{{name}}</option>\n' +
                         '{{/each}}\n' +
                         '</select>\n';
