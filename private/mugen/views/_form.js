@@ -11,6 +11,6 @@ Template.replacement_form.helpers({
     selected: function(_id) {
         if (this._id === _id)
             return "selected";
-    }
+    },
     [formHelpers]
 });
