@@ -7,4 +7,5 @@ Template.replacement_form.helpers({
     error: function(field) {
         return MeteorisSimpleSchema.error(Replacement, field);
     },
+    [formHelpers]
 });

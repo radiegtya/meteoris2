@@ -4,6 +4,7 @@ ReplacementController = MeteorisController.extend({
         var sort = MeteorisGridView.getSorting();
         sort.limit = this.limit();
 
+        [subscriptionFields]
         this.subscription = this.subs.subscribe('replacement', this.getCriteria(), sort);
     },
     /* event searching data by user input with parameter */

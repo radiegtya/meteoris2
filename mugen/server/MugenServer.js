@@ -79,6 +79,15 @@ var Mugen = {
         var content = this.replaceAll(controllerTemplate, "Replacement", this.toTitleCase(collection));
         content = this.replaceAll(content, "replacement", this.toCollectionCase(collection));
 
+        //reformat fields as string, and replacing [subscriptionFields]
+        var stringFields = "";
+        fields.forEach(function(obj) {
+            var belongToCollection = obj.belongToCollection ? belongToCollection : null;
+            if (belongToCollection)
+                stringFields += "this.subs.subscribe('" + belongToCollection + "', {});\n";
+        });
+        content = content.replace("[subscriptionFields]", stringFields);
+
         //reformat fields as string, and replacing [criteriaFields]
         var stringFields = "";
         fields.forEach(function(obj) {
@@ -86,6 +95,7 @@ var Mugen = {
             stringFields += "{" + name + ": {$regex: search, $options: 'i'}},\n";
         });
         content = content.replace("[criteriaFields]", stringFields);
+
         //reformat fields as string, and replacing [docFields]
         var stringFields = "";
         fields.forEach(function(obj) {
@@ -179,6 +189,18 @@ var Mugen = {
         });
         content_formJs = content_formJs.replace("[formRendered]", stringFields);
 
+        //reformat fields as string, and replace it with [formHelpers]
+        var stringFields = "";
+        fields.forEach(function(obj) {
+            var belongToCollection = obj.belongToCollection ? belongToCollection : null;
+            if (belongToCollection) {
+                stringFields += belongToCollection.toLowerCase() + ': function() {\n' +
+                        'return ' + belongToCollection + '.find({});\n' +
+                        '},\n';
+            }
+        });
+        content_formJs = content_formJs.replace("[formHelpers]", stringFields);
+
         //reformat fields as string, and replace it with [formFields]
         var stringFields = "";
         fields.forEach(function(obj) {
@@ -186,6 +208,8 @@ var Mugen = {
             var type = obj.type;
             var label = obj.label;
             var isRequired = obj.isRequired ? "*" : "";
+            var belongToCollection = obj.belongToCollection ? belongToCollection : null;
+
             stringFields +=
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
                     '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n';
@@ -193,6 +217,13 @@ var Mugen = {
                 stringFields += '<input type="text" id="' + name + '" value="{{meteorisFormatterDate ' + name + " 'L'" + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "Number") {
                 stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
+            } else if (type == "String" && belongToCollection) {
+                stringFields += '<select id="' + name + '" class="form-control">\n' +
+                        '<option value=""></option>\n' +
+                        '{{#each ' + belongToCollection + '}}\n' +
+                        '<option value="{{_id}}">{{name}}</option>\n' +
+                        '{{/each}}\n' +
+                        '</select>\n';
             } else {
                 stringFields += '<input type="text" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             }
@@ -370,7 +401,7 @@ var Mugen = {
         var stringFields = "";
         fields.forEach(function(obj) {
             var name = obj.name;
-            var belongToCollection = obj.belongToCollection;            
+            var belongToCollection = obj.belongToCollection;
             if (belongToCollection) {
                 stringFields +=
                         '/* return all related ' + belongToCollection + ' */\n' +
