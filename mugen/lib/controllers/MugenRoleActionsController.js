@@ -6,6 +6,7 @@ MugenRoleActionsController = MeteorisController.extend({
 
         this.subs.subscribe('mugenRoleGroups', {});
         this.subs.subscribe('mugenRoleCollections', {});
+        this.subs.subscribe('mugenRoleActions', this.getCriteriaManage(), sort);
         this.subscription = this.subs.subscribe('mugenRoleActions', this.getCriteria(), sort);
     },
     /* event searching data by user input with parameter */
