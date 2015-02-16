@@ -35,4 +35,14 @@ Router.route('users/profile/:_id?/', {
     controller: UsersController,
     action: 'profile'
 });
+Router.route('users/forgetPassword/', {
+    name: 'usersForgetPassword',
+    controller: UsersController,
+    action: 'forgetPassword'
+});
+Router.route('users/resetPassword/:token?', {
+    name: 'usersResetPassword',
+    controller: UsersController,
+    action: 'resetPassword'
+});
 /* EOF USERS */

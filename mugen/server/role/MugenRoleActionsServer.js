@@ -50,7 +50,7 @@ Meteor.methods({
 
         var isAuthenticated = false;
         //if current path is "/" or "mugen" or "user/login | user/register" then make it true
-        if (collection == "" || collection == "mugenRoleActions" || collection == "mugenRoleCollections" || collection == "mugenRoleGroups" || collection == 'users' && action == 'login' || collection == 'users' && action == 'register') {
+        if (collection == "" || collection == "mugenRoleActions" || collection == "mugenRoleCollections" || collection == "mugenRoleGroups" || collection == 'users' && action == 'login' || collection == 'users' && action == 'register' || collection == 'users' && action == 'forgetPassword' || collection == 'users' && action == 'resetPassword') {
             isAuthenticated = true;
         } else if (mugenRoleCollectionId) {
             var orArray = [
