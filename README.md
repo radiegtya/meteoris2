@@ -1,6 +1,32 @@
 METEORIS v0.9.8 (Meteor v1.0.3.1) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [METEORIS v0.9.8 (Meteor v1.0.3.1) ](#)
+		- [WHAT IS METEORIS?](#)
+		- [WHY USE METEORIS?](#)
+		- [WHAT'S NEW IN V0.9.8](#)
+		- [WHAT'S INSIDE METEORIS?](#)
+		- [DOCUMENTATION](#)
+		- [METEORIS ROADMAP AND CHANGELOG](#)
+		- [WHAT'S NEW IN V0.9.7](#)
+		- [WHAT'S NEW IN V0.9.6](#)
+		- [WHAT'S NEW IN V0.9.5](#)
+		- [WHAT'S NEW IN V0.9.4](#)
+		- [WHAT'S NEW IN V0.9.3](#)
+		- [WHAT'S NEW IN V0.9.2](#)
+		- [WHAT'S NEW IN V0.9.1](#)
+		- [WHAT'S NEW IN V0.7.5](#)
+		- [WHAT'S NEW IN V0.7.1](#)
+		- [WHAT'S NEW IN V0.6.4](#)
+		- [WHAT'S NEW IN V0.6.3](#)
+		- [WHAT'S NEW IN V0.6.2](#)
+		- [WHAT'S NEW IN V0.6.1](#)
+		- [WHAT'S NEW IN V0.5.6](#)
+		- [WHAT'S NEW IN V0.5.2](#)
+		- [Contributing](#)
+
 ###WHAT IS METEORIS?
 Meteoris is a Realtime Javascript Boilerplate based on Meteor Js framework v1.0. 
 It helps you structure your Meteor Js apps and includes many useful packages.
