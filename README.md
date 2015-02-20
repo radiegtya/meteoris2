@@ -5,15 +5,14 @@ METEORIS v0.9.8 (Meteor v1.0.3.1) <a href="https://www.paypal.com/cgi-bin/webscr
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [METEORIS v0.9.8 (Meteor v1.0.3.1) ](#)
-- [WHAT IS METEORIS?](#)
-- [WHY USE METEORIS?](#)
-- [WHAT'S NEW IN V0.9.8](#)
-- [WHAT'S INSIDE METEORIS?](#)
-- [DOCUMENTATION](#)
-- [METEORIS ROADMAP AND CHANGELOG](#)
-- [WHAT'S NEW IN](#)
-- [Contributing](#)
+- [WHAT IS METEORIS?](https://github.com/radiegtya/meteoris#what-is-meteoris)
+- [WHY USE METEORIS?](https://github.com/radiegtya/meteoris#why-use-meteoris)
+- [WHAT'S NEW IN V0.9.8](https://github.com/radiegtya/meteoris#whats-new-in-v098)
+- [WHAT'S INSIDE METEORIS?](https://github.com/radiegtya/meteoris#whats-inside-meteoris)
+- [DOCUMENTATION](https://github.com/radiegtya/meteoris#documentation)
+- [METEORIS ROADMAP AND CHANGELOG](https://github.com/radiegtya/meteoris#meteoris-roadmap-and-changelog)
+- [WHAT'S NEW IN](https://github.com/radiegtya/meteoris#whats-new-in-v096)
+- [Contributing](https://github.com/radiegtya/meteoris#contributing)
 
 
 
