@@ -88,7 +88,7 @@ or you can view the doc via google docs here:
 
 https://docs.google.com/document/d/1wEe2u9qLXRLEnWhnUx7wVyo7Jc66Dt2gkokXcP0iPCE/edit?usp=sharing
 
-Ofc We'll improve the documentation.
+Ofc We're improving the documentation. Sneak preview available [here](https://github.com/warehouseman/meteoris/wiki/User-Manual).
 
 
 ###METEORIS ROADMAP AND CHANGELOG
