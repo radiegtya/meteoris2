@@ -221,7 +221,9 @@ var Mugen = {
                 stringFields += '<select id="' + name + '" class="form-control">\n' +
                         '<option value=""></option>\n' +
                         '{{#each ' + Mugen.toCollectionCase(belongToCollection) + '}}\n' +
-                        '<option value="{{_id}}" {{selected ../' + name + '}}>{{name}}</option>\n' +
+                        '<option value="{{_id}}" {{selected ../' + name + '}}>{{name}}' +
+                        ' Using ' + collectionName + '.name here for record "{{_id}}". Correct it in the file : ' + path_formHtml +
+                        '</option>\n' +
                         '{{/each}}\n' +
                         '</select>\n';
             } else {
