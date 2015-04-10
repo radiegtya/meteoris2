@@ -11,11 +11,19 @@ aldeed:simple-schema@1.3.2
 autoupdate@1.2.1
 base64@1.0.3
 binary-heap@1.0.3
+<<<<<<< HEAD
+blaze@2.1.1
+blaze-tools@1.0.3
+boilerplate-generator@1.0.3
+callback-hook@1.0.3
+cfs:access-point@0.1.46
+=======
 blaze@2.1.2
 blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 cfs:access-point@0.1.47
+>>>>>>> ae6ac4174bfadebb0c371db17d5b2304ed2183ff
 cfs:base-package@0.0.29
 cfs:collection@0.5.5
 cfs:collection-filters@0.2.4
@@ -24,18 +32,29 @@ cfs:ejson-file@0.1.4
 cfs:file@0.1.17
 cfs:filesystem@0.1.2
 cfs:gridfs@0.0.33
+<<<<<<< HEAD
+cfs:http-methods@0.0.27
+=======
 cfs:http-methods@0.0.28
+>>>>>>> ae6ac4174bfadebb0c371db17d5b2304ed2183ff
 cfs:http-publish@0.0.13
 cfs:power-queue@0.9.11
 cfs:reactive-list@0.0.9
 cfs:reactive-property@0.0.4
+<<<<<<< HEAD
+cfs:standard-packages@0.5.7
+=======
 cfs:standard-packages@0.5.8
+>>>>>>> ae6ac4174bfadebb0c371db17d5b2304ed2183ff
 cfs:storage-adapter@0.2.2
 cfs:tempstore@0.1.5
 cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.0.5
+<<<<<<< HEAD
+=======
 codechimera:meteor-bootstrap-sweetalert@0.0.1
+>>>>>>> ae6ac4174bfadebb0c371db17d5b2304ed2183ff
 coffeescript@1.0.6
 dandv:caret-position@2.1.1
 dburles:collection-helpers@1.0.3
@@ -50,9 +69,15 @@ francocatena:status@1.1.2
 gadicohen:phantomjs@0.0.2
 geojson-utils@1.0.3
 google@1.1.5
+<<<<<<< HEAD
+ground:db@0.3.6
+ground:dictionary@0.2.0
+ground:localstorage@0.1.7
+=======
 ground:db@0.3.7
 ground:dictionary@0.2.0
 ground:localstorage@0.1.8
+>>>>>>> ae6ac4174bfadebb0c371db17d5b2304ed2183ff
 ground:minimax@1.1.2
 ground:servertime@0.0.3
 ground:store@0.1.1
@@ -85,7 +110,11 @@ minimongo@1.0.8
 mizzao:autocomplete@0.5.1
 mizzao:timesync@0.3.1
 mobile-status-bar@1.0.3
+<<<<<<< HEAD
+momentjs:moment@2.9.0
+=======
 momentjs:moment@2.10.2
+>>>>>>> ae6ac4174bfadebb0c371db17d5b2304ed2183ff
 mongo@1.1.0
 mongo-livedata@1.0.8
 mystor:device-detection@0.2.0
