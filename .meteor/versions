@@ -98,7 +98,6 @@ ordered-dict@1.0.3
 peerlibrary:assert@0.2.5
 peerlibrary:blocking@0.5.2
 peerlibrary:fs@0.1.7
-practicalmeteor:chai@1.9.2_3
 raix:eventemitter@0.1.2
 raix:onetimeout@1.0.3
 raix:stubfence@1.0.1
