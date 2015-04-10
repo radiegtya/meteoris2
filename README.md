@@ -1,4 +1,4 @@
-METEORIS v0.9.8 (Meteor v1.0.3.1) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.8.1 (Meteor v1.0.3.1) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 
@@ -32,6 +32,13 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
 
 **METEORIS IS THE SOLUTION!**
+
+###WHAT'S NEW IN V0.9.8.1
+- preparatory work towards using Velocity with Cucumber
+- begin using sweetAlert, instead of ugly generic Javascript alerts, to facilitate acceptance testing
+- handles mugen form submits, instead of trying to handle problematic submit button clicks
+- new skeleton directories for packages and tests
+- upgraded to Meteor 1.1.0.2 compatibility
 
 ###WHAT'S NEW IN V0.9.8
 - minor bug fixing on mugen RBAC
@@ -88,7 +95,7 @@ or you can view the doc via google docs here:
 
 https://docs.google.com/document/d/1wEe2u9qLXRLEnWhnUx7wVyo7Jc66Dt2gkokXcP0iPCE/edit?usp=sharing
 
-Ofc We'll improve the documentation.
+Ofc We're improving the documentation. Sneak preview available [here](https://github.com/warehouseman/meteoris/wiki/User-Manual).
 
 
 ###METEORIS ROADMAP AND CHANGELOG

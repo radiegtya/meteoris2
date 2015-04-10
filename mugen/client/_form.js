@@ -47,11 +47,26 @@ Template.mugen_form.events = {
             checkboxes[i].checked = e.target.checked;
         }
     },
-    'click #btnSave': function(e, t) {
+//    'click #btnSave': function(e, t) {      //  Handling click, rather than submit, makes
+    'submit #posts_form': function(e, t) {    //  integration testing very difficult
+
         e.preventDefault();
         var checkboxes = $('.checkAll');
-        if (confirm("Are you sure want to generate your code with this data?")) {
+//        if (confirm("Are you sure want to generate your code with this data?")) {
+//           Javascript alert/confirm boxes make integration testing very difficult
+
+        swal({
+          title: "Are you sure?",
+          text: "Are you ready to overwrite any previously generated files?",
+          type: "warning",
+          showCancelButton: true,
+          closeOnConfirm: true,
+          confirmButtonText: "Yes, its ok!",
+          confirmButtonColor: "#337ab7"
+        }, function () {
+
             var collection = t.find('#collection').value;
+
             var names = $('.names').map(function() {
                 return $(this).val();
             }).get();
@@ -69,7 +84,6 @@ Template.mugen_form.events = {
             }).get();
             var isRequireds = $('.isRequireds');
 
-
             //check whether collection cannot be empty
             if (!collection || collection == "") {
                 var errMessage = "Collection is required";
@@ -80,7 +94,7 @@ Template.mugen_form.events = {
             //regex match collection to avoid field break generate
             var collectionMatch = collection.match(/^[a-z0-9A-Z_]{2,30}$/);
             if (!collectionMatch) {
-                var errMessage = "Collection name can't contain any of the following characters \ / : * ? < > |";
+                var errMessage = "Collection name must be less tha 30 characters AND must not contain any of the following characters \ / : * ? < > |";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }
@@ -179,6 +193,6 @@ Template.mugen_form.events = {
                 }
             }
             MeteorisFlash.set('success', 'Success generating code!');
-        }
+        })
     },
 };
