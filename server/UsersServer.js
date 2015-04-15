@@ -11,7 +11,6 @@ Meteor.publishComposite('users', function(doc) {
 
 Meteor.methods({
     'Users.insert': function(doc) {
-        console.log('inserting user...');
         validateParams(doc);
         Accounts.createUser(doc);
         return true;

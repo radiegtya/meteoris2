@@ -4,8 +4,14 @@ Template.mugenRoleGroupsIndex.helpers({
 Template.mugenRoleGroupsIndex.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
-        if (confirm("Are you sure want to remove this data?"))
-            Router.current().remove(this._id);
+        var it = this._id;
+        standardConfirmDialog.text = "Are you sure want to remove this role group?";
+        swal(
+            standardConfirmDialog
+          , function () {
+            Router.current().remove(it);
+        });
+
     },
     /* sorting by parameter */
     'click #btnSortname': function(e) {
@@ -35,15 +41,20 @@ Template.mugenRoleGroupsIndex.events = {
         }
 
         if (checkedLength > 0) {
-            if (confirm("Are you sure want to remove? (total " + checkedLength + " data will be removed)")) {
-                // loop over them all
-                for (var i = 0; i < checkboxes.length; i++) {
-                    // And stick the checked ones onto an array...
-                    if (checkboxes[i].checked) {
-                        Router.current().remove($(checkboxes[i]).val());
-                    }
-                }
-            }
+
+            standardConfirmDialog.text = "Are you sure want to remove \n"
+              + ((checkedLength == 1)
+                   ?  "this role group"
+                   :  "these " + checkedLength + " role groups")
+              + "?";
+            swal(
+                standardConfirmDialog
+              , function () {
+                    dropChecked(checkboxes)
+            });
+
+
+
         } else {
             MeteorisFlash.set('danger', 'Please Select Some data which You Want to Remove');
         }
@@ -51,4 +62,15 @@ Template.mugenRoleGroupsIndex.events = {
         //set checkAll header to uncheck
         $('#checkAll').attr("checked", false);
     },
+};
+
+function dropChecked(checkboxes) {
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        // And stick the checked ones onto an array...
+        if (checkboxes[i].checked) {
+            Router.current().remove($(checkboxes[i]).val());
+        }
+    }
+
 };

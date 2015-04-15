@@ -1,5 +1,6 @@
 Template.usersLogin.events = {
-    'click #btnLogin': function(e, t){
+//    'click #btnLogin': function(e, t){
+    'submit #loginForm': function(e, t) {
         e.preventDefault();        
         Router.current().login(t);
     },    

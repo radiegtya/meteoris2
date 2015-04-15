@@ -9,41 +9,47 @@
 
     /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
     /*                                                           */
-    /*          I am on the CRUDSS generator page : mugen        */
+    /*    Given I am logged in as "UID" with password "PWD"      */
+    /*                                                           */
+    /*                                                           */
+    this.Given(/^I am logged in as "([^"]*)" with uid "([^"]*)" and password "([^"]*)"$/
+      , function (strNameAdmin, strEmailAdmin, strPwdAdmin, callback) {
+
+      seqLogin(this, callback, strEmailAdmin, strPwdAdmin, strNameAdmin);
+      callback();
+
+    });
+
+    /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+    /*                                                           */
+    /*      And I am on the CRUDSS generator page : mugen        */
     /*                                                           */
     /*                                                           */
     this.Given(/^I am on the CRUDSS generator page : "([^"]*)"$/, function (relativePath, callback) {
 
       this.browser
         .url(url.resolve(process.env.HOST, relativePath)) // process.env.HOST always points to the mirror
+//        .saveScreenshot('/home/yourself/Pictures/onCRUDPage.png')
         .call(callback);
 
     });
 
 
-    /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-    /*                                                           */
-    /*          I name my new collection "jobs"                  */
-    /*                                                           */
-    /*                                                           */
-    this.When(/^I name my new collection "([^"]*)"$/, function (nameCollection, callback) {
-      
+    /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+    /*                                                               */
+    /*   When I create a "jobs" collection with attributes :         */
+    /*    | Name   |  Type  | Required | Label | isOf |  FK  |       */
+    /*    | title  | String | required | Title | null | null |       */
+    /*    | posted | Date   | required | Date  | null | null |       */
+    /*                                                               */
+    this.When(/^I create a "([^"]*)"  collection with attributes :$/
+        , function (nameCollection, featureTable, callback) {
+
       var fldCollectionName = '//*[@id="collection"]';
       prepElem(this, fldCollectionName)
         .setValue(fldCollectionName, nameCollection)
-        .call(callback);
+//        .saveScreenshot('/home/yourself/Pictures/nameMyCollection.png')
 
-    });
-
-
-    /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
-    /*                                                           */
-    /*          I add the table                                  */
-    /*                                                           */
-    /*                                                           */
-   this.When(/^I add the table :$/, function (featureTable, callback) {
-
-      console.log("Applying gherkin table");
       var funcColumnSetter = null;
       var idxRow = 0;
 
@@ -51,47 +57,164 @@
         processNextRowIfValid(this, featureTable, idxRow, processTableRow, callback, failedTest);
       };
 
-      /*****************/
-//      callback();  // Handled inside  processNextRowIfValid
+//      console.log("Submitting the form");
+      var xpathCRUDSSForm = '//*[@id="posts_form"]';
+      var xpathBtnConfirm = '//button[text()="Yes. Please proceed!"]';
+
+      var that = this;
+      this.browser
+        .submitForm(xpathCRUDSSForm, function (err, submitForm) {
+          prepElem(that, xpathBtnConfirm)
+            .click(xpathBtnConfirm, function(err) {
+            })
+//            .saveScreenshot('/home/yourself/Pictures/jobsCollection.png')
+          callback();
+        });
+    });
+
+
+    /*   *   *   *   *   *   *   *   *   *   *  *   *   */
+    /*                                                  */
+    /*          I create a jobs roles collection :      */
+    /*                                                  */
+    this.When(/^I create a "([^"]*)" roles collection$/, function (roleName, callback) {
+      var that = this;
+
+      var urlRoleCollections = '/mugenRoleCollections';
+      var xpathInsertButton = '//a[text()="Insert"]';
+
+      var xpathNameMugenRoleCollections = '//*[@id="name"]';
+      var xpathSubmitButton = '//*[@id="btnSave"]';
+      var xpathRoleCollectionsForm = '//*[@id="mugenRoleCollections_form"]';
+
+      //  Get to the role groups page
+      var routeRoleCollections = url.resolve(process.env.HOST, urlRoleCollections);  // process.env.HOST always points to the mirror
+//      console.log("routeRoleCollections ? " + routeRoleCollections);
+      this.browser.url(routeRoleCollections);
+
+      // Open role group form
+      prepElem(this, xpathInsertButton)
+        .click(xpathInsertButton);
+
+      // Create new role group
+      prepElem(this, xpathNameMugenRoleCollections)
+        .setValue(xpathNameMugenRoleCollections, roleName)
+//        .saveScreenshot('/home/yourself/Pictures/roleCollection.png')
+        .click(xpathSubmitButton)
+//        .saveScreenshot('/home/yourself/Pictures/roleCollectionIndex.png')
+        ;
+
+      callback();
     });
 
 
     /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
     /*                                                           */
-    /*          I generate the new collection                    */
+    /*          I create a role and a user from the table :        */
     /*                                                           */
+    /*    | Name | Password  |  RoleGroup |     Email       |    */
+    /*    |  Bob |  bob123   | HR_Manager | bob@meteoris.me |    */
     /*                                                           */
-    this.When(/^I generate the new collection$/, function (callback) {
-
-      console.log("Submitting the form");
-      var xpathCRUDSSForm = '//*[@id="posts_form"]';
-      var xpathBtnConfirm = '.confirm';
-      this.browser.saveScreenshot('/home/yourself/Pictures/lastTestRun_A.png'); 
+    this.When(/^I create a role and a user from the table :$/, function (table, callback) {
       var that = this;
+
+      var urlRoleGroup = '/mugenRoleGroups/index';
+      var xpathInsertButton = '//a[text()="Insert"]';
+      var xpathNameMugenRoleGroups = '//*[@id="name"]';
+      var xpathRoleGroupsForm = '//*[@id="mugenRoleGroups_form"]';
+      var urlUserMgmnt = '/users/index';
+      var xpathSubmitButton = '//*[@id="btnSave"]';
+      var xpathUsersForm = '//*[@id="users_form"]';
+
+      //  Get to the role groups page
+      var routeRoleGroups = url.resolve(process.env.HOST, urlRoleGroup);  // process.env.HOST always points to the mirror
+//      console.log("routeRoleGroups ? " + routeRoleGroups);
+      this.browser.url(routeRoleGroups);
+
+      //  Prepare feature table data
+      var mapFeatureTable = characterizeFeatureTable(table);
+
+
+      // Open role group form
+      prepElem(this, xpathInsertButton)
+        .click(xpathInsertButton);
+
+      // Create new role group
+      prepElem(this, xpathNameMugenRoleGroups)
+        .setValue(xpathNameMugenRoleGroups, mapFeatureTable.rows[0].RoleGroup)
+        .submitForm(xpathRoleGroupsForm)
+        ;
+
+      //  Get to the user management page
+      var routeUserMgmnt = url.resolve(process.env.HOST, urlUserMgmnt);  // process.env.HOST always points to the mirror
+//      console.log("routeUserMgmnt ? " + routeUserMgmnt);
       this.browser
-        .submitForm(xpathCRUDSSForm, function (err, submitForm) {
-          console.log(" . . . . . . ");
-          console.log(err);
-          console.log(submitForm);
-          console.log("Should be submitting now from : " + xpathCRUDSSForm);
+        .url(routeUserMgmnt)
+//        .saveScreenshot('/home/yourself/Pictures/userPage.png')
+        ;
 
-          that.browser.saveScreenshot('/home/yourself/Pictures/lastTestRun_B.png');
-          prepElem(that, xpathBtnConfirm)
-            .click(xpathBtnConfirm, function(err) {
-              console.log(" Confirmed ");
-              console.log(err);
-              that.browser.saveScreenshot('/home/yourself/Pictures/lastTestRun_C.png');
-            });
-          callback();
-        });
-        
-    });
+      // Open user creation form
+      prepElem(this, xpathInsertButton)
+        .click(xpathInsertButton);
 
-    this.Then(/^I can open the "([^"]*)" manager's index page$/, function (nameCollection, callback) {
-      console.log(" Got : " + nameCollection);
+      // Create new user
+      prepElem(this, xpathSubmitButton)
+        .setValue(mapFeatureTable.columns.Email.xpath, mapFeatureTable.rows[0].Email)
+        .setValue(mapFeatureTable.columns.Password.xpath, mapFeatureTable.rows[0].Password)
+        .setValue(mapFeatureTable.columns.Name.xpath, mapFeatureTable.rows[0].Name)
+        .selectByVisibleText(mapFeatureTable.columns.RoleGroup.xpath, mapFeatureTable.rows[0].RoleGroup)
+        .click(xpathSubmitButton)
+        ;
+
       callback();
     });
 
+
+    /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+    /*                                                                           */
+    /*  I give the "a role" "a privilege" authority over the "???" collection    */
+    /*                                                                           */
+    /*                                                                           */
+    this.When(/^I give the "([^"]*)" "([^"]*)" authority over the "([^"]*)" collection$/
+             , function (role, privilege, collection, callback) {
+
+      var that = this;
+      var xpathRoleGroupsChooser = '//*[@id="mugenRoleGroupId"]';
+      var xpathRoleCollectionChooser = '//*[@id="mugenRoleCollectionId"]';
+      var xpathBtnSearch = '//*[@id="btnSearchManage"]';
+      var xpathActioName = '//*[@id="name"]';
+      var xpathBtnInsert = '//*[@id="btnInsertManage"]';
+
+      this.browser
+        .url(url.resolve(process.env.HOST, '/mugenRoleActions/manage'), function (collection, callback) {
+//             that.browser.saveScreenshot('/home/yourself/Pictures/manageRoleActions.png');
+        })
+        .waitForExist(xpathBtnSearch, 5000)
+        .selectByVisibleText(xpathRoleGroupsChooser, role)
+        .selectByVisibleText(xpathRoleCollectionChooser, collection)
+        .click(xpathBtnSearch)
+        .setValue(xpathActioName, privilege)
+        .click(xpathBtnInsert)
+//        .saveScreenshot('/home/yourself/Pictures/chosenRoleActions.png')
+
+      callback();
+    });
+
+    /*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+    /*                                                           */
+    /*        Then logged in as "bob@meteoris.me" with           */
+    /*  password "bob123" I can open the "jobs" management page  */
+    /*                                                           */
+    /*                                                           */
+    this.Then(/^logged in as "([^"]*)" with uid "([^"]*)" and password "([^"]*)" I can open the "([^"]*)" management page$/
+      , function (name, user, pwd, collection, callback) {
+      seqLogin(this, callback, user, pwd, name);
+      this.browser
+        .url(url.resolve(process.env.HOST, "/" + collection)) // process.env.HOST always points to the mirror
+//        .saveScreenshot('/home/yourself/Pictures/jobs.png')
+
+      callback();
+    });
 
     /*   --------------------------------------------------------*/
     /*          Helper functions                                 */
@@ -118,12 +241,48 @@
       };
     };
 
+    function seqLogin(this_, callback_, uid, pwd, name) {
+
+      var urlLogin = '/users/login';
+      var routeLogin = url.resolve(process.env.HOST, urlLogin);  // process.env.HOST always points to the mirror
+//      console.log("Login route ? " + routeLogin);
+      this_.browser.url(routeLogin);
+
+      var xpathFldEmail = '//*[@id="email"]';
+      var xpathFldPwd = '//*[@id="password"]';
+
+      var xpathLoginBtn = '//input[@value="Log In"]';
+
+      var xpathHrefUID = '//a[text()="' + name + '"]';
+
+      prepElem(this_, xpathFldEmail)
+        .setValue(xpathFldEmail, uid)
+        .setValue(xpathFldPwd, pwd)
+        .click(xpathLoginBtn)
+        .waitForExist(xpathHrefUID, 5000)
+        .waitForVisible(xpathHrefUID)
+
+    }
     /*   --------------------------------------------------------*/
 
-  };
 
+  };
 })();
 
+function characterizeFeatureTable(table_) {
+
+  var mapTable = {};
+  var mapColumns = {
+      Name :      {type: 'StringInput', xpath: '//*[@id="name"]'}
+    , Password :  {type: 'StringInput', xpath: '//*[@id="password"]'}
+    , RoleGroup : {type: 'DropDown',    xpath: '//*[@id="mugenRoleGroupId"]'}
+    , Email :     {type: 'StringInput', xpath: '//*[@id="email"]'}
+  };
+  mapTable.columns = mapColumns;
+  mapTable.rows = table_.hashes();
+  return mapTable;
+
+};
 
 function prepElem(this_, selector) {
   return this_.browser.waitForExist(selector, 5000).waitForVisible(selector);
@@ -133,17 +292,14 @@ function processNextRowIfValid(this_, featureTable, idxRow, processRow, workflow
 
   var lastRow = featureTable.raw().length - 2;
   var xpathButtonsCell = crudssTableCellSelector(idxRow + 1, 7) + "/a[text()='Add']";
-  console.log(" ++++++ Checking " + xpathButtonsCell);
+
   this_.browser.isExisting(xpathButtonsCell, function (err, isExisting) {
     if (isExisting) {
-      console.log("We can process this row.  It has an 'Add' button.");
+//      console.log("We can process this row.  It has an 'Add' button.");
       processRow(featureTable, idxRow, this_);
       if (idxRow < lastRow) {
-        console.log("|''''''''''''  ADD A NEW LINE NOW  '''''''''''|");
+        console.log("Adding a new table row");
         this_.browser.click(xpathButtonsCell);
-        console.log("|''''''''''''        ADDED         '''''''''''|");
-      } else {
-        workflowNext();
       }
     } else {
       console.log("No 'Add' button found ");
@@ -190,12 +346,11 @@ mapField = {
 hndlrFieldType = {
     StringInput : function setAsStringInput(this_, xpath_, strng_) {
       if (strng_ != "null") {
-        var xpath = xpath_ + "/input"
-        console.log("Set string input " + xpath + " to " + strng_);
+        var xpath = xpath_ + "/input";
+//        console.log("Set string input " + xpath + " to " + strng_);
 
         prepElem(this_, xpath)
           .setValue(xpath, strng_, function (err, value) {
-//          console.log("Have set string input " + xpath + " to " + value);
         });
 
       }
@@ -203,11 +358,11 @@ hndlrFieldType = {
   , CheckBox : function setAsCheckBox(this_, xpath_, value_) {
       if (value_ === "required") {
 
-        var xpath = xpath_ + "/input"
-        console.log("Set check box " + xpath + " to true");
+        var xpath = xpath_ + "/input";
+//        console.log("Set check box " + xpath + " to true");
         prepElem(this_, xpath_)
           .isSelected(xpath, function (err, isSelected) {
-          console.log("Is checked " + isSelected);
+//          console.log("Is checked " + isSelected);
           this_.browser.click(xpath);
         });
 
@@ -217,10 +372,9 @@ hndlrFieldType = {
       if (value_ != "null") {
 
         var xpath = xpath_ + "/select"
-        console.log("Set drop down " + xpath + " to " + value_);
+//        console.log("Set drop down " + xpath + " to " + value_);
         prepElem(this_, xpath_).selectByValue(xpath, value_);
 
       }
     }
 };
-

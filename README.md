@@ -1,4 +1,4 @@
-METEORIS v0.9.8.1 (Meteor v1.0.3.1) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.8.2 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 
@@ -7,11 +7,11 @@ METEORIS v0.9.8.1 (Meteor v1.0.3.1) <a href="https://www.paypal.com/cgi-bin/webs
 
 - [WHAT IS METEORIS?](https://github.com/radiegtya/meteoris#what-is-meteoris)
 - [WHY USE METEORIS?](https://github.com/radiegtya/meteoris#why-use-meteoris)
-- [WHAT'S NEW IN V0.9.8](https://github.com/radiegtya/meteoris#whats-new-in-v098)
+- [WHAT'S NEW IN V0.9.8.2](https://github.com/radiegtya/meteoris#whats-new-in-v0982)
 - [WHAT'S INSIDE METEORIS?](https://github.com/radiegtya/meteoris#whats-inside-meteoris)
 - [DOCUMENTATION](https://github.com/radiegtya/meteoris#documentation)
 - [METEORIS ROADMAP AND CHANGELOG](https://github.com/radiegtya/meteoris#meteoris-roadmap-and-changelog)
-- [WHAT'S NEW IN](https://github.com/radiegtya/meteoris#whats-new-in-v096)
+- [WHAT'S NEW IN](https://github.com/radiegtya/meteoris#whats-new-in-v098)
 - [Contributing](https://github.com/radiegtya/meteoris#contributing)
 
 
@@ -33,16 +33,11 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 
 **METEORIS IS THE SOLUTION!**
 
-###WHAT'S NEW IN V0.9.8.1
-- preparatory work towards using Velocity with Cucumber
-- begin using sweetAlert, instead of ugly generic Javascript alerts, to facilitate acceptance testing
-- handles mugen form submits, instead of trying to handle problematic submit button clicks
-- new skeleton directories for packages and tests
-- upgraded to Meteor 1.1.0.2 compatibility
-
-###WHAT'S NEW IN V0.9.8
-- minor bug fixing on mugen RBAC
-- dropdown form for relational db
+###WHAT'S NEW IN V0.9.8.2
+- Velocity testing with Cucumber 0.6.0 (activate with *meteor add xolvio:cucumber*)
+- A fully worked Cucumber example that automatically creates a "Jobs" collection, a Human Resources Manager role, a Human Resources nanager user, and authorizes that user to access the "Jobs" collection.
+- further sweetAlert replacements of ugly generic Javascript alerts
+- a generic sweetAlert object that hides frequently-used attributes during normal use
 
 ###WHAT'S INSIDE METEORIS?
 
@@ -80,6 +75,7 @@ Package                                   | Version | Description
 - reywood:publish-composite               |1.3.2| Publish a set of related docu...
 - sacha:spin                              |2.0.4| Simple spinner package for Me...
 - service-configuration                   |1.0.2| Manage the configuration for ...
+- xolvio:cucumber                         |0.6.0| Cucumber and Velocity ...
 
 
 
@@ -102,6 +98,17 @@ Ofc We're improving the documentation. Sneak preview available [here](https://gi
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.9.8.1
+- preparatory work towards using Velocity with Cucumber
+- begin using sweetAlert, instead of ugly generic Javascript alerts, to facilitate acceptance testing
+- handles mugen form submits, instead of trying to handle problematic submit button clicks
+- new skeleton directories for packages and tests
+- upgraded to Meteor 1.1.0.2 compatibility
+
+###WHAT'S NEW IN V0.9.8
+- minor bug fixing on mugen RBAC
+- dropdown form for relational db
 
 ###WHAT'S NEW IN V0.9.7
 - Roles addition #20 (RBAC) for meteoris Thanks to @MercedesAMG1
