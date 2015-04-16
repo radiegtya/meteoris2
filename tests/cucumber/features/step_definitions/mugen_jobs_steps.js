@@ -57,19 +57,18 @@
         processNextRowIfValid(this, featureTable, idxRow, processTableRow, callback, failedTest);
       };
 
-//      console.log("Submitting the form");
       var xpathCRUDSSForm = '//*[@id="posts_form"]';
       var xpathBtnConfirm = '//button[text()="Yes. Please proceed!"]';
 
       var that = this;
       this.browser
-        .submitForm(xpathCRUDSSForm, function (err, submitForm) {
-          prepElem(that, xpathBtnConfirm)
-            .click(xpathBtnConfirm, function(err) {
-            })
-//            .saveScreenshot('/home/yourself/Pictures/jobsCollection.png')
-          callback();
-        });
+        .submitForm(xpathCRUDSSForm)
+        .waitForExist(xpathBtnConfirm, 5000)
+        .waitForVisible(xpathBtnConfirm, 5000)
+        .waitForEnabled(xpathBtnConfirm, 5000)
+        .click(xpathBtnConfirm)
+        .call(callback);
+
     });
 
 

@@ -23,7 +23,7 @@ function validateParams(params) {
         if (key == "profile") {
             for (var keyProfile in params[key]) {
                 value = params[key][keyProfile];
-                console.log(value);
+//                console.log("UsersServer.js " + value);
                 if (value == "") {
                     throw new Meteor.Error('Please enter your ' + keyProfile, keyProfile);
                 }
@@ -35,7 +35,7 @@ function validateParams(params) {
 
         } else {
             value = params[key];
-            console.log(value);
+//            console.log("UsersServer.js " + value);
             if (value == "")
                 throw new Meteor.Error('Please enter your ' + key, key);
         }
