@@ -7,7 +7,6 @@ meteor-platform
 aldeed:collection2
 iron:router
 meteorhacks:subs-manager
-reywood:publish-composite
 accounts-base
 accounts-password
 mystor:device-detection
@@ -38,5 +37,5 @@ rajit:bootstrap3-datepicker
 summernote:summernote
 email
 accounts-ui
-codechimera:meteor-bootstrap-sweetalert
-# xolvio:cucumber@0.6.0-rc.7
+reywood:publish-composite
+kevohagan:sweetalert

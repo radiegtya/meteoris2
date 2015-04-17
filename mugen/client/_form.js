@@ -52,18 +52,11 @@ Template.mugen_form.events = {
 
         e.preventDefault();
         var checkboxes = $('.checkAll');
-//        if (confirm("Are you sure want to generate your code with this data?")) {
-//           Javascript alert/confirm boxes make integration testing very difficult
 
-        swal({
-          title: "Are you sure?",
-          text: "Are you ready to overwrite any previously generated files?",
-          type: "warning",
-          showCancelButton: true,
-          closeOnConfirm: true,
-          confirmButtonText: "Yes, its ok!",
-          confirmButtonColor: "#337ab7"
-        }, function () {
+        standardConfirmDialog.text = "Are you ready to overwrite any previously generated files";
+        swal(
+            standardConfirmDialog
+          , function () {
 
             var collection = t.find('#collection').value;
 
