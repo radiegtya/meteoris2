@@ -48,7 +48,7 @@ Template.mugen_form.events = {
         }
     },
 //    'click #btnSave': function(e, t) {      //  Handling click, rather than submit, makes
-    'submit #posts_form': function(e, t) {    //  integration testing very difficult
+    'submit #mugenGenerator_form': function(e, t) {    //  integration testing very difficult
 
         e.preventDefault();
         var checkboxes = $('.checkAll');

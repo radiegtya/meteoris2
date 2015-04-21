@@ -76,20 +76,25 @@ Meteor.startup(function() {
     var mugenRoleActions = MugenRoleActions.find();
     if (mugenRoleActions.count() == 0) {
         //meteor.users
-        MugenRoleActions.insert({name: "index", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});
-        MugenRoleActions.insert({name: "view", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});        
-        MugenRoleActions.insert({name: "insert", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});        
-        MugenRoleActions.insert({name: "update", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});        
-        MugenRoleActions.insert({name: "remove", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"});                
-        //posts
-        MugenRoleActions.insert({name: "index", mugenRoleCollectionId: "2"});
-        MugenRoleActions.insert({name: "view", mugenRoleCollectionId: "2"});        
-        MugenRoleActions.insert({name: "insert", mugenRoleCollectionId: "2", mugenRoleGroupId:"1"});        
-        MugenRoleActions.insert({name: "update", mugenRoleCollectionId: "2", mugenRoleGroupId:"1"});        
-        MugenRoleActions.insert({name: "remove", mugenRoleCollectionId: "2", mugenRoleGroupId:"1"});        
-        MugenRoleActions.insert({name: "insert", mugenRoleCollectionId: "2", mugenRoleGroupId:"2"});        
-        MugenRoleActions.insert({name: "update", mugenRoleCollectionId: "2", mugenRoleGroupId:"2"});        
-        MugenRoleActions.insert({name: "remove", mugenRoleCollectionId: "2", mugenRoleGroupId:"2"});        
+        MugenRoleActions.insert({name: "index",   mugenRoleCollectionId: "1", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "view",    mugenRoleCollectionId: "1", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "insert",  mugenRoleCollectionId: "1", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "update",  mugenRoleCollectionId: "1", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "remove",  mugenRoleCollectionId: "1", mugenRoleGroupId:"1"}); // admin
+
+        MugenRoleActions.insert({name: "profile", mugenRoleCollectionId: "1", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "profile", mugenRoleCollectionId: "1", mugenRoleGroupId:"2"}); // logged in user (@)
+        //meteor.posts
+        MugenRoleActions.insert({name: "index",   mugenRoleCollectionId: "2"                      }); // anonymous (*)
+        MugenRoleActions.insert({name: "view",    mugenRoleCollectionId: "2"                      }); // anonymous (*)
+
+        MugenRoleActions.insert({name: "insert",  mugenRoleCollectionId: "2", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "update",  mugenRoleCollectionId: "2", mugenRoleGroupId:"1"}); // admin
+        MugenRoleActions.insert({name: "remove",  mugenRoleCollectionId: "2", mugenRoleGroupId:"1"}); // admin
+
+        MugenRoleActions.insert({name: "insert",  mugenRoleCollectionId: "2", mugenRoleGroupId:"2"}); // logged in user (@)
+        MugenRoleActions.insert({name: "update",  mugenRoleCollectionId: "2", mugenRoleGroupId:"2"}); // logged in user (@)
+        MugenRoleActions.insert({name: "remove",  mugenRoleCollectionId: "2", mugenRoleGroupId:"2"}); // logged in user (@)
     }
 });
 
@@ -103,3 +108,4 @@ Meteor.startup(function() {
  }
  });
  */
+
