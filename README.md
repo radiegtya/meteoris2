@@ -45,6 +45,20 @@ Meteoris uses standard, useful, robust, and stable packages like Iron Router and
 
 For a quick overview of what's inside Meteoris, go see our simple demo at the [demo page](http://meteoris.me) and **watch the video!**.
 
+. . . . . . . **LATEST NEWS** . . . . . . . 
+
+The draft [user manual](https://github.com/warehouseman/meteoris/wiki/User-Manual) discusses how to generate all the code necessary for managing a "jobs" collection.. As of today, *2015/04/16*, those steps are **automated for you** using Cucumber and Velocity.  Here's what you have to do to get that going :
+
+ 1. Open up two terminal sessions and a browser
+ 2. In the first one, issue the command `meteor add xolvio:cucumber`
+ 3. When it completes, execute `meteor`
+ 4. As it runs you will see the following text appear : `[velocity] cucumber is starting a mirror at http://localhost:*****/`  cut'n paste that URL into your browser.
+ 5. You will see, too, an invitation to follow the `tail` of the Cucumber log file : `[velocity] You can see the mirror logs at: tail -f /home/yourself/projects/meteoris/.meteor/local/log/cucumber.log`
+ 6. Turn to the other terminal session and enter that command.
+ 7. Finally, you can see the Velocity reporter in a second tab of you browser if you turn to the usual address : `http://localhost:3000`
+ 8. **Note** that Cucumber creates a completely separate database in MongoDB.  Meanwhile. Mugen automated with Cucumber will still generate files into your project directory as if you were using it manually.
+ 9. In the browser tab of the mirror, you will see that in addition to files generated in your project directory, the automatic process generates new data into a new database : a new role group ('HR_Manager'). a new user ('Bob'), a new Role collection ('jobs') and some actions privileges for admin and HR_manager roles.  Again! That data is created in a separate database available to the test mirror server and **not** available to the project server at port 3000.
+
 **Here is a list of the packages Meteoris uses: (not updated for Meteor 1.0.2)**
 
 Package                                   | Version | Description
