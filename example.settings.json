@@ -1,0 +1,28 @@
+{
+    "public": {
+        "APP_VERSION": "0.9.8.3"
+      , "ID": "73xWmYM6nKmMa5ERB"
+      , "PROJ_NAME": "Meteoris"
+      , "PRODUCTION": false
+      , "USE_MUGEN_GENERATOR" : true
+      , "PRODUCTION_MAIN_SERVER": "http://localhost"
+      , "DEVELOPMENT_MAIN_SERVER": "http://localhost:3000"
+    }
+
+  , "PRODUCTION_MONGO_SERVER": "http://localhost:27071"
+  , "ZIPALIGN_PATH": "~/.meteor/android_bundle/android-sdk/build-tools/21.0.0"
+  , "ALIGNMENT": 4
+  , "KEYSTORE_PATH": "~/.keystore"
+  , "KEYSTORE_PWD": "notAsecretAtAll"
+  , "BUILD_DIRECTORY": "../tmp"
+
+  , "BLOB_MONGO_SERVER": null
+
+  , "DEVELOPMENT_MONGO_SERVER": null
+  
+  , "DEBUG_MODE": "yes"
+  
+  , "MOCHA": "no"
+  , "CUCUMBER": "no"
+}
+
