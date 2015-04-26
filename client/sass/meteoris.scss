@@ -34,7 +34,7 @@ img{
         color: rgba(255,255,255,0.8);
         line-height: 32px;
         height: auto;
-        &:hover, &:active{
+        &:hover, &:active, &:focus{
             color: #FC611F;
         }
         img{
