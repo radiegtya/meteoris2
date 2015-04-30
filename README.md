@@ -1,4 +1,4 @@
-METEORIS v0.9.8.2 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.8.03 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 
@@ -7,7 +7,7 @@ METEORIS v0.9.8.2 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/webs
 
 - [WHAT IS METEORIS?](https://github.com/radiegtya/meteoris#what-is-meteoris)
 - [WHY USE METEORIS?](https://github.com/radiegtya/meteoris#why-use-meteoris)
-- [WHAT'S NEW IN V0.9.8.2](https://github.com/radiegtya/meteoris#whats-new-in-v0982)
+- [WHAT'S NEW IN V0.9.8.03](https://github.com/radiegtya/meteoris#whats-new-in-v09803)
 - [WHAT'S INSIDE METEORIS?](https://github.com/radiegtya/meteoris#whats-inside-meteoris)
 - [DOCUMENTATION](https://github.com/radiegtya/meteoris#documentation)
 - [METEORIS ROADMAP AND CHANGELOG](https://github.com/radiegtya/meteoris#meteoris-roadmap-and-changelog)
@@ -33,11 +33,10 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 
 **METEORIS IS THE SOLUTION!**
 
-###WHAT'S NEW IN V0.9.8.2
-- Velocity testing with Cucumber 0.6.0 (activate with *meteor add xolvio:cucumber*)
-- A fully worked Cucumber example that automatically creates a "Jobs" collection, a Human Resources Manager role, a Human Resources nanager user, and authorizes that user to access the "Jobs" collection.
-- further sweetAlert replacements of ugly generic Javascript alerts
-- a generic sweetAlert object that hides frequently-used attributes during normal use
+###WHAT'S NEW IN V0.9.8.03
+This new version normalizes all configuration settings into `settings.json`, and introduces two command-line scripts that automate the steps required to run meteor for development, build an APK file for Android and deploy  it to browser and Play Store production.  The secondary MongoDB URL that was buried in `lib/applications/meteoris/configs/config.js` is now optional, configured in settings.json and tested against a second Mongo database.
+
+Usage of the two scripts is documented in [About the command line scripts](https://github.com/warehouseman/meteoris/wiki/About-the-command-line-scripts)
 
 ###WHAT'S INSIDE METEORIS?
 
@@ -112,6 +111,12 @@ Ofc We're improving the documentation. Sneak preview available [here](https://gi
 You can view our roadmap from this link. 
  https://trello.com/b/01SvtPLA/meteoris-roadmap.
 if you want to share your idea, just write it in our trello page from that link.
+
+###WHAT'S NEW IN V0.9.8.2
+- Velocity testing with Cucumber 0.6.0 (activate with *meteor add xolvio:cucumber*)
+- A fully worked Cucumber example that automatically creates a "Jobs" collection, a Human Resources Manager role, a Human Resources nanager user, and authorizes that user to access the "Jobs" collection.
+- further sweetAlert replacements of ugly generic Javascript alerts
+- a generic sweetAlert object that hides frequently-used attributes during normal use
 
 ###WHAT'S NEW IN V0.9.8.1
 - preparatory work towards using Velocity with Cucumber

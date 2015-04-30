@@ -15,6 +15,8 @@
     this.Given(/^I am logged in as "([^"]*)" with uid "([^"]*)" and password "([^"]*)"$/
       , function (strNameAdmin, strEmailAdmin, strPwdAdmin, callback) {
 
+      this.browser.setViewportSize({width: 1024, height: 720})
+
       seqLogin(this, callback, strEmailAdmin, strPwdAdmin, strNameAdmin);
       callback();
 
@@ -57,7 +59,7 @@
         processNextRowIfValid(this, featureTable, idxRow, processTableRow, callback, failedTest);
       };
 
-      var xpathCRUDSSForm = '//*[@id="posts_form"]';
+      var xpathCRUDSSForm = '//*[@id="mugenGenerator_form"]';
       var xpathBtnConfirm = '//button[text()="Yes. Please proceed!"]';
 
       var that = this;
@@ -254,12 +256,15 @@
 
       var xpathHrefUID = '//a[text()="' + name + '"]';
 
-      prepElem(this_, xpathFldEmail)
+      this_.browser
+        .waitForExist(xpathFldEmail, 5000)
+        .waitForVisible(xpathFldEmail, 5000)
+        .waitForEnabled(xpathFldEmail, 5000)
         .setValue(xpathFldEmail, uid)
         .setValue(xpathFldPwd, pwd)
         .click(xpathLoginBtn)
         .waitForExist(xpathHrefUID, 5000)
-        .waitForVisible(xpathHrefUID)
+        .waitForVisible(xpathHrefUID, 5000)
 
     }
     /*   --------------------------------------------------------*/
@@ -301,7 +306,7 @@ function processNextRowIfValid(this_, featureTable, idxRow, processRow, workflow
         this_.browser.click(xpathButtonsCell);
       }
     } else {
-      console.log("No 'Add' button found ");
+      console.log("No 'Add' button found :: " + xpathButtonsCell);
       giveUp(idxRow, workflowNext);
     }
   });
@@ -314,7 +319,7 @@ function crudssTableCellSelector(row, col) {
 };
 
 var crudssTableCellSelectorParts = {
-    L : '//*[@id="posts_form"]/table[1]/tbody/tr['
+    L : '//*[@id="mugenGenerator_form"]/table[1]/tbody/tr['
   , M : ']/td['
   , R : ']'
 };

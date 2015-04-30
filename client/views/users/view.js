@@ -1,12 +1,15 @@
-Template.postsView.events = {
+Template.usersView.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
-        if (confirm("Are you sure want to remove this data?")) {
-            Router.current().remove(this._id);
-            Router.go("postsIndex")
-        }
+        standardConfirmDialog.text = "There'll be no recovering from this.  Really delete this user?";
+        swal(
+            standardConfirmDialog
+          , function () {
+              Router.current().remove(this._id);
+              Router.go("usersIndex")
+          });
     },
 };
 
-Template.postsView.helpers({
+Template.usersView.helpers({
 });
