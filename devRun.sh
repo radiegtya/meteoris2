@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-source utilsJson.sh
+source ./utilsJson.sh
 #
 
 function addOrRemoveMocha {
