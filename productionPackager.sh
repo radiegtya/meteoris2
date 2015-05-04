@@ -42,7 +42,7 @@ if [ "$EUID" -eq 0 ]; then
   exit 1
 fi
 #
-source utilsJson.sh
+source ./utilsJson.sh
 #
 echo "Instantiating variables from settings.json"
 parseJSON_public APP_VERSION

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-source utilsJson.sh
+source ./utilsJson.sh
 #
 
 function addOrRemoveMocha {
@@ -28,12 +28,18 @@ function addOrRemoveCucumber {
   fi
 }
 
+function updateMongoUrl {
+  parseJSON DEVELOPMENT_MONGO_SERVER
+  if [ ${DEVELOPMENT_MONGO_SERVER} != null ]; then
+    export MONGO_URL=mongodb://${DEVELOPMENT_MONGO_SERVER}
+  fi
+}
+
 ###################   Main Program
 #
 weCanParseJSON
 echo "Instantiating variables from settings.json"
-parseJSON DEVELOPMENT_MONGO_SERVER
-export MONGO_URL=mongodb://${DEVELOPMENT_MONGO_SERVER}
+updateMongoUrl
 #
 addOrRemoveMocha
 addOrRemoveCucumber
