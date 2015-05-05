@@ -1,4 +1,4 @@
-METEORIS v0.9.8.03 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
+METEORIS v0.9.8.04 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RSYJP7FJJ4V6Y" target="_blank"><img src="https://camo.githubusercontent.com/e14c85b542e06215f7e56c0763333ef1e9b9f9b7/68747470733a2f2f7777772e70617970616c6f626a656374732e636f6d2f656e5f55532f692f62746e2f62746e5f646f6e6174655f534d2e676966" alt="Donate" data-canonical-src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" style="max-width:100%;"></a>
 ===============
 
 
@@ -7,7 +7,7 @@ METEORIS v0.9.8.03 (Meteor v1.1.0.2) <a href="https://www.paypal.com/cgi-bin/web
 
 - [WHAT IS METEORIS?](https://github.com/radiegtya/meteoris#what-is-meteoris)
 - [WHY USE METEORIS?](https://github.com/radiegtya/meteoris#why-use-meteoris)
-- [WHAT'S NEW IN V0.9.8.03](https://github.com/radiegtya/meteoris#whats-new-in-v09803)
+- [WHAT'S NEW IN V0.9.8.04](https://github.com/radiegtya/meteoris#whats-new-in-v09803)
 - [WHAT'S INSIDE METEORIS?](https://github.com/radiegtya/meteoris#whats-inside-meteoris)
 - [DOCUMENTATION](https://github.com/radiegtya/meteoris#documentation)
 - [METEORIS ROADMAP AND CHANGELOG](https://github.com/radiegtya/meteoris#meteoris-roadmap-and-changelog)
@@ -32,6 +32,9 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
 
 **METEORIS IS THE SOLUTION!**
+
+###WHAT'S NEW IN V0.9.8.04
+ - Minor usability fix : advises users to prepare valid settings before starting
 
 ###WHAT'S NEW IN V0.9.8.03
 This new version normalizes all configuration settings into `settings.json`, and introduces two command-line scripts that automate the steps required to run meteor for development, build an APK file for Android and deploy  it to browser and Play Store production.  The secondary MongoDB URL that was buried in `lib/applications/meteoris/configs/config.js` is now optional, configured in settings.json and tested against a second Mongo database.
