@@ -40,8 +40,8 @@ var schemas = new SimpleSchema({
         type: String,
         label: "Created by",
         autoValue: function() {
-            if (this.isInsert)
-                return Meteor.user()._id;
+            if (this.isInsert && !this.value)
+                return this.userId;
         },
         denyUpdate: true,
         optional: true
@@ -50,7 +50,8 @@ var schemas = new SimpleSchema({
         type: String,
         label: "Updated by",
         autoValue: function() {
-            return Meteor.user()._id;
+            if (!this.value)
+                return this.userId;
         },
         optional: true
     },
