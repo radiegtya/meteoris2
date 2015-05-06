@@ -46,8 +46,8 @@ source ./utilsJson.sh
 #
 echo "Instantiating variables from settings.json"
 parseJSON_public APP_VERSION
-parseJSON_public ID
-parseJSON_public PROJ_NAME
+parseJSON_public APP_ID
+parseJSON_public APP_NAME
 parseJSON_public USE_MUGEN_GENERATOR
 parseJSON_public PRODUCTION_MAIN_SERVER
 
@@ -72,8 +72,8 @@ export TARGET_SERVER=$(echo ${PRODUCTION_MAIN_SERVER} | awk -F/ '{print $3}')
 export TARGET_DIRECTORY=${BUILD_DIRECTORY}/${PROJ}
 #
 echo "### Configuration for your '"${PROJ}"' project  ... "
-echo "   ~                                   Public name : " ${PROJ_NAME} v${APP_VERSION}
-echo "   ~                    Meteor packaging unique ID : " ${ID}
+echo "   ~                                   Public name : " ${APP_NAME} v${APP_VERSION}
+echo "   ~                    Meteor packaging unique ID : " ${APP_ID}
 echo "   ~                               Target host is  : " ${TARGET_SERVER}
 echo "   ~                           Target web site is  : " ${PRODUCTION_MAIN_SERVER}
 echo "   ~                     Mongo main database is at : " ${MONGO_URL}
@@ -89,11 +89,11 @@ meteor install-sdk android || { echo 'Failed to install Android SDK.' ; exit 1; 
 #
 echo
 echo "Checking key exists in key store :"
-export KEY_WORKS=$(keytool -list -v  -storepass ${KEYSTORE_PWD} -keystore ~/.keystore -alias ${PROJ_NAME} | grep -c "Alias name: ${PROJ_NAME}")
+export KEY_WORKS=$(keytool -list -v  -storepass ${KEYSTORE_PWD} -keystore ~/.keystore -alias ${APP_NAME} | grep -c "Alias name: ${APP_NAME}")
 if [[  "${KEY_WORKS}" != "1"  ]]; then
   echo "Probably you need to run this command : "
   echo
-  echo "keytool -genkey -v -keystore ~/.keystore -alias ${PROJ_NAME} -keyalg RSA -keysize 2048 -validity 10000"
+  echo "keytool -genkey -v -keystore ~/.keystore -alias ${APP_NAME} -keyalg RSA -keysize 2048 -validity 10000"
   echo
   exit
 else
@@ -107,14 +107,14 @@ echo "**NOT** Checking/installing iOS capabilities : "
 #
 echo ""
 echo ""
-echo "Building project : ${PROJ_NAME} in ${BUILD_DIRECTORY}"
+echo "Building project : ${APP_NAME} in ${BUILD_DIRECTORY}"
 mkdir -p ${TARGET_DIRECTORY}
 #
 cp settings.json  ./public/
 rm -fr ${TARGET_DIRECTORY}
 echo "Building WITHOUT public debug symbols for Android version. "
 meteor build ${TARGET_DIRECTORY}         --server=${PRODUCTION_MAIN_SERVER}
-mv ${TARGET_DIRECTORY}/android/unaligned.apk ${TARGET_DIRECTORY}/android/${PROJ_NAME}_unaligned.apk
+mv ${TARGET_DIRECTORY}/android/unaligned.apk ${TARGET_DIRECTORY}/android/${APP_NAME}_unaligned.apk
 if [[  "${DEBUG_MODE}" -eq "yes"  ]]; then
   echo "Rebuilding WITH public debug symbols for browser version "
   meteor build ${TARGET_DIRECTORY} --debug --server=${PRODUCTION_MAIN_SERVER}
@@ -124,7 +124,7 @@ rm -f ./public/settings.json
 pushd ${TARGET_DIRECTORY} > /dev/null
 pushd ./android > /dev/null
 echo "Sign the unaligned APK"
-MYVARIABLE="$(jarsigner -storepass ${KEYSTORE_PWD} -tsa http://timestamp.digicert.com -digestalg SHA1 ${PROJ_NAME}_unaligned.apk ${PROJ_NAME})"
+MYVARIABLE="$(jarsigner -storepass ${KEYSTORE_PWD} -tsa http://timestamp.digicert.com -digestalg SHA1 ${APP_NAME}_unaligned.apk ${APP_NAME})"
 if [[ "$?" > "0" ]]; then
   echo "----------"
   echo ${MYVARIABLE}
@@ -133,26 +133,26 @@ if [[ "$?" > "0" ]]; then
 fi
 #
 echo "Align to byte boundaries and verify."
-${ZIPALIGN_PATH}/zipalign -f    ${ALIGNMENT} ${PROJ_NAME}_unaligned.apk ${PROJ_NAME}_aligned.apk
-# ${ZIPALIGN_PATH}/zipalign -f -v ${ALIGNMENT} ${PROJ_NAME}_unaligned.apk ${PROJ_NAME}_aligned.apk
+${ZIPALIGN_PATH}/zipalign -f    ${ALIGNMENT} ${APP_NAME}_unaligned.apk ${APP_NAME}_aligned.apk
+# ${ZIPALIGN_PATH}/zipalign -f -v ${ALIGNMENT} ${APP_NAME}_unaligned.apk ${APP_NAME}_aligned.apk
 #
 echo
 echo "Rename and relocate for easy deployment"
-mv ${PROJ_NAME}_aligned.apk ..
-mv unaligned.apk ../${PROJ_NAME}.apk
+mv ${APP_NAME}_aligned.apk ..
+mv unaligned.apk ../${APP_NAME}.apk
 popd > /dev/null
 #
 echo
-echo "Uploading ${PROJ}.tar.gz & ${PROJ_NAME}.apk to . . . "
+echo "Uploading ${PROJ}.tar.gz & ${APP_NAME}.apk to . . . "
 pwd
 scp ${PROJ}.tar.gz ${TARGET_SERVER}:~/incoming
-scp ${PROJ_NAME}.apk ${TARGET_SERVER}:~/incoming
+scp ${APP_NAME}.apk ${TARGET_SERVER}:~/incoming
 #
 popd > /dev/null
 #
 echo
 echo "Reply from ${TARGET_SERVER} :: Installing . . . "
-ssh -t ${TARGET_SERVER} "sudo -u meteor /home/meteor/installProj.sh ${PROJ} ${PROJ_NAME}"
+ssh -t ${TARGET_SERVER} "sudo -u meteor /home/meteor/installProj.sh ${PROJ} ${APP_NAME}"
 #
 echo
 echo
