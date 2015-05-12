@@ -1,0 +1,49 @@
+{
+  "Home":"主页",
+  "Users":"用户",
+  "Posts":"贴子",
+  "Crudss Generator":"快码生成器",
+  "Role":"角色",
+  "Role Collection":"角色表",
+  "Role Group":"角色组",
+  "Profile":"用户资料",
+  "Help":"帮助",
+  "Logout":"注销",
+  "Login":"登陆",
+  
+  "Update":"更新",
+  "Submit":"提交",
+  "Confirm":"确认",
+  "Remove":"移除",
+
+  "Sorry. Unable to access that page.":"抱歉，不能访问此页",
+  "documentation":"文档",
+  "Email":"邮箱",
+  "Back to Login":"返回登录页",
+
+  "Insert":"插入",
+  "Remove Selection":"删除选中项",
+  "Type Here to Search":"在这里输入进行搜索",
+  "No Data Found":"没有数据",
+  "Mugen Role Group":"连接角色组",
+  "Name":"名字",
+  "Created At":"创建于",
+  "Actions":"行为",
+  "Load More":"加载更多",
+  
+  "Password":"密码",
+  "Forget Password?":"忘记密码?",
+  "Don't have an account yet? Register here!":"还没有账户？这里注册!",
+  "Back to":"返至",
+  "Frontend":"前端",
+  
+  "Already have account? Log In here":"已经拥有账户？这里登录",
+  "User Profile":"用户资料",
+  "Old Password":"旧密码",
+  "New Password":"新密码",
+  "View":"显示",
+  "Back":"返回",
+  "index":"首页"
+   
+}
+

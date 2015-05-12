@@ -1,0 +1,48 @@
+{
+  "Home":"Home",
+  "Users":"Users",
+  "Posts":"Posts",
+  "Crudss Generator":"Crudss Generator",
+  "Role":"Role",
+  "Role Collection":"Role Collection",
+  "Role Group":"Role Group",
+  "Profile":"Profile",
+  "Help":"Help",
+  "Logout":"Logout",
+  "Login":"Login",
+  "Update":"Update",
+  "Submit":"Submit",
+  "Confirm":"Confirm",
+  "Remove":"Remove",
+
+  "Sorry. Unable to access that page.":"Sorry. Unable to access that page",
+  "documentation":"documentation",
+  "Email":"Email",
+  "Back to Login":"Back to Login",
+
+  "Insert":"Insert",
+  "Remove Selection":"Remove Selection",
+  "Type Here to Search":"Type Here to Search",
+  "No Data Found":"No Data Found",
+  "Mugen Role Group":"Mugen Role Group",
+  "Name":"Name",
+  "Created At":"Created At",
+  "Actions":"Actions",
+  "Load More":"Load More",
+  
+  "Password":"Password",
+  "Forget Password?":"Forget Password?",
+  "Don't have an account yet? Register here!":"Don't have an account yet? Register here!",
+  "Back to":"Back to",
+  "Frontend":"Frontend",
+  
+  "Already have account? Log In here":"Already have account? Log In here",
+  "User Profile":"User Profile",
+  "Old Password":"Old Password",
+  "New Password":"New Password",
+  "View":"View",
+  "Back":"Back",
+  "index":"index"
+   
+}
+
