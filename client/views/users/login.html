@@ -10,23 +10,23 @@
                     </div>
                     <div class="divider-or"></div>
                     <div class="form-group">
-                        <label class="sr-only" for="email">Email</label>
-                        <input type="text" class="form-control input-lg" id="email" placeholder="Email" autofocus>
+                        <label class="sr-only" for="email">{{_ "Email"}}</label>
+                        <input type="text" class="form-control input-lg" id="email" placeholder="{{_ 'Email'}}" autofocus>
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="password">Password</label>
-                        <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+                        <label class="sr-only" for="password">{{_ "Password"}}</label>
+                        <input type="password" class="form-control input-lg" id="password" placeholder="{{_ 'Password'}}">
                     </div>
                     <div class="form-group">
-                        <input id="btnLogin" class="btn btn-danger btn-block btn-lg btn-red" type="submit" value="Log In"/>
+                        <input id="btnLogin" class="btn btn-danger btn-block btn-lg btn-red" type="submit" value="{{_ 'Login'}}"/>
                     </div>
                 </form>
                 <br/>
                 <p class="text-center">You can login as admin with email: admin@meteoris.me, pass: admin or as authenticated user email: demo@meteoris.me, pass: demo</p>
-                <p class="text-center"><a href="{{pathFor 'usersForgetPassword'}}">Forget Password?</a></p>
-                <p class="text-center"><a href="{{pathFor 'usersRegister'}}">Don't have an account yet? Register here!</a></p>
+                <p class="text-center"><a href="{{pathFor 'usersForgetPassword'}}">{{_ "Forget Password?"}}</a></p>
+                <p class="text-center"><a href="{{pathFor 'usersRegister'}}">{{_ "Don't have an account yet? Register here!"}}</a></p>
                 <div class="divider-or"></div>
-                <p class="text-center"><a href="{{pathFor 'sitesIndex'}}">Back to {{app "name"}} Frontend</a></p>
+                <p class="text-center"><a href="{{pathFor 'sitesIndex'}}">{{_ "Back to"}} {{app "name"}} {{_ "Frontend"}}</a></p>
             </div>
         </div>
     </div>

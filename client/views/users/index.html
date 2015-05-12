@@ -2,24 +2,24 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
-            <li class="active">index</li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
+            <li class="active">{{_ "index"}}</li>
         </ol>
 
         <div class="title">
-            <h3 class="pull-left">Users</h3>
+            <h3 class="pull-left">{{_ "Users"}}</h3>
         </div>
         <div class="clearfix"></div>
 
         <div class="toolbar">
             <div class="pull-left">
-                <a class="btn btn-success" href="{{pathFor 'usersInsert'}}">Insert</a>
-                <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
+                <a class="btn btn-success" href="{{pathFor 'usersInsert'}}">{{_ "Insert"}}</a>
+                <a id="btnRemoveAll" class="btn btn-danger">{{_ "Remove Selection"}}</a>
             </div>   
             <div class="quick-search pull-right col-xs-12 col-md-3">
                 <div class="input-group">
-                    <input type="text" id="search" class="form-control" placeholder="Type Here to Search">
+                    <input type="text" id="search" class="form-control" placeholder="{{_ 'Type Here to Search'}}">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
                     </span>
@@ -29,18 +29,18 @@
         <div class="clearfix"></div>
 
         {{#if isEmpty}}
-        <p>No Data Found</p>
+        <p>{{_ "No Data Found"}}</p>
         {{else}}
         <div class=" table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
-                        <th id="btnSortEmail" class="{{meteorisGridViewSortClass 'email'}}">Email</th>
-                        <th id="btnSortMugenRoleGroupId" class="{{meteorisGridViewSortClass 'mugenRoleGroupId'}}">Mugen Role Group</th>
-                        <th id="btnSortName" class="{{meteorisGridViewSortClass 'name'}}">Name</th>
-                        <th>Created At</th>
-                        <th style="width: 145px;">Actions</th>
+                        <th id="btnSortEmail" class="{{meteorisGridViewSortClass 'email'}}">{{_ "Email"}}</th>
+                        <th id="btnSortMugenRoleGroupId" class="{{meteorisGridViewSortClass 'mugenRoleGroupId'}}">{{_ "Mugen Role Group"}}</th>
+                        <th id="btnSortName" class="{{meteorisGridViewSortClass 'name'}}">{{_ "Name"}}</th>
+                        <th>{{_ "Created At"}}</th>
+                        <th style="width: 145px;">{{_ "Actions"}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
             </table>
         </div>
         {{#if hasMore}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">{{_ "Load More"}} ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}

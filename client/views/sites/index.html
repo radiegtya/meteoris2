@@ -2,8 +2,8 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>            
-            <li class="active">index</li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>            
+            <li class="active">{{_ "index"}}</li>
         </ol>
         
         <h2>{{welcomeMessage}}</h2>
@@ -11,7 +11,7 @@
         <div class="alert alert-success">Congratulations!  You have successfully created your Meteoris Backend App.
         </div>
         
-        <p>You can check the <a href="{{pathFor 'postsIndex'}}">Posts</a> demo to quickly get started with Meteoris.
+        <p>You can check the <a href="{{pathFor 'postsIndex'}}">{{_ Posts}}</a> demo to quickly get started with Meteoris.
         </p>
 
         <p>For further details, please read our <a href="http://avocadofloat.com/publicDocs/index/Ku9o2ZJS9k3nPZtzy" target="_blank">documentation</a>.

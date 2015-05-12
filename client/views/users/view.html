@@ -2,37 +2,37 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
-            <li class="active">view</li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
+            <li class="active">{{_ "View"}}</li>
         </ol>
 
         {{#with model}}
         <div class="title">
-            <h3 class="pull-left">View User #{{_id}}</h3>
+            <h3 class="pull-left">{{_ "View"}} {{_ "User"}} #{{_id}}</h3>
             <div class="toolbar pull-right">
-                <a href="{{pathFor 'usersIndex'}}" class="btn btn-default">Back</a> 
-                <a href="{{pathFor 'usersUpdate'}}" class="btn btn-info">Update</a>
-                <a id="btnRemove" class="btn btn-danger">Remove</a>
+                <a href="{{pathFor 'usersIndex'}}" class="btn btn-default">{{_ "Back"}}</a> 
+                <a href="{{pathFor 'usersUpdate'}}" class="btn btn-info">{{_ "Update"}}</a>
+                <a id="btnRemove" class="btn btn-danger">{{_ "Remove"}}</a>
             </div>
         </div>
         <div class="clearfix"></div>
         <table class="table">
             <tbody>
                 <tr>
-                    <td><b>Email</b></td>
+                    <td><b>{{_ "Email"}}</b></td>
                     <td>{{emails.[0].address}}</td>
                 </tr>
                 <tr>
-                    <td><b>Name</b></td>
+                    <td><b>{{_ "Name"}}</b></td>
                     <td>{{profile.name}}</td>
                 </tr>                
                 <tr>
-                    <td><b>Mugen Role Group</b></td>
+                    <td><b>{{_ "Mugen Role Group"}}</b></td>
                     <td>{{mugenRoleGroup.name}}</td>
                 </tr>    
                 <tr>
-                    <td><b>Created at</b></td>
+                    <td><b>{{_ "Created at"}}</b></td>
                     <td>{{meteorisFormatter "dateTime" createdAt}}</td>
                 </tr>                            
             </tbody>

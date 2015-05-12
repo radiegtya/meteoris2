@@ -14,18 +14,18 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-                    <li><a href="{{pathFor 'usersIndex'}}">Users</a></li>
-                    <li><a href="{{pathFor 'postsIndex'}}">Posts</a></li>
+                    <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+                    <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
+                    <li><a href="{{pathFor 'postsIndex'}}">{{_ "Posts"}}</a></li>
                     {{#if app 'activateMugen'}}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mugen <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/mugen">Crudss Generator</a></li>
+                            <li><a href="/mugen">{{_ "Crudss Generator"}}</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{pathFor 'mugenRoleActionsManage'}}">Role</a></li>                                                        
-                            <li><a href="{{pathFor 'mugenRoleCollections'}}">Role Collection</a></li>
-                            <li><a href="{{pathFor 'mugenRoleGroups'}}">Role Group</a></li>
+                            <li><a href="{{pathFor 'mugenRoleActionsManage'}}">{{_ "Role"}}</a></li>                                                        
+                            <li><a href="{{pathFor 'mugenRoleCollections'}}">{{_ "Role Collection"}}</a></li>
+                            <li><a href="{{pathFor 'mugenRoleGroups'}}">{{_ "Role Group"}}</a></li>
                             <!--<li><a href="{{pathFor 'mugenRoleActions'}}">Role Actions</a></li>-->
                         </ul>
                     </li>
@@ -34,15 +34,24 @@
                         {{#if currentUser}}
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.profile.name}} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{pathFor 'usersProfile'}}">Profile</a></li>
-                            <li><a target="_blank" href="https://github.com/warehouseman/meteoris/wiki/User-Manual">Help</a></li>
+                            <li><a href="{{pathFor 'usersProfile'}}">{{_ "Profile"}}</a></li>
+                            <li><a target="_blank" href="https://github.com/warehouseman/meteoris/wiki/User-Manual">{{_ "Help"}}</a></li>
                             <li class="divider"></li>
-                            <li id="btnLogout"><a href="#">Logout</a></li>
+                            <li id="btnLogout"><a href="#">{{_ "Logout"}}</a></li>
                         </ul>
                         {{else}}
-                        <a href="{{pathFor 'usersLogin'}}">Login</a>
+                        <a href="{{pathFor 'usersLogin'}}">{{_ "Login"}}</a>
                         {{/if}}
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{app "defaultLanguage"}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" class="lang" data-lang="en">English(en)</a></li>
+                            <li><a href="#" class="lang" data-lang="zh-CN">China(zh-CN)</a></li>
+                            <li class="divider"></li>
+                            <li id="btnLogout"><a href="#">More</a></li>
+                        </ul>
+		    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
