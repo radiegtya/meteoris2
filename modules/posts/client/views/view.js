@@ -1,7 +1,6 @@
 Template.postsView.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
-
         standardConfirmDialog.text = "Really delete this post?";
         swal(
             standardConfirmDialog

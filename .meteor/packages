@@ -39,3 +39,8 @@ email
 accounts-ui
 reywood:publish-composite
 kevohagan:sweetalert
+#
+meteoris:mugen-utilities
+meteoris:meteoris-core
+
+meteoris:jobs

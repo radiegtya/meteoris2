@@ -2,10 +2,30 @@
     <form id="mugenGenerator_form" class="form-horizontal">
         <p class="text-info">Fields with * are required.</p>
         <div class="form-group">
-            <label for="collection" class="col-sm-3 control-label" style="text-align: left;">Collection Name (your mongo table/collection name) *</label>
-            <div class="col-sm-5">
-                <input type="text" id="collection" value="" placeholder="eg: comments | heroSkills" class="form-control" autofocus="true">
-            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="nameNameSpace" class="col-sm-6 control-label" style="text-align: left;">
+                                Name Space<br />(package classification name) *
+                            </label>
+                            <div class="col-sm-5">
+                                <input type="text" id="nameNameSpace" value="" placeholder="eg: MyProj.SomeCategory" class="form-control" autofocus="true">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="collection" class="col-sm-6 control-label" style="text-align: left;">
+                                Collection Name<br />(the MongoDB table/collection name) *
+                            </label>
+                            <div class="col-sm-5">
+                                <input type="text" id="collection" value="" placeholder="eg: comments | heroSkills" class="form-control" autofocus="true">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <table class="table table-bordered">
             <thead>
@@ -51,24 +71,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><div id="generatedRoutersPath">client/routers/</div></td>
+                    <td><div id="generatedRoutersPath">packages/{collection}/client/{collection}Router.js</div></td>
                     <td><input type="checkbox" class="checkAll" value="routers" checked=""/></td>
                 </tr>
                 <tr>
-                    <td><div id="generatedViewsPath">client/views/</div></td>
+                    <td><div id="generatedViewsPath">packages/{collection}/client/views/*</div></td>
                     <td><input type="checkbox" class="checkAll" value="views" checked=""/></td>
                 </tr>
                 <tr>
-                    <td><div id="generatedCollectionsPath">lib/collections/</div></td>
+                    <td><div id="generatedCollectionsPath">packages/{collection}/lib/{Collection}Controller.js</div></td>
                     <td><input type="checkbox" class="checkAll" value="collections" checked=""/></td>
                 </tr>
                 <tr>
-                    <td><div id="generatedControllersPath">lib/controllers/</div></td>
+                    <td><div id="generatedControllersPath">packages/{collection}/lib/{Collection}.js</div></td>
                     <td><input type="checkbox" class="checkAll" value="controllers" checked=""/></td>
                 </tr>
                 <tr>
-                    <td><div id="generatedServerPath">server/</div></td>
+                    <td><div id="generatedServerPath">packages/{collection}/server/{Collection}Server.js</div></td>
                     <td><input type="checkbox" class="checkAll" value="server" checked=""/></td>
+                </tr>
+                <tr>
+                    <td><div id="generatedPackagePath">packages/{collection}/package.js</div></td>
+                    <td><input type="checkbox" class="checkAll" value="package" checked=""/></td>
+                </tr>
+                <tr>
+                    <td><div id="installPackage"><i>Install new meteor package {namespace}:{collection}</i></div></td>
+                    <td><input type="checkbox" class="checkAll" value="install" checked=""/></td>
                 </tr>
             </tbody>
         </table>

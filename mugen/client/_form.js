@@ -1,33 +1,34 @@
-String.prototype.toCollectionCase = function() {
-    var words = this.split(' ');
-    var results = [];
-    for (var i = 0; i < words.length; i++) {
-        var letter = words[i].charAt(0).toLowerCase();
-        results.push(letter + words[i].slice(1));
-    }
-    return results.join(' ');
-};
+function advisePaths (collection, nameNameSpace) {
 
-String.prototype.toProperCase = function() {
-    var words = this.split(' ');
-    var results = [];
-    for (var i = 0; i < words.length; i++) {
-        var letter = words[i].charAt(0).toUpperCase();
-        results.push(letter + words[i].slice(1));
-    }
-    return results.join(' ');
+    if ( typeof    collection == "undefined" |    collection.length < 1)     collection = "{collection}";
+    if ( typeof nameNameSpace == "undefined" | nameNameSpace.length < 1)  nameNameSpace = "{nameSpace}";
+//    var pathPkg = "packages/" + collection + "/";
+
+    $(    '#generatedRoutersPath').text(MugenUtils.preparePath(      "router", collection));
+    $(      '#generatedViewsPath').text(MugenUtils.preparePath(       "views", collection));
+    $('#generatedCollectionsPath').text(MugenUtils.preparePath( "collections", collection));
+    $('#generatedControllersPath').text(MugenUtils.preparePath( "controllers", collection));
+    $(     '#generatedServerPath').text(MugenUtils.preparePath(      "server", collection));
+    $(    '#generatedPackagePath').text(MugenUtils.preparePath(     "package", collection));
+    $(          '#installPackage').html("<i>Install new meteor package " 
+                                      + MugenUtils.preparePath(     "install", collection, null, nameNameSpace) + "</i>");
+
 };
 
 Template.mugen_form.events = {
+    'keyup #nameNameSpace': function(e) {
+        var nameNameSpace = $(e.target).val();
+        $(e.target).val(nameNameSpace);
+        var collection = $('#collection').val();
+
+        advisePaths (collection, nameNameSpace);
+    },
     'keyup #collection': function(e) {
         var collection = $(e.target).val();
         $(e.target).val(collection.toCollectionCase());
+        var nameNameSpace = $('#nameNameSpace').val()
 
-        $('#generatedRoutersPath').text("client/routers/" + collection.toCollectionCase() + ".js");
-        $('#generatedViewsPath').text("client/views/" + collection.toCollectionCase() + "/*");
-        $('#generatedCollectionsPath').text("lib/collections/" + collection.toProperCase() + ".js");
-        $('#generatedControllersPath').text("lib/controllers/" + collection.toProperCase() + ".js");
-        $('#generatedServerPath').text("server/" + collection.toProperCase() + ".js");
+        advisePaths (collection, nameNameSpace);
     },
     'click .btnAddField': function(e) {
         e.preventDefault();
@@ -58,6 +59,7 @@ Template.mugen_form.events = {
             standardConfirmDialog
           , function () {
 
+            var nameNameSpace = t.find('#nameNameSpace').value;
             var collection = t.find('#collection').value;
 
             var names = $('.names').map(function() {
@@ -77,17 +79,32 @@ Template.mugen_form.events = {
             }).get();
             var isRequireds = $('.isRequireds');
 
-            //check whether collection cannot be empty
+            //check if nameNameSpace is empty
+            if (!nameNameSpace || nameNameSpace == "") {
+                var errMessage = "Name Space is required";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            }
+
+            //regex match nameNameSpace to avoid control characters
+            var nameNameSpaceMatch = nameNameSpace.match(/^[a-z0-9A-Z._]{2,30}$/);
+            if (!nameNameSpaceMatch) {
+                var errMessage = "Name Space name must be less tha 30 characters AND may only contain numbers, letters, period (.) and underscore (_)";
+                MeteorisFlash.set('danger', errMessage);
+                throw new Meteor.Error(errMessage);
+            }
+
+            //check if collection is empty
             if (!collection || collection == "") {
                 var errMessage = "Collection is required";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }
 
-            //regex match collection to avoid field break generate
+            //regex match collection to avoid control characters
             var collectionMatch = collection.match(/^[a-z0-9A-Z_]{2,30}$/);
             if (!collectionMatch) {
-                var errMessage = "Collection name must be less tha 30 characters AND must not contain any of the following characters \ / : * ? < > |";
+                var errMessage = "Collection name must be less tha 30 characters AND may only contain numbers, letters, and underscore (_)";
                 MeteorisFlash.set('danger', errMessage);
                 throw new Meteor.Error(errMessage);
             }
@@ -152,39 +169,58 @@ Template.mugen_form.events = {
                     MeteorisFlash.set('danger', err.reason);
             });
 
-            // loop over generated check lists
-            for (var i = 0; i < checkboxes.length; i++) {
-                // And stick the checked ones onto an array...
-                if (checkboxes[i].checked) {
-                    var checkedGeneratedList = $(checkboxes[i]).val();
-                    if (checkedGeneratedList == 'routers') {
-                        Meteor.call("Mugen.generateRouter", collection, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'views') {
-                        Meteor.call("Mugen.generateView", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'collections') {
-                        Meteor.call("Mugen.generateCollection", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'controllers') {
-                        Meteor.call("Mugen.generateController", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
-                    } else if (checkedGeneratedList == 'server') {
-                        Meteor.call("Mugen.generateServer", collection, fields, function(err) {
-                            if (err)
-                                MeteorisFlash.set('danger', err.reason);
-                        });
+
+            if (false) {
+                Meteor.call("Mugen.testMe", "dir_pkg", collection, function(err) {
+                    if (err)
+                        MeteorisFlash.set('danger', err.reason);
+                });
+            } else {
+                // loop over generated check lists
+                for (var i = 0; i < checkboxes.length; i++) {
+                    // And stick the checked ones onto an array...
+                    if (checkboxes[i].checked) {
+                        var checkedGeneratedList = $(checkboxes[i]).val();
+                        if (checkedGeneratedList == 'routers') {
+                            Meteor.call("Mugen.generateRouter", collection, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        } else if (checkedGeneratedList == 'views') {
+                            Meteor.call("Mugen.generateView", collection, fields, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        } else if (checkedGeneratedList == 'collections') {
+                            Meteor.call("Mugen.generateCollection", collection, fields, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        } else if (checkedGeneratedList == 'controllers') {
+                            Meteor.call("Mugen.generateController", collection, fields, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        } else if (checkedGeneratedList == 'server') {
+                            Meteor.call("Mugen.generateServer", collection, fields, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        } else if (checkedGeneratedList == 'package') {
+                            Meteor.call("Mugen.generatePackage", collection, nameNameSpace, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        } else if (checkedGeneratedList == 'install') {
+                            Meteor.call("Mugen.installPackage", collection, nameNameSpace, function(err) {
+                                if (err)
+                                    MeteorisFlash.set('danger', err.reason);
+                            });
+                        }
                     }
                 }
             }
+
             MeteorisFlash.set('success', 'Success generating code!');
         })
     },
