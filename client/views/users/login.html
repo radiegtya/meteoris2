@@ -6,9 +6,10 @@
                 
                 <form id="loginForm">
                     <div class="form-group">
-                        <a id="btnLoginFacebook" class="btn btn-facebook btn-block btn-lg"><i class="fa fa-facebook pull-left"></i>Sign In with Facebook</a>
+                        <a id="btnLoginFacebook" class="btn btn-facebook btn-block btn-lg">
+                        <i class="fa fa-facebook pull-left"></i>{{_ "Sign In with Facebook"}}</a>
                     </div>
-                    <div class="divider-or"></div>
+                    <div class="divider-or" style="content:EH !important;"></div>
                     <div class="form-group">
                         <label class="sr-only" for="email">{{_ "Email"}}</label>
                         <input type="text" class="form-control input-lg" id="email" placeholder="{{_ 'Email'}}" autofocus>
@@ -22,7 +23,8 @@
                     </div>
                 </form>
                 <br/>
-                <p class="text-center">You can login as admin with email: admin@meteoris.me, pass: admin or as authenticated user email: demo@meteoris.me, pass: demo</p>
+                <p class="text-center">{{_ "demo_hint" uidadmin="admin" emadmin="admin@meteoris.me" pwdadmin="admin"
+                                                       uiddemo="demo" emdemo="demo@meteoris.me" pwddemo="demo"}}</p>
                 <p class="text-center"><a href="{{pathFor 'usersForgetPassword'}}">{{_ "Forget Password?"}}</a></p>
                 <p class="text-center"><a href="{{pathFor 'usersRegister'}}">{{_ "Don't have an account yet? Register here!"}}</a></p>
                 <div class="divider-or"></div>

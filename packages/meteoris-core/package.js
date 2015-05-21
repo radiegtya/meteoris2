@@ -18,6 +18,7 @@ var filesHtmlClient = [
 
 var filesJsClient = [
     'client/flash/flash.js'
+  , 'client/alert/alert.js'
 ];
 
 var filesJsBoth = [
@@ -36,8 +37,11 @@ Package.onUse(function(api) {
   api.use('meteor-platform');
   api.use('meteorhacks:subs-manager');
   api.use('accounts-ui');
+  api.use('kevohagan:sweetalert');
+  api.use('liyu:sprintfjs');  
 
   api.addFiles(filesJsBoth, ['client', 'server']);
+  api.export('MeteorisAlert', 'client');
   api.export('MeteorisFlash', 'client');
   api.export('MeteorisController', ['client', 'server']);
 

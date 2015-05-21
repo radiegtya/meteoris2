@@ -1,26 +1,26 @@
 <template name="mugen_form">
     <form id="mugenGenerator_form" class="form-horizontal">
-        <p class="text-info">Fields with * are required.</p>
+        <p class="text-info">{{_ "required_fields"}}</p>
         <div class="form-group">
             <table>
                 <tbody>
                     <tr>
                         <td>
                             <label for="nameNameSpace" class="col-sm-6 control-label" style="text-align: left;">
-                                Name Space<br />(package classification name) *
+                                {{_ "name_space"}}<br />({{_ "name_space_hint"}}) *
                             </label>
                             <div class="col-sm-5">
-                                <input type="text" id="nameNameSpace" value="" placeholder="eg: MyProj.SomeCategory" class="form-control" autofocus="true">
+                                <input type="text" id="nameNameSpace" value="" placeholder={{_ "name_space_example"}} class="form-control" autofocus="true">
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="collection" class="col-sm-6 control-label" style="text-align: left;">
-                                Collection Name<br />(the MongoDB table/collection name) *
+                                {{_ "name_collection"}}<br />({{_ "name_collection_hint"}}) *
                             </label>
                             <div class="col-sm-5">
-                                <input type="text" id="collection" value="" placeholder="eg: comments | heroSkills" class="form-control" autofocus="true">
+                                <input type="text" id="collection" value="" placeholder={{_ "name_collection_example"}} class="form-control" autofocus="true">
                             </div>
                         </td>
                     </tr>
@@ -30,31 +30,32 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Name *</th>
-                    <th>Type *</th>
-                    <th>Required</th>
-                    <th>Label</th>
-                    <th>Belongs to Collection</th>
-                    <th>Relation Key</th>
+                    <th>{{_ "Name"}} *</th>
+                    <th>{{_ "type"}} *</th>
+                    <th>{{_ "required"}}</th>
+                    <th>{{_ "label"}}</th>
+                    <th>{{_ "related_collection"}}</th>
+                    <th>{{_ "foreign_key"}}</th>
+
                     <th></th>
                 </tr>
             </thead>
             <tbody  class="collectionFields">
                 <tr>
-                    <td><input type="text" class="names form-control" placeholder="eg: title"></td>
+                    <td><input type="text" class="names form-control" placeholder={{_ "name_hint"}}></td>
                     <td><select class="types form-control" id="types">                     
-                            <option value="String" selected="selected">String</option>                    
-                            <option value="Number">Number</option>                    
-                            <option value="Boolean">Boolean</option>                    
-                            <option value="Date">Date</option>                    
+                            <option value="String" selected="selected">{{_ "string_type"}}</option>                    
+                            <option value="Number">{{_ "numeric_type"}}</option>                    
+                            <option value="Boolean">{{_ "boolean_type"}}</option>                    
+                            <option value="Date">{{_ "date_type"}}</option>
                         </select></td>
                     <td><input type="checkbox" class="isRequireds" value="1"></td>
-                    <td><input type="text" class="labels form-control" value="" placeholder="eg: Title"></td>
-                    <td><input type="text" class="belongToCollections form-control" value="" placeholder="eg: Posts (case sensitive)"></td>
-                    <td><input type="text" class="relationKeys form-control" value="" placeholder="eg: post"></td>
+                    <td><input type="text" class="labels form-control" value="" placeholder={{_ "label_hint"}}></td>
+                    <td><input type="text" class="belongToCollections form-control" value="" placeholder={{_ "belongsTo_hint"}}></td>
+                    <td><input type="text" class="relationKeys form-control" value="" placeholder={{_ "foreignKey_hint"}}></td>
                     <td>
-                        <a href="#" class="btn btn-default btnAddField">Add</a>
-                        <a href="#" class="btn btn-default btnDeleteField">Delete</a>
+                        <a href="#" class="btn btn-default btnAddField">{{_ "add"}}</a>
+                        <a href="#" class="btn btn-default btnDeleteField">{{_ "delete"}}</a>
                     </td>
                 </tr>
             </tbody>
@@ -65,7 +66,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>                    
-                    <th>Code File</th>
+                    <th>{{_ "target_files"}}</th>
                     <th style="width: 30px;"><input type="checkbox" id="checkAll" checked=""/></th>
                 </tr>
             </thead>
@@ -104,7 +105,7 @@
         <div>
             <div class="buttons">
                 <!--<a href="#" id="btnAddField" class="btn btn-success">Add Field</a>-->
-                <button id="btnSave" type="submit" class="btn btn-primary">Generate</button>        
+                <button id="btnSave" type="submit" class="btn btn-primary">{{_ "generate"}}</button>        
             </div>
         </div>
     </form>

@@ -106,7 +106,7 @@ ReplacementController = MeteorisController.extend({
                     MeteorisFlash.set('danger', err.message);
                     throw new Meteor.Error(err);
                 }
-                MeteorisFlash.set('success', "Success Updating Replacement");
+                MeteorisFlash.set('success', TAPi18n.__("Success Updating Replacement", ""));
             });
             Router.go('replacementView', {_id: _id});
         }

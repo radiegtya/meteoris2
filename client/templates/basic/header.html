@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
-                    <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
+                    <li><a href="{{pathFor 'usersIndex'}}">{{_ "user" count=2}}</a></li>
                     <li><a href="{{pathFor 'postsIndex'}}">{{_ "Posts"}}</a></li>
                     {{#if app 'activateMugen'}}
                     <li class="dropdown">
@@ -44,14 +44,13 @@
                         {{/if}}
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{app "defaultLanguage"}}<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentLanguage}}<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#" class="lang" data-lang="en">English(en)</a></li>
-                            <li><a href="#" class="lang" data-lang="zh-CN">China(zh-CN)</a></li>
-                            <li class="divider"></li>
-                            <li id="btnLogout"><a href="#">More</a></li>
+                        {{#each language}}
+                           <li><a href="#" class="lang" data-lang="{{code}}">{{name}} ({{code}})</a></li>
+                        {{/each}}
                         </ul>
-		    </li>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

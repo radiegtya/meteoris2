@@ -3,13 +3,14 @@
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
-            <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">{{_ "user" count=2}}</a></li>
             <li class="active">{{_ "View"}}</li>
         </ol>
 
         {{#with model}}
         <div class="title">
-            <h3 class="pull-left">{{_ "View"}} {{_ "User"}} #{{_id}}</h3>
+            <h3 class="pull-left">{{_ "user"}}</h3>
+            <h5 class="pull-right">ID = #{{_id}}</h5>
             <div class="toolbar pull-right">
                 <a href="{{pathFor 'usersIndex'}}" class="btn btn-default">{{_ "Back"}}</a> 
                 <a href="{{pathFor 'usersUpdate'}}" class="btn btn-info">{{_ "Update"}}</a>
@@ -28,11 +29,11 @@
                     <td>{{profile.name}}</td>
                 </tr>                
                 <tr>
-                    <td><b>{{_ "Mugen Role Group"}}</b></td>
+                    <td><b>{{_ "role_group"}}</b></td>
                     <td>{{mugenRoleGroup.name}}</td>
                 </tr>    
                 <tr>
-                    <td><b>{{_ "Created at"}}</b></td>
+                    <td><b>{{_ "Created At"}}</b></td>
                     <td>{{meteorisFormatter "dateTime" createdAt}}</td>
                 </tr>                            
             </tbody>

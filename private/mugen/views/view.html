@@ -2,18 +2,18 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'replacementIndex'}}">Replacement</a></li>
-            <li class="active">view</li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+            <li><a href="{{pathFor 'replacementIndex'}}">{{_ "Replacement"}}</a></li>
+            <li class="active">{{_ "View"}}</li>
         </ol>
 
         {{#with model}}
         <div class="title">
-            <h3 class="pull-left">View Replacement #{{_id}}</h3>
+            <h3 class="pull-left">{{_ "View"}} {{_ "Replacement"}} #{{_id}}</h3>
             <div class="toolbar pull-right">
-                <a href="{{pathFor 'replacementIndex'}}" class="btn btn-default">Back</a> 
-                <a href="{{pathFor 'replacementUpdate'}}" class="btn btn-info">Update</a>
-                <a id="btnRemove" class="btn btn-danger">Remove</a>
+                <a href="{{pathFor 'replacementIndex'}}" class="btn btn-default">{{_ "Back"}}</a> 
+                <a href="{{pathFor 'replacementUpdate'}}" class="btn btn-info">{{_ "Update"}}</a>
+                <a id="btnRemove" class="btn btn-danger">{{_ "Remove"}}</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -25,19 +25,19 @@
                     <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
                 </tr>                -->
                 <tr>
-                    <td><b>Created at</b></td>
+                    <td><b>{{_ "Created at"}}</b></td>
                     <td>{{meteorisFormatter "dateTime" createdAt}}</td>
                 </tr>                
                 <tr>
-                    <td><b>Updated at</b></td>
+                    <td><b>{{_ "Updated At"}}</b></td>
                     <td>{{meteorisFormatter "dateTime" updatedAt}}</td>
                 </tr>                
                 <tr>
-                    <td><b>Created by</b></td>
+                    <td><b>{{_ "Created by"}}</b></td>
                     <td>{{createdUser.profile.name}}</td>
                 </tr>                
                 <tr>
-                    <td><b>Updated By</b></td>
+                    <td><b>{{_ "Updated By"}}</b></td>
                     <td>{{updatedUser.profile.name}}</td>
                 </tr>                
             </tbody>

@@ -4,6 +4,11 @@ Template.mugenRoleGroupsIndex.helpers({
 Template.mugenRoleGroupsIndex.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
+        var recordId = this._id;
+        MeteorisAlert.confirm("confirm_remove", function() {
+            Router.current().remove(recordId);
+        });
+/*
         var it = this._id;
         standardConfirmDialog.text = "Are you sure want to remove this role group?";
         swal(
@@ -11,7 +16,7 @@ Template.mugenRoleGroupsIndex.events = {
           , function () {
             Router.current().remove(it);
         });
-
+*/
     },
     /* sorting by parameter */
     'click #btnSortname': function(e) {

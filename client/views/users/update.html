@@ -3,13 +3,13 @@
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
-            <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
+            <li><a href="{{pathFor 'usersIndex'}}">{{_ "user" count=2}}</a></li>
             <li class="active">{{_ "Update"}}</li>
         </ol>
 
         <div id="basic-form">
             <div class="title">
-                <h3 class="pull-left">{{_ "Update"}} {{_ "User"}}</h3>
+                <h3 class="pull-left">{{_ "Update"}} {{_ "user"}}</h3>
             </div>
             <div class="clearfix"></div>
 
@@ -21,7 +21,7 @@
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group">
-                    <label for="mugenRoleGroupId" class="control-label">{{_ "Mugen Role Group"}}</label>
+                    <label for="mugenRoleGroupId" class="control-label">{{_ "role_group"}}</label>
                     <select class="form-control" id="mugenRoleGroupId">
                         <option value="">*</option>
                         {{#each mugenRoleGroups}}

@@ -54,174 +54,171 @@ Template.mugen_form.events = {
         e.preventDefault();
         var checkboxes = $('.checkAll');
 
-        standardConfirmDialog.text = "Are you ready to overwrite any previously generated files";
-        swal(
-            standardConfirmDialog
-          , function () {
+        var id = this._id;
+        MeteorisAlert.confirm("overwrite_ok", function() {
+                var nameNameSpace = t.find('#nameNameSpace').value;
+                var collection = t.find('#collection').value;
 
-            var nameNameSpace = t.find('#nameNameSpace').value;
-            var collection = t.find('#collection').value;
+                var names = $('.names').map(function() {
+                    return $(this).val();
+                }).get();
+                var types = $('.types').map(function() {
+                    return $(this).val();
+                }).get();
+                var labels = $('.labels').map(function() {
+                    return $(this).val();
+                }).get();
+                var belongToCollections = $('.belongToCollections').map(function() {
+                    return $(this).val();
+                }).get();
+                var relationKeys = $('.relationKeys').map(function() {
+                    return $(this).val();
+                }).get();
+                var isRequireds = $('.isRequireds');
 
-            var names = $('.names').map(function() {
-                return $(this).val();
-            }).get();
-            var types = $('.types').map(function() {
-                return $(this).val();
-            }).get();
-            var labels = $('.labels').map(function() {
-                return $(this).val();
-            }).get();
-            var belongToCollections = $('.belongToCollections').map(function() {
-                return $(this).val();
-            }).get();
-            var relationKeys = $('.relationKeys').map(function() {
-                return $(this).val();
-            }).get();
-            var isRequireds = $('.isRequireds');
-
-            //check if nameNameSpace is empty
-            if (!nameNameSpace || nameNameSpace == "") {
-                var errMessage = "Name Space is required";
-                MeteorisFlash.set('danger', errMessage);
-                throw new Meteor.Error(errMessage);
-            }
-
-            //regex match nameNameSpace to avoid control characters
-            var nameNameSpaceMatch = nameNameSpace.match(/^[a-z0-9A-Z._]{2,30}$/);
-            if (!nameNameSpaceMatch) {
-                var errMessage = "Name Space name must be less tha 30 characters AND may only contain numbers, letters, period (.) and underscore (_)";
-                MeteorisFlash.set('danger', errMessage);
-                throw new Meteor.Error(errMessage);
-            }
-
-            //check if collection is empty
-            if (!collection || collection == "") {
-                var errMessage = "Collection is required";
-                MeteorisFlash.set('danger', errMessage);
-                throw new Meteor.Error(errMessage);
-            }
-
-            //regex match collection to avoid control characters
-            var collectionMatch = collection.match(/^[a-z0-9A-Z_]{2,30}$/);
-            if (!collectionMatch) {
-                var errMessage = "Collection name must be less tha 30 characters AND may only contain numbers, letters, and underscore (_)";
-                MeteorisFlash.set('danger', errMessage);
-                throw new Meteor.Error(errMessage);
-            }
-
-            //check all field before insert, avoid blank field
-            for (i = 0; i < names.length; i++) {
-                var name = names[i];
-                var type = types[i];
-                var belongToCollection = belongToCollections[i];
-                var relationKey = relationKeys[i];
-
-                if (name == null || name == "") {
-                    var errMessage = "Field (" + (i + 1) + ") Name is required.";
+                //check if nameNameSpace is empty
+                if (!nameNameSpace || nameNameSpace == "") {
+                    var errMessage = TAPi18n.__("namespace_required", "");
                     MeteorisFlash.set('danger', errMessage);
                     throw new Meteor.Error(errMessage);
                 }
 
-                if (type == null || type == "") {
-                    var errMessage = "Field (" + (i + 1) + ") Type is required.";
+                //regex match nameNameSpace to avoid control characters
+                var nameNameSpaceMatch = nameNameSpace.match(/^[a-z][a-z0-9]{2,16}$/);
+                if (!nameNameSpaceMatch) {
+                    var errMessage = TAPi18n.__("namespace_syntax", "");
                     MeteorisFlash.set('danger', errMessage);
                     throw new Meteor.Error(errMessage);
                 }
 
-                if (belongToCollection != "" && relationKey == "" || belongToCollection == "" && relationKey != "") {
-                    var errMessage = "Field (" + (i + 1) + "), error. Please fill both Belongs to Collection and Relation Key.";
-                    MeteorisFlash.set('danger', errMessage);
-                    throw new Meteor.Error(errMessage);
-                }
-            }
-
-            //push all validated field to fieldsArray
-            var fields = [];
-            for (i = 0; i < names.length; i++) {
-                var name = names[i];
-                var type = types[i];
-                var label = labels[i] ? labels[i] : names[i].toProperCase();
-                var belongToCollection = belongToCollections[i];
-                var relationKey = relationKeys[i];
-                var isRequired = isRequireds[i].checked ? true : false;
-
-                //regex match name to avoid field break generate
-                var nameMatch = name.match(/^[a-z0-9A-Z_]{2,30}$/);
-                if (!nameMatch) {
-                    var errMessage = "Field (" + (i + 1) + ") Name can't contain any of the following characters \ / : * ? < > |";
+                //check if collection is empty
+                if (!collection || collection == "") {
+                    var errMessage = TAPi18n.__("collection_required", "");
                     MeteorisFlash.set('danger', errMessage);
                     throw new Meteor.Error(errMessage);
                 }
 
-                fields.push({
-                    name: name,
-                    type: type,
-                    label: label,
-                    isRequired: isRequired,
-                    belongToCollection: belongToCollection,
-                    relationKey: relationKey,
-                });
-            }
+                //regex match collection to avoid control characters
+                var collectionMatch = collection.match(/^[a-z][a-z0-9]{2,30}$/);
+                if (!collectionMatch) {
+                    var errMessage = TAPi18n.__("collection_name_syntax", "");
+                    MeteorisFlash.set('danger', errMessage);
+                    throw new Meteor.Error(errMessage);
+                }
 
-            //insert into mugenRoleCollections & mugenRoleActions automatically
-            Meteor.call('MugenRoleCollections.autoInsert', {name: collection}, function(err) {
-                if (err)
-                    MeteorisFlash.set('danger', err.reason);
-            });
+                //check all field before insert, avoid blank field
+                for (i = 0; i < names.length; i++) {
+                    var name = names[i];
+                    var type = types[i];
+                    var belongToCollection = belongToCollections[i];
+                    var relationKey = relationKeys[i];
 
+                    if (name == null || name == "") {
+                        var errMessage = "Field (" + (i + 1) + ") Name is required.";
+                        MeteorisFlash.set('danger', errMessage);
+                        throw new Meteor.Error(errMessage);
+                    }
 
-            if (false) {
-                Meteor.call("Mugen.testMe", "dir_pkg", collection, function(err) {
+                    if (type == null || type == "") {
+                        var errMessage = "Field (" + (i + 1) + ") Type is required.";
+                        MeteorisFlash.set('danger', errMessage);
+                        throw new Meteor.Error(errMessage);
+                    }
+
+                    if (belongToCollection != "" && relationKey == "" || belongToCollection == "" && relationKey != "") {
+                        var errMessage = "Field (" + (i + 1) + "), error. Please fill both Belongs to Collection and Relation Key.";
+                        MeteorisFlash.set('danger', errMessage);
+                        throw new Meteor.Error(errMessage);
+                    }
+                }
+
+                //push all validated field to fieldsArray
+                var fields = [];
+                for (i = 0; i < names.length; i++) {
+                    var name = names[i];
+                    var type = types[i];
+                    var label = labels[i] ? labels[i] : names[i].toProperCase();
+                    var belongToCollection = belongToCollections[i];
+                    var relationKey = relationKeys[i];
+                    var isRequired = isRequireds[i].checked ? true : false;
+
+                    //regex match name to avoid field break generate
+                    var nameMatch = name.match(/^[a-z0-9A-Z_]{2,30}$/);
+                    if (!nameMatch) {
+                        var errMessage = "Field (" + (i + 1) + ") Name can't contain any of the following characters \ / : * ? < > |";
+                        MeteorisFlash.set('danger', errMessage);
+                        throw new Meteor.Error(errMessage);
+                    }
+
+                    fields.push({
+                        name: name,
+                        type: type,
+                        label: label,
+                        isRequired: isRequired,
+                        belongToCollection: belongToCollection,
+                        relationKey: relationKey,
+                    });
+                }
+
+                //insert into mugenRoleCollections & mugenRoleActions automatically
+                Meteor.call('MugenRoleCollections.autoInsert', {name: collection}, function(err) {
                     if (err)
                         MeteorisFlash.set('danger', err.reason);
                 });
-            } else {
-                // loop over generated check lists
-                for (var i = 0; i < checkboxes.length; i++) {
-                    // And stick the checked ones onto an array...
-                    if (checkboxes[i].checked) {
-                        var checkedGeneratedList = $(checkboxes[i]).val();
-                        if (checkedGeneratedList == 'routers') {
-                            Meteor.call("Mugen.generateRouter", collection, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
-                        } else if (checkedGeneratedList == 'views') {
-                            Meteor.call("Mugen.generateView", collection, fields, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
-                        } else if (checkedGeneratedList == 'collections') {
-                            Meteor.call("Mugen.generateCollection", collection, fields, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
-                        } else if (checkedGeneratedList == 'controllers') {
-                            Meteor.call("Mugen.generateController", collection, fields, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
-                        } else if (checkedGeneratedList == 'server') {
-                            Meteor.call("Mugen.generateServer", collection, fields, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
-                        } else if (checkedGeneratedList == 'package') {
-                            Meteor.call("Mugen.generatePackage", collection, nameNameSpace, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
-                        } else if (checkedGeneratedList == 'install') {
-                            Meteor.call("Mugen.installPackage", collection, nameNameSpace, function(err) {
-                                if (err)
-                                    MeteorisFlash.set('danger', err.reason);
-                            });
+
+
+                if (false) {
+                    Meteor.call("Mugen.testMe", "dir_pkg", collection, function(err) {
+                        if (err)
+                            MeteorisFlash.set('danger', err.reason);
+                    });
+                } else {
+                    // loop over generated check lists
+                    for (var i = 0; i < checkboxes.length; i++) {
+                        // And stick the checked ones onto an array...
+                        if (checkboxes[i].checked) {
+                            var checkedGeneratedList = $(checkboxes[i]).val();
+                            if (checkedGeneratedList == 'routers') {
+                                Meteor.call("Mugen.generateRouter", collection, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'views') {
+                                Meteor.call("Mugen.generateView", collection, fields, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'collections') {
+                                Meteor.call("Mugen.generateCollection", collection, fields, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'controllers') {
+                                Meteor.call("Mugen.generateController", collection, fields, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'server') {
+                                Meteor.call("Mugen.generateServer", collection, fields, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'package') {
+                                Meteor.call("Mugen.generatePackage", collection, nameNameSpace, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'install') {
+                                Meteor.call("Mugen.installPackage", collection, nameNameSpace, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            }
                         }
                     }
                 }
-            }
 
-            MeteorisFlash.set('success', 'Success generating code!');
+                MeteorisFlash.set('success', TAPi18n.__("generate_success", ""));
         })
     },
 };

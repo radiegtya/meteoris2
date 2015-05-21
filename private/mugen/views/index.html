@@ -2,20 +2,20 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'replacementIndex'}}">Replacement</a></li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+            <li><a href="{{pathFor 'replacementIndex'}}">{{_ "Replacement"}}</a></li>
             <li class="active">index</li>
         </ol>
 
         <div class="title">
-            <h3 class="pull-left">Replacement</h3>
+            <h3 class="pull-left">{{_ "Replacement"}}</h3>
         </div>
         <div class="clearfix"></div>
 
         <div class="toolbar">
             <div class="pull-left">
-                <a class="btn btn-success" href="{{pathFor 'replacementInsert'}}">Insert</a>
-                <a id="btnRemoveAll" class="btn btn-danger">Remove Selection</a>
+                <a class="btn btn-success" href="{{pathFor 'replacementInsert'}}">{{_ "Insert"}}</a>
+                <a id="btnRemoveAll" class="btn btn-danger">{{_ "Remove Selection"}}</a>
             </div>   
             <div class="quick-search pull-right col-xs-12 col-md-3">
                 <div class="input-group">
@@ -29,7 +29,7 @@
         <div class="clearfix"></div>
 
         {{#if isEmpty}}
-        <p>No Data Found</p>
+        <p>{{_ "No Data Found"}}</p>
         {{else}}
         <div class=" table-responsive">
             <table class="table table-bordered">
@@ -38,8 +38,8 @@
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
                         [thFields]
                         <!--<th>Image</th>-->                    
-                        <th>Created by</th>                    
-                        <th style="width: 145px;">Actions</th>
+                        <th>{{_ "Created by"}}</th>                    
+                        <th style="width: 145px;">{{_ "Actions"}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,7 @@
             </table>
         </div>
         {{#if hasMore}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">{{_ "Load More"}} ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}

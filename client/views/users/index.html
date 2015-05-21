@@ -3,12 +3,12 @@
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
             <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
-            <li><a href="{{pathFor 'usersIndex'}}">{{_ "Users"}}</a></li>
-            <li class="active">{{_ "index"}}</li>
+            <li><a href="{{pathFor 'usersIndex'}}">{{_ "user" count=2}}</a></li>
+            <li class="active">{{_ "Index"}}</li>
         </ol>
 
         <div class="title">
-            <h3 class="pull-left">{{_ "Users"}}</h3>
+            <h3 class="pull-left">{{_ "user" count=2}}</h3>
         </div>
         <div class="clearfix"></div>
 
@@ -37,7 +37,7 @@
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                        
                         <th id="btnSortEmail" class="{{meteorisGridViewSortClass 'email'}}">{{_ "Email"}}</th>
-                        <th id="btnSortMugenRoleGroupId" class="{{meteorisGridViewSortClass 'mugenRoleGroupId'}}">{{_ "Mugen Role Group"}}</th>
+                        <th id="btnSortMugenRoleGroupId" class="{{meteorisGridViewSortClass 'mugenRoleGroupId'}}">{{_ "role_group"}}</th>
                         <th id="btnSortName" class="{{meteorisGridViewSortClass 'name'}}">{{_ "Name"}}</th>
                         <th>{{_ "Created At"}}</th>
                         <th style="width: 145px;">{{_ "Actions"}}</th>

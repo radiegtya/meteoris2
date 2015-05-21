@@ -1,0 +1,23 @@
+<template name="sitesIndex_es">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>            
+            <li class="active">{{_ "index"}}</li>
+        </ol>
+        
+        <h2>{{welcomeMessage}}</h2>
+        
+        <div class="alert alert-success">¡ Felicitaciones !  Meteoris está funcionando.
+        </div>
+        
+        <p>Para ver funcionalidad más completa mira la demo <a href="{{pathFor 'postsIndex'}}">{{_ "Posts"}}</a>.
+        </p>
+
+        <p>Documentación mas completa (en inglés) se encuentra acá : <a href="https://github.com/warehouseman/meteoris/blob/master/README.md#whats-new-in-v09806" target="_blank">English language documentation</a>.
+        </p>
+
+        <p>No dúdas en contactárnos en <a href="mailto:radiegtya@yahoo.co.id">radiegtya@yahoo.co.id</a>, o, si te encuentras en difficultades, sírvase solícitar ayuda en <a href="https://github.com/radiegtya/meteoris" target="_blank">https://github.com/radiegtya/meteoris.</a>
+        </p>
+    </div>
+</template>

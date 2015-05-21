@@ -1,4 +1,5 @@
 Template.templateBasicHeader.events({
+    
     'click a.lang':function(e){
 	lang='undefined';
 	$this=$(e.target);
@@ -11,3 +12,25 @@ Template.templateBasicHeader.events({
         });          
     }
 });
+
+/*
+Template.templateBasicHeader.helpers({    
+    currentLanguage: function() {
+
+        var lang = TAPi18n.getLanguage();
+        var langs = TAPi18n.getLanguages();
+        var language = langs[lang].name;
+
+        return language;
+    },
+    language: function() {
+        var languages = [];
+        var langs = TAPi18n.getLanguages();
+        for (lang in langs) {
+            languages.push({name:langs[lang].name, code:lang});
+        }
+
+        return languages;
+    }
+});
+*/
