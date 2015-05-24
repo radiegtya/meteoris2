@@ -10,6 +10,8 @@ function advisePaths (collection, nameNameSpace) {
     $('#generatedControllersPath').text(MugenUtils.preparePath( "controllers", collection));
     $(     '#generatedServerPath').text(MugenUtils.preparePath(      "server", collection));
     $(    '#generatedPackagePath').text(MugenUtils.preparePath(     "package", collection));
+    $(    '#generatedPkgI18nPath').text(MugenUtils.preparePath(     "pkgI18n", collection));
+    $(       '#generatedI18nPath').text(MugenUtils.preparePath(        "i18n", collection));
     $(          '#installPackage').html("<i>Install new meteor package " 
                                       + MugenUtils.preparePath(     "install", collection, null, nameNameSpace) + "</i>");
 
@@ -50,7 +52,15 @@ Template.mugen_form.events = {
     },
 //    'click #btnSave': function(e, t) {      //  Handling click, rather than submit, makes
     'submit #mugenGenerator_form': function(e, t) {    //  integration testing very difficult
-
+/*
+        console.log("ready");
+        Meteor.call("Mugen.generatedI18n", "jobs", "hr", function(err) {
+            if (err)
+                MeteorisFlash.set('danger', err.reason);
+        });
+        MeteorisFlash.set('success', TAPi18n.__("generate_success", ""));
+        return;
+*/
         e.preventDefault();
         var checkboxes = $('.checkAll');
 
@@ -84,7 +94,7 @@ Template.mugen_form.events = {
                 }
 
                 //regex match nameNameSpace to avoid control characters
-                var nameNameSpaceMatch = nameNameSpace.match(/^[a-z][a-z0-9]{2,16}$/);
+                var nameNameSpaceMatch = nameNameSpace.match(/^[a-z][a-z0-9]{1,16}$/);
                 if (!nameNameSpaceMatch) {
                     var errMessage = TAPi18n.__("namespace_syntax", "");
                     MeteorisFlash.set('danger', errMessage);
@@ -99,7 +109,7 @@ Template.mugen_form.events = {
                 }
 
                 //regex match collection to avoid control characters
-                var collectionMatch = collection.match(/^[a-z][a-z0-9]{2,30}$/);
+                var collectionMatch = collection.match(/^[a-z][a-z0-9]{1,30}$/);
                 if (!collectionMatch) {
                     var errMessage = TAPi18n.__("collection_name_syntax", "");
                     MeteorisFlash.set('danger', errMessage);
@@ -205,6 +215,16 @@ Template.mugen_form.events = {
                                 });
                             } else if (checkedGeneratedList == 'package') {
                                 Meteor.call("Mugen.generatePackage", collection, nameNameSpace, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'pkgI18n') {
+                                Meteor.call("Mugen.generatePkgI18n", collection, nameNameSpace, function(err) {
+                                    if (err)
+                                        MeteorisFlash.set('danger', err.reason);
+                                });
+                            } else if (checkedGeneratedList == 'i18n') {
+                                Meteor.call("Mugen.generatedI18n", collection, nameNameSpace, function(err) {
                                     if (err)
                                         MeteorisFlash.set('danger', err.reason);
                                 });

@@ -17,6 +17,10 @@ Package.onUse(function(api) {
   api.use('aldeed:simple-schema');
   api.use('meteoris:meteoris-core');
   api.use('accounts-ui');
+  api.use('tap:i18n', ["client", "server"]);
+
+  api.add_files("package-tap.i18n", ["client", "server"]);
+
 
   api.addFiles([
         'lib/{Collection}.js'
@@ -46,6 +50,12 @@ Package.onUse(function(api) {
       , 'client/views/update.js'
       , 'client/views/view.js'
     ], ['client']
+  );
+
+  api.addFiles([
+        'i18n/en.i18n.json'
+      , 'i18n/es.i18n.json'
+    ], ['client', 'server']
   );
 
 });

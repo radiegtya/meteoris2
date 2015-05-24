@@ -1,3 +1,4 @@
+/*
 Template.registerHelper('currentLanguage', function() {
   var lang = TAPi18n.getLanguage();
   var langs = TAPi18n.getLanguages();
@@ -13,3 +14,4 @@ Template.registerHelper('language', function(){
   }
   return languages;
 });
+*/

@@ -1,10 +1,13 @@
+fieldFormat = new Tracker.Dependency;
+
 MeteorisFormatter = {
     /**
      * Formatting date to desired format, this function needs moment packages     
      */
     date: function(date, format) {
         if (date)
-            return moment(date).format(format ? format : 'DD MMM YYYY');
+//            return moment(date).format(format ? format : 'DD MMM YYYY');
+            return moment(date).format(format ? format : 'll');
         else
             return "-";
     },
@@ -13,7 +16,8 @@ MeteorisFormatter = {
      */
     dateTime: function(date, format) {
         if (date)
-            return moment(date).format(format ? format : 'DD MMM YYYY HH:mm');
+//            return moment(date).format(format ? format : 'DD MMM YYYY HH:mm');
+            return moment(date).format(format ? format : 'LLLL');
         else
             return "-";
     },

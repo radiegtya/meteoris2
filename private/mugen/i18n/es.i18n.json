@@ -1,0 +1,34 @@
+{
+  "home":"Menú Principal",
+  "{collection}":"{Collection}",
+  "update_success":"{Collection} actualizado con éxito",
+  "search_hint":"Criterio de búsqueda",
+  "no_data_found":"No hay datos",
+  "load_more":"Traer mas regístros",
+
+  "confirm_remove":"¿ Esta seguro que desea eliminar el regístro ?",
+  "confirm_remove_plural":"¿ Esta seguro que desea eliminar los __count__ regístros ?",
+
+  "no_selection":"Escoge al menos un registro para borrar",
+   
+  "index":"Lista de los {collection}",
+  "insert_{collection}":"Insertar {Collection}",
+  "update_{collection}":"Actualizar el {Collection}",
+  "view":"Revisar",
+  "submit":"Introducir",
+  "view_{collection}":"Revisar {Collection}",
+  "back":"Volver atrás",
+  "update":"Actualizar",
+  "remove":"Eliminar",
+  "remove_selection":"Eliminar Los {Collection} Seleccionados",
+  "remove_success":"El {collection} fue elíminado exitósamente",
+  "actions":"Herramientas",
+  "insert":"Insertar",
+  "insert_success":"El {collection} fue creado exitósamente",
+  "title":"Título",
+  "created_at":"Creado",
+  "created_by":"Creado por",
+  "updated_at":"Actualizado",
+  "updated_by":"Actualizado por"
+}
+

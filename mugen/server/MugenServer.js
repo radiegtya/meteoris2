@@ -9,7 +9,7 @@ var Mugen = {
 //    collectionDestinationPath: "lib/collections/",
 //    collectionPrefix: ".js",
     viewTemplatePath: 'mugen/views/',
-    viewDestinationPath: "client/views/",
+//    viewDestinationPath: "client/views/",
     viewPrefixJs: ".js",
     viewPrefixHtml: ".html",
     routerTemplatePath: 'mugen/routers/templateRouter.js',
@@ -19,6 +19,8 @@ var Mugen = {
 //    serverDestinationPath: "server/",
 //    serverPrefix: "Server.js",
     pkgeTemplatePath: 'mugen/templatePackage.js',
+    pkgI18nTemplatePath: 'mugen/templatePackage-tap.i18n',
+    i18nTemplatePath: 'mugen/i18n/',
 
 
     /* write file to path */
@@ -36,13 +38,14 @@ var Mugen = {
         return Assets.getText(path);
     },
     mkdir: function(path) {
-        fs.mkdir(this.rootPath + path, function(err) {
-            if (err) {
-                if (err.code.indexOf("EEXIST") < 0) console.log(err);
-            } else {
-                console.log("The folder was created at " + path);
-            }
-        });
+        try {
+            fs.mkdirSync(this.rootPath + path);
+        }
+        catch (err) {
+            if (err.code.indexOf("EEXIST") < 0) console.log(err);
+            console.log(this.rootPath + path + " recreated.")
+        }
+
     },
     /* replace all string to desired string */
     replaceAll: function(str, find, replace) {
@@ -495,6 +498,50 @@ var Mugen = {
         //finally write it
         this.write(path, content);
     },
+    generatedI18n: function(collection, nameNameSpace) {
+        //create directory for views first
+//        this.mkdir(this.viewDestinationPath + this.toCollectionCase(collection));
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        var path = MugenUtils.preparePath("dir_i18n", collection);
+        this.mkdir(path);
+
+        var srcPath = this.i18nTemplatePath;
+        var dirSrcI18n = this.rootPath + "private/" + srcPath;
+
+//        console.log(" generating i18n from " + dirSrcI18n + " to " + this.rootPath + path);
+        var filenames = fs.readdirSync(dirSrcI18n);
+        for (idx in filenames) {
+            var filename = filenames[idx];
+            var src = srcPath + filename;
+            var dst = path + "/" + filename;
+
+            var content = this.replaceAll(this.read(src), "{Collection}", this.toTitleCase(collection));
+            content = this.replaceAll(content, "{collection}", this.toCollectionCase(collection));
+            content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+
+//            console.log("src :: " + src);
+//            console.log("dst :: " + dst);
+            this.write(dst, content);
+        };
+//        console.log(" generated i18n ");
+    },
+    /* generate your package definition file from template, then replacing with collection */
+    generatePkgI18n: function(collection, nameNameSpace) {
+        //get pkge template content
+        var pkgeTemplate = this.read(this.pkgI18nTemplatePath);
+
+        //get destinationPath, and set the file name
+//        var path = this.pkgeDestinationPath + this.toCollectionCase(collection) + this.pkgePrefix;
+        var path = MugenUtils.preparePath("pkgI18n", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+
+        //get the content, replace the template with desired collection
+        var content = this.replaceAll(pkgeTemplate, "{collection}", this.toCollectionCase(collection));
+        content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+
+        //finally write it
+        this.write(path, content);
+    },
     /* generate your package definition file from template, then replacing with collection */
     installPackage: function(collection, nameNameSpace) {
         var METEOR_PACKAGES = ".meteor/packages";
@@ -534,6 +581,12 @@ Meteor.methods({
     "Mugen.generatePackage": function(collection, nameSpace) {
         Mugen.generatePackage(collection, nameSpace);
     },
+    "Mugen.generatePkgI18n": function(collection, nameSpace) {
+        Mugen.generatePkgI18n(collection, nameSpace);
+    },
+    "Mugen.generatedI18n": function(collection, nameSpace) {
+        Mugen.generatedI18n(collection, nameSpace);
+    },
     "Mugen.installPackage": function(collection, nameSpace) {
         Mugen.installPackage(collection, nameSpace);
     },
@@ -544,6 +597,8 @@ Meteor.methods({
         Mugen.generateRouter(collection);
         Mugen.generateServer(collection, fields);
         Mugen.generatePackage(collection, nameSpace);
+        Mugen.generatePkgI18n(collection, nameSpace);
+        Mugen.generatedI18n(collection, nameSpace);
         Mugen.installPackage(collection, nameSpace);
     },
 });

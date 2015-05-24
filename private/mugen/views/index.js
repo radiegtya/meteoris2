@@ -5,8 +5,10 @@ Template.replacementIndex.helpers({
 Template.replacementIndex.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
-        if (confirm("Are you sure want to remove this data?"))
-            Router.current().remove(this._id);
+        var it = this._id;
+        MeteorisAlert.confirm("confirm_remove", function() {
+            Router.current().remove(it);
+        });
     },
     [sortFields]
     'keyup #search': function(e, t) {
@@ -33,17 +35,16 @@ Template.replacementIndex.events = {
         }
 
         if (checkedLength > 0) {
-            if (confirm("Are you sure want to remove? (total " + checkedLength + " data will be removed)")) {
-                // loop over them all
+            MeteorisAlert.confirm("confirm_remove", function() {
                 for (var i = 0; i < checkboxes.length; i++) {
                     // And stick the checked ones onto an array...
                     if (checkboxes[i].checked) {
                         Router.current().remove($(checkboxes[i]).val());
                     }
                 }
-            }
+            }, {count:checkedLength});
         } else {
-            MeteorisFlash.set('danger', 'Please Select Some data which You Want to Remove');
+            MeteorisFlash.set('danger', __("no_selection", "") + ".");
         }
 
         //set checkAll header to uncheck

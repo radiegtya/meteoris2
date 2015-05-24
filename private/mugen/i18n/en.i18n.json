@@ -1,0 +1,34 @@
+{
+  "home":"Home",
+  "{collection}":"{Collection}",
+  "update_success":"{Collection} updated successfully",
+  "search_hint":"Search key",
+  "no_data_found":"No Data Found",
+  "load_more":"Load More",
+
+  "confirm_remove":"Are you sure you want to delete this record?",
+  "confirm_remove_plural":"Are you sure you want to delete these __count__ records?",
+
+  "no_selection":"Select at least one row for deletion",
+    
+  "index":"{Collection} Index",
+  "insert_{collection}":"Insert {Collection}",
+  "update_{collection}":"Update {Collection}",
+  "view":"View",
+  "submit":"Submit",
+  "view_{collection}":"View {Collection}",
+  "back":"Back",
+  "update":"Update",
+  "remove":"Delete",
+  "remove_selection":"Remove selected {collection}",
+  "remove_success":"{Collection} removed successfully",
+  "actions":"Actions",
+  "insert":"Insert",
+  "insert_success":"{Collection} added successfully",
+  "title":"title",
+  "created_at":"created_at",
+  "created_by":"created_by",
+  "updated_at":"updated_at",
+  "updated_by":"Updated By"
+}
+
