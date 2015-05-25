@@ -26,9 +26,9 @@
   "insert":"Insert",
   "insert_success":"{Collection} added successfully",
   "title":"title",
-  "created_at":"created_at",
-  "created_by":"created_by",
-  "updated_at":"updated_at",
+  "created_at":"Created At",
+  "created_by":"Created By",
+  "updated_at":"Dpdated At",
   "updated_by":"Updated By"
 }
 

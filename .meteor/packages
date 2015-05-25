@@ -43,8 +43,8 @@ tap:i18n
 #
 meteoris:mugen-utilities
 meteoris:meteoris-core
+rzymek:moment-locale-fr
 rzymek:moment-locale-es
 rzymek:moment-locale-zh-cn
+lbee:moment-helpers
 #
-whsmn:invoice
-whsmn:invoiceitem

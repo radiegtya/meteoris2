@@ -23,7 +23,6 @@
   "confirm_remove_plural":"¿ Esta seguro que desea eliminar los __count__ registros ?",
   "cancel":"Cancelar",
 
-  "Sorry. Unable to access that page.":"Perdón. La página no es disponible,",
   "documentation":"documentación",
   "Email":"Correo",
   "Back to Login":"Reconectar",
@@ -56,7 +55,7 @@
 
   "Sign In with Facebook":"Conexión : Facebook",
   "Password":"Contraseña",
-  "Forget Password?":"Olvidar contraseña?",
+  "Forget Password?":"Olvidaste tu contraseña?",
   "Don't have an account yet? Register here!":"Aún no tienes cuenta? Registrarse aqui!",
   "Back to":"Regresar a",
   "Frontend":"Sección no privilegiado",

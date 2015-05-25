@@ -23,7 +23,6 @@
   "confirm_remove_plural":"Are you sure want to remove these __count__ items?",
   "cancel":"No. Cancel",
 
-  "Sorry. Unable to access that page.":"Sorry. Unable to access that page",
   "documentation":"documentation",
   "Email":"Email",
   "Back to Login":"Back to Login",
@@ -32,16 +31,16 @@
   "Remove Selection":"Remove Selection",
   "Type Here to Search":"Type Here to Search",
   "No Data Found":"No Data Found",
-//  "Mugen Role Group":"Mugen Role Group",
+
   "Name":"Name",
   "Created At":"Created At",
-  "Created by":"Created By",
+  "Created By":"Created By",
   "Updated At":"Updated At",
   "Updated By":"Updated By",
   "Actions":"Actions",
   "Load More":"Load More",
 
-  "register success":"register success",
+//  "register success":"register success",
   "insert_success":"Record inserted successfully",
   "update_success":"Record updated successfully",
   "delete_success":"Record(s) deleted successfully",
@@ -56,7 +55,7 @@
   
   "Sign In with Facebook":"Sign In with Facebook",
   "Password":"Password",
-  "Forget Password?":"Forget Password?",
+  "Forget Password?":"Forgot your password?",
   "Don't have an account yet? Register here!":"Don't have an account yet? Register here!",
   "Back to":"Back to",
   "Frontend":"Frontend",

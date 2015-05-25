@@ -244,7 +244,7 @@ var Mugen = {
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
                     '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n';
             if (type == "Date") {
-                stringFields += '<input type="text" id="' + name + '" value="{{meteorisFormatterDate ' + name + " 'L'" + '}}" placeholder="' + label + '" class="form-control">\n';
+                stringFields += '<input type="text" id="' + name + '" value="{{moFormat ' + name + ' "L"' + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "Number") {
                 stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "String" && belongToCollection) {
@@ -304,7 +304,7 @@ var Mugen = {
             var relationKey = obj.relationKey ? obj.relationKey : null;
 
             if (type == "Date")
-                stringFields += "<td>{{meteorisFormatter 'date' " + name + '}}</td>\n';
+                stringFields += "<td>{{moFormat " + name + ' "LL"}}</td>\n';
             else if (belongToCollection && relationKey && type == "String")
                 stringFields += '<td>{{' + relationKey + '.name}}</td>\n';
             else
@@ -408,7 +408,7 @@ var Mugen = {
                     "<td><b>" + label + "</b></td>\n";
             if (type == "Date") {
                 stringFields +=
-                        "<td>{{meteorisFormatter 'date' " + name + "}}</td>\n";
+                        "<td>{{moFormat " + name + ' "LLLL"}}</td>\n';
             } else if (belongToCollection && relationKey && type == "String") {
                 stringFields +=
                         "<td>{{" + relationKey + ".name}}</td>\n";

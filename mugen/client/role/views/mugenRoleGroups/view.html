@@ -26,11 +26,11 @@
                 </tr>
                 <tr>
                     <td><b>{{_ "Created At"}}</b></td>
-                    <td>{{meteorisFormatter "dateTime" createdAt}}</td>
+                    <td>{{moFormat createdAt "LLLL"}}</td>
                 </tr>                
                 <tr>
                     <td><b>{{_ "Updated At"}}</b></td>
-                    <td>{{meteorisFormatter "dateTime" updatedAt}}</td>
+                    <td>{{moFormat updatedAt "LLLL"}}</td>
                 </tr>                
             </tbody>
         </table>        
@@ -77,7 +77,7 @@
                         <td><input type="checkbox" class="checkAll" value="{{_id}}"/></td>
                         <td>{{emails.[0].address}}</td>
                         <td>{{profile.name}}</td>
-                        <td>{{meteorisFormatter 'date' createdAt}}</td>
+                        <td>{{moFormat createdAt "LL"}}</td>
 <!--                        <td>
                             <a href="{{pathFor 'usersView'}}" class="btn btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
                             <a href="{{pathFor 'usersUpdate'}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>

@@ -27,11 +27,11 @@
                 </tr>                -->
                 <tr>
                     <td><b>{{_ "created_at"}}</b></td>
-                    <td>{{meteorisFormatter "dateTime" createdAt}}</td>
+                    <td>{{moFormat createdAt "LLLL"}}</td>
                 </tr>                
                 <tr>
                     <td><b>{{_ "updated_at"}}</b></td>
-                    <td>{{meteorisFormatter "dateTime" updatedAt}}</td>
+                    <td>{{moFormat updatedAt "LLLL"}}</td>
                 </tr>                
                 <tr>
                     <td><b>{{_ "created_by"}}</b></td>
