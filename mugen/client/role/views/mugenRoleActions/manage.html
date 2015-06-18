@@ -2,13 +2,13 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'mugenRoleActionsManage'}}">Mugen Role Actions</a></li>
-            <li class="active">index</li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+            <li><a href="{{pathFor 'mugenRoleActionsManage'}}">{{_ "mugen"}} : {{_ "role_action" count=2}}</a></li>
+            <li class="active">{{_ "manage"}}</li>
         </ol>
 
         <div class="title">
-            <h3 class="pull-left">Mugen Role Actions</h3>
+            <h3 class="pull-left">{{_ "mugen"}} : {{_ "role_action" count=2}}</h3>
         </div>
         <div class="clearfix"></div>
 
@@ -16,21 +16,21 @@
             <div class="pull-left">
                 <div class="input-group">                    
                     <select class="form-control" id="mugenRoleGroupId">
-                        <option value="">-- Choose Group --</option>
+                        <option value="">-- {{_ "choose_group"}} --</option>
                         <option value="*">*</option>
                         {{#each mugenRoleGroups}}
                         <option value="{{_id}}">{{name}}</option>
                         {{/each}}
                     </select>
                     <select class="form-control" id="mugenRoleCollectionId">
-                        <option value="">-- Choose Collection --</option>
+                        <option value="">-- {{_ "choose_collection"}} --</option>
                         {{#each mugenRoleCollections}}
                         <option value="{{_id}}">{{name}}</option>
                         {{/each}}
                     </select>
                 </div>
                 <div class="input-group">
-                    <input type="submit" value="Search" id="btnSearchManage"/>
+                    <input type="submit" value={{_ "search"}} id="btnSearchManage"/>
                 </div>
             </div>   
         </div>
@@ -38,22 +38,25 @@
 
         <div class="input-group">
             <input type="hidden" id="search">
-            <input type="text" id="name" class="form-control" placeholder="Add new Action Name">
+            <input type="text" id="name" class="form-control" placeholder={{_ "add_privilege"}}>
         </div>
         <div class="input-group">
-            <input type="submit" value="Save" id="btnInsertManage"/>
+            <input type="submit" value={{_ "Submit"}} id="btnInsertManage"/>
         </div>
+        <div class="clearfix"></div>
+        <br />
 
         {{#if isEmpty}}
-        <p>No Data Found</p>
+        <p>{{_ "No Data Found"}}</p>
+
         {{else}}
         <div class=" table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th style="width: 30px;"><input type="checkbox" id="checkAll"/></th>                                           
-                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">Name</th>
-                        <th style="width: 145px;">Actions</th>
+                        <th id="btnSortname" class="{{meteorisGridViewSortClass 'name'}}">{{_ "Name"}}</th>
+                        <th style="width: 145px;">{{_ "Actions"}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,7 +75,7 @@
             </table>
         </div>
         {{#if hasMore}}
-        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">Load More ...</a>
+        <a class="btn btn-default load-more btn-block" href="{{hasMore}}">{{_ "Load More"}} ...</a>
         {{/if}}
         {{#unless ready}}
         {{> spinner}}

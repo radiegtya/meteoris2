@@ -106,7 +106,7 @@ MugenRoleGroupsController = MeteorisController.extend({
                         MeteorisFlash.set('danger', err.message);
                         throw new Meteor.Error(err);
                     }
-                    MeteorisFlash.set('success', "Success Inserting MugenRoleGroups");
+                    MeteorisFlash.set('success', TAPi18n.__("insert_success", "") + ".");
                     Router.go('mugenRoleGroupsView', {_id: _id});
                 });
             }
@@ -135,7 +135,7 @@ MugenRoleGroupsController = MeteorisController.extend({
                     MeteorisFlash.set('danger', err.message);
                     throw new Meteor.Error(err);
                 }
-                MeteorisFlash.set('success', "Success Updating MugenRoleGroups");
+                MeteorisFlash.set('success', TAPi18n.__("update_success", ""));
             });
             Router.go('mugenRoleGroupsView', {_id: _id});
         }
@@ -152,7 +152,7 @@ MugenRoleGroupsController = MeteorisController.extend({
                 MeteorisFlash.set('danger', err.message);
                 throw new Meteor.Error(err);
             }
-            MeteorisFlash.set('success', "Success Removing MugenRoleGroups");
+            MeteorisFlash.set('success', TAPi18n.__("delete_success", ""));
         });
     },
     _loadModel: function(_id) {

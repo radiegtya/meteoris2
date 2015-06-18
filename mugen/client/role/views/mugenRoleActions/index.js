@@ -4,8 +4,10 @@ Template.mugenRoleActionsIndex.helpers({
 Template.mugenRoleActionsIndex.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
-        if (confirm("Are you sure want to remove this data?"))
-            Router.current().remove(this._id);
+        var recordId = this._id;
+        MeteorisAlert.confirm("confirm_remove", function() {
+            Router.current().remove(recordId);
+        });
     },
     /* sorting by parameter */
     'click #btnSortname': function(e) {
@@ -43,7 +45,8 @@ Template.mugenRoleActionsIndex.events = {
         }
 
         if (checkedLength > 0) {
-            if (confirm("Are you sure want to remove? (total " + checkedLength + " data will be removed)")) {
+
+            MeteorisAlert.confirm("confirm_remove", function() {
                 // loop over them all
                 for (var i = 0; i < checkboxes.length; i++) {
                     // And stick the checked ones onto an array...
@@ -51,7 +54,7 @@ Template.mugenRoleActionsIndex.events = {
                         Router.current().remove($(checkboxes[i]).val());
                     }
                 }
-            }
+            }, {count:checkedLength});
         } else {
             MeteorisFlash.set('danger', 'Please Select Some data which You Want to Remove');
         }

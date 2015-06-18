@@ -28,6 +28,9 @@
   "Mugen Role Group":"连接角色组",
   "Name":"名字",
   "Created At":"创建于",
+  "Created by":"Created By",
+  "Updated At":"Updated At",
+  "Updated By":"Updated By",
   "Actions":"行为",
   "Load More":"加载更多",
   
@@ -41,6 +44,7 @@
   "User Profile":"用户资料",
   "Old Password":"旧密码",
   "New Password":"新密码",
+  "login success": "login success",
   "View":"显示",
   "Back":"返回",
   "index":"首页"

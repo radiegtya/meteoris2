@@ -1,13 +1,6 @@
 <template name="templatePublicNotFound">
     <div class="container">
-        <div class="alert alert-danger">
-            <h3 class="">{{_ "Sorry.  Unable to access that page."}}
-
-            <!-- You can try to
-                <a href="{{pathFor 'backend_sitesIndex'}}">search</a>
-                         for it. -->
-            </h3>
-        </div>
+      {{> UI.dynamic template=notfound_i18n}}
     </div>
 </template>
 

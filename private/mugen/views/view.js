@@ -1,10 +1,11 @@
 Template.replacementView.events = {
     'click #btnRemove': function(e) {
         e.preventDefault();
-        if (confirm("Are you sure want to remove this data?")) {
-            Router.current().remove(this._id);
-            Router.go("replacementIndex")
-        }
+        var it = this._id;
+        MeteorisAlert.confirm("confirm_remove", function() {
+            Router.current().remove(it);
+            Router.go("replacementIndex");
+        });
     },
 };
 

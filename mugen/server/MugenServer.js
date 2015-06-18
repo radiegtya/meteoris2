@@ -3,21 +3,26 @@ var rootPath = process.env.PWD;
 var Mugen = {
     rootPath: process.env.PWD + "/",
     controllerTemplatePath: 'mugen/controllers/TemplateController.js',
-    controllerDestinationPath: "lib/controllers/",
-    controllerPrefix: "Controller.js",
+//    controllerDestinationPath: "lib/controllers/",
+//    controllerPrefix: "Controller.js",
     collectionTemplatePath: 'mugen/collections/TemplateCollection.js',
-    collectionDestinationPath: "lib/collections/",
-    collectionPrefix: ".js",
+//    collectionDestinationPath: "lib/collections/",
+//    collectionPrefix: ".js",
     viewTemplatePath: 'mugen/views/',
-    viewDestinationPath: "client/views/",
+//    viewDestinationPath: "client/views/",
     viewPrefixJs: ".js",
     viewPrefixHtml: ".html",
     routerTemplatePath: 'mugen/routers/templateRouter.js',
-    routerDestinationPath: "client/routers/",
-    routerPrefix: ".js",
+//    routerDestinationPath: "client/routers/",
+//    routerPrefix: ".js",
     serverTemplatePath: 'mugen/server/TemplateServer.js',
-    serverDestinationPath: "server/",
-    serverPrefix: "Server.js",
+//    serverDestinationPath: "server/",
+//    serverPrefix: "Server.js",
+    pkgeTemplatePath: 'mugen/templatePackage.js',
+    pkgI18nTemplatePath: 'mugen/templatePackage-tap.i18n',
+    i18nTemplatePath: 'mugen/i18n/',
+
+
     /* write file to path */
     write: function(path, content) {
         fs.writeFile(this.rootPath + path, content, function(err) {
@@ -33,13 +38,14 @@ var Mugen = {
         return Assets.getText(path);
     },
     mkdir: function(path) {
-        fs.mkdir(this.rootPath + path, function(err) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("The folder was created at " + path);
-            }
-        });
+        try {
+            fs.mkdirSync(this.rootPath + path);
+        }
+        catch (err) {
+            if (err.code.indexOf("EEXIST") < 0) console.log(err);
+            console.log(this.rootPath + path + " recreated.")
+        }
+
     },
     /* replace all string to desired string */
     replaceAll: function(str, find, replace) {
@@ -67,13 +73,26 @@ var Mugen = {
         }
         return results.join(' ');
     },
+
+    testMe: function(element, collection) {
+        var path = MugenUtils.preparePath(element, collection)
+        console.log("Helloooo " + path);
+        this.mkdir(path);
+
+    },
+
     /* generate your controller from template, then replacing with collection */
     generateController: function(collection, fields) {
+
         //get controller template content
         var controllerTemplate = this.read(this.controllerTemplatePath);
 
         //get destinationPath, and set the file name
-        var path = this.controllerDestinationPath + this.toTitleCase(collection) + this.controllerPrefix;
+//        var path = this.controllerDestinationPath + this.toTitleCase(collection) + this.controllerPrefix;
+        var path = MugenUtils.preparePath("controllers", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        this.mkdir(MugenUtils.preparePath("dir_lib", collection));
+
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(controllerTemplate, "Replacement", this.toTitleCase(collection));
@@ -119,7 +138,10 @@ var Mugen = {
         var collectionTemplate = this.read(this.collectionTemplatePath);
 
         //get destinationPath, and set the file name
-        var path = this.collectionDestinationPath + this.toTitleCase(collection) + this.collectionPrefix;
+//        var path = this.collectionDestinationPath + this.toTitleCase(collection) + this.collectionPrefix;
+        var path = MugenUtils.preparePath("collections", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        this.mkdir(MugenUtils.preparePath("dir_lib", collection));
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(collectionTemplate, "Replacement", this.toTitleCase(collection));
@@ -161,16 +183,24 @@ var Mugen = {
     },
     generateView: function(collection, fields) {
         //create directory for views first
-        this.mkdir(this.viewDestinationPath + this.toCollectionCase(collection));
+//        this.mkdir(this.viewDestinationPath + this.toCollectionCase(collection));
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        this.mkdir(MugenUtils.preparePath("dir_client", collection));
+        this.mkdir(MugenUtils.preparePath("dir_views", collection));
+
 
         //================= generate _form ===============//
         //get view template content
-        var viewTemplate_formHtml = this.read(this.viewTemplatePath + "_form" + this.viewPrefixHtml);
-        var viewTemplate_formJs = this.read(this.viewTemplatePath + "_form" + this.viewPrefixJs);
+        var action = "_form";
+        var viewTemplate_formHtml = this.read(this.viewTemplatePath + action + this.viewPrefixHtml);
+        var viewTemplate_formJs = this.read(this.viewTemplatePath + action + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var path_formHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/_form" + this.viewPrefixHtml;
-        var path_formJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/_form" + this.viewPrefixJs;
+//        var path_formHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/_form" + this.viewPrefixHtml;
+//        var path_formJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/_form" + this.viewPrefixJs;
+
+        var path_formHtml = MugenUtils.preparePath("viewsActionHtml", collection, action);
+        var   path_formJs = MugenUtils.preparePath(  "viewsActionJs", collection, action);
 
         //get the content, replace the template with desired collection
         var content_formHtml = this.replaceAll(viewTemplate_formHtml, "Replacement", this.toTitleCase(collection));
@@ -214,7 +244,7 @@ var Mugen = {
                     '<div class="form-group {{#if error ' + "'" + name + "'" + '}}has-error{{/if}}">\n' +
                     '<label for="' + name + '" class="control-label">' + label + " " + isRequired + '</label>\n';
             if (type == "Date") {
-                stringFields += '<input type="text" id="' + name + '" value="{{meteorisFormatterDate ' + name + " 'L'" + '}}" placeholder="' + label + '" class="form-control">\n';
+                stringFields += '<input type="text" id="' + name + '" value="{{moFormat ' + name + ' "L"' + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "Number") {
                 stringFields += '<input type="number" id="' + name + '" value="{{' + name + '}}" placeholder="' + label + '" class="form-control">\n';
             } else if (type == "String" && belongToCollection) {
@@ -240,12 +270,15 @@ var Mugen = {
 
         //================= generate index ===============//
         //get view template content
-        var viewTemplateindexHtml = this.read(this.viewTemplatePath + "index" + this.viewPrefixHtml);
-        var viewTemplateindexJs = this.read(this.viewTemplatePath + "index" + this.viewPrefixJs);
+        var action = "index";
+        var viewTemplateindexHtml = this.read(this.viewTemplatePath + action + this.viewPrefixHtml);
+        var viewTemplateindexJs = this.read(this.viewTemplatePath + action + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathindexHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/index" + this.viewPrefixHtml;
-        var pathindexJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/index" + this.viewPrefixJs;
+//        var pathindexHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/index" + this.viewPrefixHtml;
+//        var pathindexJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/index" + this.viewPrefixJs;
+        var pathindexHtml = MugenUtils.preparePath("viewsActionHtml", collection, action);
+        var   pathindexJs = MugenUtils.preparePath(  "viewsActionJs", collection, action);
 
         //get the content, replace the template with desired collection
         var contentindexHtml = this.replaceAll(viewTemplateindexHtml, "Replacement", this.toTitleCase(collection));
@@ -271,7 +304,7 @@ var Mugen = {
             var relationKey = obj.relationKey ? obj.relationKey : null;
 
             if (type == "Date")
-                stringFields += "<td>{{meteorisFormatter 'date' " + name + '}}</td>\n';
+                stringFields += "<td>{{moFormat " + name + ' "LL"}}</td>\n';
             else if (belongToCollection && relationKey && type == "String")
                 stringFields += '<td>{{' + relationKey + '.name}}</td>\n';
             else
@@ -299,12 +332,15 @@ var Mugen = {
 
         //================= generate insert ===============//
         //get view template content
-        var viewTemplateinsertHtml = this.read(this.viewTemplatePath + "insert" + this.viewPrefixHtml);
-        var viewTemplateinsertJs = this.read(this.viewTemplatePath + "insert" + this.viewPrefixJs);
+        var action = "insert";
+        var viewTemplateinsertHtml = this.read(this.viewTemplatePath + action + this.viewPrefixHtml);
+        var viewTemplateinsertJs = this.read(this.viewTemplatePath + action + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathinsertHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/insert" + this.viewPrefixHtml;
-        var pathinsertJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/insert" + this.viewPrefixJs;
+//        var pathinsertHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/insert" + this.viewPrefixHtml;
+//        var pathinsertJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/insert" + this.viewPrefixJs;
+        var pathinsertHtml = MugenUtils.preparePath("viewsActionHtml", collection, action);
+        var   pathinsertJs = MugenUtils.preparePath(  "viewsActionJs", collection, action);
 
         //get the content, replace the template with desired collection
         var contentinsertHtml = this.replaceAll(viewTemplateinsertHtml, "Replacement", this.toTitleCase(collection));
@@ -319,12 +355,15 @@ var Mugen = {
 
         //================= generate update ===============//
         //get view template content
-        var viewTemplateupdateHtml = this.read(this.viewTemplatePath + "update" + this.viewPrefixHtml);
-        var viewTemplateupdateJs = this.read(this.viewTemplatePath + "update" + this.viewPrefixJs);
+        var action = "update";
+        var viewTemplateupdateHtml = this.read(this.viewTemplatePath + action + this.viewPrefixHtml);
+        var viewTemplateupdateJs = this.read(this.viewTemplatePath + action + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathupdateHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/update" + this.viewPrefixHtml;
-        var pathupdateJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/update" + this.viewPrefixJs;
+//        var pathupdateHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/update" + this.viewPrefixHtml;
+//        var pathupdateJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/update" + this.viewPrefixJs;
+        var pathupdateHtml = MugenUtils.preparePath("viewsActionHtml", collection, action);
+        var   pathupdateJs = MugenUtils.preparePath(  "viewsActionJs", collection, action);
 
         //get the content, replace the template with desired collection
         var contentupdateHtml = this.replaceAll(viewTemplateupdateHtml, "Replacement", this.toTitleCase(collection));
@@ -339,12 +378,15 @@ var Mugen = {
 
         //================= generate view ===============//
         //get view template content
-        var viewTemplateviewHtml = this.read(this.viewTemplatePath + "view" + this.viewPrefixHtml);
-        var viewTemplateviewJs = this.read(this.viewTemplatePath + "view" + this.viewPrefixJs);
+        var action = "view";
+        var viewTemplateviewHtml = this.read(this.viewTemplatePath + action + this.viewPrefixHtml);
+        var viewTemplateviewJs = this.read(this.viewTemplatePath + action + this.viewPrefixJs);
 
         //get destinationPath, and set the file name
-        var pathviewHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/view" + this.viewPrefixHtml;
-        var pathviewJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/view" + this.viewPrefixJs;
+//        var pathviewHtml = this.viewDestinationPath + this.toCollectionCase(collection) + "/view" + this.viewPrefixHtml;
+//        var pathviewJs = this.viewDestinationPath + this.toCollectionCase(collection) + "/view" + this.viewPrefixJs;
+        var pathviewHtml = MugenUtils.preparePath("viewsActionHtml", collection, action);
+        var   pathviewJs = MugenUtils.preparePath(  "viewsActionJs", collection, action);
 
         //get the content, replace the template with desired collection
         var contentviewHtml = this.replaceAll(viewTemplateviewHtml, "Replacement", this.toTitleCase(collection));
@@ -366,7 +408,7 @@ var Mugen = {
                     "<td><b>" + label + "</b></td>\n";
             if (type == "Date") {
                 stringFields +=
-                        "<td>{{meteorisFormatter 'date' " + name + "}}</td>\n";
+                        "<td>{{moFormat " + name + ' "LLLL"}}</td>\n';
             } else if (belongToCollection && relationKey && type == "String") {
                 stringFields +=
                         "<td>{{" + relationKey + ".name}}</td>\n";
@@ -385,11 +427,16 @@ var Mugen = {
     },
     /* generate your controller from template, then replacing with collection */
     generateRouter: function(collection) {
+
+
         //get router template content
         var routerTemplate = this.read(this.routerTemplatePath);
 
         //get destinationPath, and set the file name
-        var path = this.routerDestinationPath + this.toCollectionCase(collection) + this.routerPrefix;
+//        var path = this.routerDestinationPath + this.toCollectionCase(collection) + this.routerPrefix;
+        var path = MugenUtils.preparePath("router", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        this.mkdir(MugenUtils.preparePath("dir_client", collection));
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(routerTemplate, "Replacement", this.toTitleCase(collection));
@@ -404,7 +451,10 @@ var Mugen = {
         var serverTemplate = this.read(this.serverTemplatePath);
 
         //get destinationPath, and set the file name
-        var path = this.serverDestinationPath + this.toTitleCase(collection) + this.serverPrefix;
+//        var path = this.serverDestinationPath + this.toTitleCase(collection) + this.serverPrefix;
+        var path = MugenUtils.preparePath("server", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        this.mkdir(MugenUtils.preparePath("dir_server", collection));
 
         //get the content, replace the template with desired collection
         var content = this.replaceAll(serverTemplate, "Replacement", this.toTitleCase(collection));
@@ -430,6 +480,77 @@ var Mugen = {
         //finally write it
         this.write(path, content);
     },
+    /* generate your package definition file from template, then replacing with collection */
+    generatePackage: function(collection, nameNameSpace) {
+        //get pkge template content
+        var pkgeTemplate = this.read(this.pkgeTemplatePath);
+
+        //get destinationPath, and set the file name
+//        var path = this.pkgeDestinationPath + this.toCollectionCase(collection) + this.pkgePrefix;
+        var path = MugenUtils.preparePath("package", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+
+        //get the content, replace the template with desired collection
+        var content = this.replaceAll(pkgeTemplate, "{Collection}", this.toTitleCase(collection));
+        content = this.replaceAll(content, "{collection}", this.toCollectionCase(collection));
+        content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+
+        //finally write it
+        this.write(path, content);
+    },
+    generatedI18n: function(collection, nameNameSpace) {
+        //create directory for views first
+//        this.mkdir(this.viewDestinationPath + this.toCollectionCase(collection));
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+        var path = MugenUtils.preparePath("dir_i18n", collection);
+        this.mkdir(path);
+
+        var srcPath = this.i18nTemplatePath;
+        var dirSrcI18n = this.rootPath + "private/" + srcPath;
+
+//        console.log(" generating i18n from " + dirSrcI18n + " to " + this.rootPath + path);
+        var filenames = fs.readdirSync(dirSrcI18n);
+        for (idx in filenames) {
+            var filename = filenames[idx];
+            var src = srcPath + filename;
+            var dst = path + "/" + filename;
+
+            var content = this.replaceAll(this.read(src), "{Collection}", this.toTitleCase(collection));
+            content = this.replaceAll(content, "{collection}", this.toCollectionCase(collection));
+            content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+
+//            console.log("src :: " + src);
+//            console.log("dst :: " + dst);
+            this.write(dst, content);
+        };
+//        console.log(" generated i18n ");
+    },
+    /* generate your package definition file from template, then replacing with collection */
+    generatePkgI18n: function(collection, nameNameSpace) {
+        //get pkge template content
+        var pkgeTemplate = this.read(this.pkgI18nTemplatePath);
+
+        //get destinationPath, and set the file name
+//        var path = this.pkgeDestinationPath + this.toCollectionCase(collection) + this.pkgePrefix;
+        var path = MugenUtils.preparePath("pkgI18n", collection);
+        this.mkdir(MugenUtils.preparePath("dir_pkg", collection));
+
+        //get the content, replace the template with desired collection
+        var content = this.replaceAll(pkgeTemplate, "{collection}", this.toCollectionCase(collection));
+        content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+
+        //finally write it
+        this.write(path, content);
+    },
+    /* generate your package definition file from template, then replacing with collection */
+    installPackage: function(collection, nameNameSpace) {
+        var METEOR_PACKAGES = ".meteor/packages";
+        console.log("Adding " + nameNameSpace + ":" +  collection + " to " + METEOR_PACKAGES);
+        fs.appendFile(Mugen.rootPath + METEOR_PACKAGES, '\n' + nameNameSpace + ":" +  collection, function (err) {
+          if (err) throw err;
+          console.log("Added " + nameNameSpace + ":" + collection + " to " + Mugen.rootPath + METEOR_PACKAGES);
+        });
+    }
 };
 
 Meteor.methods({
@@ -438,6 +559,9 @@ Meteor.methods({
     },
     "Mugen.read": function(path) {
         Mugen.read(path);
+    },
+    "Mugen.testMe": function(A, B, C) {
+        Mugen.testMe(A, B, C);
     },
     "Mugen.generateController": function(collection, fields) {
         Mugen.generateController(collection, fields);
@@ -454,11 +578,27 @@ Meteor.methods({
     "Mugen.generateServer": function(collection, fields) {
         Mugen.generateServer(collection, fields);
     },
-    "Mugen.generateAll": function(collection, fields) {
+    "Mugen.generatePackage": function(collection, nameSpace) {
+        Mugen.generatePackage(collection, nameSpace);
+    },
+    "Mugen.generatePkgI18n": function(collection, nameSpace) {
+        Mugen.generatePkgI18n(collection, nameSpace);
+    },
+    "Mugen.generatedI18n": function(collection, nameSpace) {
+        Mugen.generatedI18n(collection, nameSpace);
+    },
+    "Mugen.installPackage": function(collection, nameSpace) {
+        Mugen.installPackage(collection, nameSpace);
+    },
+    "Mugen.generateAll": function(collection, fields, nameSpace) {
         Mugen.generateController(collection, fields);
         Mugen.generateCollection(collection, fields);
         Mugen.generateView(collection, fields);
         Mugen.generateRouter(collection);
         Mugen.generateServer(collection, fields);
+        Mugen.generatePackage(collection, nameSpace);
+        Mugen.generatePkgI18n(collection, nameSpace);
+        Mugen.generatedI18n(collection, nameSpace);
+        Mugen.installPackage(collection, nameSpace);
     },
 });

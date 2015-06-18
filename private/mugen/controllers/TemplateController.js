@@ -78,7 +78,7 @@ ReplacementController = MeteorisController.extend({
                     MeteorisFlash.set('danger', err.message);
                     throw new Meteor.Error(err);
                 }
-                MeteorisFlash.set('success', "Success Inserting Replacement");
+                MeteorisFlash.set('success', __("insert_success", "") + ".");
                 Router.go('replacementView', {_id: _id});
             });
         }
@@ -106,7 +106,7 @@ ReplacementController = MeteorisController.extend({
                     MeteorisFlash.set('danger', err.message);
                     throw new Meteor.Error(err);
                 }
-                MeteorisFlash.set('success', "Success Updating Replacement");
+                MeteorisFlash.set('success', __("update_success", "") + ".");
             });
             Router.go('replacementView', {_id: _id});
         }
@@ -123,7 +123,7 @@ ReplacementController = MeteorisController.extend({
                 MeteorisFlash.set('danger', err.message);
                 throw new Meteor.Error(err);
             }
-            MeteorisFlash.set('success', "Success Removing Replacement");
+            MeteorisFlash.set('success', __("remove_success", "") + ".");
         });
     },
     _loadModel: function(_id) {

@@ -1,0 +1,77 @@
+{
+  "Home":"Menu Principal",
+  "user":"Utilisateur",
+  "user_plural":"Utilisateurs",
+  "Posts":"Babillard",
+  "Crudss Generator":"Générateur d'Objets Gérables",
+  "Role":"Privileges",
+  "Role Collection":"Collections",
+  "Role Group":"Group de Utilisateurs",
+  "Profile":"Profile",
+  "Help":"Aide",
+  "Logout":"Déconnecter",
+  "Login":"Connecter",
+  "Update":"Mettre à Jour",
+  "Submit":"Soumettre",
+  "Confirm":"Confirmer",
+  "Remove":"Eliminer",
+
+  "No rows selected":"Sélectionnez au moins une ligne pour cette action",
+  "sure?":"Êtes-vous sûr?",
+  "proceed":"Oui. Vas-y!",
+  "confirm_remove":"Êtes- vous sûr de vouloir supprimer cet élément ?",
+  "confirm_remove_plural":"Êtes-vous sûr de vouloir supprimer ces __count__ éléments ?",
+  "cancel":"Annuler",
+
+  "documentation":"documentation",
+  "Email":"Courriel",
+  "Back to Login":"Rebranchez",
+
+  "Insert":"Insérer",
+  "Remove Selection":"Éliminer les éléments sélectionnés",
+  "Type Here to Search":"Ecris ici pour chercher",
+  "No Data Found":"Aucun résultat de recherche",
+
+  "Name":"Nom",
+  "Created At":"Créé",
+  "Created By":"Créé par",
+  "Updated At":"Mis à jour",
+  "Updated By":"Mis à jour par",
+  "Actions":"Outils",
+  "Load More":"Chargez plus de fiches",
+
+  "insert_success":"Fiche insérée avec succès",
+  "update_success":"Fiche correctement mis à jour",
+  "delete_success":"La(les) fiche(s) ont été supprimés avec succès",
+  "Profile successfully changed":"Profil modifié avec succès",
+  "New Password and Password Confirmation must be equal":"Nouveau mot de passe et la confirmation de mot de passe doivent être égal",
+  "New Password at least has 6 min length":"La longueur du mot de passe minimum est de 6 caractères.",
+  "Password successfully changed":"Mot de passe changé avec succès",
+  "This email does not exist.":"Cet addresse de courriel n'existe pas.",
+  "We are sorry but something went wrong.":"Nous sommes désolés, mais quelque chose a mal tourné.",
+  "Email Sent. Check your mailbox.":"Email envoyé. Vérifiez vos courriels reçus.",
+  "Your password has been changed. Welcome back!":"Votre mot de passe a été changé",
+
+  "Sign In with Facebook":"Connection : Facebook",
+  "Password":"Mot de passe",
+  "Forget Password?":"Mot de passe oublié?",
+  "Don't have an account yet? Register here!":"Vous ne avez pas encore de compte? Inscrivez-vous ici !",
+  "Back to":"Retourner a",
+  "Frontend":"Section non-privilégié",
+  "demo_hint":"Vous pouvez vous connecter en tant '__uidadmin__' avec courriel : '__emadmin__' et mot de passe : '__pwdadmin__' ou comme utilisateur authentifié '__uiddemo__' avec courriel : '__emdemo__' et mot de passe : '__pwddemo__' ",
+
+  
+  "Already have account? Log In here":"Avez-vous déjà un compte? Connexion ici",
+  "User Profile":"Profil de utilisateur",
+  "Change Profile":"Changer Profil",
+  "Change Password":"Changer Mot de Passe",
+  "Old Password":"Ancien Mot de Passe",
+  "New Password":"Nouveau Mot de Passe",
+  "login success": "La procédure de connexion a réussi",
+  "View":"Vue",
+  "Back":"Retourner",
+  "index":"Index"
+   
+
+}
+

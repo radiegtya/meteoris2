@@ -2,14 +2,14 @@
     <div class="container">
         <!--Breadcrumbs-->
         <ol class="breadcrumb">
-            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
-            <li><a href="{{pathFor 'mugenRoleCollectionsIndex'}}">Mugen Role Collections</a></li>
-            <li class="active">update</li>
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "Home"}}</a></li>
+            <li><a href="{{pathFor 'mugenRoleCollectionsIndex'}}">{{_ "mugen"}} : {{_ "collection" count=2}}</a></li>
+            <li class="active">{{_ "Update"}}</li>
         </ol>
 
         <div id="basic-form">
             <div class="title">
-                <h3 class="pull-left">Update Mugen Role Collections</h3>
+                <h3 class="pull-left">{{_ "mugen"}} : {{_ "collection"  count=2}} -- {{_ "Update"}}</h3>
             </div>
             <div class="clearfix"></div>
 
