@@ -41,13 +41,10 @@ reywood:publish-composite
 kevohagan:sweetalert
 tap:i18n
 #
-meteoris:mugen-utilities
 meteoris:meteoris-core
+meteoris:mugen-utilities
 rzymek:moment-locale-fr
 rzymek:moment-locale-es
 rzymek:moment-locale-zh-cn
 lbee:moment-helpers
 #
-
-test:test
-tesproject:tasks

@@ -1,8 +1,8 @@
 Package.describe({
   name: 'meteoris:meteoris-core',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
-  summary: 'The run time parts of Meteoris.',
+  summary: 'Meteoris Package.',
   // URL to the Git repository containing the source code for this package.
   git: '',
   // By default, Meteor will default to using README.md for documentation.
@@ -133,17 +133,17 @@ Package.onUse(function(api) {
   // one defined in Meteor 1.1.0.2.
   api.versionsFrom('1.1.0.2');
 
-  api.use('iron:router');
+  api.use('iron:router@1.0.9');
   api.use('meteor-platform');
-  api.use('aldeed:simple-schema');
-  api.use('ground:db');
-  api.use('momentjs:moment');
-  api.use('cfs:standard-packages');
+  api.use('aldeed:simple-schema@1.3.3');
+  api.use('ground:db@0.3.9');
+  api.use('momentjs:moment@2.10.3');
+  api.use('cfs:standard-packages@0.5.9');
   api.use('service-configuration');
-  api.use('meteorhacks:subs-manager');
+  api.use('meteorhacks:subs-manager@1.4.0');
   api.use('accounts-ui');
-  api.use('kevohagan:sweetalert');
-  api.use('liyu:sprintfjs');  
+  api.use('kevohagan:sweetalert@0.5.0');
+  api.use('liyu:sprintfjs@1.0.0');  
 
   api.addFiles(filesJsBoth, ['client', 'server']);
   api.export('MeteorisAlert', 'client');
