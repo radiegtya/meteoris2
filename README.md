@@ -32,6 +32,23 @@ cd your_meteor_apps
 mkdir packages
 ```
 
+d. Edit meteor setting 
+```
+copy "example.settings.json", and rename it with "settings.json".
+Edit the setting as you need or just using default setting.
+```
+
+e. Try Posts example 
+```
+on the menu bar, there is menu called "Post". Simply try it out, and feel the power of Meteoris
+```
+
+f. Generate CRUDSS using MUGEN
+```
+on the menu bar, click menu called "mugen->generate crudss". Fill the form and voila, your basic CRUDSS apps are ready.
+For more info, please take a look at documentation section.
+```
+
 Thats all, You already have stunning app which is having authentication, crudss generator, role base access controll, MVC/MVVM structure, widgets, pagination, basic bootstrap design, and many more!
 
 
