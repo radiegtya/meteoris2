@@ -7,87 +7,111 @@ Package.describe({
 });
 
 var filesHtmlClient = [
-    'client/_form.html'
-  , 'client/insert.html'
+    'mugen/client/_form.html'
+  , 'mugen/client/insert.html'
   //views mugenRoleActions
-  ,	'client/role/views/mugenRoleActions/_form.html'
-  ,	'client/role/views/mugenRoleActions/index.html'
-  ,	'client/role/views/mugenRoleActions/insert.html'
-  ,	'client/role/views/mugenRoleActions/manage.html'
-  ,	'client/role/views/mugenRoleActions/update.html'
-  ,	'client/role/views/mugenRoleActions/view.html'
+  ,	'mugen/client/role/views/mugenRoleActions/_form.html'
+  ,	'mugen/client/role/views/mugenRoleActions/index.html'
+  ,	'mugen/client/role/views/mugenRoleActions/insert.html'
+  ,	'mugen/client/role/views/mugenRoleActions/manage.html'
+  ,	'mugen/client/role/views/mugenRoleActions/update.html'
+  ,	'mugen/client/role/views/mugenRoleActions/view.html'
   //views mugenRoleCollections
-  ,	'client/role/views/mugenRoleCollections/_form.html'
-  ,	'client/role/views/mugenRoleCollections/index.html'
-  ,	'client/role/views/mugenRoleCollections/insert.html'
-  ,	'client/role/views/mugenRoleCollections/update.html'
-  ,	'client/role/views/mugenRoleCollections/view.html'
+  ,	'mugen/client/role/views/mugenRoleCollections/_form.html'
+  ,	'mugen/client/role/views/mugenRoleCollections/index.html'
+  ,	'mugen/client/role/views/mugenRoleCollections/insert.html'
+  ,	'mugen/client/role/views/mugenRoleCollections/update.html'
+  ,	'mugen/client/role/views/mugenRoleCollections/view.html'
   //views mugenRoleGroups
-  ,	'client/role/views/mugenRoleGroups/_form.html'
-  ,	'client/role/views/mugenRoleGroups/index.html'
-  ,	'client/role/views/mugenRoleGroups/insert.html'
-  ,	'client/role/views/mugenRoleGroups/update.html'
-  ,	'client/role/views/mugenRoleGroups/view.html'
+  ,	'mugen/client/role/views/mugenRoleGroups/_form.html'
+  ,	'mugen/client/role/views/mugenRoleGroups/index.html'
+  ,	'mugen/client/role/views/mugenRoleGroups/insert.html'
+  ,	'mugen/client/role/views/mugenRoleGroups/update.html'
+  ,	'mugen/client/role/views/mugenRoleGroups/view.html'
 ];
 
 var filesJsClient = [
   //routers
-    'client/role/routers/mugenRoleActions.js'
-  , 'client/role/routers/mugenRoleCollections.js'
-  , 'client/role/routers/mugenRoleGroups.js'
-  , 'client/_form.js'
-  ,	'client/insert.js'
-  ,	'client/router.js'
+    'mugen/client/role/routers/mugenRoleActions.js'
+  , 'mugen/client/role/routers/mugenRoleCollections.js'
+  , 'mugen/client/role/routers/mugenRoleGroups.js'
+  , 'mugen/client/_form.js'
+  ,	'mugen/client/insert.js'
+  ,	'mugen/client/router.js'
   //views mugenRoleActions
-  ,	'client/role/views/mugenRoleActions/_form.js'
-  ,	'client/role/views/mugenRoleActions/index.js'
-  ,	'client/role/views/mugenRoleActions/insert.js'
-  ,	'client/role/views/mugenRoleActions/manage.js'
-  ,	'client/role/views/mugenRoleActions/update.js'
-  ,	'client/role/views/mugenRoleActions/view.js'
+  ,	'mugen/client/role/views/mugenRoleActions/_form.js'
+  ,	'mugen/client/role/views/mugenRoleActions/index.js'
+  ,	'mugen/client/role/views/mugenRoleActions/insert.js'
+  ,	'mugen/client/role/views/mugenRoleActions/manage.js'
+  ,	'mugen/client/role/views/mugenRoleActions/update.js'
+  ,	'mugen/client/role/views/mugenRoleActions/view.js'
   //views mugenRoleCollections
-  ,	'client/role/views/mugenRoleCollections/_form.js'
-  ,	'client/role/views/mugenRoleCollections/index.js'
-  ,	'client/role/views/mugenRoleCollections/insert.js'
-  ,	'client/role/views/mugenRoleCollections/update.js'
-  ,	'client/role/views/mugenRoleCollections/view.js'
+  ,	'mugen/client/role/views/mugenRoleCollections/_form.js'
+  ,	'mugen/client/role/views/mugenRoleCollections/index.js'
+  ,	'mugen/client/role/views/mugenRoleCollections/insert.js'
+  ,	'mugen/client/role/views/mugenRoleCollections/update.js'
+  ,	'mugen/client/role/views/mugenRoleCollections/view.js'
   //views mugenRoleGroups
-  ,	'client/role/views/mugenRoleGroups/_form.js'
-  ,	'client/role/views/mugenRoleGroups/index.js'
-  ,	'client/role/views/mugenRoleGroups/insert.js'
-  ,	'client/role/views/mugenRoleGroups/update.js'
-  ,	'client/role/views/mugenRoleGroups/view.js'
+  ,	'mugen/client/role/views/mugenRoleGroups/_form.js'
+  ,	'mugen/client/role/views/mugenRoleGroups/index.js'
+  ,	'mugen/client/role/views/mugenRoleGroups/insert.js'
+  ,	'mugen/client/role/views/mugenRoleGroups/update.js'
+  ,	'mugen/client/role/views/mugenRoleGroups/view.js'
 ];
 
 var filesJsBoth = [
   //controllers
-  	'lib/controllers/MeteorisController.js'
-  , 'lib/controllers/MugenRoleActionsController.js'
-  , 'lib/controllers/MugenRoleCollectionsController.js'
-  , 'lib/controllers/MugenRoleGroupsController.js'
+    'mugen/lib/controllers/MugenRoleActionsController.js'
+  , 'mugen/lib/controllers/MugenRoleCollectionsController.js'
+  , 'mugen/lib/controllers/MugenRoleGroupsController.js'
   //collections
-  , 'lib/collections/MugenRoleActions.js'
-  , 'lib/collections/MugenRoleCollections.js'
-  , 'lib/collections/MugenRoleGroups.js'
+  , 'mugen/lib/collections/MugenRoleActions.js'
+  , 'mugen/lib/collections/MugenRoleCollections.js'
+  , 'mugen/lib/collections/MugenRoleGroups.js'
 ];
 
 var filesJsonBoth = [
   //i18n
-    'lib/i18n/en.i18n.json'
-  , 'lib/i18n/es.i18n.json'
-  , 'lib/i18n/fr.i18n.json'
+    'mugen/lib/i18n/en.i18n.json'
+  , 'mugen/lib/i18n/es.i18n.json'
+  , 'mugen/lib/i18n/fr.i18n.json'
 ];
 
 var filesJsServer = [
-    'server/MugenServer.js'
-  , 'server/role/MugenRoleActionsServer.js'
-  , 'server/role/MugenRoleCollectionsServer.js'
-  , 'server/role/MugenRoleGroupsServer.js'
+    'mugen/server/MugenServer.js'
+  , 'mugen/server/role/MugenRoleActionsServer.js'
+  , 'mugen/server/role/MugenRoleCollectionsServer.js'
+  , 'mugen/server/role/MugenRoleGroupsServer.js'
+];
+
+var filesPrivate = [
+    'private/mugen/views/_form.html'
+  , 'private/mugen/views/index.html'
+  , 'private/mugen/views/insert.html'
+  , 'private/mugen/views/update.html'
+  , 'private/mugen/views/view.html'
+  , 'private/mugen/views/_form.js'
+  , 'private/mugen/views/index.js'
+  , 'private/mugen/views/insert.js'
+  , 'private/mugen/views/update.js'
+  , 'private/mugen/views/view.js'
+  , 'private/mugen/collections/TemplateCollection.js'
+  , 'private/mugen/controllers/TemplateController.js'
+  , 'private/mugen/i18n/en.i18n.json'
+  , 'private/mugen/i18n/es.i18n.json',
+  , 'private/mugen/i18n/fr.i18n.json'
+  , 'private/mugen/i18n/zh-CN.i18n.json'
+  , 'private/mugen/routers/templateRouter.js'
+  , 'private/mugen/server/TemplateServer.js'
+  , 'private/mugen/templatePackage-tap.i18n'
+  , 'private/mugen/templatePackage.js'
 ];
 
 Package.onUse(function(api) {
 
   api.versionsFrom('1.1.0.2');
+
+  
 
   api.use('iron:router@1.0.9');
   api.use('meteor-platform');
@@ -100,20 +124,21 @@ Package.onUse(function(api) {
   api.use('accounts-ui');
   api.use('kevohagan:sweetalert@0.5.0');
   api.use('liyu:sprintfjs@1.0.0');
-  api.use('meteoris:meteoris-core');
   api.use('tap:i18n');
   
-  api.export('App', ['client', 'server']);
+  api.use('meteoris:meteoris-core');
+
   api.export('MugenUtils', ['client', 'server']);
   api.addFiles('utils.js', ['client', 'server']);
   api.addFiles('configuration.js', ['client', 'server']);
 
   //export collection & controller to package
   var controllers = [
-  	'MeteorisController',
   	'MugenRoleActionsController',
   	'MugenRoleCollectionsController',
-  	'MugenRoleGroupsController'
+  	'MugenRoleGroupsController',
+    //private 
+    'ReplacementController',
   ];
 
   api.export(controllers, ['client', 'server']);
@@ -121,7 +146,9 @@ Package.onUse(function(api) {
   var collections = [
   	'MugenRoleActions',
   	'MugenRoleCollections',
-  	'MugenRoleGroups'
+  	'MugenRoleGroups',
+    //private
+    'Replacement'
   ];
 
   api.export(collections, ['client', 'server']);
@@ -136,4 +163,6 @@ Package.onUse(function(api) {
   api.addFiles(filesJsonBoth, ['client', 'server']);
   //add all server file
   api.addFiles(filesJsServer, 'server');
+  //add all private file
+  api.addFiles(filesPrivate, 'server', {isAsset: true});
 });

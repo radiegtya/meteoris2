@@ -2,25 +2,25 @@ var rootPath = process.env.PWD;
 
 var Mugen = {
     rootPath: process.env.PWD + "/",
-    controllerTemplatePath: 'mugen/controllers/TemplateController.js',
+    controllerTemplatePath: 'private/mugen/controllers/TemplateController.js',
 //    controllerDestinationPath: "lib/controllers/",
 //    controllerPrefix: "Controller.js",
-    collectionTemplatePath: 'mugen/collections/TemplateCollection.js',
+    collectionTemplatePath: 'private/mugen/collections/TemplateCollection.js',
 //    collectionDestinationPath: "lib/collections/",
 //    collectionPrefix: ".js",
-    viewTemplatePath: 'mugen/views/',
+    viewTemplatePath: 'private/mugen/views/',
 //    viewDestinationPath: "client/views/",
     viewPrefixJs: ".js",
     viewPrefixHtml: ".html",
-    routerTemplatePath: 'mugen/routers/templateRouter.js',
+    routerTemplatePath: 'private/mugen/routers/templateRouter.js',
 //    routerDestinationPath: "client/routers/",
 //    routerPrefix: ".js",
-    serverTemplatePath: 'mugen/server/TemplateServer.js',
+    serverTemplatePath: 'private/mugen/server/TemplateServer.js',
 //    serverDestinationPath: "server/",
 //    serverPrefix: "Server.js",
-    pkgeTemplatePath: 'mugen/templatePackage.js',
-    pkgI18nTemplatePath: 'mugen/templatePackage-tap.i18n',
-    i18nTemplatePath: 'mugen/i18n/',
+    pkgeTemplatePath: 'private/mugen/templatePackage.js',
+    pkgI18nTemplatePath: 'private/mugen/templatePackage-tap.i18n',
+    i18nTemplatePath: 'private/mugen/i18n/',
 
 
     /* write file to path */
@@ -505,24 +505,35 @@ var Mugen = {
         var path = MugenUtils.preparePath("dir_i18n", collection);
         this.mkdir(path);
 
-        var srcPath = this.i18nTemplatePath;
-        var dirSrcI18n = this.rootPath + "private/" + srcPath;
+//         var srcPath = this.i18nTemplatePath;
+//         var dirSrcI18n = this.rootPath + "private/" + srcPath;
 
-//        console.log(" generating i18n from " + dirSrcI18n + " to " + this.rootPath + path);
-        var filenames = fs.readdirSync(dirSrcI18n);
-        for (idx in filenames) {
-            var filename = filenames[idx];
-            var src = srcPath + filename;
-            var dst = path + "/" + filename;
+// //        console.log(" generating i18n from " + dirSrcI18n + " to " + this.rootPath + path);
+//         var filenames = fs.readdirSync(dirSrcI18n);        
+//         for (idx in filenames) {
+//             var filename = filenames[idx];
+//             var src = srcPath + filename;
+//             var dst = path + "/" + filename;
 
-            var content = this.replaceAll(this.read(src), "{Collection}", this.toTitleCase(collection));
-            content = this.replaceAll(content, "{collection}", this.toCollectionCase(collection));
-            content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+//             var content = this.replaceAll(this.read(src), "{Collection}", this.toTitleCase(collection));
+//             content = this.replaceAll(content, "{collection}", this.toCollectionCase(collection));
+//             content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
+
+// //            console.log("src :: " + src);
+// //            console.log("dst :: " + dst);
+//             this.write(dst, content);
+//         };
+
+        /* updated by ega radiegtya, using only english version for mugen because of package error using fs.readdirSync */
+        var content = this.replaceAll(this.read(this.i18nTemplatePath + 'en.i18n.json'), "{Collection}", this.toTitleCase(collection));
+        content = this.replaceAll(content, "{collection}", this.toCollectionCase(collection));
+        content = this.replaceAll(content, "{nameSpace}", nameNameSpace);
 
 //            console.log("src :: " + src);
 //            console.log("dst :: " + dst);
-            this.write(dst, content);
-        };
+        var writePath = MugenUtils.preparePath("i18n_en", collection); 
+        this.write(writePath, content);        
+                 
 //        console.log(" generated i18n ");
     },
     /* generate your package definition file from template, then replacing with collection */

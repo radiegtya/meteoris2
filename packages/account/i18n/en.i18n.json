@@ -1,0 +1,34 @@
+{
+  "home":"Home",
+  "account":"Account",
+  "update_success":"Account updated successfully",
+  "search_hint":"Search key",
+  "no_data_found":"No Data Found",
+  "load_more":"Load More",
+
+  "confirm_remove":"Are you sure you want to delete this record?",
+  "confirm_remove_plural":"Are you sure you want to delete these __count__ records?",
+
+  "no_selection":"Select at least one row for deletion",
+    
+  "index":"Account Index",
+  "insert_account":"Insert Account",
+  "update_account":"Update Account",
+  "view":"View",
+  "submit":"Submit",
+  "view_account":"View Account",
+  "back":"Back",
+  "update":"Update",
+  "remove":"Delete",
+  "remove_selection":"Remove selected account",
+  "remove_success":"Account removed successfully",
+  "actions":"Actions",
+  "insert":"Insert",
+  "insert_success":"Account added successfully",
+  "title":"title",
+  "created_at":"Created At",
+  "created_by":"Created By",
+  "updated_at":"Dpdated At",
+  "updated_by":"Updated By"
+}
+

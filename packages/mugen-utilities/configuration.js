@@ -17,6 +17,8 @@ MugenUtils = {
       ,         package : "packages/{collection}/package.js"
       ,         pkgI18n : "packages/{collection}/package-tap.i18n"
       ,         install : "{nameSpace}:{collection}"
+      //added by ega radiegtya because i18n bug when used as standalone package
+      ,         i18n_en : "packages/{collection}/i18n/en.i18n.json"
   }
     /* prepare a path from an example path */
   , preparePath: function(element, collection, action, nameNameSpace) {
