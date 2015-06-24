@@ -101,6 +101,7 @@ Package.onUse(function(api) {
   api.use('kevohagan:sweetalert@0.5.0');
   api.use('liyu:sprintfjs@1.0.0');
   api.use('meteoris:meteoris-core');
+  api.use('tap:i18n');
   
   api.export('App', ['client', 'server']);
   api.export('MugenUtils', ['client', 'server']);
