@@ -85,7 +85,6 @@ meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:subs-manager@1.4.0
 meteoris:meteoris-core@0.0.2
-meteoris:mugen-utilities@0.0.1
 minifiers@1.1.5
 minimongo@1.0.8
 mizzao:autocomplete@0.5.1
@@ -105,6 +104,8 @@ peerlibrary:assert@0.2.5
 peerlibrary:blocking@0.5.2
 peerlibrary:fs@0.1.7
 piyiku:account@0.0.1
+piyiku:ledger@0.0.1
+piyiku:saving@0.0.1
 raix:eventemitter@0.1.2
 raix:onetimeout@1.0.3
 raix:stubfence@1.0.1

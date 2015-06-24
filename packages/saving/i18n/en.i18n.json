@@ -1,0 +1,34 @@
+{
+  "home":"Home",
+  "saving":"Saving",
+  "update_success":"Saving updated successfully",
+  "search_hint":"Search key",
+  "no_data_found":"No Data Found",
+  "load_more":"Load More",
+
+  "confirm_remove":"Are you sure you want to delete this record?",
+  "confirm_remove_plural":"Are you sure you want to delete these __count__ records?",
+
+  "no_selection":"Select at least one row for deletion",
+    
+  "index":"Saving Index",
+  "insert_saving":"Insert Saving",
+  "update_saving":"Update Saving",
+  "view":"View",
+  "submit":"Submit",
+  "view_saving":"View Saving",
+  "back":"Back",
+  "update":"Update",
+  "remove":"Delete",
+  "remove_selection":"Remove selected saving",
+  "remove_success":"Saving removed successfully",
+  "actions":"Actions",
+  "insert":"Insert",
+  "insert_success":"Saving added successfully",
+  "title":"title",
+  "created_at":"Created At",
+  "created_by":"Created By",
+  "updated_at":"Dpdated At",
+  "updated_by":"Updated By"
+}
+

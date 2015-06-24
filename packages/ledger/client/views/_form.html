@@ -1,0 +1,13 @@
+<template name="ledger_form">
+    <form id="ledger_form"> 
+        <div class="form-group {{#if error 'title'}}has-error{{/if}}">
+<label for="title" class="control-label">Title </label>
+<input type="text" id="title" value="{{title}}" placeholder="Title" class="form-control">
+<span class="help-block">{{error "title"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">{{_ "submit"}}</button>
+        <a href="{{pathFor 'ledgerIndex'}}" class="btn btn-default">{{_ "back"}}</a>
+    </form>
+</template>
+
