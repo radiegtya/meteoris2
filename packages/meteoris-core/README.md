@@ -1,3 +1,6 @@
+### WARNING
+This Meteoris version is still on alpha stage, if you prefer using stable version, please using this Meteoris version https://github.com/radiegtya/meteoris-v1
+
 ### WHAT IS METEORIS?
 Meteoris is a Realtime Javascript Boilerplate based on Meteor Js framework v1.0. 
 It helps you structure your Meteor Js apps and includes many useful packages.
@@ -8,4 +11,37 @@ It helps you structure your Meteor Js apps and includes many useful packages.
 - Tired of installing required packages/plugin and searching for the best packages?
 - Want a standard way to structure all of your Meteor projects so they're consistent every time?
 - Confused or don't have the time to learn about whats new in the latest meteor version? 
+
+Meteoris comes with solutions!
+
+### INSTALLATION
+to Install Meteoris, simply follow these steps:
+
+a. Add meteoris package to your project 
+```
+meteor add meteoris:meteoris-core
+```
+b. Remove autopublish package from your project, because meteoris already using pub n sub
+```
+meteor remove autopublish
+```
+
+c. Create a directory called "packages" inside your root project
+```
+cd your_meteor_apps
+mkdir packages
+```
+
+Thats all, You already have stunning app which is having authentication, crudss generator, role base access controll, MVC/MVVM structure, widgets, pagination, basic bootstrap design, and many more!
+
+
+### DOCUMENTATION
+For now You can watch the documentation via youtube here:
+[![IMAGE ALT TEXT HERE](http://content.screencast.com/users/Radiegtya/folders/Jing/media/cf1d9765-375c-47de-88e5-80e0af89b24d/meteoris%20vid.png)](http://www.youtube.com/watch?v=9AVKFwepaHM&list=PLkq0XDlLyPbA6y51gLeJSnK419PFFgS5M)
+
+or you can view the doc via google docs here:
+
+https://docs.google.com/document/d/1wEe2u9qLXRLEnWhnUx7wVyo7Jc66Dt2gkokXcP0iPCE/edit?usp=sharing
+
+Ofc We're improving the documentation. Sneak preview available [here](https://github.com/warehouseman/meteoris/wiki/User-Manual).
 

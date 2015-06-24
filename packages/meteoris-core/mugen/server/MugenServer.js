@@ -80,7 +80,9 @@ var Mugen = {
         this.mkdir(path);
 
     },
-
+    generatePackageFolder: function() {
+        this.mkdir("packages");
+    },
     /* generate your controller from template, then replacing with collection */
     generateController: function(collection, fields) {
 
@@ -602,14 +604,17 @@ Meteor.methods({
         Mugen.installPackage(collection, nameSpace);
     },
     "Mugen.generateAll": function(collection, fields, nameSpace) {
-        Mugen.generateController(collection, fields);
-        Mugen.generateCollection(collection, fields);
-        Mugen.generateView(collection, fields);
-        Mugen.generateRouter(collection);
-        Mugen.generateServer(collection, fields);
-        Mugen.generatePackage(collection, nameSpace);
-        Mugen.generatePkgI18n(collection, nameSpace);
-        Mugen.generatedI18n(collection, nameSpace);
-        Mugen.installPackage(collection, nameSpace);
+        Mugen.generatePackageFolder();
+        Meteor.setTimeout(function(){
+            Mugen.generateController(collection, fields);
+            Mugen.generateCollection(collection, fields);
+            Mugen.generateView(collection, fields);
+            Mugen.generateRouter(collection);
+            Mugen.generateServer(collection, fields);
+            Mugen.generatePackage(collection, nameSpace);
+            Mugen.generatePkgI18n(collection, nameSpace);
+            Mugen.generatedI18n(collection, nameSpace);
+            Mugen.installPackage(collection, nameSpace);
+        }, 2000);
     },
 });

@@ -1,8 +1,8 @@
 Package.describe({
   name: 'meteoris:meteoris-core',
-  version: '0.0.2',
+  version: '0.0.7_4',
   // Brief, one-line summary of the package.
-  summary: 'Meteoris Package.',
+  summary: 'Meteoris Standalone Package.',
   // URL to the Git repository containing the source code for this package.
   git: '',
   // By default, Meteor will default to using README.md for documentation.
@@ -227,18 +227,38 @@ Package.onUse(function(api) {
   // one defined in Meteor 1.1.0.2.
   api.versionsFrom('1.1.0.2');
 
-  api.use('iron:router@1.0.9');
   api.use('meteor-platform');
-  api.use('aldeed:simple-schema@1.3.3');
-  api.use('ground:db@0.3.9');
-  api.use('momentjs:moment@2.10.3');
-  api.use('cfs:standard-packages@0.5.9');
-  api.use('service-configuration');
+  api.use('aldeed:collection2@2.3.3');
+  api.use('iron:router@1.0.9');
+  api.use('accounts-base');
+  api.use('accounts-password');
   api.use('meteorhacks:subs-manager@1.4.0');
+  api.use('mystor:device-detection@0.2.0');
+  api.use('sacha:spin@2.3.1');
+  api.use('aldeed:simple-schema@1.3.3');
+  api.use('jquery@1.11.3_2');
+  api.use('momentjs:moment@2.10.3');
+  api.use('lepozepo:accounting@1.0.0');
+  api.use('cfs:standard-packages@0.5.9');
+  api.use('cfs:filesystem@0.1.2');
+  api.use('cfs:ejson-file@0.1.4');
+  api.use('cfs:gridfs@0.0.33');
+  api.use('twbs:bootstrap@3.3.5');
+  api.use('francocatena:status@1.2.3');
+  api.use('accounts-facebook@1.0.4');
+  api.use('service-configuration@1.0.4');
+  api.use('fortawesome:fontawesome@4.3.0');
+  api.use('ground:db@0.3.9');
+  api.use('peerlibrary:fs@0.1.7');
+  api.use('dburles:collection-helpers@1.0.3');
+  api.use('rajit:bootstrap3-datepicker@1.4.1');
+  api.use('email@1.0.6');
   api.use('accounts-ui');
+  api.use('reywood:publish-composite@1.3.6');
   api.use('kevohagan:sweetalert@0.5.0');
-  api.use('liyu:sprintfjs@1.0.0'); 
-  api.use('tap:i18n'); 
+  api.use('tap:i18n@1.5.0');
+  api.use('liyu:sprintfjs@1.0.0');  
+  api.use('lbee:moment-helpers@0.2.0');
 
   api.addFiles(filesJsBoth, ['client', 'server']);
   api.export('MeteorisAlert', 'client');
