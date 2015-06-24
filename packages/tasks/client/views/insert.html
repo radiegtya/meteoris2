@@ -1,0 +1,19 @@
+<template name="tasksInsert">    
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">{{_ "home"}}</a></li>
+            <li><a href="{{pathFor 'tasksIndex'}}">{{_ "tasks"}}</a></li>
+            <li class="active">{{_ "insert"}}</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">{{_ "insert_tasks"}}</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> tasks_form}}  
+        </div>        
+    </div>
+</template>

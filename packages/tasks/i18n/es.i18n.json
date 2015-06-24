@@ -1,0 +1,34 @@
+{
+  "home":"Menú Principal",
+  "tasks":"Tasks",
+  "update_success":"Tasks actualizado con éxito",
+  "search_hint":"Criterio de búsqueda",
+  "no_data_found":"No hay datos",
+  "load_more":"Traer mas regístros",
+
+  "confirm_remove":"¿ Esta seguro que desea eliminar el regístro ?",
+  "confirm_remove_plural":"¿ Esta seguro que desea eliminar los __count__ regístros ?",
+
+  "no_selection":"Escoge al menos un registro para borrar",
+   
+  "index":"Lista de los tasks",
+  "insert_tasks":"Insertar Tasks",
+  "update_tasks":"Actualizar el Tasks",
+  "view":"Revisar",
+  "submit":"Introducir",
+  "view_tasks":"Revisar Tasks",
+  "back":"Volver atrás",
+  "update":"Actualizar",
+  "remove":"Eliminar",
+  "remove_selection":"Eliminar Los Tasks Seleccionados",
+  "remove_success":"El tasks fue elíminado exitósamente",
+  "actions":"Herramientas",
+  "insert":"Insertar",
+  "insert_success":"El tasks fue creado exitósamente",
+  "title":"Título",
+  "created_at":"Creado",
+  "created_by":"Creado por",
+  "updated_at":"Actualizado",
+  "updated_by":"Actualizado por"
+}
+

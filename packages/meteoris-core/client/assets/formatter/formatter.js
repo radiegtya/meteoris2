@@ -1,33 +1,30 @@
-// MeteorisFormatter = {
+MeteorisFormatter = {
     /**
      * Formatting date to desired format, this function needs moment packages     
      */
-/*
+
     date: function(date, format) {
         if (date)
             return moment(date).format(format ? format : 'll');
         else
             return "-";
     },
-*/
 
     /**
      * Formatting date to desired format, this function needs moment packages     
      */
-/*
+
     dateTime: function(date, format) {
         if (date)
             return moment(date).format(format ? format : 'LLLL');
         else
             return "-";
     },
-*/
 
     /**
      * get elapsed time whether it's minutes, hours or days     
      */
 
-/*
     elapsedTime: function(date) {
         var dateNow = moment(new Date(TimeSync.serverTime()));
         var elapsedMinutes = dateNow.diff(date, "minutes");
@@ -49,13 +46,11 @@
 
         return elapsed;
     },
-*/
 
     /**
      * Formatting number to desired format, this function needs accounting packages     
      */
 
-/*
     money: function(value) {
         if (value === 0)
             return 0;
@@ -64,13 +59,11 @@
         else if (value)
             return accounting.formatMoney(value, "", 2, ".", ",");
     },
-/*
 
     /**
      * Formatting number to desired format, this function needs accounting packages     
      */
 
-/*     
     number: function(value) {
         if (value === 0)
             return 0;
@@ -87,12 +80,12 @@
             return moment(date).format("YYYY-MM-DD");
     },
 };
-*/
+
 
 /**
  * Don't edit this if you don't know what exactly are you doing 
  */
-/* 
+
 UI.registerHelper('meteorisFormatter', function(option, firstParam) {
     return MeteorisFormatter[option](firstParam);
 });
@@ -105,4 +98,3 @@ UI.registerHelper('meteorisFormatterDateTime', function(date, format) {
 UI.registerHelper('meteorisFormatterNumber', function(value) {
     return MeteorisFormatter.dateTime(value);
 });
-*/

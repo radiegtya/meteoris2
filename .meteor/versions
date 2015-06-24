@@ -127,6 +127,8 @@ srp@1.0.3
 summernote:summernote@0.6.0_1
 tap:i18n@1.3.2
 templating@1.1.1
+tesproject:tasks@0.0.1
+test:test@0.0.1
 tracker@1.0.7
 twbs:bootstrap@3.3.4
 ui@1.0.6
