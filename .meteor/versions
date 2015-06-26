@@ -47,7 +47,7 @@ email@1.0.6
 facebook@1.2.0
 fastclick@1.0.3
 fortawesome:fontawesome@4.3.0
-francocatena:status@1.1.2
+francocatena:status@1.2.3
 gadicohen:phantomjs@0.0.2
 geojson-utils@1.0.3
 google@1.1.5
@@ -84,7 +84,7 @@ logging@1.0.7
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:subs-manager@1.4.0
-meteoris:meteoris-core@0.0.3
+meteoris:meteoris-core@0.0.7_4
 meteorspark:util@0.2.0
 minifiers@1.1.5
 minimongo@1.0.8
@@ -104,9 +104,6 @@ ordered-dict@1.0.3
 peerlibrary:assert@0.2.5
 peerlibrary:blocking@0.5.2
 peerlibrary:fs@0.1.7
-piyiku:account@0.0.1
-piyiku:ledger@0.0.1
-piyiku:saving@0.0.1
 raix:eventemitter@0.1.2
 raix:onetimeout@1.0.3
 raix:stubfence@1.0.1
@@ -121,7 +118,7 @@ routepolicy@1.0.5
 rzymek:moment-locale-es@2.9.0
 rzymek:moment-locale-fr@2.9.0
 rzymek:moment-locale-zh-cn@2.9.0
-sacha:spin@2.0.4
+sacha:spin@2.3.1
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
@@ -133,7 +130,7 @@ summernote:summernote@0.6.0_1
 tap:i18n@1.5.0
 templating@1.1.1
 tracker@1.0.7
-twbs:bootstrap@3.3.4
+twbs:bootstrap@3.3.5
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4
